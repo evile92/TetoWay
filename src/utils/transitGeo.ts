@@ -11,9 +11,23 @@ import type {
 
 const TRANSFER_HUB_KEYS = ['dar_takafa', 'rommana'] as const;
 const WALK_SPEED_METERS_PER_MIN = 75;
+const URBAN_BUS_METERS_PER_MIN = 330;
+const REGIONAL_BUS_METERS_PER_MIN = 600;
 
 function metersToWalkMinutes(meters: number): number {
   return Math.max(1, Math.round(meters / WALK_SPEED_METERS_PER_MIN));
+}
+
+function estimateRideMinutes(
+  rideDistanceMeters: number,
+  stopCount: number,
+  category: BusLine['category'],
+): number {
+  const speed =
+    category === 'regional' ? REGIONAL_BUS_METERS_PER_MIN : URBAN_BUS_METERS_PER_MIN;
+  const dwellPerStop = category === 'regional' ? 0.25 : 0.4;
+  const minMins = category === 'regional' ? 3 : 2;
+  return Math.max(minMins, Math.round(rideDistanceMeters / speed + stopCount * dwellPerStop));
 }
 
 function safeSliceLine(
@@ -194,14 +208,16 @@ function buildLeg(
   const rideDistanceMeters = Math.round(
     turf.length(turf.lineString(segmentGeometry.coordinates), { units: 'meters' }),
   );
+  const stopCount = Math.max(1, Math.abs(alightIdx - boardIdx));
 
   return {
     line,
     boardStop,
     alightStop,
     segmentGeometry,
-    stopCount: Math.max(1, Math.abs(alightIdx - boardIdx)),
+    stopCount,
     rideDistanceMeters,
+    rideMinutes: estimateRideMinutes(rideDistanceMeters, stopCount, line.category),
   };
 }
 
@@ -240,6 +256,8 @@ export function planTripItineraries(
 
     const leg = buildLeg(orig.line, orig.stop, orig.stopIndex, dest.stop, dest.stopIndex);
     const totalWalk = orig.walkMeters + dest.walkMeters;
+    const walkToBoardMinutes = metersToWalkMinutes(orig.walkMeters);
+    const walkFromAlightMinutes = metersToWalkMinutes(dest.walkMeters);
     const score = totalWalk + leg.rideDistanceMeters * 0.12;
 
     candidates.push({
@@ -247,7 +265,7 @@ export function planTripItineraries(
       originPoint,
       destinationPoint,
       walkToBoardMeters: orig.walkMeters,
-      walkToBoardMinutes: metersToWalkMinutes(orig.walkMeters),
+      walkToBoardMinutes,
       walkToBoardGeometry: {
         type: 'LineString',
         coordinates: [
@@ -256,7 +274,7 @@ export function planTripItineraries(
         ],
       },
       walkFromAlightMeters: dest.walkMeters,
-      walkFromAlightMinutes: metersToWalkMinutes(dest.walkMeters),
+      walkFromAlightMinutes,
       walkFromAlightGeometry: {
         type: 'LineString',
         coordinates: [
@@ -266,6 +284,7 @@ export function planTripItineraries(
       },
       legs: [leg],
       totalFareMad: orig.line.price_mad,
+      totalMinutes: walkToBoardMinutes + leg.rideMinutes + walkFromAlightMinutes,
       score,
     });
   }
@@ -292,6 +311,9 @@ export function planTripItineraries(
         const leg2 = buildLeg(dest.line, transferStop2, transferIdx2, dest.stop, dest.stopIndex);
 
         const totalWalk = orig.walkMeters + dest.walkMeters;
+        const walkToBoardMinutes = metersToWalkMinutes(orig.walkMeters);
+        const walkFromAlightMinutes = metersToWalkMinutes(dest.walkMeters);
+        const transferWaitMinutes = Math.min(12, Math.max(4, Math.round(dest.line.frequency_mins / 2)));
         const score = totalWalk + (leg1.rideDistanceMeters + leg2.rideDistanceMeters) * 0.12 + 450;
 
         candidates.push({
@@ -299,7 +321,7 @@ export function planTripItineraries(
           originPoint,
           destinationPoint,
           walkToBoardMeters: orig.walkMeters,
-          walkToBoardMinutes: metersToWalkMinutes(orig.walkMeters),
+          walkToBoardMinutes,
           walkToBoardGeometry: {
             type: 'LineString',
             coordinates: [
@@ -308,7 +330,7 @@ export function planTripItineraries(
             ],
           },
           walkFromAlightMeters: dest.walkMeters,
-          walkFromAlightMinutes: metersToWalkMinutes(dest.walkMeters),
+          walkFromAlightMinutes,
           walkFromAlightGeometry: {
             type: 'LineString',
             coordinates: [
@@ -321,6 +343,12 @@ export function planTripItineraries(
           transferStopNameEn: transferStop1.name_en,
           transferStopNameAr: transferStop1.name_ar,
           totalFareMad: orig.line.price_mad + dest.line.price_mad,
+          totalMinutes:
+            walkToBoardMinutes +
+            leg1.rideMinutes +
+            transferWaitMinutes +
+            leg2.rideMinutes +
+            walkFromAlightMinutes,
           score,
         });
       }

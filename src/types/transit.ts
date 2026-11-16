@@ -78,6 +78,7 @@ export interface TripLeg {
   segmentGeometry: LineStringGeometry;
   stopCount: number;
   rideDistanceMeters: number;
+  rideMinutes: number;
 }
 
 export interface TripItinerary {
@@ -95,6 +96,7 @@ export interface TripItinerary {
   transferStopNameEn?: string;
   transferStopNameAr?: string;
   totalFareMad: number;
+  totalMinutes: number;
   score: number;
 }
 

@@ -79,6 +79,7 @@
     "boardAt": "Board at",
     "alightAt": "Alight at",
     "totalFare": "Total fare",
+    "estimatedTimeLabel": "Est. trip time",
     "noRouteFound": "No route found within reasonable walking distance. Try selecting closer points.",
     "promptSelectPoints": "Set an origin and destination on the map or choose hubs above to compute your trip."
   },

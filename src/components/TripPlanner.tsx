@@ -1,5 +1,6 @@
 import {
   ArrowUpDown,
+  Clock,
   Footprints,
   LocateFixed,
   MapPin,
@@ -433,11 +434,23 @@ export function TripPlanner({
                       ))}
                     </div>
 
-                    <div className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums shrink-0 flex items-center gap-1">
-                      <span dir="ltr">{formatMad(itinerary.totalFareMad)}</span>
-                      <span className="text-[11px] text-[#526D82] dark:text-[#85A3BC] font-normal">
-                        {t.explorer.currency}
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span
+                        title={t.planner.estimatedTimeLabel}
+                        data-testid={`itinerary-duration-${idx}`}
+                        className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#EEF5F9] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] text-[11px] font-semibold text-[#0155A6] dark:text-[#34D399] tabular-nums"
+                      >
+                        <Clock className="w-3 h-3 shrink-0" strokeWidth={1.75} />
+                        <span dir="ltr">~{itinerary.totalMinutes}</span>
+                        <span>{t.explorer.minutesUnit}</span>
                       </span>
+
+                      <div className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums flex items-center gap-1">
+                        <span dir="ltr">{formatMad(itinerary.totalFareMad)}</span>
+                        <span className="text-[11px] text-[#526D82] dark:text-[#85A3BC] font-normal">
+                          {t.explorer.currency}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
@@ -469,8 +482,12 @@ export function TripPlanner({
                             className="inline-flex items-center gap-1.5 hover:opacity-80 cursor-pointer"
                           >
                             <LineBadge number={leg.line.number} color={leg.line.color} size="sm" />
-                            <span className="text-[10px] text-[#526D82] dark:text-[#85A3BC] tabular-nums">
-                              <span dir="ltr">{leg.stopCount}</span> {t.explorer.stopsCount}
+                            <span className="text-[10px] text-[#526D82] dark:text-[#85A3BC] tabular-nums flex items-center gap-1">
+                              <span dir="ltr">{leg.stopCount}</span>
+                              <span>{t.explorer.stopsCount}</span>
+                              <span>·</span>
+                              <span dir="ltr">~{leg.rideMinutes}</span>
+                              <span>{t.explorer.minutesUnit}</span>
                             </span>
                           </button>
 
