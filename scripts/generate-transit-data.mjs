@@ -53,7 +53,7 @@ const HUBS = {
   barbourine: [-5.374, 35.581],
   sahtriyine: [-5.467919, 35.560172],
   amsa: [-5.230782, 35.526575],
-  zaouiat_sidi_kacem: [-5.22056, 35.4758],
+  azla: [-5.242701, 35.550609],
   oued_laou: [-5.09164, 35.44921],
   ain_lahcen: [-5.55494, 35.54749],
   khemis_anjra: [-5.510734, 35.664526],
@@ -61,14 +61,17 @@ const HUBS = {
   ben_karrich: [-5.425515, 35.507641],
   zinate: [-5.402815, 35.470438],
   arbaa_beni_hassan: [-5.370735, 35.356061],
+  beni_salah: [-5.360733, 35.550764],
+  ain_zarka: [-5.342911, 35.520493],
+  hay_bouzaghlal: [-5.346932, 35.698063],
   mdiq: [-5.322959, 35.685441],
   fnideq: [-5.355107, 35.841411],
   martil: [-5.275194, 35.617984],
 };
 
-// Complete 31 Bus Lines (21 Urban + 10 Regional)
+// Complete 35 Bus Lines (17 Urban + 18 Regional)
 const LINES_SPEC = [
-  // Urban Network (21 Lines - 3.50 MAD)
+  // Urban Network (17 Lines - 3.50 MAD)
   { id: 'L1', number: '1', category: 'urban', color: '#0284C7', price_mad: 3.5, frequency_mins: 12, first_departure: '06:00', last_departure: '22:00', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'boujarrah'] },
   { id: 'L3', number: '3', category: 'urban', color: '#4F46E5', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['rommana', 'dar_takafa', 'boujarrah', 'qalaline'] },
   { id: 'L4', number: '4', category: 'urban', color: '#059669', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['dar_takafa', 'abderrahmane_dakhel', 'dar_zkik'] },
@@ -86,19 +89,23 @@ const LINES_SPEC = [
   { id: 'L16', number: '16', category: 'urban', color: '#65A30D', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine'] },
   { id: 'L17', number: '17', category: 'urban', color: '#9333EA', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:30', corridor: ['rommana', 'dar_takafa', 'ancienne_gare', 'abdellah_fakhar'] },
   { id: 'L18', number: '18', category: 'urban', color: '#F97316', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:30', corridor: ['rommana', 'dar_takafa', 'barbourine'] },
-  { id: 'L19', number: '19', category: 'urban', color: '#0284C7', price_mad: 3.5, frequency_mins: 35, first_departure: '06:30', last_departure: '21:00', corridor: ['rommana', 'dar_takafa', 'quartier_universitaire', 'amsa'] },
-  { id: 'L20', number: '20', category: 'urban', color: '#0F766E', price_mad: 3.5, frequency_mins: 35, first_departure: '06:30', last_departure: '20:30', corridor: ['rommana', 'dar_takafa', 'quartier_universitaire', 'amsa', 'zaouiat_sidi_kacem'] },
-  { id: 'L22', number: '22', category: 'urban', color: '#BE185D', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['khalid_ibn_walid', 'dar_takafa', 'omar_mokhtar', 'sahtriyine'] },
-  { id: 'L26', number: '26', category: 'urban', color: '#4D7C0F', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'malaliyine'] },
 
-  // Regional / Suburban Network (10 Lines - 4.00 to 8.00 MAD)
+  // Regional / Suburban Network (18 Lines - 4.00 to 8.00 MAD)
+  { id: 'L19', number: '19', category: 'regional', color: '#0284C7', price_mad: 4.5, frequency_mins: 35, first_departure: '06:30', last_departure: '21:00', corridor: ['rommana', 'dar_takafa', 'quartier_universitaire', 'amsa'] },
+  { id: 'L20', number: '20', category: 'regional', color: '#0F766E', price_mad: 4.5, frequency_mins: 30, first_departure: '06:30', last_departure: '20:30', corridor: ['rommana', 'dar_takafa', 'quartier_universitaire', 'azla'] },
   { id: 'L21', number: '21', category: 'regional', color: '#0369A1', price_mad: 8.0, frequency_mins: 40, first_departure: '06:30', last_departure: '20:30', corridor: ['ancienne_gare', 'quartier_universitaire', 'amsa', 'oued_laou'] },
+  { id: 'L22', number: '22', category: 'regional', color: '#BE185D', price_mad: 4.0, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['khalid_ibn_walid', 'dar_takafa', 'omar_mokhtar', 'sahtriyine'] },
   { id: 'L23', number: '23', category: 'regional', color: '#CA8A04', price_mad: 5.0, frequency_mins: 30, first_departure: '06:15', last_departure: '21:00', corridor: ['dar_takafa', 'omar_mokhtar', 'sahtriyine', 'ain_lahcen'] },
   { id: 'L24', number: '24', category: 'regional', color: '#E11D48', price_mad: 6.0, frequency_mins: 40, first_departure: '06:30', last_departure: '20:30', corridor: ['dar_takafa', 'saddina', 'khemis_anjra'] },
   { id: 'L25', number: '25', category: 'regional', color: '#7C3AED', price_mad: 5.0, frequency_mins: 35, first_departure: '06:30', last_departure: '21:00', corridor: ['dar_takafa', 'saddina'] },
+  { id: 'L26', number: '26', category: 'regional', color: '#4D7C0F', price_mad: 4.0, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'malaliyine'] },
   { id: 'L27', number: '27', category: 'regional', color: '#059669', price_mad: 4.5, frequency_mins: 25, first_departure: '06:15', last_departure: '21:30', corridor: ['ancienne_gare', 'ben_karrich'] },
   { id: 'L28', number: '28', category: 'regional', color: '#D97706', price_mad: 5.5, frequency_mins: 40, first_departure: '06:30', last_departure: '20:30', corridor: ['ancienne_gare', 'ben_karrich', 'zinate'] },
   { id: 'L29', number: '29', category: 'regional', color: '#DB2777', price_mad: 7.0, frequency_mins: 45, first_departure: '06:30', last_departure: '20:00', corridor: ['ancienne_gare', 'ben_karrich', 'zinate', 'arbaa_beni_hassan'] },
+  { id: 'L30', number: '30', category: 'regional', color: '#14B8A6', price_mad: 4.0, frequency_mins: 30, first_departure: '06:30', last_departure: '20:30', corridor: ['ancienne_gare', 'torreta', 'beni_salah'] },
+  { id: 'L31', number: '31', category: 'regional', color: '#6366F1', price_mad: 4.5, frequency_mins: 35, first_departure: '06:30', last_departure: '20:30', corridor: ['ancienne_gare', 'torreta', 'beni_salah', 'ain_zarka'] },
+  { id: 'L32', number: '32', category: 'regional', color: '#0EA5E9', price_mad: 4.5, frequency_mins: 25, first_departure: '06:15', last_departure: '21:30', corridor: ['hay_bouzaghlal', 'mdiq', 'martil'] },
+  { id: 'L33', number: '33', category: 'regional', color: '#EC4899', price_mad: 6.0, frequency_mins: 25, first_departure: '06:15', last_departure: '21:30', corridor: ['fnideq', 'mdiq', 'martil'] },
   { id: 'L34', number: '34', category: 'regional', color: '#0891B2', price_mad: 5.0, frequency_mins: 15, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine', 'mdiq'] },
   { id: 'L35', number: '35', category: 'regional', color: '#2563EB', price_mad: 7.0, frequency_mins: 15, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine', 'mdiq', 'fnideq'] },
   { id: 'L36', number: '36', category: 'regional', color: '#10B981', price_mad: 4.0, frequency_mins: 10, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'saniat_rmel', 'tamouda', 'martil'] },

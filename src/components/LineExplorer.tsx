@@ -31,6 +31,7 @@ function normalizeSearch(value: string): string {
   return value
     .normalize('NFD')
     .replace(/\p{Diacritic}/gu, '')
+    .replace(/[\u0622\u0623\u0625]/g, '\u0627')
     .toLowerCase()
     .trim();
 }

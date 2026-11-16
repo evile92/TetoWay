@@ -2,7 +2,7 @@
   "app": {
     "brand": "TetoWay",
     "subtitle": "Tetouan & Region Public Transit",
-    "networkBadge": "31 lines",
+    "networkBadge": "35 lines",
     "loading": "Loading transit network...",
     "loadError": "Unable to load transit network data.",
     "retry": "Retry"
@@ -106,7 +106,7 @@
   "sheet": {
     "expand": "Expand",
     "collapse": "Collapse",
-    "browsePrompt": "Browse 31 lines and route planner"
+    "browsePrompt": "Browse 35 lines and route planner"
   },
   "hubs": {
     "rommana": "Avenue Rif (Rommana)",
@@ -122,7 +122,7 @@
     "qalaline": "Qalaline",
     "dar_zkik": "Dar Zkik Station",
     "hay_nassim": "Hay Nassim",
-    "omar_mokhtar": "Avenue Omar El Mokhtar 7",
+    "omar_mokhtar": "Avenue Omar El Mokhtar",
     "hajrat_aroussa": "Hajrat Aroussa",
     "karyane": "Hay El Karyane",
     "mokhtar_soussi": "Avenue Mokhtar Soussi",
@@ -138,14 +138,17 @@
     "barbourine": "Hay Barbourine",
     "sahtriyine": "Sahtriyine",
     "amsa": "Amsa",
-    "zaouiat_sidi_kacem": "Zaouiat Sidi Kacem",
-    "oued_laou": "Oued Laou",
+    "azla": "Azla",
+    "oued_laou": "Oued Laou (Souk Beni Said)",
     "ain_lahcen": "Ain Lahcen",
     "khemis_anjra": "Khemis Anjra",
     "saddina": "Saddina",
     "ben_karrich": "Dar Ben Karrich",
     "zinate": "Zinate",
     "arbaa_beni_hassan": "Arbaa Beni Hassan",
+    "beni_salah": "Beni Salah",
+    "ain_zarka": "Ain Zarka",
+    "hay_bouzaghlal": "Hay Bouzaghlal",
     "mdiq": "M'diq",
     "fnideq": "Fnideq",
     "martil": "Martil"
