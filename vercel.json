@@ -38,6 +38,36 @@
           "value": "public, max-age=0, must-revalidate"
         }
       ]
+    },
+    {
+      "source": "/tiles/(.*).pmtiles",
+      "headers": [
+        {
+          "key": "Accept-Ranges",
+          "value": "bytes"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/vnd.pmtiles"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*).pbf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/x-protobuf"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }

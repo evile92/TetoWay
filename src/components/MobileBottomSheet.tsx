@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { TRANSLATIONS } from '../i18n';
 import type { AppMode, Lang, SheetSnap } from '../types/transit';
 import { ContactFooter } from './ContactFooter';
+import { OfflineMapButton } from './OfflineMapButton';
 
 interface MobileBottomSheetProps {
   lang: Lang;
@@ -11,6 +12,9 @@ interface MobileBottomSheetProps {
   onChangeMode: (mode: AppMode) => void;
   snap: SheetSnap;
   onChangeSnap: (snap: SheetSnap) => void;
+  offlineSupported: boolean;
+  isOfflineCached: boolean;
+  onOpenOfflineModal: () => void;
   children: ReactNode;
 }
 
@@ -20,6 +24,9 @@ export function MobileBottomSheet({
   onChangeMode,
   snap,
   onChangeSnap,
+  offlineSupported,
+  isOfflineCached,
+  onOpenOfflineModal,
   children,
 }: MobileBottomSheetProps) {
   const t = TRANSLATIONS[lang];
@@ -114,25 +121,36 @@ export function MobileBottomSheet({
             </div>
           )}
 
-          <button
-            type="button"
-            onClick={cycleSnap}
-            aria-label={snap === 'expanded' ? t.sheet.collapse : t.sheet.expand}
-            data-testid="mobile-sheet-toggle"
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#F2F7FA] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] text-xs font-medium text-[#041626] dark:text-[#EFF6FA] cursor-pointer"
-          >
-            {snap === 'expanded' ? (
-              <>
-                <ChevronDown className="w-3.5 h-3.5" strokeWidth={1.75} />
-                <span>{t.sheet.collapse}</span>
-              </>
-            ) : (
-              <>
-                <ChevronUp className="w-3.5 h-3.5" strokeWidth={1.75} />
-                <span>{t.sheet.expand}</span>
-              </>
+          <div className="flex items-center gap-1.5">
+            {offlineSupported && (
+              <OfflineMapButton
+                lang={lang}
+                isCached={isOfflineCached}
+                onClick={onOpenOfflineModal}
+                testId="mobile-offline-map-btn"
+              />
             )}
-          </button>
+
+            <button
+              type="button"
+              onClick={cycleSnap}
+              aria-label={snap === 'expanded' ? t.sheet.collapse : t.sheet.expand}
+              data-testid="mobile-sheet-toggle"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#F2F7FA] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] text-xs font-medium text-[#041626] dark:text-[#EFF6FA] cursor-pointer"
+            >
+              {snap === 'expanded' ? (
+                <>
+                  <ChevronDown className="w-3.5 h-3.5" strokeWidth={1.75} />
+                  <span>{t.sheet.collapse}</span>
+                </>
+              ) : (
+                <>
+                  <ChevronUp className="w-3.5 h-3.5" strokeWidth={1.75} />
+                  <span>{t.sheet.expand}</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 

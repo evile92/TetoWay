@@ -5,9 +5,11 @@ import {
   Marker,
   NavigationControl,
   Popup,
+  addProtocol,
   setWorkerUrl,
 } from 'maplibre-gl';
 import type { GeoJSONSource, MapLayerMouseEvent, MapMouseEvent } from 'maplibre-gl';
+import { Protocol } from 'pmtiles';
 import { useEffect, useRef, useState } from 'react';
 import { resolveStopLabel, TRANSLATIONS } from '../i18n';
 import type {
@@ -24,14 +26,17 @@ import type {
   Theme,
   TripItinerary,
 } from '../types/transit';
+import { buildTetouanMapStyle } from '../utils/offlineMapStyle';
 import { getContrastTextColor, getLinesServingPoint } from '../utils/transitGeo';
 
 setWorkerUrl(maplibreWorkerUrl);
 
-const MAP_STYLES: Record<Theme, string> = {
-  light: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
-  dark: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
-};
+const pmtilesProtocol = new Protocol();
+let pmtilesProtocolRegistered = false;
+if (!pmtilesProtocolRegistered) {
+  addProtocol('pmtiles', pmtilesProtocol.tile);
+  pmtilesProtocolRegistered = true;
+}
 
 const TETOUAN_CENTER: [number, number] = [-5.365, 35.573];
 const INITIAL_ZOOM = 12.5;
@@ -273,6 +278,7 @@ export function TransitMap({
   const stopMarkersByIdRef = useRef<globalThis.Map<string, Marker>>(new globalThis.Map());
   const popupRef = useRef<Popup | null>(null);
   const appliedThemeRef = useRef<Theme>(theme);
+  const appliedLangRef = useRef<Lang>(lang);
   const [styleRevision, setStyleRevision] = useState(0);
 
   const langRef = useRef(lang);
@@ -299,9 +305,10 @@ export function TransitMap({
     if (!container) return;
 
     appliedThemeRef.current = themeRef.current;
+    appliedLangRef.current = langRef.current;
     const map = new MapLibreMap({
       container,
-      style: MAP_STYLES[themeRef.current],
+      style: buildTetouanMapStyle(themeRef.current, langRef.current),
       center: TETOUAN_CENTER,
       zoom: INITIAL_ZOOM,
       attributionControl: { compact: true },
@@ -406,13 +413,17 @@ export function TransitMap({
     };
   }, []);
 
-  // Switch CartoDB Voyager (light) <-> Dark Matter (dark)
+  // Switch Protomaps Light/Dark style and map label language
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || appliedThemeRef.current === theme) return;
+    if (!map) return;
+    if (appliedThemeRef.current === theme && appliedLangRef.current === lang) {
+      return;
+    }
     appliedThemeRef.current = theme;
-    map.setStyle(MAP_STYLES[theme]);
-  }, [theme]);
+    appliedLangRef.current = lang;
+    map.setStyle(buildTetouanMapStyle(theme, lang));
+  }, [theme, lang]);
 
   // Update cursor when pickMode changes
   useEffect(() => {

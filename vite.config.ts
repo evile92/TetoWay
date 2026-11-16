@@ -56,6 +56,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,png,svg,json,webmanifest}'],
+        globIgnores: ['tiles/**', 'fonts/**'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
         clientsClaim: true,
@@ -63,13 +64,24 @@ export default defineConfig({
         navigateFallback: 'index.html',
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/basemaps\.cartocdn\.com\/.*/i,
-            handler: 'StaleWhileRevalidate',
+            urlPattern: /\/tiles\/.*\.pmtiles$/i,
+            handler: 'CacheFirst',
             options: {
-              cacheName: 'carto-basemaps',
+              cacheName: 'tetoway-offline-map-v1',
+              rangeRequests: true,
+              cacheableResponse: {
+                statuses: [200],
+              },
+            },
+          },
+          {
+            urlPattern: /\/(?:fonts|sprites)\/.*\.(?:pbf|json|png)$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'tetoway-offline-map-v1',
               expiration: {
-                maxEntries: 250,
-                maxAgeSeconds: 60 * 60 * 24 * 7,
+                maxEntries: 60,
+                maxAgeSeconds: 60 * 60 * 24 * 90,
               },
               cacheableResponse: {
                 statuses: [0, 200],

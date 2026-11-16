@@ -5,10 +5,13 @@ import { ContactFooter } from './components/ContactFooter';
 import { InstallModal } from './components/InstallModal';
 import { LineExplorer } from './components/LineExplorer';
 import { MobileBottomSheet } from './components/MobileBottomSheet';
+import { OfflineMapButton } from './components/OfflineMapButton';
+import { OfflineMapModal } from './components/OfflineMapModal';
 import { RouteEditor } from './components/RouteEditor';
 import { TopBar } from './components/TopBar';
 import { TransitMap } from './components/TransitMap';
 import { TripPlanner } from './components/TripPlanner';
+import { useOfflineMap } from './hooks/useOfflineMap';
 import { usePwaInstall } from './hooks/usePwaInstall';
 import { getDir, TRANSLATIONS } from './i18n';
 import type {
@@ -64,6 +67,7 @@ export function App() {
   const [focusTarget, setFocusTarget] = useState<MapFocusTarget | null>(null);
   const focusSeqRef = useRef(1);
   const pwa = usePwaInstall();
+  const offlineMap = useOfflineMap();
 
   const t = TRANSLATIONS[lang];
   const dir = getDir(lang);
@@ -449,9 +453,18 @@ export function App() {
               </div>
             )}
 
-            <span className="shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded border bg-[#EEF5F9] dark:bg-[#0D2236] border-[#DCE6EE] dark:border-[#183550] text-[#0155A6] dark:text-[#34D399] tabular-nums">
-              {t.app.networkBadge}
-            </span>
+            <div className="flex items-center gap-1.5 shrink-0">
+              {offlineMap.supported && (
+                <OfflineMapButton
+                  lang={lang}
+                  isCached={offlineMap.isCached}
+                  onClick={offlineMap.openModal}
+                />
+              )}
+              <span className="shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded border bg-[#EEF5F9] dark:bg-[#0D2236] border-[#DCE6EE] dark:border-[#183550] text-[#0155A6] dark:text-[#34D399] tabular-nums">
+                {t.app.networkBadge}
+              </span>
+            </div>
           </div>
 
           {mode === 'editor' ? (
@@ -586,6 +599,9 @@ export function App() {
           onChangeMode={handleChangeMode}
           snap={mobileSnap}
           onChangeSnap={setMobileSnap}
+          offlineSupported={offlineMap.supported}
+          isOfflineCached={offlineMap.isCached}
+          onOpenOfflineModal={offlineMap.openModal}
         >
           {loading ? (
             <div className="flex items-center justify-center h-full p-6">
@@ -615,6 +631,18 @@ export function App() {
         canPromptInstall={pwa.canPromptInstall}
         onTriggerNativeInstall={() => void pwa.triggerNativeInstall()}
         onClose={pwa.closeGuideModal}
+      />
+
+      <OfflineMapModal
+        open={offlineMap.modalOpen}
+        lang={lang}
+        isCached={offlineMap.isCached}
+        isDownloading={offlineMap.isDownloading}
+        progress={offlineMap.progress}
+        error={offlineMap.error}
+        onStartDownload={() => void offlineMap.startDownload()}
+        onRemoveCache={() => void offlineMap.removeCache()}
+        onClose={offlineMap.closeModal}
       />
     </div>
   );

@@ -170,5 +170,19 @@
     "label": "Contact & source",
     "emailAria": "Send email",
     "githubAria": "GitHub profile"
+  },
+  "offlineMap": {
+    "buttonLabel": "Offline",
+    "readyBadge": "Offline Ready",
+    "modalTitle": "Tetouan Offline Map",
+    "modalSubtitle": "Save the vector street map and bilingual fonts on your device (~6.5 MB).",
+    "statusReadyTitle": "Map saved on this device",
+    "statusReadyDesc": "Streets, labels, and all 35 routes work without internet or mobile data.",
+    "statusNotReadyTitle": "Online streaming active",
+    "statusNotReadyDesc": "Download once to browse streets anywhere around Tetouan even in airplane mode.",
+    "downloadButton": "Download offline map (~6.5 MB)",
+    "downloading": "Saving map for offline use...",
+    "removeButton": "Remove saved map",
+    "downloadError": "Could not save offline map. Check your connection and try again."
   }
 }
