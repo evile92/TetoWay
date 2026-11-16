@@ -9,7 +9,6 @@ import {
   setWorkerUrl,
 } from 'maplibre-gl';
 import type { GeoJSONSource, MapLayerMouseEvent, MapMouseEvent } from 'maplibre-gl';
-import { Protocol } from 'pmtiles';
 import { useEffect, useRef, useState } from 'react';
 import { resolveStopLabel, TRANSLATIONS } from '../i18n';
 import type {
@@ -26,17 +25,12 @@ import type {
   Theme,
   TripItinerary,
 } from '../types/transit';
+import { registerOfflinePmtilesProtocol } from '../utils/offlineMapCache';
 import { buildTetouanMapStyle } from '../utils/offlineMapStyle';
 import { getContrastTextColor, getLinesServingPoint } from '../utils/transitGeo';
 
 setWorkerUrl(maplibreWorkerUrl);
-
-const pmtilesProtocol = new Protocol();
-let pmtilesProtocolRegistered = false;
-if (!pmtilesProtocolRegistered) {
-  addProtocol('pmtiles', pmtilesProtocol.tile);
-  pmtilesProtocolRegistered = true;
-}
+registerOfflinePmtilesProtocol(addProtocol);
 
 const TETOUAN_CENTER: [number, number] = [-5.365, 35.573];
 const INITIAL_ZOOM = 12.5;

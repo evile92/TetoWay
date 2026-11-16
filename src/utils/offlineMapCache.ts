@@ -1,3 +1,7 @@
+import { FetchSource, PMTiles, Protocol } from 'pmtiles';
+import type { RangeResponse, Source } from 'pmtiles';
+import type { AddProtocolAction } from 'maplibre-gl';
+
 export const OFFLINE_MAP_CACHE = 'tetoway-offline-map-v1';
 export const OFFLINE_MAP_APPROX_MB = '6.5';
 
@@ -36,6 +40,92 @@ export const OFFLINE_MAP_ASSETS: readonly string[] = [
   ...SPRITE_ASSETS,
   ...FONT_ASSETS,
 ];
+
+/**
+ * Custom PMTiles archive Source that reads slices straight from the cached Blob in
+ * Cache Storage when offline pack is saved, falling back to HTTP Range streaming otherwise.
+ */
+class CachedPMTilesSource implements Source {
+  private readonly archiveUrl: string;
+  private readonly cacheKeyUrl: string;
+  private readonly fetchFallback: FetchSource;
+  private cachedBlobPromise: Promise<Blob | null> | null = null;
+
+  constructor(archiveUrl: string, cacheKeyUrl: string) {
+    this.archiveUrl = archiveUrl;
+    this.cacheKeyUrl = cacheKeyUrl;
+    this.fetchFallback = new FetchSource(archiveUrl);
+  }
+
+  getKey(): string {
+    return this.archiveUrl;
+  }
+
+  invalidateMemoryCache(): void {
+    this.cachedBlobPromise = null;
+  }
+
+  private async getCachedBlob(): Promise<Blob | null> {
+    if (!supportsOfflineMapCache()) return null;
+    if (!this.cachedBlobPromise) {
+      this.cachedBlobPromise = window.caches
+        .open(OFFLINE_MAP_CACHE)
+        .then((cache) => cache.match(this.cacheKeyUrl))
+        .then((res) => (res ? res.blob() : null))
+        .catch(() => null);
+    }
+    const blob = await this.cachedBlobPromise;
+    if (!blob) {
+      this.cachedBlobPromise = null;
+    }
+    return blob;
+  }
+
+  async getBytes(
+    offset: number,
+    length: number,
+    signal?: AbortSignal,
+    etag?: string,
+  ): Promise<RangeResponse> {
+    const cachedBlob = await this.getCachedBlob();
+    if (cachedBlob) {
+      const end = Math.min(cachedBlob.size, offset + length);
+      const data = await cachedBlob.slice(offset, end).arrayBuffer();
+      return { data };
+    }
+    return this.fetchFallback.getBytes(offset, length, signal, etag);
+  }
+}
+
+const pmtilesProtocol = new Protocol();
+let protocolRegistered = false;
+let activeCachedSource: CachedPMTilesSource | null = null;
+let activeArchive: PMTiles | null = null;
+
+export function registerOfflinePmtilesProtocol(
+  addProtocolFn: (scheme: string, handler: AddProtocolAction) => void,
+): void {
+  if (protocolRegistered || typeof window === 'undefined') return;
+  const archiveUrl = `${window.location.origin}${TILE_URL}`;
+  activeCachedSource = new CachedPMTilesSource(archiveUrl, TILE_URL);
+  activeArchive = new PMTiles(activeCachedSource);
+  pmtilesProtocol.add(activeArchive);
+  addProtocolFn('pmtiles', pmtilesProtocol.tile);
+  protocolRegistered = true;
+}
+
+async function invalidateActiveArchive(): Promise<void> {
+  if (activeCachedSource) {
+    activeCachedSource.invalidateMemoryCache();
+    if (activeArchive) {
+      try {
+        await activeArchive.cache.invalidate(activeCachedSource);
+      } catch {
+        // Ignore cache invalidation error when archive is uncached
+      }
+    }
+  }
+}
 
 export function supportsOfflineMapCache(): boolean {
   return typeof window !== 'undefined' && 'caches' in window;
@@ -78,7 +168,6 @@ export async function downloadOfflineMap(
 
   onProgress?.(1);
 
-  // Download the primary 4.4 MB PMTiles archive as a full 200 OK response
   const tileRes = await fetch(TILE_URL, { cache: 'no-store' });
   if (!tileRes.ok) {
     throw new Error(`HTTP ${tileRes.status}`);
@@ -86,7 +175,6 @@ export async function downloadOfflineMap(
   await cache.put(TILE_URL, tileRes);
   markDone();
 
-  // Download sprites and glyphs cleanly in small batches
   const secondary = OFFLINE_MAP_ASSETS.slice(1);
   const BATCH_SIZE = 4;
   for (let i = 0; i < secondary.length; i += BATCH_SIZE) {
@@ -102,9 +190,12 @@ export async function downloadOfflineMap(
       }),
     );
   }
+
+  await invalidateActiveArchive();
 }
 
 export async function clearOfflineMapCache(): Promise<void> {
   if (!supportsOfflineMapCache()) return;
   await window.caches.delete(OFFLINE_MAP_CACHE);
+  await invalidateActiveArchive();
 }

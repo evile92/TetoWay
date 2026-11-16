@@ -9,16 +9,6 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: [
-        'favicon.png',
-        'logo-pin.png',
-        'logo-tetoway.png',
-        'logo-tetoway-dark.png',
-        'apple-touch-icon.png',
-        'pwa-192x192.png',
-        'pwa-512x512.png',
-        'pwa-maskable-512x512.png',
-      ],
       manifest: {
         id: '/',
         name: 'TetoWay - Tetouan Public Transit',
@@ -55,7 +45,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,png,svg,json,webmanifest}'],
+        globPatterns: ['**/*.{js,mjs,css,html,png,svg,json,webmanifest}'],
         globIgnores: ['tiles/**', 'fonts/**'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
@@ -79,10 +69,6 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'tetoway-offline-map-v1',
-              expiration: {
-                maxEntries: 60,
-                maxAgeSeconds: 60 * 60 * 24 * 90,
-              },
               cacheableResponse: {
                 statuses: [0, 200],
               },
