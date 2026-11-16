@@ -1,6 +1,7 @@
 import * as turf from '@turf/turf';
 import { Compass, PencilRuler, RotateCcw, Route } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { ContactFooter } from './components/ContactFooter';
 import { InstallModal } from './components/InstallModal';
 import { LineExplorer } from './components/LineExplorer';
 import { MobileBottomSheet } from './components/MobileBottomSheet';
@@ -533,6 +534,8 @@ export function App() {
             panelContent
           )}
         </div>
+
+        <ContactFooter lang={lang} />
       </aside>
 
       {/* Main Map Area */}

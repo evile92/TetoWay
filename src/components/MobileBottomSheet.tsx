@@ -3,6 +3,7 @@ import type { PointerEvent as ReactPointerEvent, ReactNode } from 'react';
 import { useRef } from 'react';
 import { TRANSLATIONS } from '../i18n';
 import type { AppMode, Lang, SheetSnap } from '../types/transit';
+import { ContactFooter } from './ContactFooter';
 
 interface MobileBottomSheetProps {
   lang: Lang;
@@ -136,9 +137,10 @@ export function MobileBottomSheet({
       </div>
 
       {snap !== 'collapsed' && (
-        <div className="flex-1 min-h-0 overflow-hidden pb-[env(safe-area-inset-bottom)]">
-          {children}
-        </div>
+        <>
+          <div className="flex-1 min-h-0 overflow-hidden">{children}</div>
+          <ContactFooter lang={lang} className="pb-[calc(0.5rem+env(safe-area-inset-bottom))]" />
+        </>
       )}
     </div>
   );

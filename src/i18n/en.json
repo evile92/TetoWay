@@ -162,5 +162,10 @@
     "installNow": "Install now",
     "offlineReady": "Core transit map data is cached for offline use",
     "close": "Close"
+  },
+  "footer": {
+    "label": "Contact & source",
+    "emailAria": "Send email",
+    "githubAria": "GitHub profile"
   }
 }
