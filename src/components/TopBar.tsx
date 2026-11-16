@@ -1,5 +1,6 @@
 import {
   Crosshair,
+  Download,
   Layers,
   Maximize2,
   Moon,
@@ -26,6 +27,8 @@ interface TopBarProps {
   onResetMapView: () => void;
   pickMode: MapPickMode;
   onCancelPickMode: () => void;
+  showInstallButton: boolean;
+  onInstallApp: () => void;
 }
 
 export function TopBar({
@@ -43,6 +46,8 @@ export function TopBar({
   onResetMapView,
   pickMode,
   onCancelPickMode,
+  showInstallButton,
+  onInstallApp,
 }: TopBarProps) {
   const t = TRANSLATIONS[lang];
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -61,7 +66,7 @@ export function TopBar({
   return (
     <header
       dir={dir}
-      className="pointer-events-none absolute top-3 inset-x-3 z-20 flex flex-wrap items-center justify-between gap-2"
+      className="pointer-events-none absolute top-[calc(0.75rem+env(safe-area-inset-top))] inset-x-3 z-20 flex flex-wrap items-center justify-between gap-2"
     >
       {/* Left / Start Context Cluster */}
       <div className="pointer-events-auto flex items-center gap-2 flex-wrap">
@@ -102,7 +107,7 @@ export function TopBar({
                   text: resolveHubName(selectedLine.origin_key, lang),
                   dir,
                 }}
-                className="truncate max-w-[140px] lg:max-w-[180px]"
+                className="truncate max-w-[115px] xl:max-w-[145px]"
               />
               <span className="text-[#85A3BC] dark:text-[#4A657A] shrink-0">{lang === 'ar' ? '←' : '→'}</span>
               <BidiText
@@ -110,7 +115,7 @@ export function TopBar({
                   text: resolveHubName(selectedLine.destination_key, lang),
                   dir,
                 }}
-                className="truncate max-w-[160px] lg:max-w-[200px]"
+                className="truncate max-w-[125px] xl:max-w-[155px]"
               />
             </span>
             <span className="h-3.5 w-px bg-[#DCE6EE] dark:bg-[#183550] shrink-0" />
@@ -177,6 +182,21 @@ export function TopBar({
           <PencilRuler className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
           <span className="whitespace-nowrap">{t.nav.editor}</span>
         </button>
+
+        {/* Install PWA Button */}
+        {showInstallButton && (
+          <button
+            type="button"
+            onClick={onInstallApp}
+            data-testid="pwa-install-btn"
+            title={t.pwa.installButton}
+            aria-label={t.pwa.installButton}
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[#0155A6] dark:text-[#34D399] hover:bg-[#F4F8FB] dark:hover:bg-[#0D2236] transition-colors cursor-pointer"
+          >
+            <Download className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
+            <span className="hidden 2xl:inline whitespace-nowrap">{t.pwa.installButton}</span>
+          </button>
+        )}
 
         {/* Day / Night Theme Toggle */}
         <button

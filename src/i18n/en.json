@@ -149,5 +149,18 @@
     "mdiq": "M'diq",
     "fnideq": "Fnideq",
     "martil": "Martil"
+  },
+  "pwa": {
+    "installButton": "Install App",
+    "modalTitle": "Install TetoWay on your device",
+    "modalSubtitle": "Pin TetoWay to your home screen for one-tap access and offline transit routes.",
+    "iosHintTitle": "On iPhone & iPad (Safari)",
+    "iosStep1": "Tap the Share icon in Safari's bottom bar.",
+    "iosStep2": "Scroll down, tap Add to Home Screen, then tap Add.",
+    "androidHintTitle": "On Android & Chrome",
+    "androidStep1": "Tap Install now below, or open the browser menu and select Install app.",
+    "installNow": "Install now",
+    "offlineReady": "Core transit map data is cached for offline use",
+    "close": "Close"
   }
 }

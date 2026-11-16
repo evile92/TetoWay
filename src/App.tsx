@@ -1,12 +1,14 @@
 import * as turf from '@turf/turf';
 import { Compass, PencilRuler, RotateCcw, Route } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { InstallModal } from './components/InstallModal';
 import { LineExplorer } from './components/LineExplorer';
 import { MobileBottomSheet } from './components/MobileBottomSheet';
 import { RouteEditor } from './components/RouteEditor';
 import { TopBar } from './components/TopBar';
 import { TransitMap } from './components/TransitMap';
 import { TripPlanner } from './components/TripPlanner';
+import { usePwaInstall } from './hooks/usePwaInstall';
 import { getDir, TRANSLATIONS } from './i18n';
 import type {
   AppMode,
@@ -60,6 +62,7 @@ export function App() {
   const [mobileSnap, setMobileSnap] = useState<SheetSnap>('half');
   const [focusTarget, setFocusTarget] = useState<MapFocusTarget | null>(null);
   const focusSeqRef = useRef(1);
+  const pwa = usePwaInstall();
 
   const t = TRANSLATIONS[lang];
   const dir = getDir(lang);
@@ -549,6 +552,8 @@ export function App() {
           onResetMapView={handleResetMapView}
           pickMode={pickMode}
           onCancelPickMode={() => setPickMode('none')}
+          showInstallButton={!pwa.isStandalone}
+          onInstallApp={pwa.handleInstallClick}
         />
 
         <TransitMap
@@ -599,6 +604,15 @@ export function App() {
           )}
         </MobileBottomSheet>
       </main>
+
+      <InstallModal
+        open={pwa.showGuideModal}
+        lang={lang}
+        isIos={pwa.isIos}
+        canPromptInstall={pwa.canPromptInstall}
+        onTriggerNativeInstall={() => void pwa.triggerNativeInstall()}
+        onClose={pwa.closeGuideModal}
+      />
     </div>
   );
 }
