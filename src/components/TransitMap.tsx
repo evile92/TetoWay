@@ -426,7 +426,7 @@ export function TransitMap({
     map.getCanvas().style.cursor = pickMode !== 'none' ? 'crosshair' : '';
   }, [pickMode]);
 
-  // Update all-network overview layer & dimming
+  // Upload all-network GeoJSON only when lines data changes or map style reloads
   useEffect(() => {
     const map = mapRef.current;
     if (!map || styleRevision === 0) return;
@@ -441,6 +441,12 @@ export function TransitMap({
         geometry: line.geometry,
       })),
     });
+  }, [styleRevision, lines]);
+
+  // Adjust dimming & stroke width without re-uploading 35 GeoJSON geometries
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || styleRevision === 0 || !map.getLayer('network-lines-layer')) return;
 
     const isFocused =
       Boolean(selectedLine && mode !== 'planner') ||
@@ -449,7 +455,7 @@ export function TransitMap({
     const baseOpacity = theme === 'light' ? 0.45 : 0.35;
     map.setPaintProperty('network-lines-layer', 'line-opacity', isFocused ? 0.14 : baseOpacity);
     map.setPaintProperty('network-lines-layer', 'line-width', isFocused ? 1.5 : 2.25);
-  }, [styleRevision, theme, lines, selectedLine, activeItinerary, mode]);
+  }, [styleRevision, theme, selectedLine, activeItinerary, mode]);
 
   // Update active route(s)
   useEffect(() => {
@@ -522,7 +528,7 @@ export function TransitMap({
     });
   }, [styleRevision, mode, nearMeResult, activeItinerary]);
 
-  // Update raw OSM stops layer & toggle visibility
+  // Upload OSM stops GeoJSON only when dataset changes or style reloads
   useEffect(() => {
     const map = mapRef.current;
     if (!map || styleRevision === 0) return;
@@ -544,15 +550,18 @@ export function TransitMap({
         },
       })),
     });
+  }, [styleRevision, osmStops]);
 
-    if (map.getLayer('osm-stops-layer')) {
-      map.setLayoutProperty(
-        'osm-stops-layer',
-        'visibility',
-        showOsmStops ? 'visible' : 'none',
-      );
-    }
-  }, [styleRevision, osmStops, showOsmStops]);
+  // Toggle OSM stops visibility cleanly without re-serializing GeoJSON
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || styleRevision === 0 || !map.getLayer('osm-stops-layer')) return;
+    map.setLayoutProperty(
+      'osm-stops-layer',
+      'visibility',
+      showOsmStops ? 'visible' : 'none',
+    );
+  }, [styleRevision, showOsmStops]);
 
   // Render interactive HTML markers for Stops, Trip Points, or Editor Pins
   useEffect(() => {
@@ -779,13 +788,13 @@ export function TransitMap({
           right: 56,
         },
         maxZoom: 14.8,
-        duration: 650,
+        duration: 450,
       });
     } else if (focusTarget.center) {
       map.flyTo({
         center: focusTarget.center,
         zoom: focusTarget.zoom ?? 15.5,
-        duration: 650,
+        duration: 450,
       });
     }
 
