@@ -62,6 +62,13 @@ export interface OsmStop {
   name_ar: string;
 }
 
+export interface NearbyStopAlternative {
+  stop: BusStop;
+  distanceMeters: number;
+  walkingMinutes: number;
+  servingLines: BusLine[];
+}
+
 export interface NearMeResult {
   userPoint: GeoPoint;
   nearestStop: BusStop;
@@ -69,6 +76,7 @@ export interface NearMeResult {
   walkingMinutes: number;
   walkingGeometry: LineStringGeometry;
   servingLines: BusLine[];
+  alternativeStops: NearbyStopAlternative[];
 }
 
 export interface TripLeg {

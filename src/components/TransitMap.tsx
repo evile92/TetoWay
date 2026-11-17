@@ -51,24 +51,75 @@ interface TransitMapProps {
   activeItinerary: TripItinerary | null;
   focusTarget: MapFocusTarget | null;
   onSelectLine: (line: BusLine) => void;
+  onSetOriginFromStop: (point: GeoPoint) => void;
+  onSetDestinationFromStop: (point: GeoPoint) => void;
   onMapPick: (point: GeoPoint) => void;
   onEditorDragStop: (stopIndex: number, lng: number, lat: number) => void;
 }
 
-function buildStopPopupElement(
-  lang: Lang,
-  titleText: string,
-  titleDir: 'ltr' | 'rtl',
-  subtitleText: string,
-  nearbyLines: BusLine[],
-  sectionTitle: string,
-  emptyText: string,
-  onPickLine: (line: BusLine) => void,
-): HTMLElement {
+interface StopPopupOptions {
+  lang: Lang;
+  titleText: string;
+  titleDir: 'ltr' | 'rtl';
+  subtitleText: string;
+  nearbyLines: BusLine[];
+  sectionTitle: string;
+  emptyText: string;
+  onPickLine: (line: BusLine) => void;
+  originActionLabel?: string;
+  destActionLabel?: string;
+  onUseAsOrigin?: () => void;
+  onUseAsDestination?: () => void;
+}
+
+function createPopupPointActionButton(
+  badgeText: 'A' | 'B',
+  badgeColorClass: string,
+  labelText: string,
+  testId: string,
+  onClick: () => void,
+): HTMLButtonElement {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.dataset.testid = testId;
+  btn.className =
+    'inline-flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-md border border-[#DCE6EE] dark:border-[#183550] bg-[#F4F8FB] dark:bg-[#0D2236] hover:border-[#B6CBD9] dark:hover:border-[#254E74] text-[11px] font-medium text-[#041626] dark:text-[#EFF6FA] transition-colors cursor-pointer whitespace-nowrap';
+
+  const badge = document.createElement('span');
+  badge.setAttribute('dir', 'ltr');
+  badge.className = `w-3.5 h-3.5 rounded-full ${badgeColorClass} text-white text-[9px] font-bold inline-flex items-center justify-center shrink-0`;
+  badge.textContent = badgeText;
+
+  const text = document.createElement('span');
+  text.textContent = labelText;
+
+  btn.appendChild(badge);
+  btn.appendChild(text);
+  btn.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    onClick();
+  });
+  return btn;
+}
+
+function buildStopPopupElement({
+  lang,
+  titleText,
+  titleDir,
+  subtitleText,
+  nearbyLines,
+  sectionTitle,
+  emptyText,
+  onPickLine,
+  originActionLabel,
+  destActionLabel,
+  onUseAsOrigin,
+  onUseAsDestination,
+}: StopPopupOptions): HTMLElement {
   const rootDir = lang === 'ar' ? 'rtl' : 'ltr';
   const container = document.createElement('div');
   container.setAttribute('dir', rootDir);
-  container.className = 'min-w-[205px] max-w-[265px] space-y-2';
+  container.className = 'min-w-[215px] max-w-[270px] space-y-2';
 
   const header = document.createElement('div');
   header.className = 'space-y-0.5';
@@ -125,6 +176,38 @@ function buildStopPopupElement(
   }
 
   container.appendChild(linesBox);
+
+  if (onUseAsOrigin || onUseAsDestination) {
+    const actionsRow = document.createElement('div');
+    actionsRow.className =
+      'pt-2 border-t border-[#DCE6EE] dark:border-[#183550] grid grid-cols-2 gap-1.5';
+
+    if (onUseAsOrigin && originActionLabel) {
+      actionsRow.appendChild(
+        createPopupPointActionButton(
+          'A',
+          'bg-[#01A069]',
+          originActionLabel,
+          'popup-set-origin',
+          onUseAsOrigin,
+        ),
+      );
+    }
+    if (onUseAsDestination && destActionLabel) {
+      actionsRow.appendChild(
+        createPopupPointActionButton(
+          'B',
+          'bg-rose-600',
+          destActionLabel,
+          'popup-set-dest',
+          onUseAsDestination,
+        ),
+      );
+    }
+
+    container.appendChild(actionsRow);
+  }
+
   return container;
 }
 
@@ -263,6 +346,8 @@ export function TransitMap({
   activeItinerary,
   focusTarget,
   onSelectLine,
+  onSetOriginFromStop,
+  onSetDestinationFromStop,
   onMapPick,
   onEditorDragStop,
 }: TransitMapProps) {
@@ -280,6 +365,8 @@ export function TransitMap({
   const linesRef = useRef(lines);
   const pickModeRef = useRef(pickMode);
   const onSelectLineRef = useRef(onSelectLine);
+  const onSetOriginFromStopRef = useRef(onSetOriginFromStop);
+  const onSetDestinationFromStopRef = useRef(onSetDestinationFromStop);
   const onMapPickRef = useRef(onMapPick);
   const onEditorDragStopRef = useRef(onEditorDragStop);
 
@@ -289,9 +376,21 @@ export function TransitMap({
     linesRef.current = lines;
     pickModeRef.current = pickMode;
     onSelectLineRef.current = onSelectLine;
+    onSetOriginFromStopRef.current = onSetOriginFromStop;
+    onSetDestinationFromStopRef.current = onSetDestinationFromStop;
     onMapPickRef.current = onMapPick;
     onEditorDragStopRef.current = onEditorDragStop;
-  }, [lang, theme, lines, pickMode, onSelectLine, onMapPick, onEditorDragStop]);
+  }, [
+    lang,
+    theme,
+    lines,
+    pickMode,
+    onSelectLine,
+    onSetOriginFromStop,
+    onSetDestinationFromStop,
+    onMapPick,
+    onEditorDragStop,
+  ]);
 
   // Initialize MapLibre instance once
   useEffect(() => {
@@ -353,24 +452,34 @@ export function TransitMap({
         { hub_key: null, name_en: nameEn, name_ar: nameAr },
         currentLang,
       );
-      const nearby = getLinesServingPoint(lat, lng, linesRef.current, { maxMeters: 150 });
+      const nearby = getLinesServingPoint(lat, lng, linesRef.current, { maxMeters: 180 });
 
-      const dom = buildStopPopupElement(
-        currentLang,
-        label.text,
-        label.dir,
-        t.map.osmSourceTitle,
-        nearby,
-        t.map.servedByTitle,
-        t.map.noNearbyLines,
-        (picked) => {
+      const dom = buildStopPopupElement({
+        lang: currentLang,
+        titleText: label.text,
+        titleDir: label.dir,
+        subtitleText: t.map.osmSourceTitle,
+        nearbyLines: nearby,
+        sectionTitle: t.map.servedByTitle,
+        emptyText: t.map.noNearbyLines,
+        originActionLabel: t.map.useAsOrigin,
+        destActionLabel: t.map.useAsDestination,
+        onPickLine: (picked) => {
           popupRef.current?.remove();
           onSelectLineRef.current(picked);
         },
-      );
+        onUseAsOrigin: () => {
+          popupRef.current?.remove();
+          onSetOriginFromStopRef.current({ lat, lng });
+        },
+        onUseAsDestination: () => {
+          popupRef.current?.remove();
+          onSetDestinationFromStopRef.current({ lat, lng });
+        },
+      });
 
       popupRef.current?.remove();
-      popupRef.current = new Popup({ offset: 12, maxWidth: '280px' })
+      popupRef.current = new Popup({ offset: 12, maxWidth: '285px' })
         .setLngLat([lng, lat])
         .setDOMContent(dom)
         .addTo(map);
@@ -604,6 +713,55 @@ export function TransitMap({
       return;
     }
 
+    const mountStopMarkerWithPopup = (
+      el: HTMLElement,
+      stop: BusStop,
+      subtitle: string,
+      nearbyLines: BusLine[],
+      sectionTitle: string,
+    ) => {
+      const label = resolveStopLabel(stop, lang);
+      const popupDom = buildStopPopupElement({
+        lang,
+        titleText: label.text,
+        titleDir: label.dir,
+        subtitleText: subtitle,
+        nearbyLines,
+        sectionTitle,
+        emptyText: t.map.noNearbyLines,
+        originActionLabel: t.map.useAsOrigin,
+        destActionLabel: t.map.useAsDestination,
+        onPickLine: (picked) => {
+          popupRef.current?.remove();
+          onSelectLineRef.current(picked);
+        },
+        onUseAsOrigin: () => {
+          popupRef.current?.remove();
+          onSetOriginFromStopRef.current({ lat: stop.lat, lng: stop.lng });
+        },
+        onUseAsDestination: () => {
+          popupRef.current?.remove();
+          onSetDestinationFromStopRef.current({ lat: stop.lat, lng: stop.lng });
+        },
+      });
+
+      const popup = new Popup({ offset: 12, maxWidth: '285px' }).setDOMContent(popupDom);
+      const marker = new Marker({ element: el })
+        .setLngLat([stop.lng, stop.lat])
+        .setPopup(popup)
+        .addTo(map);
+
+      el.addEventListener('click', () => {
+        if (popupRef.current && popupRef.current !== popup) {
+          popupRef.current.remove();
+        }
+        popupRef.current = popup;
+      });
+
+      markersRef.current.push(marker);
+      stopMarkersByIdRef.current.set(stop.id, marker);
+    };
+
     if (mode === 'explorer' && selectedLine) {
       const orderedStops: BusStop[] =
         direction === 'outbound' ? selectedLine.stops : [...selectedLine.stops].reverse();
@@ -629,45 +787,18 @@ export function TransitMap({
         }
         el.textContent = String(seq);
 
-        const label = resolveStopLabel(stop, lang);
         const nearby = getLinesServingPoint(stop.lat, stop.lng, lines, {
           excludeLineId: selectedLine.id,
           hubKey: stop.hub_key,
           maxMeters: 120,
         });
-
-        const popupDom = buildStopPopupElement(
-          lang,
-          label.text,
-          label.dir,
+        mountStopMarkerWithPopup(
+          el,
+          stop,
           `${t.map.stopPopupSequence} ${seq}`,
           nearby,
           t.map.nearbyLinesTitle,
-          t.map.noNearbyLines,
-          (picked) => {
-            popupRef.current?.remove();
-            onSelectLineRef.current(picked);
-          },
         );
-
-        const popup = new Popup({ offset: 12, maxWidth: '280px' }).setDOMContent(
-          popupDom,
-        );
-
-        const marker = new Marker({ element: el })
-          .setLngLat([stop.lng, stop.lat])
-          .setPopup(popup)
-          .addTo(map);
-
-        el.addEventListener('click', () => {
-          if (popupRef.current && popupRef.current !== popup) {
-            popupRef.current.remove();
-          }
-          popupRef.current = popup;
-        });
-
-        markersRef.current.push(marker);
-        stopMarkersByIdRef.current.set(stop.id, marker);
       });
       return;
     }
@@ -683,29 +814,31 @@ export function TransitMap({
             .addTo(map),
         );
 
-        const stopEl = document.createElement('div');
-        stopEl.className = `w-6 h-6 rounded-full bg-[#01A069] border-2 ${ringBorderClass} shadow-sm flex items-center justify-center text-[10px] font-bold text-white`;
+        const stopEl = document.createElement('button');
+        stopEl.type = 'button';
+        stopEl.className = `w-6 h-6 rounded-full bg-[#01A069] border-2 ${ringBorderClass} shadow-sm flex items-center justify-center text-[10px] font-bold text-white cursor-pointer`;
         stopEl.textContent = 'S';
-        const stopLabel = resolveStopLabel(nearMeResult.nearestStop, lang);
-        const stopPopup = buildStopPopupElement(
-          lang,
-          stopLabel.text,
-          stopLabel.dir,
+        mountStopMarkerWithPopup(
+          stopEl,
+          nearMeResult.nearestStop,
           `${nearMeResult.distanceMeters} ${t.planner.metersUnit}`,
           nearMeResult.servingLines,
           t.planner.linesServingStop,
-          t.map.noNearbyLines,
-          (picked) => {
-            popupRef.current?.remove();
-            onSelectLineRef.current(picked);
-          },
         );
-        markersRef.current.push(
-          new Marker({ element: stopEl })
-            .setLngLat([nearMeResult.nearestStop.lng, nearMeResult.nearestStop.lat])
-            .setPopup(new Popup({ offset: 12 }).setDOMContent(stopPopup))
-            .addTo(map),
-        );
+
+        nearMeResult.alternativeStops.forEach((alt) => {
+          const altEl = document.createElement('button');
+          altEl.type = 'button';
+          altEl.className = `w-5 h-5 rounded-full bg-[#0155A6] dark:bg-[#0284C7] border-2 ${ringBorderClass} shadow-sm flex items-center justify-center text-[10px] font-bold text-white cursor-pointer`;
+          altEl.textContent = '+';
+          mountStopMarkerWithPopup(
+            altEl,
+            alt.stop,
+            `${alt.distanceMeters} ${t.planner.metersUnit}`,
+            alt.servingLines,
+            t.planner.linesServingStop,
+          );
+        });
       }
 
       if (originPoint) {

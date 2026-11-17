@@ -32,17 +32,45 @@ import { buildDeepLinkSearch, findLineByParam, parseDeepLink } from './utils/dee
 import {
   findNearestServedStop,
   getBboxForCoordinates,
+  getNearMeFocusBounds,
   planTripItineraries,
 } from './utils/transitGeo';
 
 const TETOUAN_CENTER: [number, number] = [-5.365, 35.573];
 const THEME_STORAGE_KEY = 'tetoway-theme';
+const LANG_STORAGE_KEY = 'tetoway-lang';
+const FAVORITES_STORAGE_KEY = 'tetoway-favorites';
 
 function readInitialTheme(): Theme {
   try {
     return window.localStorage.getItem(THEME_STORAGE_KEY) === 'dark' ? 'dark' : 'light';
   } catch {
     return 'light';
+  }
+}
+
+function readInitialLang(urlLang: Lang | null): Lang {
+  if (urlLang) return urlLang;
+  try {
+    const stored = window.localStorage.getItem(LANG_STORAGE_KEY);
+    if (stored === 'ar' || stored === 'en') {
+      return stored;
+    }
+  } catch {
+    // Ignore storage errors in restricted browsing contexts
+  }
+  return 'en';
+}
+
+function readInitialFavorites(): string[] {
+  try {
+    const raw = window.localStorage.getItem(FAVORITES_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((item): item is string => typeof item === 'string');
+  } catch {
+    return [];
   }
 }
 
@@ -58,8 +86,9 @@ export function App() {
       ? 'editor'
       : (initialDeepLink.mode ?? 'explorer');
 
-  const [lang, setLang] = useState<Lang>(() => initialDeepLink.lang ?? 'en');
+  const [lang, setLang] = useState<Lang>(() => readInitialLang(initialDeepLink.lang));
   const [theme, setTheme] = useState<Theme>(readInitialTheme);
+  const [favoriteIds, setFavoriteIds] = useState<string[]>(readInitialFavorites);
   const [mode, setMode] = useState<AppMode>(initialMode);
   const [lines, setLines] = useState<BusLine[]>([]);
   const [osmStops, setOsmStops] = useState<OsmStop[]>([]);
@@ -99,6 +128,29 @@ export function App() {
     document.documentElement.lang = lang;
     document.documentElement.dir = dir;
   }, [lang, dir]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favoriteIds));
+    } catch {
+      // Ignore storage errors in restricted browsing contexts
+    }
+  }, [favoriteIds]);
+
+  const handleChangeLang = useCallback((nextLang: Lang) => {
+    setLang(nextLang);
+    try {
+      window.localStorage.setItem(LANG_STORAGE_KEY, nextLang);
+    } catch {
+      // Ignore storage errors in restricted browsing contexts
+    }
+  }, []);
+
+  const handleToggleFavorite = useCallback((lineId: string) => {
+    setFavoriteIds((prev) =>
+      prev.includes(lineId) ? prev.filter((id) => id !== lineId) : [...prev, lineId],
+    );
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -158,10 +210,7 @@ export function App() {
       if (initialDeepLink.near && !initialDeepLink.from && !initialDeepLink.to) {
         const res = findNearestServedStop(initialDeepLink.near, loadedLines);
         if (res) {
-          const bounds = getBboxForCoordinates([
-            [initialDeepLink.near.lng, initialDeepLink.near.lat],
-            [res.nearestStop.lng, res.nearestStop.lat],
-          ]);
+          const bounds = getNearMeFocusBounds(res);
           if (bounds) {
             focusSeqRef.current += 1;
             setFocusTarget({ bounds, seq: focusSeqRef.current });
@@ -367,6 +416,21 @@ export function App() {
     [editorLine, handleUpdateLine],
   );
 
+  const handleSetTripPointFromStop = useCallback(
+    (role: 'origin' | 'destination', point: GeoPoint) => {
+      if (role === 'origin') {
+        setOriginPoint(point);
+      } else {
+        setDestinationPoint(point);
+      }
+      setSelectedItineraryIndex(0);
+      setPickMode('none');
+      setMode('planner');
+      snapMobileToHalf();
+    },
+    [snapMobileToHalf],
+  );
+
   const handleMapPick = useCallback(
     (point: GeoPoint) => {
       if (pickMode === 'near_me') {
@@ -375,28 +439,19 @@ export function App() {
         setMobileSnap('half');
         const res = findNearestServedStop(point, lines);
         if (res) {
-          const bounds = getBboxForCoordinates([
-            [point.lng, point.lat],
-            [res.nearestStop.lng, res.nearestStop.lat],
-          ]);
+          const bounds = getNearMeFocusBounds(res);
           if (bounds) triggerFocus({ bounds });
         }
         return;
       }
 
       if (pickMode === 'trip_origin') {
-        setOriginPoint(point);
-        setSelectedItineraryIndex(0);
-        setPickMode('none');
-        setMobileSnap('half');
+        handleSetTripPointFromStop('origin', point);
         return;
       }
 
       if (pickMode === 'trip_destination') {
-        setDestinationPoint(point);
-        setSelectedItineraryIndex(0);
-        setPickMode('none');
-        setMobileSnap('half');
+        handleSetTripPointFromStop('destination', point);
         return;
       }
 
@@ -452,7 +507,7 @@ export function App() {
         setMobileSnap('half');
       }
     },
-    [pickMode, lines, editorLine, handleUpdateLine, triggerFocus],
+    [pickMode, lines, editorLine, handleUpdateLine, handleSetTripPointFromStop, triggerFocus],
   );
 
   // Auto-fit bounds when a new itinerary is computed or selected
@@ -499,15 +554,13 @@ export function App() {
           if (pt) {
             const res = findNearestServedStop(pt, lines);
             if (res) {
-              const bounds = getBboxForCoordinates([
-                [pt.lng, pt.lat],
-                [res.nearestStop.lng, res.nearestStop.lat],
-              ]);
+              const bounds = getNearMeFocusBounds(res);
               if (bounds) triggerFocus({ bounds });
               snapMobileToHalf();
             }
           }
         }}
+        onFocusNearStop={handleFocusStop}
         originPoint={originPoint}
         destinationPoint={destinationPoint}
         onSetOriginPoint={(pt) => {
@@ -538,6 +591,8 @@ export function App() {
         lines={lines}
         selectedLine={selectedLine}
         direction={direction}
+        favoriteIds={favoriteIds}
+        onToggleFavorite={handleToggleFavorite}
         onSelectLine={handleSelectLine}
         onChangeDirection={setDirection}
         onFocusStop={handleFocusStop}
@@ -686,7 +741,7 @@ export function App() {
       <main className="relative flex-1 min-w-0 h-[100dvh]">
         <TopBar
           lang={lang}
-          onChangeLang={setLang}
+          onChangeLang={handleChangeLang}
           theme={theme}
           onToggleTheme={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
           mode={mode}
@@ -720,6 +775,8 @@ export function App() {
           activeItinerary={activeItinerary}
           focusTarget={focusTarget}
           onSelectLine={(line) => handleSelectLine(line)}
+          onSetOriginFromStop={(pt) => handleSetTripPointFromStop('origin', pt)}
+          onSetDestinationFromStop={(pt) => handleSetTripPointFromStop('destination', pt)}
           onMapPick={handleMapPick}
           onEditorDragStop={handleEditorDragStop}
         />

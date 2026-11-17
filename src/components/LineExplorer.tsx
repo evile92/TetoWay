@@ -5,6 +5,7 @@ import {
   Flag,
   MapPin,
   Search,
+  Star,
   X,
 } from 'lucide-react';
 import { useMemo, useState } from 'react';
@@ -25,10 +26,86 @@ interface LineExplorerProps {
   lines: BusLine[];
   selectedLine: BusLine | null;
   direction: DirectionMode;
+  favoriteIds: string[];
+  onToggleFavorite: (lineId: string) => void;
   onSelectLine: (line: BusLine | null) => void;
   onChangeDirection: (dir: DirectionMode) => void;
   onFocusStop: (stop: BusStop) => void;
   onReportLine: (line: BusLine) => void;
+}
+
+interface LineListRowProps {
+  line: BusLine;
+  lang: Lang;
+  isFavorite: boolean;
+  onSelectLine: (line: BusLine) => void;
+  onToggleFavorite: (lineId: string) => void;
+}
+
+function LineListRow({
+  line,
+  lang,
+  isFavorite,
+  onSelectLine,
+  onToggleFavorite,
+}: LineListRowProps) {
+  const t = TRANSLATIONS[lang];
+  const dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  return (
+    <div className="flex items-center hover:bg-[#F4F8FB] dark:hover:bg-[#0D2236] transition-colors">
+      <button
+        type="button"
+        onClick={() => onSelectLine(line)}
+        data-testid={`line-card-${line.id}`}
+        className="flex-1 min-w-0 text-start flex items-center gap-3 ps-3.5 pe-2 py-2.5 cursor-pointer"
+      >
+        <LineBadge number={line.number} color={line.color} size="md" />
+
+        <div className="min-w-0 flex-1">
+          <div className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] truncate">
+            <BidiText label={{ text: resolveHubName(line.origin_key, lang), dir }} />
+          </div>
+          <div className="text-[11px] text-[#526D82] dark:text-[#85A3BC] truncate mt-0.5 flex items-center gap-1">
+            <span>{lang === 'ar' ? '←' : '→'}</span>
+            <BidiText label={{ text: resolveHubName(line.destination_key, lang), dir }} />
+          </div>
+        </div>
+
+        <div className="shrink-0 text-end space-y-0.5">
+          <div className="text-[11px] font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums flex items-center justify-end gap-1">
+            <span dir="ltr">{formatMad(line.price_mad)}</span>
+            <span className="text-[#526D82] dark:text-[#85A3BC] font-normal">
+              {t.explorer.currency}
+            </span>
+          </div>
+          <div className="text-[10px] text-[#7C97AE] dark:text-[#6B8BA5] tabular-nums flex items-center justify-end gap-1">
+            <span dir="ltr">{line.frequency_mins}</span>
+            <span>{t.explorer.minutesUnit}</span>
+          </div>
+        </div>
+      </button>
+
+      <button
+        type="button"
+        onClick={() => onToggleFavorite(line.id)}
+        aria-pressed={isFavorite}
+        aria-label={isFavorite ? t.explorer.removeFavoriteAria : t.explorer.addFavoriteAria}
+        title={isFavorite ? t.explorer.removeFavoriteAria : t.explorer.addFavoriteAria}
+        data-testid={`favorite-toggle-${line.id}`}
+        className={`shrink-0 p-2 me-1.5 rounded-md transition-colors cursor-pointer ${
+          isFavorite
+            ? 'text-amber-500 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40'
+            : 'text-[#85A3BC] dark:text-[#4A657A] hover:text-[#041626] dark:hover:text-[#EFF6FA] hover:bg-[#E6EFF5] dark:hover:bg-[#132E47]'
+        }`}
+      >
+        <Star
+          className={`w-3.5 h-3.5 ${isFavorite ? 'fill-current' : ''}`}
+          strokeWidth={1.75}
+        />
+      </button>
+    </div>
+  );
 }
 
 function normalizeSearch(value: string): string {
@@ -45,6 +122,8 @@ export function LineExplorer({
   lines,
   selectedLine,
   direction,
+  favoriteIds,
+  onToggleFavorite,
   onSelectLine,
   onChangeDirection,
   onFocusStop,
@@ -103,7 +182,23 @@ export function LineExplorer({
     });
   }, [lines, category, query]);
 
+  const favoriteSet = useMemo(() => new Set(favoriteIds), [favoriteIds]);
+
+  const { favoriteLines, regularLines } = useMemo(() => {
+    const favs: BusLine[] = [];
+    const regular: BusLine[] = [];
+    for (const line of filteredLines) {
+      if (favoriteSet.has(line.id)) {
+        favs.push(line);
+      } else {
+        regular.push(line);
+      }
+    }
+    return { favoriteLines: favs, regularLines: regular };
+  }, [filteredLines, favoriteSet]);
+
   if (selectedLine) {
+    const isSelectedFavorite = favoriteSet.has(selectedLine.id);
     const orderedStops =
       direction === 'outbound' ? selectedLine.stops : [...selectedLine.stops].reverse();
     const startHubKey =
@@ -181,6 +276,28 @@ export function LineExplorer({
                 <BidiText label={{ text: resolveHubName(endHubKey, lang), dir }} />
               </div>
             </div>
+            <button
+              type="button"
+              onClick={() => onToggleFavorite(selectedLine.id)}
+              aria-pressed={isSelectedFavorite}
+              aria-label={
+                isSelectedFavorite ? t.explorer.removeFavoriteAria : t.explorer.addFavoriteAria
+              }
+              title={
+                isSelectedFavorite ? t.explorer.removeFavoriteAria : t.explorer.addFavoriteAria
+              }
+              data-testid="toggle-favorite-line"
+              className={`shrink-0 p-1.5 rounded-lg border transition-colors cursor-pointer ${
+                isSelectedFavorite
+                  ? 'bg-amber-50 border-amber-200 text-amber-500 dark:bg-amber-950/50 dark:border-amber-800/70 dark:text-amber-400'
+                  : 'bg-[#F4F8FB] border-[#DCE6EE] text-[#85A3BC] hover:text-[#041626] dark:bg-[#0D2236] dark:border-[#183550] dark:text-[#6B8BA5] dark:hover:text-[#EFF6FA]'
+              }`}
+            >
+              <Star
+                className={`w-4 h-4 ${isSelectedFavorite ? 'fill-current' : ''}`}
+                strokeWidth={1.75}
+              />
+            </button>
           </div>
 
           {/* Direction Switcher (Outbound / Inbound) */}
@@ -411,40 +528,50 @@ export function LineExplorer({
             )}
           </div>
         ) : (
-          filteredLines.map((line) => (
-            <button
-              key={line.id}
-              type="button"
-              onClick={() => onSelectLine(line)}
-              data-testid={`line-card-${line.id}`}
-              className="w-full text-start flex items-center gap-3 px-3.5 py-2.5 hover:bg-[#F4F8FB] dark:hover:bg-[#0D2236] transition-colors cursor-pointer"
-            >
-              <LineBadge number={line.number} color={line.color} size="md" />
-
-              <div className="min-w-0 flex-1">
-                <div className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] truncate">
-                  <BidiText label={{ text: resolveHubName(line.origin_key, lang), dir }} />
-                </div>
-                <div className="text-[11px] text-[#526D82] dark:text-[#85A3BC] truncate mt-0.5 flex items-center gap-1">
-                  <span>{lang === 'ar' ? '←' : '→'}</span>
-                  <BidiText label={{ text: resolveHubName(line.destination_key, lang), dir }} />
-                </div>
-              </div>
-
-              <div className="shrink-0 text-end space-y-0.5">
-                <div className="text-[11px] font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums flex items-center justify-end gap-1">
-                  <span dir="ltr">{formatMad(line.price_mad)}</span>
-                  <span className="text-[#526D82] dark:text-[#85A3BC] font-normal">
-                    {t.explorer.currency}
+          <>
+            {favoriteLines.length > 0 && (
+              <>
+                <div
+                  data-testid="favorites-section-header"
+                  className="px-3.5 py-1.5 bg-[#F8FBFD] dark:bg-[#061321] flex items-center justify-between gap-2 text-[10px] font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400"
+                >
+                  <span className="inline-flex items-center gap-1.5">
+                    <Star className="w-3 h-3 fill-current shrink-0" strokeWidth={1.75} />
+                    <span>{t.explorer.favoritesSection}</span>
+                  </span>
+                  <span dir="ltr" className="tabular-nums">
+                    {favoriteLines.length}
                   </span>
                 </div>
-                <div className="text-[10px] text-[#7C97AE] dark:text-[#6B8BA5] tabular-nums flex items-center justify-end gap-1">
-                  <span dir="ltr">{line.frequency_mins}</span>
-                  <span>{t.explorer.minutesUnit}</span>
-                </div>
-              </div>
-            </button>
-          ))
+                {favoriteLines.map((line) => (
+                  <LineListRow
+                    key={line.id}
+                    line={line}
+                    lang={lang}
+                    isFavorite
+                    onSelectLine={onSelectLine}
+                    onToggleFavorite={onToggleFavorite}
+                  />
+                ))}
+                {regularLines.length > 0 && (
+                  <div className="px-3.5 py-1.5 bg-[#F8FBFD] dark:bg-[#061321] text-[10px] font-semibold uppercase tracking-wider text-[#526D82] dark:text-[#85A3BC]">
+                    {t.explorer.allLinesSection}
+                  </div>
+                )}
+              </>
+            )}
+
+            {regularLines.map((line) => (
+              <LineListRow
+                key={line.id}
+                line={line}
+                lang={lang}
+                isFavorite={false}
+                onSelectLine={onSelectLine}
+                onToggleFavorite={onToggleFavorite}
+              />
+            ))}
+          </>
         )}
       </div>
     </div>

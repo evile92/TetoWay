@@ -42,7 +42,11 @@
     "hubStopBadge": "Hub",
     "unnamedStop": "Bus Stop",
     "shareLine": "Share",
-    "reportError": "Report"
+    "reportError": "Report",
+    "favoritesSection": "Favorite lines",
+    "allLinesSection": "All lines",
+    "addFavoriteAria": "Add line to favorites",
+    "removeFavoriteAria": "Remove line from favorites"
   },
   "map": {
     "stopPopupSequence": "Stop",
@@ -51,7 +55,9 @@
     "osmSourceTitle": "OpenStreetMap stop",
     "servedByTitle": "Nearby lines",
     "fitRoute": "Fit route",
-    "resetView": "Reset map"
+    "resetView": "Reset map",
+    "useAsOrigin": "Start here",
+    "useAsDestination": "Go here"
   },
   "planner": {
     "nearMeTitle": "Nearest bus stop",
@@ -65,6 +71,7 @@
     "walkMinutesUnit": "min walk",
     "nearestStopFound": "Closest served stop",
     "linesServingStop": "Lines at this stop",
+    "moreNearbyStopsTitle": "Nearby stops with other lines",
     "tripFinderTitle": "Route planner",
     "originLabel": "Origin (A)",
     "destinationLabel": "Destination (B)",

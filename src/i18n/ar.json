@@ -42,7 +42,11 @@
     "hubStopBadge": "قطب",
     "unnamedStop": "محطة حافلات",
     "shareLine": "مشاركة",
-    "reportError": "إبلاغ"
+    "reportError": "إبلاغ",
+    "favoritesSection": "الخطوط المفضلة",
+    "allLinesSection": "جميع الخطوط",
+    "addFavoriteAria": "إضافة الخط إلى المفضلة",
+    "removeFavoriteAria": "إزالة الخط من المفضلة"
   },
   "map": {
     "stopPopupSequence": "محطة رقم",
@@ -51,7 +55,9 @@
     "osmSourceTitle": "محطة على الخريطة",
     "servedByTitle": "الخطوط القريبة",
     "fitRoute": "تركيز المسار",
-    "resetView": "عرض الشبكة"
+    "resetView": "عرض الشبكة",
+    "useAsOrigin": "انطلاق من هنا",
+    "useAsDestination": "وجهة إلى هنا"
   },
   "planner": {
     "nearMeTitle": "أقرب محطة إليك",
@@ -65,6 +71,7 @@
     "walkMinutesUnit": "دقائق مشيا",
     "nearestStopFound": "أقرب محطة متاحة",
     "linesServingStop": "الخطوط المتوقفة بهذه المحطة",
+    "moreNearbyStopsTitle": "محطات قريبة تخدم خطوطاً إضافية",
     "tripFinderTitle": "مخطط الرحلات",
     "originLabel": "نقطة الانطلاق",
     "destinationLabel": "نقطة الوصول",

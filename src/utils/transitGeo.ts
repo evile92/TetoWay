@@ -208,43 +208,96 @@ export function getLinesServingPoint(
   });
 }
 
+/** Compute bounding box covering the user's position, nearest stop, and alternative nearby stops. */
+export function getNearMeFocusBounds(
+  res: NearMeResult,
+): [[number, number], [number, number]] | null {
+  const coords: [number, number][] = [
+    [res.userPoint.lng, res.userPoint.lat],
+    [res.nearestStop.lng, res.nearestStop.lat],
+    ...res.alternativeStops.map((alt): [number, number] => [alt.stop.lng, alt.stop.lat]),
+  ];
+  return getBboxForCoordinates(coords);
+}
+
 export function findNearestServedStop(userPoint: GeoPoint, lines: BusLine[]): NearMeResult | null {
-  let nearestStop: BusStop | null = null;
-  let minMeters = Infinity;
+  const ranked: { stop: BusStop; dist: number }[] = [];
 
   for (const line of lines) {
     for (const stop of line.stops) {
-      const d = haversineMeters(userPoint.lng, userPoint.lat, stop.lng, stop.lat);
-      if (d < minMeters) {
-        minMeters = d;
-        nearestStop = stop;
-      }
+      ranked.push({
+        stop,
+        dist: haversineMeters(userPoint.lng, userPoint.lat, stop.lng, stop.lat),
+      });
     }
   }
 
-  if (!nearestStop) {
+  if (ranked.length === 0) {
     return null;
   }
 
-  const distanceMeters = Math.round(minMeters);
-  const servingLines = getLinesServingPoint(nearestStop.lat, nearestStop.lng, lines, {
-    hubKey: nearestStop.hub_key,
+  ranked.sort((a, b) => a.dist - b.dist);
+  const closest = ranked[0];
+  const distanceMeters = Math.round(closest.dist);
+  const servingLines = getLinesServingPoint(closest.stop.lat, closest.stop.lng, lines, {
+    hubKey: closest.stop.hub_key,
     maxMeters: 100,
   });
 
+  const coveredLineIds = new Set(servingLines.map((l) => l.id));
+  const pickedStops: BusStop[] = [closest.stop];
+  const maxAltMeters = Math.max(350, Math.min(closest.dist + 180, 1200));
+  const alternativeStops: NearMeResult['alternativeStops'] = [];
+
+  for (let i = 1; i < ranked.length && alternativeStops.length < 3; i++) {
+    const candidate = ranked[i];
+    if (candidate.dist > maxAltMeters) break;
+
+    const alreadyGrouped = pickedStops.some((prev) => {
+      if (candidate.stop.hub_key && prev.hub_key === candidate.stop.hub_key) {
+        return true;
+      }
+      return (
+        haversineMeters(prev.lng, prev.lat, candidate.stop.lng, candidate.stop.lat) < 75
+      );
+    });
+    if (alreadyGrouped) continue;
+
+    const altLines = getLinesServingPoint(candidate.stop.lat, candidate.stop.lng, lines, {
+      hubKey: candidate.stop.hub_key,
+      maxMeters: 100,
+    });
+    const addsNewLine = altLines.some((l) => !coveredLineIds.has(l.id));
+    if (!addsNewLine) continue;
+
+    for (const l of altLines) {
+      coveredLineIds.add(l.id);
+    }
+    pickedStops.push(candidate.stop);
+
+    const altMeters = Math.round(candidate.dist);
+    alternativeStops.push({
+      stop: candidate.stop,
+      distanceMeters: altMeters,
+      walkingMinutes: metersToWalkMinutes(altMeters),
+      servingLines: altLines,
+    });
+  }
+
   return {
     userPoint,
-    nearestStop,
+    nearestStop: closest.stop,
     distanceMeters,
     walkingMinutes: metersToWalkMinutes(distanceMeters),
     walkingGeometry: {
       type: 'LineString',
       coordinates: [
         [userPoint.lng, userPoint.lat],
-        [nearestStop.lng, nearestStop.lat],
+        [closest.stop.lng, closest.stop.lat],
       ],
     },
     servingLines,
+    alternativeStops,
   };
 }
 

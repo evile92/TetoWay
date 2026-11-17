@@ -12,6 +12,7 @@ import { useMemo, useState } from 'react';
 import { formatMad, resolveHubName, resolveStopLabel, TRANSLATIONS } from '../i18n';
 import type {
   BusLine,
+  BusStop,
   GeoPoint,
   Lang,
   MapPickMode,
@@ -29,6 +30,7 @@ interface TripPlannerProps {
   onSetPickMode: (mode: MapPickMode) => void;
   nearMeResult: NearMeResult | null;
   onSetNearMePoint: (pt: GeoPoint | null) => void;
+  onFocusNearStop: (stop: BusStop) => void;
   originPoint: GeoPoint | null;
   destinationPoint: GeoPoint | null;
   onSetOriginPoint: (pt: GeoPoint | null) => void;
@@ -46,6 +48,7 @@ export function TripPlanner({
   onSetPickMode,
   nearMeResult,
   onSetNearMePoint,
+  onFocusNearStop,
   originPoint,
   destinationPoint,
   onSetOriginPoint,
@@ -223,6 +226,52 @@ export function TripPlanner({
                 ))}
               </div>
             </div>
+
+            {nearMeResult.alternativeStops.length > 0 && (
+              <div
+                data-testid="near-me-alternatives"
+                className="pt-2 border-t border-[#DCE6EE] dark:border-[#183550] space-y-2"
+              >
+                <div className="text-[10px] font-medium text-[#526D82] dark:text-[#85A3BC]">
+                  {t.planner.moreNearbyStopsTitle}
+                </div>
+                <div className="space-y-1.5">
+                  {nearMeResult.alternativeStops.map((alt) => (
+                    <div
+                      key={alt.stop.id}
+                      className="rounded border border-[#DCE6EE] dark:border-[#183550] bg-white/80 dark:bg-[#081828]/80 px-2.5 py-2 space-y-1.5"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => onFocusNearStop(alt.stop)}
+                        className="w-full flex items-center justify-between gap-2 text-start hover:opacity-80 cursor-pointer"
+                      >
+                        <span className="text-[11px] font-medium text-[#041626] dark:text-[#EFF6FA] truncate">
+                          <BidiText label={resolveStopLabel(alt.stop, lang)} />
+                        </span>
+                        <span className="shrink-0 text-[10px] text-[#526D82] dark:text-[#85A3BC] tabular-nums flex items-center gap-1">
+                          <span dir="ltr">{alt.distanceMeters}</span>
+                          <span>{t.planner.metersUnit}</span>
+                        </span>
+                      </button>
+
+                      <div className="flex flex-wrap gap-1">
+                        {alt.servingLines.map((line) => (
+                          <button
+                            key={line.id}
+                            type="button"
+                            onClick={() => onOpenLine(line)}
+                            className="cursor-pointer hover:opacity-85 transition-opacity"
+                          >
+                            <LineBadge number={line.number} color={line.color} size="sm" />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </section>
