@@ -19,6 +19,8 @@ import type {
   TripItinerary,
 } from '../types/transit';
 import { BidiText, LineBadge } from './BidiText';
+import { ShareButton } from './ShareButton';
+import { buildShareUrl } from '../utils/deepLink';
 
 interface TripPlannerProps {
   lang: Lang;
@@ -237,6 +239,27 @@ export function TripPlanner({
 
           {(originPoint || destinationPoint) && (
             <div className="flex items-center gap-1">
+              {originPoint && destinationPoint && (
+                <ShareButton
+                  lang={lang}
+                  label={t.planner.shareTrip}
+                  testId="share-trip-btn"
+                  getSharePayload={() => ({
+                    url: buildShareUrl({
+                      lang,
+                      mode: 'planner',
+                      selectedLine: null,
+                      direction: 'outbound',
+                      originPoint,
+                      destinationPoint,
+                      nearMePoint: nearMeResult?.userPoint ?? null,
+                      selectedItineraryIndex,
+                    }),
+                    title: t.share.tripShareTitle,
+                    text: t.share.tripShareText,
+                  })}
+                />
+              )}
               <button
                 type="button"
                 onClick={handleSwapPoints}

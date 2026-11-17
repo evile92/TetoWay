@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react';
+import { Flag, Mail } from 'lucide-react';
 import { getDir, TRANSLATIONS } from '../i18n';
 import type { Lang } from '../types/transit';
 
@@ -7,11 +7,12 @@ const GITHUB_URL = 'https://github.com/evile92';
 
 interface ContactFooterProps {
   lang: Lang;
+  onOpenReport: () => void;
   className?: string;
 }
 
 /** Slim architectural footer bar for desktop sidebar and open mobile sheet. */
-export function ContactFooter({ lang, className = '' }: ContactFooterProps) {
+export function ContactFooter({ lang, onOpenReport, className = '' }: ContactFooterProps) {
   const t = TRANSLATIONS[lang];
   const dir = getDir(lang);
 
@@ -19,13 +20,26 @@ export function ContactFooter({ lang, className = '' }: ContactFooterProps) {
     <footer
       dir={dir}
       data-testid="contact-footer"
-      className={`shrink-0 px-4 py-2 border-t border-[#DCE6EE] dark:border-[#183550] bg-[#F8FBFD] dark:bg-[#061321] flex items-center justify-between gap-2 ${className}`.trim()}
+      className={`shrink-0 px-3.5 py-2 border-t border-[#DCE6EE] dark:border-[#183550] bg-[#F8FBFD] dark:bg-[#061321] flex items-center justify-between gap-2 ${className}`.trim()}
     >
-      <span className="text-[11px] font-medium text-[#526D82] dark:text-[#85A3BC] truncate">
-        {t.footer.label}
+      <span
+        data-testid="dataset-updated-label"
+        className="text-[11px] font-medium text-[#526D82] dark:text-[#85A3BC] truncate tabular-nums"
+      >
+        {t.footer.updatedLabel}
       </span>
 
       <div className="flex items-center gap-1.5 shrink-0">
+        <button
+          type="button"
+          onClick={onOpenReport}
+          data-testid="footer-report-btn"
+          className="h-7 px-2 rounded-md border border-[#DCE6EE] dark:border-[#183550] bg-white dark:bg-[#081828] text-[11px] font-medium text-[#4A657A] dark:text-[#85A3BC] hover:text-amber-700 dark:hover:text-amber-300 hover:border-amber-300 dark:hover:border-amber-700/60 transition-colors inline-flex items-center gap-1 cursor-pointer whitespace-nowrap"
+        >
+          <Flag className="w-3 h-3 shrink-0" strokeWidth={1.75} />
+          <span>{t.footer.reportBtn}</span>
+        </button>
+
         <a
           href={`mailto:${CONTACT_EMAIL}`}
           aria-label={t.footer.emailAria}

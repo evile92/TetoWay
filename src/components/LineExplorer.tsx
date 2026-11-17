@@ -2,6 +2,7 @@ import {
   ArrowLeft,
   ArrowLeftRight,
   ArrowRight,
+  Flag,
   MapPin,
   Search,
   X,
@@ -15,7 +16,9 @@ import type {
   Lang,
   LineCategoryFilter,
 } from '../types/transit';
+import { buildShareUrl } from '../utils/deepLink';
 import { BidiText, LineBadge } from './BidiText';
+import { ShareButton } from './ShareButton';
 
 interface LineExplorerProps {
   lang: Lang;
@@ -25,6 +28,7 @@ interface LineExplorerProps {
   onSelectLine: (line: BusLine | null) => void;
   onChangeDirection: (dir: DirectionMode) => void;
   onFocusStop: (stop: BusStop) => void;
+  onReportLine: (line: BusLine) => void;
 }
 
 function normalizeSearch(value: string): string {
@@ -44,6 +48,7 @@ export function LineExplorer({
   onSelectLine,
   onChangeDirection,
   onFocusStop,
+  onReportLine,
 }: LineExplorerProps) {
   const t = TRANSLATIONS[lang];
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -125,11 +130,44 @@ export function LineExplorer({
               <span>{t.explorer.backToAll}</span>
             </button>
 
-            <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-[#EEF5F9] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] text-[#0155A6] dark:text-[#38BDF8]">
-              {selectedLine.category === 'urban'
-                ? t.explorer.tabs.urban
-                : t.explorer.tabs.regional}
-            </span>
+            <div className="flex items-center gap-1.5 flex-wrap justify-end">
+              <ShareButton
+                lang={lang}
+                label={t.explorer.shareLine}
+                testId="share-line-btn"
+                getSharePayload={() => ({
+                  url: buildShareUrl({
+                    lang,
+                    mode: 'explorer',
+                    selectedLine,
+                    direction,
+                    originPoint: null,
+                    destinationPoint: null,
+                    nearMePoint: null,
+                    selectedItineraryIndex: 0,
+                  }),
+                  title: `${t.share.lineShareTitle} ${selectedLine.number}`,
+                  text: `${t.share.lineShareText} ${selectedLine.number}: ${resolveHubName(startHubKey, lang)} - ${resolveHubName(endHubKey, lang)}`,
+                })}
+              />
+
+              <button
+                type="button"
+                onClick={() => onReportLine(selectedLine)}
+                data-testid="report-line-btn"
+                title={t.explorer.reportError}
+                className="inline-flex items-center gap-1 px-2 py-1 rounded-md border border-[#DCE6EE] dark:border-[#183550] bg-[#F4F8FB] dark:bg-[#0D2236] hover:border-amber-300 dark:hover:border-amber-700/60 text-[11px] font-medium text-[#4A657A] dark:text-[#85A3BC] hover:text-amber-700 dark:hover:text-amber-300 transition-colors cursor-pointer shrink-0 whitespace-nowrap"
+              >
+                <Flag className="w-3 h-3 shrink-0" strokeWidth={1.75} />
+                <span>{t.explorer.reportError}</span>
+              </button>
+
+              <span className="text-[11px] font-medium px-2 py-1 rounded-md bg-[#EEF5F9] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] text-[#0155A6] dark:text-[#38BDF8] whitespace-nowrap">
+                {selectedLine.category === 'urban'
+                  ? t.explorer.tabs.urban
+                  : t.explorer.tabs.regional}
+              </span>
+            </div>
           </div>
 
           <div className="flex items-start gap-3">

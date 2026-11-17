@@ -40,7 +40,9 @@
     "zoomHint": "Select a stop to focus on the map",
     "osmStopBadge": "Stop",
     "hubStopBadge": "Hub",
-    "unnamedStop": "Bus Stop"
+    "unnamedStop": "Bus Stop",
+    "shareLine": "Share",
+    "reportError": "Report"
   },
   "map": {
     "stopPopupSequence": "Stop",
@@ -81,7 +83,8 @@
     "totalFare": "Total fare",
     "estimatedTimeLabel": "Est. trip time",
     "noRouteFound": "No route found within reasonable walking distance. Try selecting closer points.",
-    "promptSelectPoints": "Set an origin and destination on the map or choose hubs above to compute your trip."
+    "promptSelectPoints": "Set an origin and destination on the map or choose hubs above to compute your trip.",
+    "shareTrip": "Share"
   },
   "editor": {
     "bannerTitle": "Route Studio",
@@ -169,8 +172,36 @@
   },
   "footer": {
     "label": "Contact & source",
+    "updatedLabel": "Updated Nov 2026",
+    "reportBtn": "Report error",
     "emailAria": "Send email",
     "githubAria": "GitHub profile"
+  },
+  "share": {
+    "copied": "Link copied",
+    "lineShareTitle": "TetoWay Bus Line",
+    "lineShareText": "View route and stops for Line",
+    "tripShareTitle": "TetoWay Trip Route",
+    "tripShareText": "View bus directions in Tetouan on TetoWay"
+  },
+  "report": {
+    "modalTitle": "Report a data issue",
+    "modalSubtitle": "Help keep Tetouan routes and stops accurate",
+    "lineContextLabel": "Selected line",
+    "generalContext": "General network feedback",
+    "stopLabel": "Specific stop (optional)",
+    "anyStopOption": "General / entire route",
+    "issueTypeLabel": "What needs correction?",
+    "typeRoute": "Route changed or missing stop",
+    "typeLocation": "Wrong stop location",
+    "typeSchedule": "Wrong fare or schedule",
+    "typeOther": "Other note",
+    "detailsLabel": "Details (optional)",
+    "detailsPlaceholder": "Describe the right street, stop name, or schedule...",
+    "sendEmailBtn": "Send via Email",
+    "copyDetailsBtn": "Copy details",
+    "openGithubBtn": "GitHub Issue",
+    "copiedNotice": "Details copied"
   },
   "offlineMap": {
     "buttonLabel": "Offline",

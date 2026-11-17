@@ -40,7 +40,9 @@
     "zoomHint": "اختر أي محطة للتركيز على الخريطة",
     "osmStopBadge": "محطة",
     "hubStopBadge": "قطب",
-    "unnamedStop": "محطة حافلات"
+    "unnamedStop": "محطة حافلات",
+    "shareLine": "مشاركة",
+    "reportError": "إبلاغ"
   },
   "map": {
     "stopPopupSequence": "محطة رقم",
@@ -81,7 +83,8 @@
     "totalFare": "التعريفة الإجمالية",
     "estimatedTimeLabel": "المدة التقديرية للرحلة",
     "noRouteFound": "لم يتم العثور على خط قريب ضمن مسافة مشي معقولة. حاول اختيار نقطة أقرب لطريق رئيسي.",
-    "promptSelectPoints": "حدد نقطة الانطلاق ونقطة الوصول على الخريطة أو من القائمة لإيجاد أفضل مسار."
+    "promptSelectPoints": "حدد نقطة الانطلاق ونقطة الوصول على الخريطة أو من القائمة لإيجاد أفضل مسار.",
+    "shareTrip": "مشاركة"
   },
   "editor": {
     "bannerTitle": "استوديو تعديل المسارات",
@@ -169,8 +172,36 @@
   },
   "footer": {
     "label": "التواصل والمصدر",
+    "updatedLabel": "آخر مراجعة: نوفمبر 2026",
+    "reportBtn": "إبلاغ عن خطأ",
     "emailAria": "إرسال بريد إلكتروني",
     "githubAria": "الحساب البرمجي"
+  },
+  "share": {
+    "copied": "تم النسخ",
+    "lineShareTitle": "خط حافلات تيتوواي",
+    "lineShareText": "شاهد مسار ومحطات الخط رقم",
+    "tripShareTitle": "مسار رحلة تيتوواي",
+    "tripShareText": "شاهد مسار الرحلة بالحافلة في تطوان عبر تيتوواي"
+  },
+  "report": {
+    "modalTitle": "الإبلاغ عن خطأ في البيانات",
+    "modalSubtitle": "مساعدتك تضمن دقة المسارات والمحطات لركاب تطوان",
+    "lineContextLabel": "الخط المحدد",
+    "generalContext": "ملاحظة عامة حول الشبكة",
+    "stopLabel": "المحطة المعنية (اختياري)",
+    "anyStopOption": "عام / كامل المسار",
+    "issueTypeLabel": "ما الذي يحتاج تصحيحاً؟",
+    "typeRoute": "المسار تغير أو محطة ناقصة",
+    "typeLocation": "موقع المحطة غير دقيق",
+    "typeSchedule": "التعريفة أو أوقات العمل مختلفة",
+    "typeOther": "ملاحظة أخرى",
+    "detailsLabel": "تفاصيل إضافية (اختياري)",
+    "detailsPlaceholder": "اكتب الشارع الصحيح أو اسم المحطة أو التوقيت...",
+    "sendEmailBtn": "إرسال عبر البريد",
+    "copyDetailsBtn": "نسخ التفاصيل",
+    "openGithubBtn": "بلاغ تقني",
+    "copiedNotice": "تم نسخ التفاصيل"
   },
   "offlineMap": {
     "buttonLabel": "أوفلاين",

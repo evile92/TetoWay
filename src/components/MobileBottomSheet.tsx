@@ -15,6 +15,7 @@ interface MobileBottomSheetProps {
   offlineSupported: boolean;
   isOfflineCached: boolean;
   onOpenOfflineModal: () => void;
+  onOpenReport: () => void;
   children: ReactNode;
 }
 
@@ -27,6 +28,7 @@ export function MobileBottomSheet({
   offlineSupported,
   isOfflineCached,
   onOpenOfflineModal,
+  onOpenReport,
   children,
 }: MobileBottomSheetProps) {
   const t = TRANSLATIONS[lang];
@@ -157,7 +159,11 @@ export function MobileBottomSheet({
       {snap !== 'collapsed' && (
         <>
           <div className="flex-1 min-h-0 overflow-hidden">{children}</div>
-          <ContactFooter lang={lang} className="pb-[calc(0.5rem+env(safe-area-inset-bottom))]" />
+          <ContactFooter
+            lang={lang}
+            onOpenReport={onOpenReport}
+            className="pb-[calc(0.5rem+env(safe-area-inset-bottom))]"
+          />
         </>
       )}
     </div>

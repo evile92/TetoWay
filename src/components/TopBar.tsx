@@ -27,6 +27,7 @@ interface TopBarProps {
   onResetMapView: () => void;
   pickMode: MapPickMode;
   onCancelPickMode: () => void;
+  showEditorButton: boolean;
   showInstallButton: boolean;
   onInstallApp: () => void;
 }
@@ -46,6 +47,7 @@ export function TopBar({
   onResetMapView,
   pickMode,
   onCancelPickMode,
+  showEditorButton,
   showInstallButton,
   onInstallApp,
 }: TopBarProps) {
@@ -167,21 +169,23 @@ export function TopBar({
           </span>
         </button>
 
-        {/* Editor Mode Toggle */}
-        <button
-          type="button"
-          onClick={() => onChangeMode(mode === 'editor' ? 'explorer' : 'editor')}
-          aria-pressed={mode === 'editor'}
-          data-testid="toggle-editor-mode"
-          className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium transition-colors cursor-pointer ${
-            mode === 'editor'
-              ? 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300'
-              : 'text-[#041626] dark:text-[#EFF6FA] hover:bg-[#F4F8FB] dark:hover:bg-[#0D2236]'
-          }`}
-        >
-          <PencilRuler className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
-          <span className="whitespace-nowrap">{t.nav.editor}</span>
-        </button>
+        {/* Editor Mode Toggle (Unlocked via ?editor=1) */}
+        {showEditorButton && (
+          <button
+            type="button"
+            onClick={() => onChangeMode(mode === 'editor' ? 'explorer' : 'editor')}
+            aria-pressed={mode === 'editor'}
+            data-testid="toggle-editor-mode"
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium transition-colors cursor-pointer ${
+              mode === 'editor'
+                ? 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300'
+                : 'text-[#041626] dark:text-[#EFF6FA] hover:bg-[#F4F8FB] dark:hover:bg-[#0D2236]'
+            }`}
+          >
+            <PencilRuler className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
+            <span className="whitespace-nowrap">{t.nav.editor}</span>
+          </button>
+        )}
 
         {/* Install PWA Button */}
         {showInstallButton && (

@@ -7,6 +7,7 @@ import { LineExplorer } from './components/LineExplorer';
 import { MobileBottomSheet } from './components/MobileBottomSheet';
 import { OfflineMapButton } from './components/OfflineMapButton';
 import { OfflineMapModal } from './components/OfflineMapModal';
+import { ReportIssueModal } from './components/ReportIssueModal';
 import { RouteEditor } from './components/RouteEditor';
 import { TopBar } from './components/TopBar';
 import { TransitMap } from './components/TransitMap';
@@ -27,6 +28,7 @@ import type {
   SheetSnap,
   Theme,
 } from './types/transit';
+import { buildDeepLinkSearch, findLineByParam, parseDeepLink } from './utils/deepLink';
 import {
   findNearestServedStop,
   getBboxForCoordinates,
@@ -45,9 +47,20 @@ function readInitialTheme(): Theme {
 }
 
 export function App() {
-  const [lang, setLang] = useState<Lang>('en');
+  const [initialDeepLink] = useState(() => parseDeepLink(window.location.search));
+  const editorEnabled = initialDeepLink.editorAccess;
+  const initialMode: AppMode =
+    editorEnabled &&
+    !initialDeepLink.lineParam &&
+    !initialDeepLink.from &&
+    !initialDeepLink.to &&
+    initialDeepLink.mode !== 'planner'
+      ? 'editor'
+      : (initialDeepLink.mode ?? 'explorer');
+
+  const [lang, setLang] = useState<Lang>(() => initialDeepLink.lang ?? 'en');
   const [theme, setTheme] = useState<Theme>(readInitialTheme);
-  const [mode, setMode] = useState<AppMode>('explorer');
+  const [mode, setMode] = useState<AppMode>(initialMode);
   const [lines, setLines] = useState<BusLine[]>([]);
   const [osmStops, setOsmStops] = useState<OsmStop[]>([]);
   const [loading, setLoading] = useState(true);
@@ -55,17 +68,27 @@ export function App() {
 
   const [showOsmStops, setShowOsmStops] = useState(false);
   const [selectedLineId, setSelectedLineId] = useState<string | null>(null);
-  const [direction, setDirection] = useState<DirectionMode>('outbound');
+  const [direction, setDirection] = useState<DirectionMode>(
+    () => initialDeepLink.direction ?? 'outbound',
+  );
   const [pickMode, setPickMode] = useState<MapPickMode>('none');
 
-  const [nearMePoint, setNearMePoint] = useState<GeoPoint | null>(null);
-  const [originPoint, setOriginPoint] = useState<GeoPoint | null>(null);
-  const [destinationPoint, setDestinationPoint] = useState<GeoPoint | null>(null);
-  const [selectedItineraryIndex, setSelectedItineraryIndex] = useState(0);
+  const [nearMePoint, setNearMePoint] = useState<GeoPoint | null>(() => initialDeepLink.near);
+  const [originPoint, setOriginPoint] = useState<GeoPoint | null>(() => initialDeepLink.from);
+  const [destinationPoint, setDestinationPoint] = useState<GeoPoint | null>(
+    () => initialDeepLink.to,
+  );
+  const [selectedItineraryIndex, setSelectedItineraryIndex] = useState<number>(
+    () => initialDeepLink.itineraryIndex,
+  );
+
+  const [reportModalOpen, setReportModalOpen] = useState(false);
+  const [reportTargetLine, setReportTargetLine] = useState<BusLine | null>(null);
 
   const [mobileSnap, setMobileSnap] = useState<SheetSnap>('half');
   const [focusTarget, setFocusTarget] = useState<MapFocusTarget | null>(null);
   const focusSeqRef = useRef(1);
+  const deepLinkHydratedRef = useRef(false);
   const pwa = usePwaInstall();
   const offlineMap = useOfflineMap();
 
@@ -104,6 +127,51 @@ export function App() {
     return { linesJson, osmJson };
   }, []);
 
+  const hydrateDeepLink = useCallback(
+    (loadedLines: BusLine[]) => {
+      if (deepLinkHydratedRef.current) return;
+      deepLinkHydratedRef.current = true;
+
+      if (initialDeepLink.lineParam && initialMode !== 'planner') {
+        const matched = findLineByParam(loadedLines, initialDeepLink.lineParam);
+        if (matched) {
+          setSelectedLineId(matched.id);
+          const bounds = getBboxForCoordinates(matched.geometry.coordinates);
+          if (bounds) {
+            focusSeqRef.current += 1;
+            setFocusTarget({ bounds, seq: focusSeqRef.current });
+          }
+        }
+        return;
+      }
+
+      if (initialMode === 'editor' && loadedLines[0]) {
+        setSelectedLineId(loadedLines[0].id);
+        const bounds = getBboxForCoordinates(loadedLines[0].geometry.coordinates);
+        if (bounds) {
+          focusSeqRef.current += 1;
+          setFocusTarget({ bounds, seq: focusSeqRef.current });
+        }
+        return;
+      }
+
+      if (initialDeepLink.near && !initialDeepLink.from && !initialDeepLink.to) {
+        const res = findNearestServedStop(initialDeepLink.near, loadedLines);
+        if (res) {
+          const bounds = getBboxForCoordinates([
+            [initialDeepLink.near.lng, initialDeepLink.near.lat],
+            [res.nearestStop.lng, res.nearestStop.lat],
+          ]);
+          if (bounds) {
+            focusSeqRef.current += 1;
+            setFocusTarget({ bounds, seq: focusSeqRef.current });
+          }
+        }
+      }
+    },
+    [initialDeepLink, initialMode],
+  );
+
   const handleRetryLoad = useCallback(async () => {
     setLoading(true);
     setLoadError(false);
@@ -111,12 +179,13 @@ export function App() {
       const { linesJson, osmJson } = await fetchTransitDataset();
       setLines(linesJson);
       setOsmStops(osmJson);
+      hydrateDeepLink(linesJson);
     } catch {
       setLoadError(true);
     } finally {
       setLoading(false);
     }
-  }, [fetchTransitDataset]);
+  }, [fetchTransitDataset, hydrateDeepLink]);
 
   useEffect(() => {
     let active = true;
@@ -125,6 +194,7 @@ export function App() {
         if (!active) return;
         setLines(linesJson);
         setOsmStops(osmJson);
+        hydrateDeepLink(linesJson);
         setLoading(false);
       })
       .catch(() => {
@@ -135,7 +205,7 @@ export function App() {
     return () => {
       active = false;
     };
-  }, [fetchTransitDataset]);
+  }, [fetchTransitDataset, hydrateDeepLink]);
 
   const selectedLine = useMemo(
     () => lines.find((l) => l.id === selectedLineId) ?? null,
@@ -195,6 +265,7 @@ export function App() {
 
   const handleChangeMode = useCallback(
     (nextMode: AppMode) => {
+      if (nextMode === 'editor' && !editorEnabled) return;
       setPickMode('none');
       setMode(nextMode);
       if (nextMode === 'editor' && !selectedLineId && lines[0]) {
@@ -203,8 +274,50 @@ export function App() {
         if (bounds) triggerFocus({ bounds });
       }
     },
-    [selectedLineId, lines, triggerFocus],
+    [editorEnabled, selectedLineId, lines, triggerFocus],
   );
+
+  const handleOpenReport = useCallback(
+    (targetLine: BusLine | null = null) => {
+      setReportTargetLine(targetLine ?? selectedLine);
+      setReportModalOpen(true);
+    },
+    [selectedLine],
+  );
+
+  // Synchronize current map/route selection with browser URL without adding history entries
+  useEffect(() => {
+    if (loading) return;
+    const nextSearch = buildDeepLinkSearch(
+      {
+        lang,
+        mode,
+        selectedLine,
+        direction,
+        originPoint,
+        destinationPoint,
+        nearMePoint,
+        selectedItineraryIndex,
+        editorEnabled,
+      },
+      { includeEditor: true },
+    );
+    const nextUrl = `${window.location.pathname}${nextSearch}`;
+    if (`${window.location.pathname}${window.location.search}` !== nextUrl) {
+      window.history.replaceState(null, '', nextUrl);
+    }
+  }, [
+    loading,
+    lang,
+    mode,
+    selectedLine,
+    direction,
+    originPoint,
+    destinationPoint,
+    nearMePoint,
+    selectedItineraryIndex,
+    editorEnabled,
+  ]);
 
   const handleSetPickMode = useCallback((nextPickMode: MapPickMode) => {
     setPickMode(nextPickMode);
@@ -428,6 +541,7 @@ export function App() {
         onSelectLine={handleSelectLine}
         onChangeDirection={setDirection}
         onFocusStop={handleFocusStop}
+        onReportLine={(line) => handleOpenReport(line)}
       />
     );
 
@@ -565,7 +679,7 @@ export function App() {
           )}
         </div>
 
-        <ContactFooter lang={lang} />
+        <ContactFooter lang={lang} onOpenReport={() => handleOpenReport()} />
       </aside>
 
       {/* Main Map Area */}
@@ -585,6 +699,7 @@ export function App() {
           onResetMapView={handleResetMapView}
           pickMode={pickMode}
           onCancelPickMode={() => setPickMode('none')}
+          showEditorButton={editorEnabled}
           showInstallButton={!pwa.isStandalone}
           onInstallApp={pwa.handleInstallClick}
         />
@@ -619,6 +734,7 @@ export function App() {
           offlineSupported={offlineMap.supported}
           isOfflineCached={offlineMap.isCached}
           onOpenOfflineModal={offlineMap.openModal}
+          onOpenReport={() => handleOpenReport()}
         >
           {loading ? (
             <div className="flex items-center justify-center h-full p-6">
@@ -660,6 +776,13 @@ export function App() {
         onStartDownload={() => void offlineMap.startDownload()}
         onRemoveCache={() => void offlineMap.removeCache()}
         onClose={offlineMap.closeModal}
+      />
+
+      <ReportIssueModal
+        open={reportModalOpen}
+        lang={lang}
+        line={reportTargetLine}
+        onClose={() => setReportModalOpen(false)}
       />
     </div>
   );
