@@ -167,6 +167,12 @@ export function App() {
     setFocusTarget({ ...target, seq: focusSeqRef.current });
   }, []);
 
+  const snapMobileToHalf = useCallback(() => {
+    if (window.innerWidth < 768) {
+      setMobileSnap('half');
+    }
+  }, []);
+
   const handleSelectLine = useCallback(
     (line: BusLine | null) => {
       if (!line) {
@@ -182,8 +188,9 @@ export function App() {
       if (bounds) {
         triggerFocus({ bounds });
       }
+      snapMobileToHalf();
     },
-    [mode, triggerFocus],
+    [mode, snapMobileToHalf, triggerFocus],
   );
 
   const handleChangeMode = useCallback(
@@ -384,6 +391,7 @@ export function App() {
                 [res.nearestStop.lng, res.nearestStop.lat],
               ]);
               if (bounds) triggerFocus({ bounds });
+              snapMobileToHalf();
             }
           }
         }}
@@ -392,14 +400,23 @@ export function App() {
         onSetOriginPoint={(pt) => {
           setOriginPoint(pt);
           setSelectedItineraryIndex(0);
+          if (pt && destinationPoint) {
+            snapMobileToHalf();
+          }
         }}
         onSetDestinationPoint={(pt) => {
           setDestinationPoint(pt);
           setSelectedItineraryIndex(0);
+          if (pt && originPoint) {
+            snapMobileToHalf();
+          }
         }}
         itineraries={itineraries}
         selectedItineraryIndex={selectedItineraryIndex}
-        onSelectItineraryIndex={setSelectedItineraryIndex}
+        onSelectItineraryIndex={(index) => {
+          setSelectedItineraryIndex(index);
+          snapMobileToHalf();
+        }}
         onOpenLine={(line) => handleSelectLine(line)}
       />
     ) : (
