@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tetoway.vercel.app/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?mode=planner</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=1</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=1" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=1&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=1" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=1&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=1" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=1&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=1" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=3</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=3" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=3&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=3" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=3&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=3" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=3&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=3" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=4</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=4" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=4&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=4" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=4&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=4" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=4&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=4" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=5</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=5" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=5&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=5" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=5&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=5" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=5&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=5" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=6</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=6" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=6&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=6" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=6&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=6" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=6&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=6" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=7</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=7" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=7&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=7" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=7&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=7" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=7&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=7" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=8</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=8" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=8&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=8" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=8&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=8" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=8&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=8" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=9</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=9" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=9&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=9" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=9&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=9" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=9&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=9" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=10</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=10" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=10&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=10" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=10&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=10" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=10&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=10" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=11</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=11" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=11&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=11" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=11&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=11" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=11&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=11" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=12</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=12" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=12&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=12" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=12&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=12" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=12&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=12" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=13</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=13" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=13&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=13" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=13&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=13" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=13&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=13" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=14</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=14" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=14&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=14" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=14&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=14" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=14&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=14" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=15</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=15" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=15&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=15" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=15&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=15" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=15&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=15" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=16</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=16" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=16&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=16" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=16&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=16" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=16&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=16" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=17</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=17" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=17&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=17" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=17&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=17" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=17&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=17" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=18</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=18" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=18&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=18" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=18&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=18" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=18&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=18" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=19</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=19" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=19&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=19" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=19&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=19" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=19&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=19" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=20</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=20" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=20&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=20" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=20&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=20" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=20&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=20" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=21</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=21" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=21&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=21" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=21&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=21" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=21&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=21" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=22</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=22" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=22&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=22" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=22&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=22" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=22&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=22" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=23</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=23" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=23&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=23" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=23&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=23" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=23&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=23" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=24</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=24" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=24&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=24" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=24&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=24" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=24&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=24" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=25</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=25" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=25&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=25" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=25&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=25" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=25&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=25" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=26</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=26" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=26&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=26" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=26&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=26" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=26&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=26" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=27</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=27" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=27&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=27" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=27&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=27" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=27&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=27" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=28</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=28" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=28&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=28" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=28&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=28" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=28&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=28" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=29</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=29" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=29&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=29" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=29&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=29" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=29&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=29" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=30</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=30" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=30&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=30" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=30&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=30" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=30&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=30" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=31</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=31" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=31&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=31" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=31&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=31" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=31&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=31" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=32</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=32" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=32&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=32" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=32&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=32" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=32&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=32" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=33</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=33" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=33&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=33" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=33&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=33" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=33&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=33" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=34</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=34" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=34&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=34" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=34&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=34" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=34&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=34" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=35</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=35" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=35&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=35" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=35&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=35" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=35&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=35" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=36</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=36" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=36&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=36" />
+  </url>
+  <url>
+    <loc>https://tetoway.vercel.app/?line=36&amp;lang=ar</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/?line=36" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?line=36&amp;lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/?line=36" />
+  </url>
+</urlset>

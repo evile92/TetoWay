@@ -46,12 +46,13 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,mjs,css,html,png,svg,json,webmanifest}'],
-        globIgnores: ['tiles/**', 'fonts/**'],
+        globIgnores: ['tiles/**', 'fonts/**', 'og-preview.png'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,
         navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/robots\.txt$/, /^\/sitemap\.xml$/],
         runtimeCaching: [
           {
             urlPattern: /\/tiles\/.*\.pmtiles$/i,

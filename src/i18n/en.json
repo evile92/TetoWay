@@ -223,5 +223,11 @@
     "downloading": "Saving map for offline use...",
     "removeButton": "Remove saved map",
     "downloadError": "Could not save offline map. Check your connection and try again."
+  },
+  "seo": {
+    "defaultTitle": "TetoWay - Tetouan & Region Public Transit Map",
+    "defaultDescription": "Interactive public transit map & trip planner for Tetouan, Martil, M'diq, Fnideq, Oued Laou, and surrounding corridors with offline support.",
+    "plannerTitle": "Tetouan Bus Trip Planner | TetoWay",
+    "lineTitlePrefix": "Bus Line"
   }
 }

@@ -4,26 +4,120 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#F2F7FA" />
+    <title>TetoWay — خريطة حافلات تطوان والنواحي | Tetouan Public Transit</title>
     <meta
       name="description"
-      content="Interactive public transit map & trip planner for Tetouan and its region."
+      content="خريطة تفاعلية لجميع خطوط حافلات تطوان والنواحي (35 خطاً، بدون إنترنت): تطوان، مرتيل، المضيق، الفنيدق، واد لاو، وبني حسان مع مخطط رحلات ذكي. Interactive Tetouan bus map & trip planner."
     />
+    <meta
+      name="keywords"
+      content="طوبيس تطوان, حافلات تطوان, خطوط الحافلات تطوان, خريطة حافلات تطوان, حافلة تطوان مرتيل, حافلة تطوان المضيق, حافلة تطوان الفنيدق, حافلة واد لاو, النقل العمومي تطوان, TetoWay, Tetouan bus routes, bus Tetouan Martil Mdiq Fnideq, lignes bus Tetouan"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tetoway.vercel.app/" />
+    <link rel="alternate" hreflang="ar" href="https://tetoway.vercel.app/?lang=ar" />
+    <link rel="alternate" hreflang="en" href="https://tetoway.vercel.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://tetoway.vercel.app/" />
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TetoWay" />
+    <meta property="og:locale" content="ar_MA" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:url" content="https://tetoway.vercel.app/" />
+    <meta
+      property="og:title"
+      content="TetoWay — خريطة حافلات تطوان والنواحي | خطوط الطوبيس ومخطط الرحلات"
+    />
+    <meta
+      property="og:description"
+      content="خريطة حافلات تطوان والنواحي (35 خطاً)، مرتيل، المضيق، الفنيدق وواد لاو مع تحديد أقرب محطة ومخطط رحلات يعمل أوفلاين."
+    />
+    <meta property="og:image" content="https://tetoway.vercel.app/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="TetoWay — Interactive Public Transit Map for Tetouan & Region"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="TetoWay — خريطة حافلات تطوان والنواحي | Tetouan Public Transit"
+    />
+    <meta
+      name="twitter:description"
+      content="35 bus routes across Tetouan, Martil, M'diq, Fnideq & Oued Laou with offline street map and smart route planner."
+    />
+    <meta name="twitter:image" content="https://tetoway.vercel.app/og-preview.png" />
+
+    <!-- PWA & Icons -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="TetoWay" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <title>TetoWay - Tetouan Public Transit</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "TetoWay - تيتوواي",
+        "alternateName": "خريطة حافلات تطوان والنواحي",
+        "url": "https://tetoway.vercel.app/",
+        "image": "https://tetoway.vercel.app/og-preview.png",
+        "description": "Interactive public transit map & offline route planner covering 35 bus lines across Tetouan, Martil, M'diq, Fnideq, Oued Laou, and surrounding towns in northern Morocco.",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "isAccessibleForFree": true,
+        "inLanguage": ["ar", "en"],
+        "areaServed": [
+          { "@type": "City", "name": "Tetouan" },
+          { "@type": "City", "name": "Martil" },
+          { "@type": "City", "name": "M'diq" },
+          { "@type": "City", "name": "Fnideq" },
+          { "@type": "City", "name": "Oued Laou" }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-[#F2F7FA] text-[#041626] dark:bg-[#05101C] dark:text-[#EFF6FA] antialiased overflow-hidden select-none sm:select-auto">
-    <div id="root"></div>
+    <div id="root">
+      <noscript>
+        <main style="max-width:720px;margin:2rem auto;padding:1rem;font-family:sans-serif;line-height:1.6;">
+          <h1>TetoWay — خريطة حافلات تطوان والنواحي</h1>
+          <p>
+            Interactive bus network map &amp; trip planner for Tetouan, Martil, M'diq, Fnideq,
+            Oued Laou, Azla, Amsa, Ain Lahcen, Khemis Anjra, Saddina, and Dar Ben Karrich
+            (35 urban &amp; regional lines). Enable JavaScript to view the interactive map.
+          </p>
+          <p dir="rtl">
+            خريطة تفاعلية لجميع خطوط الحافلات في تطوان والنواحي (35 خطاً): تطوان، مرتيل، المضيق،
+            الفنيدق، واد لاو، أزلا، أمسا، عين الحصن، خميس أنجرة ودار بن قريش.
+          </p>
+          <ul>
+            <li><a href="/?line=1">Line 1: Avenue Rif (Rommana) - Boujarrah</a></li>
+            <li><a href="/?line=3">Line 3: Avenue Rif (Rommana) - Qalaline</a></li>
+            <li><a href="/?line=34">Line 34: Tetouan - M'diq</a></li>
+            <li><a href="/?line=35">Line 35: Tetouan - Fnideq</a></li>
+            <li><a href="/?line=36">Line 36: Tetouan - Martil</a></li>
+            <li><a href="/?line=21">Line 21: Tetouan - Oued Laou</a></li>
+          </ul>
+        </main>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

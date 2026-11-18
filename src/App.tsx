@@ -14,7 +14,7 @@ import { TransitMap } from './components/TransitMap';
 import { TripPlanner } from './components/TripPlanner';
 import { useOfflineMap } from './hooks/useOfflineMap';
 import { usePwaInstall } from './hooks/usePwaInstall';
-import { getDir, TRANSLATIONS } from './i18n';
+import { formatMad, getDir, resolveHubName, TRANSLATIONS } from './i18n';
 import type {
   AppMode,
   BusLine,
@@ -367,6 +367,33 @@ export function App() {
     selectedItineraryIndex,
     editorEnabled,
   ]);
+
+  // Update document title and meta description dynamically for shareable deep links & SEO
+  useEffect(() => {
+    let pageTitle = t.seo.defaultTitle;
+    let pageDesc = t.seo.defaultDescription;
+
+    if (mode === 'planner') {
+      pageTitle = t.seo.plannerTitle;
+    } else if (mode === 'explorer' && selectedLine) {
+      const startKey =
+        direction === 'outbound' ? selectedLine.origin_key : selectedLine.destination_key;
+      const endKey =
+        direction === 'outbound' ? selectedLine.destination_key : selectedLine.origin_key;
+      const startName = resolveHubName(startKey, lang);
+      const endName = resolveHubName(endKey, lang);
+      const arrow = lang === 'ar' ? '←' : '→';
+
+      pageTitle = `${t.seo.lineTitlePrefix} ${selectedLine.number}: ${startName} ${arrow} ${endName} | ${t.app.brand}`;
+      pageDesc = `${t.seo.lineTitlePrefix} ${selectedLine.number}: ${startName} ${arrow} ${endName} · ${selectedLine.stops.length} ${t.explorer.stopsCount} · ${formatMad(selectedLine.price_mad)} ${t.explorer.currency} · ${selectedLine.first_departure} - ${selectedLine.last_departure}`;
+    }
+
+    document.title = pageTitle;
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) {
+      descMeta.setAttribute('content', pageDesc);
+    }
+  }, [lang, mode, selectedLine, direction, t]);
 
   const handleSetPickMode = useCallback((nextPickMode: MapPickMode) => {
     setPickMode(nextPickMode);
