@@ -46,13 +46,17 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,mjs,css,html,png,svg,json,webmanifest}'],
-        globIgnores: ['tiles/**', 'fonts/**', 'og-preview.png'],
+        globIgnores: ['tiles/**', 'fonts/**', 'og-preview.png', 'google*.html'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,
         navigateFallback: 'index.html',
-        navigateFallbackDenylist: [/^\/robots\.txt$/, /^\/sitemap\.xml$/],
+        navigateFallbackDenylist: [
+          /^\/robots\.txt$/,
+          /^\/sitemap\.xml$/,
+          /^\/google[a-z0-9]+\.html$/i,
+        ],
         runtimeCaching: [
           {
             urlPattern: /\/tiles\/.*\.pmtiles$/i,
