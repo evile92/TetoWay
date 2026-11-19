@@ -5,6 +5,7 @@ import {
   LocateFixed,
   MapPin,
   Navigation,
+  Radio,
   Repeat,
   RotateCcw,
 } from 'lucide-react';
@@ -43,6 +44,7 @@ interface TripPlannerProps {
   selectedItineraryIndex: number;
   onSelectItineraryIndex: (idx: number) => void;
   onOpenLine: (line: BusLine) => void;
+  onStartRideItinerary: (itinerary: TripItinerary) => void;
 }
 
 export function TripPlanner({
@@ -62,6 +64,7 @@ export function TripPlanner({
   selectedItineraryIndex,
   onSelectItineraryIndex,
   onOpenLine,
+  onStartRideItinerary,
 }: TripPlannerProps) {
   const t = TRANSLATIONS[lang];
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -585,6 +588,23 @@ export function TripPlanner({
                         <span>{t.explorer.minutesUnit}</span>
                       </span>
                     </div>
+
+                    {active && (
+                      <div className="p-2.5 bg-[#F4F8FB] dark:bg-[#0D2236]/80">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onStartRideItinerary(itinerary);
+                          }}
+                          data-testid={`start-ride-itinerary-${idx}`}
+                          className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-md bg-[#0155A6] hover:bg-[#01468A] dark:bg-[#01A069] dark:hover:bg-[#018A5B] text-white text-xs font-semibold transition-colors cursor-pointer"
+                        >
+                          <Radio className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
+                          <span>{t.ride.startTripRideBtn}</span>
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               );

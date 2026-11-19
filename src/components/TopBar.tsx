@@ -30,6 +30,7 @@ interface TopBarProps {
   showEditorButton: boolean;
   showInstallButton: boolean;
   onInstallApp: () => void;
+  rideActive?: boolean;
 }
 
 export function TopBar({
@@ -50,6 +51,7 @@ export function TopBar({
   showEditorButton,
   showInstallButton,
   onInstallApp,
+  rideActive = false,
 }: TopBarProps) {
   const t = TRANSLATIONS[lang];
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -100,7 +102,7 @@ export function TopBar({
         )}
 
         {/* Active Line Context Bar (Desktop >= 1024px) */}
-        {!pickPrompt && selectedLine && mode !== 'planner' && (
+        {!rideActive && !pickPrompt && selectedLine && mode !== 'planner' && (
           <div className="hidden lg:flex items-center gap-2 bg-white dark:bg-[#081828] border border-[#DCE6EE] dark:border-[#183550] rounded-lg px-2.5 py-1.5 shadow-sm max-w-full">
             <LineBadge number={selectedLine.number} color={selectedLine.color} size="sm" />
             <span className="text-xs font-medium text-[#041626] dark:text-[#EFF6FA] flex items-center gap-1.5 min-w-0">
@@ -134,7 +136,7 @@ export function TopBar({
         )}
 
         {/* Reset View Button (Desktop) */}
-        {!pickPrompt && !selectedLine && mode !== 'planner' && (
+        {!rideActive && !pickPrompt && !selectedLine && mode !== 'planner' && (
           <button
             type="button"
             onClick={onResetMapView}

@@ -16,6 +16,7 @@ interface MobileBottomSheetProps {
   isOfflineCached: boolean;
   onOpenOfflineModal: () => void;
   onOpenReport: () => void;
+  rideHeader?: ReactNode;
   children: ReactNode;
 }
 
@@ -29,6 +30,7 @@ export function MobileBottomSheet({
   isOfflineCached,
   onOpenOfflineModal,
   onOpenReport,
+  rideHeader,
   children,
 }: MobileBottomSheetProps) {
   const t = TRANSLATIONS[lang];
@@ -84,7 +86,9 @@ export function MobileBottomSheet({
         </div>
 
         <div className="flex items-center justify-between gap-2">
-          {mode === 'editor' ? (
+          {rideHeader ? (
+            <div className="min-w-0 flex-1">{rideHeader}</div>
+          ) : mode === 'editor' ? (
             <div className="text-xs font-semibold text-amber-700 dark:text-amber-300 px-1">
               {t.editor.bannerTitle}
             </div>
@@ -123,8 +127,8 @@ export function MobileBottomSheet({
             </div>
           )}
 
-          <div className="flex items-center gap-1.5">
-            {offlineSupported && (
+          <div className="flex items-center gap-1.5 shrink-0">
+            {offlineSupported && !rideHeader && (
               <OfflineMapButton
                 lang={lang}
                 isCached={isOfflineCached}

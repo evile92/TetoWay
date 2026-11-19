@@ -8,6 +8,8 @@ import type {
   TripItinerary,
   TripLeg,
 } from '../types/transit';
+import type { WalkGraph, WalkRouteResult } from './walkGraph';
+import { routeWalkOrFallback } from './walkGraph';
 
 const MAX_WALK_METERS = 1500;
 const MAX_TRANSFER_WALK_METERS = 220;
@@ -209,19 +211,24 @@ export function getLinesServingPoint(
   });
 }
 
-/** Compute bounding box covering the user's position, nearest stop, and alternative nearby stops. */
+/** Compute bounding box covering the user's position, walking route, nearest stop, and alternative nearby stops. */
 export function getNearMeFocusBounds(
   res: NearMeResult,
 ): [[number, number], [number, number]] | null {
   const coords: [number, number][] = [
     [res.userPoint.lng, res.userPoint.lat],
     [res.nearestStop.lng, res.nearestStop.lat],
+    ...res.walkingGeometry.coordinates,
     ...res.alternativeStops.map((alt): [number, number] => [alt.stop.lng, alt.stop.lat]),
   ];
   return getBboxForCoordinates(coords);
 }
 
-export function findNearestServedStop(userPoint: GeoPoint, lines: BusLine[]): NearMeResult | null {
+export function findNearestServedStop(
+  userPoint: GeoPoint,
+  lines: BusLine[],
+  walkGraph?: WalkGraph | null,
+): NearMeResult | null {
   const ranked: { stop: BusStop; dist: number }[] = [];
 
   for (const line of lines) {
@@ -238,23 +245,66 @@ export function findNearestServedStop(userPoint: GeoPoint, lines: BusLine[]): Ne
   }
 
   ranked.sort((a, b) => a.dist - b.dist);
-  const closest = ranked[0];
-  const distanceMeters = Math.round(closest.dist);
-  const servingLines = getLinesServingPoint(closest.stop.lat, closest.stop.lng, lines, {
-    hubKey: closest.stop.hub_key,
+
+  let closestStop = ranked[0].stop;
+  let closestWalk: WalkRouteResult = routeWalkOrFallback(
+    userPoint,
+    { lng: closestStop.lng, lat: closestStop.lat },
+    walkGraph,
+    2800,
+  );
+
+  // When the offline street graph is loaded, evaluate up to 10 distinct nearby candidates
+  // so river/bridge/alley detours pick the genuinely closest walkable bus stop.
+  if (walkGraph) {
+    const evalLimitMeters = Math.min(1800, Math.max(ranked[0].dist * 2.2, 650));
+    const distinctCandidates: BusStop[] = [closestStop];
+    const evaluated: { stop: BusStop; walk: WalkRouteResult }[] = [
+      { stop: closestStop, walk: closestWalk },
+    ];
+
+    for (let i = 1; i < ranked.length && evaluated.length < 10; i++) {
+      const item = ranked[i];
+      if (item.dist > evalLimitMeters) break;
+
+      const dup = distinctCandidates.some((prev) => {
+        if (item.stop.hub_key && prev.hub_key === item.stop.hub_key) return true;
+        return haversineMeters(prev.lng, prev.lat, item.stop.lng, item.stop.lat) < 45;
+      });
+      if (dup) continue;
+
+      distinctCandidates.push(item.stop);
+      const walk = routeWalkOrFallback(
+        userPoint,
+        { lng: item.stop.lng, lat: item.stop.lat },
+        walkGraph,
+        2800,
+      );
+      evaluated.push({ stop: item.stop, walk });
+    }
+
+    evaluated.sort((a, b) => a.walk.distanceMeters - b.walk.distanceMeters);
+    closestStop = evaluated[0].stop;
+    closestWalk = evaluated[0].walk;
+  }
+
+  const distanceMeters = closestWalk.distanceMeters;
+  const servingLines = getLinesServingPoint(closestStop.lat, closestStop.lng, lines, {
+    hubKey: closestStop.hub_key,
     maxMeters: 100,
   });
 
   const coveredLineIds = new Set(servingLines.map((l) => l.id));
-  const pickedStops: BusStop[] = [closest.stop];
-  const maxAltMeters = Math.max(350, Math.min(closest.dist + 180, 1200));
+  const pickedStops: BusStop[] = [closestStop];
+  const maxAltMeters = Math.max(350, Math.min(ranked[0].dist + 220, 1200));
   const alternativeStops: NearMeResult['alternativeStops'] = [];
 
-  for (let i = 1; i < ranked.length && alternativeStops.length < 3; i++) {
+  for (let i = 0; i < ranked.length && alternativeStops.length < 3; i++) {
     const candidate = ranked[i];
     if (candidate.dist > maxAltMeters) break;
 
     const alreadyGrouped = pickedStops.some((prev) => {
+      if (candidate.stop.id === prev.id) return true;
       if (candidate.stop.hub_key && prev.hub_key === candidate.stop.hub_key) {
         return true;
       }
@@ -276,27 +326,26 @@ export function findNearestServedStop(userPoint: GeoPoint, lines: BusLine[]): Ne
     }
     pickedStops.push(candidate.stop);
 
-    const altMeters = Math.round(candidate.dist);
+    const altWalk = routeWalkOrFallback(
+      userPoint,
+      { lng: candidate.stop.lng, lat: candidate.stop.lat },
+      walkGraph,
+      2500,
+    );
     alternativeStops.push({
       stop: candidate.stop,
-      distanceMeters: altMeters,
-      walkingMinutes: metersToWalkMinutes(altMeters),
+      distanceMeters: altWalk.distanceMeters,
+      walkingMinutes: metersToWalkMinutes(altWalk.distanceMeters),
       servingLines: altLines,
     });
   }
 
   return {
     userPoint,
-    nearestStop: closest.stop,
+    nearestStop: closestStop,
     distanceMeters,
     walkingMinutes: metersToWalkMinutes(distanceMeters),
-    walkingGeometry: {
-      type: 'LineString',
-      coordinates: [
-        [userPoint.lng, userPoint.lat],
-        [closest.stop.lng, closest.stop.lat],
-      ],
-    },
+    walkingGeometry: closestWalk.geometry,
     servingLines,
     alternativeStops,
   };
@@ -473,6 +522,7 @@ export function planTripItineraries(
   originPoint: GeoPoint,
   destinationPoint: GeoPoint,
   lines: BusLine[],
+  walkGraph?: WalkGraph | null,
 ): TripItinerary[] {
   const directDistance = haversineMeters(
     originPoint.lng,
@@ -558,36 +608,93 @@ export function planTripItineraries(
 
   candidates.sort((a, b) => a.score - b.score);
 
-  // Deduplicate first, then run geometry slicing ONLY on the top 3 winning routes
-  const winners: CandidateSpec[] = [];
+  // Deduplicate top shortlist, refine with offline street-walking graph when loaded, then keep top 3
+  const shortlistLimit = walkGraph ? 8 : 3;
+  const shortlist: CandidateSpec[] = [];
   const seenKeys = new Set<string>();
   for (const item of candidates) {
     if (!seenKeys.has(item.sig)) {
       seenKeys.add(item.sig);
-      winners.push(item);
-      if (winners.length >= 3) break;
+      shortlist.push(item);
+      if (shortlist.length >= shortlistLimit) break;
     }
   }
 
+  const originWalkCache = new Map<string, WalkRouteResult>();
+  const destWalkCache = new Map<string, WalkRouteResult>();
+  const transferWalkCache = new Map<string, WalkRouteResult>();
+
+  const getOriginWalk = (stop: BusStop): WalkRouteResult => {
+    const cached = originWalkCache.get(stop.id);
+    if (cached) return cached;
+    const res = routeWalkOrFallback(originPoint, { lng: stop.lng, lat: stop.lat }, walkGraph, 3200);
+    originWalkCache.set(stop.id, res);
+    return res;
+  };
+
+  const getDestWalk = (stop: BusStop): WalkRouteResult => {
+    const cached = destWalkCache.get(stop.id);
+    if (cached) return cached;
+    const res = routeWalkOrFallback(
+      { lng: stop.lng, lat: stop.lat },
+      destinationPoint,
+      walkGraph,
+      3200,
+    );
+    destWalkCache.set(stop.id, res);
+    return res;
+  };
+
+  const getTransferWalk = (stop1: BusStop, stop2: BusStop): WalkRouteResult | null => {
+    if (stop1.id === stop2.id) return null;
+    const straight = haversineMeters(stop1.lng, stop1.lat, stop2.lng, stop2.lat);
+    if (straight <= 15) return null;
+    const key = `${stop1.id}|${stop2.id}`;
+    const cached = transferWalkCache.get(key);
+    if (cached) return cached;
+    const res = routeWalkOrFallback(
+      { lng: stop1.lng, lat: stop1.lat },
+      { lng: stop2.lng, lat: stop2.lat },
+      walkGraph,
+      900,
+    );
+    transferWalkCache.set(key, res);
+    return res;
+  };
+
+  const refined = shortlist.map((c) => {
+    const originWalk = getOriginWalk(c.orig.stop);
+    const destWalk = getDestWalk(c.dest.stop);
+    const transferWalk =
+      c.type === 'transfer' && c.transferStop1 && c.transferStop2
+        ? getTransferWalk(c.transferStop1, c.transferStop2)
+        : null;
+
+    const origDelta = originWalk.distanceMeters - c.orig.walkMeters;
+    const destDelta = destWalk.distanceMeters - c.dest.walkMeters;
+    const transferDelta = transferWalk
+      ? transferWalk.distanceMeters - (c.transferWalkMeters ?? 0)
+      : 0;
+
+    return {
+      spec: c,
+      originWalk,
+      destWalk,
+      transferWalk,
+      refinedScore: c.score + origDelta + destDelta + transferDelta * 1.5,
+    };
+  });
+
+  refined.sort((a, b) => a.refinedScore - b.refinedScore);
+  const winners = refined.slice(0, 3);
+
   const legCache = new Map<string, TripLeg>();
 
-  return winners.map((c) => {
-    const walkToBoardMinutes = metersToWalkMinutes(c.orig.walkMeters);
-    const walkFromAlightMinutes = metersToWalkMinutes(c.dest.walkMeters);
-    const walkToBoardGeometry: LineStringGeometry = {
-      type: 'LineString',
-      coordinates: [
-        [originPoint.lng, originPoint.lat],
-        [c.orig.stop.lng, c.orig.stop.lat],
-      ],
-    };
-    const walkFromAlightGeometry: LineStringGeometry = {
-      type: 'LineString',
-      coordinates: [
-        [c.dest.stop.lng, c.dest.stop.lat],
-        [destinationPoint.lng, destinationPoint.lat],
-      ],
-    };
+  return winners.map(({ spec: c, originWalk, destWalk, transferWalk, refinedScore }) => {
+    const walkToBoardMeters = originWalk.distanceMeters;
+    const walkToBoardMinutes = metersToWalkMinutes(walkToBoardMeters);
+    const walkFromAlightMeters = destWalk.distanceMeters;
+    const walkFromAlightMinutes = metersToWalkMinutes(walkFromAlightMeters);
 
     if (c.type === 'direct') {
       const leg = buildLeg(
@@ -602,16 +709,16 @@ export function planTripItineraries(
         type: 'direct',
         originPoint,
         destinationPoint,
-        walkToBoardMeters: c.orig.walkMeters,
+        walkToBoardMeters,
         walkToBoardMinutes,
-        walkToBoardGeometry,
-        walkFromAlightMeters: c.dest.walkMeters,
+        walkToBoardGeometry: originWalk.geometry,
+        walkFromAlightMeters,
         walkFromAlightMinutes,
-        walkFromAlightGeometry,
+        walkFromAlightGeometry: destWalk.geometry,
         legs: [leg],
         totalFareMad: c.orig.line.price_mad,
         totalMinutes: walkToBoardMinutes + leg.rideMinutes + walkFromAlightMinutes,
-        score: c.score,
+        score: refinedScore,
       };
     }
 
@@ -631,8 +738,11 @@ export function planTripItineraries(
       c.dest.stopIndex,
       legCache,
     );
+    const actualTransferWalkMeters = transferWalk
+      ? transferWalk.distanceMeters
+      : (c.transferWalkMeters ?? 0);
     const transferWalkMinutes =
-      (c.transferWalkMeters ?? 0) > 30 ? metersToWalkMinutes(c.transferWalkMeters!) : 0;
+      actualTransferWalkMeters > 30 ? metersToWalkMinutes(actualTransferWalkMeters) : 0;
     const transferWaitMinutes = Math.min(
       12,
       Math.max(4, Math.round(c.dest.line.frequency_mins / 2)),
@@ -642,16 +752,18 @@ export function planTripItineraries(
       type: 'transfer',
       originPoint,
       destinationPoint,
-      walkToBoardMeters: c.orig.walkMeters,
+      walkToBoardMeters,
       walkToBoardMinutes,
-      walkToBoardGeometry,
-      walkFromAlightMeters: c.dest.walkMeters,
+      walkToBoardGeometry: originWalk.geometry,
+      walkFromAlightMeters,
       walkFromAlightMinutes,
-      walkFromAlightGeometry,
+      walkFromAlightGeometry: destWalk.geometry,
       legs: [leg1, leg2],
       transferHubKey: c.transferHubKey,
       transferStopNameEn: c.transferStop1!.name_en,
       transferStopNameAr: c.transferStop1!.name_ar,
+      transferWalkMeters: actualTransferWalkMeters > 15 ? actualTransferWalkMeters : undefined,
+      transferWalkGeometry: transferWalk?.geometry,
       totalFareMad: c.orig.line.price_mad + c.dest.line.price_mad,
       totalMinutes:
         walkToBoardMinutes +
@@ -660,7 +772,7 @@ export function planTripItineraries(
         transferWaitMinutes +
         leg2.rideMinutes +
         walkFromAlightMinutes,
-      score: c.score,
+      score: refinedScore,
     };
   });
 }

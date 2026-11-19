@@ -23,6 +23,9 @@ import type {
   MapPickMode,
   NearMeResult,
   OsmStop,
+  RideGpsPosition,
+  RideLegPlan,
+  RideProgress,
   Theme,
   TripItinerary,
 } from '../types/transit';
@@ -64,12 +67,17 @@ interface TransitMapProps {
   originPoint: GeoPoint | null;
   destinationPoint: GeoPoint | null;
   activeItinerary: TripItinerary | null;
+  rideLeg?: RideLegPlan | null;
+  rideProgress?: RideProgress | null;
+  rideGpsPosition?: RideGpsPosition | null;
+  rideFollowGps?: boolean;
   focusTarget: MapFocusTarget | null;
   onSelectLine: (line: BusLine) => void;
   onSetOriginFromStop: (point: GeoPoint) => void;
   onSetDestinationFromStop: (point: GeoPoint) => void;
   onMapPick: (point: GeoPoint) => void;
   onEditorDragStop: (stopIndex: number, lng: number, lat: number) => void;
+  onDisableRideFollow?: () => void;
 }
 
 interface StopPopupOptions {
@@ -359,16 +367,22 @@ export function TransitMap({
   originPoint,
   destinationPoint,
   activeItinerary,
+  rideLeg = null,
+  rideProgress = null,
+  rideGpsPosition = null,
+  rideFollowGps = false,
   focusTarget,
   onSelectLine,
   onSetOriginFromStop,
   onSetDestinationFromStop,
   onMapPick,
   onEditorDragStop,
+  onDisableRideFollow,
 }: TransitMapProps) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const markersRef = useRef<Marker[]>([]);
+  const liveGpsMarkerRef = useRef<Marker | null>(null);
   const stopMarkersByIdRef = useRef<globalThis.Map<string, Marker>>(new globalThis.Map());
   const popupRef = useRef<Popup | null>(null);
   const appliedThemeRef = useRef<Theme>(theme);
@@ -380,32 +394,41 @@ export function TransitMap({
   const themeRef = useRef(theme);
   const linesRef = useRef(lines);
   const pickModeRef = useRef(pickMode);
+  const rideActiveRef = useRef(Boolean(rideLeg));
+  const rideFollowGpsRef = useRef(rideFollowGps);
   const onSelectLineRef = useRef(onSelectLine);
   const onSetOriginFromStopRef = useRef(onSetOriginFromStop);
   const onSetDestinationFromStopRef = useRef(onSetDestinationFromStop);
   const onMapPickRef = useRef(onMapPick);
   const onEditorDragStopRef = useRef(onEditorDragStop);
+  const onDisableRideFollowRef = useRef(onDisableRideFollow);
 
   useEffect(() => {
     langRef.current = lang;
     themeRef.current = theme;
     linesRef.current = lines;
     pickModeRef.current = pickMode;
+    rideActiveRef.current = Boolean(rideLeg);
+    rideFollowGpsRef.current = rideFollowGps;
     onSelectLineRef.current = onSelectLine;
     onSetOriginFromStopRef.current = onSetOriginFromStop;
     onSetDestinationFromStopRef.current = onSetDestinationFromStop;
     onMapPickRef.current = onMapPick;
     onEditorDragStopRef.current = onEditorDragStop;
+    onDisableRideFollowRef.current = onDisableRideFollow;
   }, [
     lang,
     theme,
     lines,
     pickMode,
+    rideLeg,
+    rideFollowGps,
     onSelectLine,
     onSetOriginFromStop,
     onSetDestinationFromStop,
     onMapPick,
     onEditorDragStop,
+    onDisableRideFollow,
   ]);
 
   // Initialize MapLibre instance once
@@ -440,7 +463,7 @@ export function TransitMap({
     map.on('style.load', handleStyleLoad);
 
     map.on('click', 'network-lines-layer', (e: MapLayerMouseEvent) => {
-      if (pickModeRef.current !== 'none') return;
+      if (pickModeRef.current !== 'none' || rideActiveRef.current) return;
       const feature = e.features?.[0];
       const lineId = feature?.properties?.id;
       if (typeof lineId === 'string') {
@@ -452,7 +475,7 @@ export function TransitMap({
     });
 
     map.on('mouseenter', 'network-lines-layer', () => {
-      if (pickModeRef.current === 'none') {
+      if (pickModeRef.current === 'none' && !rideActiveRef.current) {
         map.getCanvas().style.cursor = 'pointer';
       }
     });
@@ -526,11 +549,19 @@ export function TransitMap({
       });
     });
 
+    map.on('dragstart', () => {
+      if (rideFollowGpsRef.current) {
+        onDisableRideFollowRef.current?.();
+      }
+    });
+
     mapRef.current = map;
     const stopMarkersMap = stopMarkersByIdRef.current;
 
     return () => {
       popupRef.current?.remove();
+      liveGpsMarkerRef.current?.remove();
+      liveGpsMarkerRef.current = null;
       markersRef.current.forEach((m) => m.remove());
       markersRef.current = [];
       stopMarkersMap.clear();
@@ -581,13 +612,14 @@ export function TransitMap({
     if (!map || styleRevision === 0 || !map.getLayer('network-lines-layer')) return;
 
     const isFocused =
+      Boolean(rideLeg) ||
       Boolean(selectedLine && mode !== 'planner') ||
       Boolean(activeItinerary && mode === 'planner');
 
     const baseOpacity = theme === 'light' ? 0.45 : 0.35;
     map.setPaintProperty('network-lines-layer', 'line-opacity', isFocused ? 0.14 : baseOpacity);
     map.setPaintProperty('network-lines-layer', 'line-width', isFocused ? 1.5 : 2.25);
-  }, [styleRevision, theme, selectedLine, activeItinerary, mode]);
+  }, [styleRevision, theme, rideLeg, selectedLine, activeItinerary, mode]);
 
   // Update active route(s)
   useEffect(() => {
@@ -596,7 +628,18 @@ export function TransitMap({
     const source = map.getSource('active-routes-source') as GeoJSONSource | undefined;
     if (!source) return;
 
-    if (mode === 'planner' && activeItinerary) {
+    if (rideLeg) {
+      source.setData({
+        type: 'FeatureCollection',
+        features: [
+          {
+            type: 'Feature',
+            properties: { id: rideLeg.line.id, color: rideLeg.line.color },
+            geometry: rideLeg.segmentGeometry,
+          },
+        ],
+      });
+    } else if (mode === 'planner' && activeItinerary) {
       source.setData({
         type: 'FeatureCollection',
         features: activeItinerary.legs.map((leg) => ({
@@ -619,7 +662,7 @@ export function TransitMap({
     } else {
       source.setData({ type: 'FeatureCollection', features: [] });
     }
-  }, [styleRevision, mode, selectedLine, activeItinerary]);
+  }, [styleRevision, mode, rideLeg, selectedLine, activeItinerary]);
 
   // Update dashed walking paths (Near Me + Trip Planner)
   useEffect(() => {
@@ -630,7 +673,7 @@ export function TransitMap({
 
     const features: GeoJSON.Feature<GeoJSON.LineString>[] = [];
 
-    if (mode === 'planner') {
+    if (!rideLeg && mode === 'planner') {
       if (nearMeResult) {
         features.push({
           type: 'Feature',
@@ -651,6 +694,13 @@ export function TransitMap({
             geometry: activeItinerary.walkFromAlightGeometry,
           },
         );
+        if (activeItinerary.transferWalkGeometry) {
+          features.push({
+            type: 'Feature',
+            properties: {},
+            geometry: activeItinerary.transferWalkGeometry,
+          });
+        }
       }
     }
 
@@ -658,7 +708,7 @@ export function TransitMap({
       type: 'FeatureCollection',
       features,
     });
-  }, [styleRevision, mode, nearMeResult, activeItinerary]);
+  }, [styleRevision, mode, rideLeg, nearMeResult, activeItinerary]);
 
   // Upload OSM stops GeoJSON only when dataset changes or style reloads
   useEffect(() => {
@@ -695,7 +745,9 @@ export function TransitMap({
     );
   }, [styleRevision, showOsmStops]);
 
-  // Render interactive HTML markers for Stops, Trip Points, or Editor Pins
+  const rideCurrentStopIndex = rideProgress?.currentStopIndex ?? 0;
+
+  // Render interactive HTML markers for Stops, Trip Points, Ride Mode, or Editor Pins
   useEffect(() => {
     const map = mapRef.current;
     if (!map || styleRevision === 0) return;
@@ -784,6 +836,52 @@ export function TransitMap({
       markersRef.current.push(marker);
       stopMarkersByIdRef.current.set(stop.id, marker);
     };
+
+    if (rideLeg) {
+      rideLeg.stops.forEach((stop, idx) => {
+        const seq = idx + 1;
+        const isTarget = idx === rideLeg.targetStopIndex;
+        const isPassed = idx < rideCurrentStopIndex;
+        const isCurrent = idx === rideCurrentStopIndex;
+
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.setAttribute('dir', 'ltr');
+
+        if (isTarget) {
+          el.className = `w-7 h-7 rounded-full border-2 ${ringBorderClass} shadow-md flex items-center justify-center text-[10px] font-bold text-white tabular-nums cursor-pointer`;
+          el.style.backgroundColor = rideLeg.isTransferLeg ? '#F59E0B' : '#01A069';
+          el.textContent = String(seq);
+        } else if (isCurrent) {
+          el.className = `w-6 h-6 rounded-full border-2 ${ringBorderClass} shadow-sm flex items-center justify-center text-[10px] font-bold tabular-nums cursor-pointer`;
+          el.style.backgroundColor = rideLeg.line.color;
+          el.style.color = getContrastTextColor(rideLeg.line.color);
+          el.textContent = String(seq);
+        } else {
+          el.className = `w-4 h-4 rounded-full border-2 shadow-xs flex items-center justify-center text-[9px] font-bold tabular-nums cursor-pointer ${
+            theme === 'light'
+              ? 'bg-white text-[#041626]'
+              : 'bg-[#081828] text-[#EFF6FA]'
+          } ${isPassed ? 'opacity-45' : ''}`;
+          el.style.borderColor = rideLeg.line.color;
+          el.textContent = String(seq);
+        }
+
+        const nearby = getLinesServingPoint(stop.lat, stop.lng, lines, {
+          excludeLineId: rideLeg.line.id,
+          hubKey: stop.hub_key,
+          maxMeters: 120,
+        });
+        mountStopMarkerWithPopup(
+          el,
+          stop,
+          `${t.map.stopPopupSequence} ${seq}`,
+          nearby,
+          t.map.nearbyLinesTitle,
+        );
+      });
+      return;
+    }
 
     if (mode === 'explorer' && selectedLine) {
       const orderedStops: BusStop[] =
@@ -927,7 +1025,52 @@ export function TransitMap({
     originPoint,
     destinationPoint,
     activeItinerary,
+    rideLeg,
+    rideCurrentStopIndex,
   ]);
+
+  // Dedicated live GPS blue dot during Ride Mode (updated in-place without re-creating stop markers)
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || styleRevision === 0) return;
+
+    if (!rideLeg || !rideGpsPosition) {
+      liveGpsMarkerRef.current?.remove();
+      liveGpsMarkerRef.current = null;
+      return;
+    }
+
+    if (!liveGpsMarkerRef.current) {
+      const wrapper = document.createElement('div');
+      wrapper.dataset.testid = 'ride-live-gps-dot';
+      wrapper.className = 'relative flex items-center justify-center w-6 h-6 pointer-events-none';
+
+      const halo = document.createElement('span');
+      halo.className =
+        'absolute inset-0 rounded-full bg-sky-500/35 animate-ping';
+
+      const dot = document.createElement('span');
+      dot.className =
+        'relative w-4 h-4 rounded-full bg-[#0284C7] border-2 border-white shadow-[0_0_0_3px_rgba(2,132,199,0.28)]';
+
+      wrapper.appendChild(halo);
+      wrapper.appendChild(dot);
+
+      liveGpsMarkerRef.current = new Marker({ element: wrapper })
+        .setLngLat([rideGpsPosition.lng, rideGpsPosition.lat])
+        .addTo(map);
+    } else {
+      liveGpsMarkerRef.current.setLngLat([rideGpsPosition.lng, rideGpsPosition.lat]);
+    }
+
+    if (rideFollowGps) {
+      map.easeTo({
+        center: [rideGpsPosition.lng, rideGpsPosition.lat],
+        zoom: Math.max(map.getZoom(), 15),
+        duration: 450,
+      });
+    }
+  }, [styleRevision, rideLeg, rideGpsPosition, rideFollowGps]);
 
   // Handle imperative focus / flyTo / fitBounds requests
   useEffect(() => {

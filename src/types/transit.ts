@@ -103,6 +103,8 @@ export interface TripItinerary {
   transferHubKey?: string;
   transferStopNameEn?: string;
   transferStopNameAr?: string;
+  transferWalkMeters?: number;
+  transferWalkGeometry?: LineStringGeometry;
   totalFareMad: number;
   totalMinutes: number;
   score: number;
@@ -114,4 +116,45 @@ export interface MapFocusTarget {
   zoom?: number;
   bounds?: [[number, number], [number, number]];
   openStopId?: string;
+}
+
+export type RideAlertStage = 'riding' | 'approaching' | 'arriving' | 'passed';
+
+export type RideGpsStatus = 'searching' | 'tracking' | 'denied' | 'unavailable' | 'error';
+
+export interface RideGpsPosition {
+  lat: number;
+  lng: number;
+  accuracy: number;
+  heading: number | null;
+  speed: number | null;
+  timestamp: number;
+}
+
+export interface RideLegPlan {
+  line: BusLine;
+  stops: BusStop[];
+  targetStopIndex: number;
+  isTransferLeg: boolean;
+  nextLineNumber?: string;
+  nextLineColor?: string;
+  segmentGeometry: LineStringGeometry;
+}
+
+export interface RideSession {
+  source: 'itinerary' | 'line';
+  direction?: DirectionMode;
+  legs: RideLegPlan[];
+  activeLegIndex: number;
+}
+
+export interface RideProgress {
+  currentStopIndex: number;
+  nextStopIndex: number;
+  stopsRemaining: number;
+  distanceToNextMeters: number | null;
+  distanceToTargetMeters: number | null;
+  nearestStopDistanceMeters: number | null;
+  offRoute: boolean;
+  stage: RideAlertStage;
 }

@@ -1,6 +1,7 @@
 import * as turf from '@turf/turf';
-import { Compass, PencilRuler, RotateCcw, Route } from 'lucide-react';
+import { Compass, PencilRuler, Radio, RotateCcw, Route } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { LineBadge } from './components/BidiText';
 import { ContactFooter } from './components/ContactFooter';
 import { InstallModal } from './components/InstallModal';
 import { LineExplorer } from './components/LineExplorer';
@@ -8,12 +9,14 @@ import { MobileBottomSheet } from './components/MobileBottomSheet';
 import { OfflineMapButton } from './components/OfflineMapButton';
 import { OfflineMapModal } from './components/OfflineMapModal';
 import { ReportIssueModal } from './components/ReportIssueModal';
+import { RideModePanel } from './components/RideModePanel';
 import { RouteEditor } from './components/RouteEditor';
 import { TopBar } from './components/TopBar';
 import { TransitMap } from './components/TransitMap';
 import { TripPlanner } from './components/TripPlanner';
 import { useOfflineMap } from './hooks/useOfflineMap';
 import { usePwaInstall } from './hooks/usePwaInstall';
+import { useRideMode } from './hooks/useRideMode';
 import { formatMad, getDir, resolveHubName, TRANSLATIONS } from './i18n';
 import type {
   AppMode,
@@ -27,14 +30,17 @@ import type {
   OsmStop,
   SheetSnap,
   Theme,
+  TripItinerary,
 } from './types/transit';
 import { buildDeepLinkSearch, findLineByParam, parseDeepLink } from './utils/deepLink';
+import { formatStopsRemainingLabel } from './utils/rideTracker';
 import {
   findNearestServedStop,
   getBboxForCoordinates,
   getNearMeFocusBounds,
   planTripItineraries,
 } from './utils/transitGeo';
+import { loadWalkGraph, type WalkGraph } from './utils/walkGraph';
 
 const TETOUAN_CENTER: [number, number] = [-5.365, 35.573];
 const THEME_STORAGE_KEY = 'tetoway-theme';
@@ -92,6 +98,7 @@ export function App() {
   const [mode, setMode] = useState<AppMode>(initialMode);
   const [lines, setLines] = useState<BusLine[]>([]);
   const [osmStops, setOsmStops] = useState<OsmStop[]>([]);
+  const [walkGraph, setWalkGraph] = useState<WalkGraph | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
 
@@ -120,6 +127,7 @@ export function App() {
   const deepLinkHydratedRef = useRef(false);
   const pwa = usePwaInstall();
   const offlineMap = useOfflineMap();
+  const ride = useRideMode(lang);
 
   const t = TRANSLATIONS[lang];
   const dir = getDir(lang);
@@ -166,9 +174,10 @@ export function App() {
   }, [theme]);
 
   const fetchTransitDataset = useCallback(async () => {
-    const [linesRes, osmRes] = await Promise.all([
+    const [linesRes, osmRes, loadedWalkGraph] = await Promise.all([
       fetch('/data/tetouan-lines.json'),
       fetch('/data/osm-stops.json'),
+      loadWalkGraph(),
     ]);
 
     if (!linesRes.ok) {
@@ -176,11 +185,11 @@ export function App() {
     }
     const linesJson = (await linesRes.json()) as BusLine[];
     const osmJson = osmRes.ok ? ((await osmRes.json()) as OsmStop[]) : [];
-    return { linesJson, osmJson };
+    return { linesJson, osmJson, loadedWalkGraph };
   }, []);
 
   const hydrateDeepLink = useCallback(
-    (loadedLines: BusLine[]) => {
+    (loadedLines: BusLine[], loadedWalkGraph: WalkGraph | null) => {
       if (deepLinkHydratedRef.current) return;
       deepLinkHydratedRef.current = true;
 
@@ -208,7 +217,7 @@ export function App() {
       }
 
       if (initialDeepLink.near && !initialDeepLink.from && !initialDeepLink.to) {
-        const res = findNearestServedStop(initialDeepLink.near, loadedLines);
+        const res = findNearestServedStop(initialDeepLink.near, loadedLines, loadedWalkGraph);
         if (res) {
           const bounds = getNearMeFocusBounds(res);
           if (bounds) {
@@ -225,10 +234,11 @@ export function App() {
     setLoading(true);
     setLoadError(false);
     try {
-      const { linesJson, osmJson } = await fetchTransitDataset();
+      const { linesJson, osmJson, loadedWalkGraph } = await fetchTransitDataset();
       setLines(linesJson);
       setOsmStops(osmJson);
-      hydrateDeepLink(linesJson);
+      setWalkGraph(loadedWalkGraph);
+      hydrateDeepLink(linesJson, loadedWalkGraph);
     } catch {
       setLoadError(true);
     } finally {
@@ -239,11 +249,12 @@ export function App() {
   useEffect(() => {
     let active = true;
     fetchTransitDataset()
-      .then(({ linesJson, osmJson }) => {
+      .then(({ linesJson, osmJson, loadedWalkGraph }) => {
         if (!active) return;
         setLines(linesJson);
         setOsmStops(osmJson);
-        hydrateDeepLink(linesJson);
+        setWalkGraph(loadedWalkGraph);
+        hydrateDeepLink(linesJson, loadedWalkGraph);
         setLoading(false);
       })
       .catch(() => {
@@ -267,14 +278,14 @@ export function App() {
   );
 
   const nearMeResult = useMemo(
-    () => (nearMePoint ? findNearestServedStop(nearMePoint, lines) : null),
-    [nearMePoint, lines],
+    () => (nearMePoint ? findNearestServedStop(nearMePoint, lines, walkGraph) : null),
+    [nearMePoint, lines, walkGraph],
   );
 
   const itineraries = useMemo(() => {
     if (!originPoint || !destinationPoint) return [];
-    return planTripItineraries(originPoint, destinationPoint, lines);
-  }, [originPoint, destinationPoint, lines]);
+    return planTripItineraries(originPoint, destinationPoint, lines, walkGraph);
+  }, [originPoint, destinationPoint, lines, walkGraph]);
 
   const activeItinerary = useMemo(() => {
     if (itineraries.length === 0) return null;
@@ -464,7 +475,7 @@ export function App() {
         setNearMePoint(point);
         setPickMode('none');
         setMobileSnap('half');
-        const res = findNearestServedStop(point, lines);
+        const res = findNearestServedStop(point, lines, walkGraph);
         if (res) {
           const bounds = getNearMeFocusBounds(res);
           if (bounds) triggerFocus({ bounds });
@@ -534,15 +545,17 @@ export function App() {
         setMobileSnap('half');
       }
     },
-    [pickMode, lines, editorLine, handleUpdateLine, handleSetTripPointFromStop, triggerFocus],
+    [pickMode, lines, walkGraph, editorLine, handleUpdateLine, handleSetTripPointFromStop, triggerFocus],
   );
 
   // Auto-fit bounds when a new itinerary is computed or selected
   useEffect(() => {
-    if (mode !== 'planner' || !activeItinerary) return;
+    if (ride.session || mode !== 'planner' || !activeItinerary) return;
     const coords: [number, number][] = [
       [activeItinerary.originPoint.lng, activeItinerary.originPoint.lat],
       [activeItinerary.destinationPoint.lng, activeItinerary.destinationPoint.lat],
+      ...activeItinerary.walkToBoardGeometry.coordinates,
+      ...activeItinerary.walkFromAlightGeometry.coordinates,
     ];
     for (const leg of activeItinerary.legs) {
       coords.push(...leg.segmentGeometry.coordinates);
@@ -551,10 +564,92 @@ export function App() {
     if (bounds) {
       triggerFocus({ bounds });
     }
-  }, [mode, activeItinerary, triggerFocus]);
+  }, [ride.session, mode, activeItinerary, triggerFocus]);
+
+  const handleStartRideItinerary = useCallback(
+    (itinerary: TripItinerary) => {
+      setPickMode('none');
+      ride.startFromItinerary(itinerary);
+      const firstLeg = itinerary.legs[0];
+      if (firstLeg) {
+        const bounds = getBboxForCoordinates(firstLeg.segmentGeometry.coordinates);
+        if (bounds) triggerFocus({ bounds });
+      }
+      snapMobileToHalf();
+    },
+    [ride, snapMobileToHalf, triggerFocus],
+  );
+
+  const handleStartRideLine = useCallback(
+    (line: BusLine, dirMode: DirectionMode) => {
+      setPickMode('none');
+      ride.startFromLine(line, dirMode);
+      const bounds = getBboxForCoordinates(line.geometry.coordinates);
+      if (bounds) triggerFocus({ bounds });
+      snapMobileToHalf();
+    },
+    [ride, snapMobileToHalf, triggerFocus],
+  );
+
+  const handleAdvanceRideLeg = useCallback(() => {
+    const nextLeg = ride.session?.legs[ride.session.activeLegIndex + 1];
+    ride.advanceToNextLeg();
+    if (nextLeg) {
+      const bounds = getBboxForCoordinates(nextLeg.segmentGeometry.coordinates);
+      if (bounds) triggerFocus({ bounds });
+    }
+  }, [ride, triggerFocus]);
+
+  const handleToggleRideFollow = useCallback(() => {
+    if (ride.followGps) {
+      ride.setFollowGps(false);
+      return;
+    }
+    ride.setFollowGps(true);
+    if (ride.gpsPosition) {
+      triggerFocus({
+        center: [ride.gpsPosition.lng, ride.gpsPosition.lat],
+        zoom: 15.5,
+      });
+    } else if (ride.activeLeg) {
+      const bounds = getBboxForCoordinates(ride.activeLeg.segmentGeometry.coordinates);
+      if (bounds) triggerFocus({ bounds });
+    }
+  }, [ride, triggerFocus]);
+
+  const handleFocusRideStop = useCallback(
+    (stop: BusStop) => {
+      ride.setFollowGps(false);
+      handleFocusStop(stop);
+    },
+    [ride, handleFocusStop],
+  );
+
+  const isRideActive = Boolean(ride.session && ride.activeLeg && ride.progress);
 
   const panelContent =
-    mode === 'editor' && editorLine ? (
+    ride.session && ride.activeLeg && ride.progress ? (
+      <RideModePanel
+        lang={lang}
+        session={ride.session}
+        activeLeg={ride.activeLeg}
+        progress={ride.progress}
+        gpsPosition={ride.gpsPosition}
+        gpsStatus={ride.gpsStatus}
+        soundEnabled={ride.soundEnabled}
+        followGps={ride.followGps}
+        wakeLockActive={ride.wakeLockActive}
+        onStopRide={ride.stopRide}
+        onChangeTargetStop={ride.setTargetStopIndex}
+        onAdvanceLeg={handleAdvanceRideLeg}
+        onRetryGps={ride.retryGps}
+        onManualSyncStop={ride.manualSyncStop}
+        onFocusStop={handleFocusRideStop}
+        onToggleSound={ride.toggleSound}
+        onToggleFollowGps={handleToggleRideFollow}
+        onTestAlert={ride.testAlert}
+      />
+    ) : mode === 'editor' && editorLine ? (
       <RouteEditor
         lang={lang}
         lines={lines}
@@ -580,7 +675,7 @@ export function App() {
         onSetNearMePoint={(pt) => {
           setNearMePoint(pt);
           if (pt) {
-            const res = findNearestServedStop(pt, lines);
+            const res = findNearestServedStop(pt, lines, walkGraph);
             if (res) {
               const bounds = getNearMeFocusBounds(res);
               if (bounds) triggerFocus({ bounds });
@@ -612,6 +707,7 @@ export function App() {
           snapMobileToHalf();
         }}
         onOpenLine={(line) => handleSelectLine(line)}
+        onStartRideItinerary={handleStartRideItinerary}
       />
     ) : (
       <LineExplorer
@@ -625,8 +721,32 @@ export function App() {
         onChangeDirection={setDirection}
         onFocusStop={handleFocusStop}
         onReportLine={(line) => handleOpenReport(line)}
+        onStartRideLine={handleStartRideLine}
       />
     );
+
+  const mobileRideHeader =
+    ride.session && ride.activeLeg && ride.progress ? (
+      <div className="flex items-center gap-2 min-w-0">
+        <LineBadge
+          number={ride.activeLeg.line.number}
+          color={ride.activeLeg.line.color}
+          size="sm"
+        />
+        <span className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] truncate tabular-nums">
+          {ride.progress.stage === 'arriving' ? (
+            t.ride.stageArrivingTitle
+          ) : ride.progress.stopsRemaining > 0 ? (
+            <span className="inline-flex items-center gap-1">
+              <span dir="ltr">{ride.progress.stopsRemaining}</span>
+              <span>{formatStopsRemainingLabel(ride.progress.stopsRemaining, lang)}</span>
+            </span>
+          ) : (
+            t.ride.stopsRemainingZero
+          )}
+        </span>
+      </div>
+    ) : undefined;
 
   return (
     <div
@@ -681,7 +801,21 @@ export function App() {
             </div>
           </div>
 
-          {mode === 'editor' ? (
+          {isRideActive ? (
+            <div className="flex items-center justify-between gap-2 pb-2.5">
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0155A6] dark:text-[#34D399]">
+                <Radio className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
+                <span>{t.ride.title}</span>
+              </div>
+              <button
+                type="button"
+                onClick={ride.stopRide}
+                className="text-[11px] font-medium text-rose-600 hover:text-rose-700 dark:text-rose-400 dark:hover:text-rose-300 cursor-pointer"
+              >
+                {t.ride.endRide}
+              </button>
+            </div>
+          ) : mode === 'editor' ? (
             <div className="flex items-center justify-between gap-2 pb-2.5">
               <div className="flex items-center gap-1.5 text-xs font-semibold text-amber-700 dark:text-amber-400">
                 <PencilRuler className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
@@ -785,6 +919,7 @@ export function App() {
           showEditorButton={editorEnabled}
           showInstallButton={!pwa.isStandalone}
           onInstallApp={pwa.handleInstallClick}
+          rideActive={isRideActive}
         />
 
         <TransitMap
@@ -801,12 +936,17 @@ export function App() {
           originPoint={originPoint}
           destinationPoint={destinationPoint}
           activeItinerary={activeItinerary}
+          rideLeg={ride.activeLeg}
+          rideProgress={ride.progress}
+          rideGpsPosition={ride.gpsPosition}
+          rideFollowGps={ride.followGps}
           focusTarget={focusTarget}
           onSelectLine={(line) => handleSelectLine(line)}
           onSetOriginFromStop={(pt) => handleSetTripPointFromStop('origin', pt)}
           onSetDestinationFromStop={(pt) => handleSetTripPointFromStop('destination', pt)}
           onMapPick={handleMapPick}
           onEditorDragStop={handleEditorDragStop}
+          onDisableRideFollow={() => ride.setFollowGps(false)}
         />
 
         {/* Mobile Collapsible Bottom Sheet (< 768px) */}
@@ -820,6 +960,7 @@ export function App() {
           isOfflineCached={offlineMap.isCached}
           onOpenOfflineModal={offlineMap.openModal}
           onOpenReport={() => handleOpenReport()}
+          rideHeader={mobileRideHeader}
         >
           {loading ? (
             <div className="flex items-center justify-center h-full p-6">

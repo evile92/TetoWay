@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Flag,
   MapPin,
+  Radio,
   Search,
   Star,
   X,
@@ -34,6 +35,7 @@ interface LineExplorerProps {
   onChangeDirection: (dir: DirectionMode) => void;
   onFocusStop: (stop: BusStop) => void;
   onReportLine: (line: BusLine) => void;
+  onStartRideLine: (line: BusLine, direction: DirectionMode) => void;
 }
 
 interface LineListRowProps {
@@ -136,6 +138,7 @@ export function LineExplorer({
   onChangeDirection,
   onFocusStop,
   onReportLine,
+  onStartRideLine,
 }: LineExplorerProps) {
   const t = TRANSLATIONS[lang];
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -412,6 +415,18 @@ export function LineExplorer({
               </div>
             </div>
           </div>
+
+          {orderedStops.length >= 2 && (
+            <button
+              type="button"
+              onClick={() => onStartRideLine(selectedLine, direction)}
+              data-testid="start-ride-line-btn"
+              className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[#0155A6] hover:bg-[#01468A] dark:bg-[#01A069] dark:hover:bg-[#018A5B] text-white text-xs font-semibold transition-colors cursor-pointer"
+            >
+              <Radio className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
+              <span>{t.ride.startTripRideBtn}</span>
+            </button>
+          )}
         </div>
 
         {/* Vertical Stop Timeline */}

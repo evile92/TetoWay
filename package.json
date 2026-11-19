@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "generate:data": "node scripts/generate-transit-data.mjs",
-    "generate:seo": "node scripts/generate-seo.mjs"
+    "generate:seo": "node scripts/generate-seo.mjs",
+    "generate:walk": "node scripts/build-walk-graph.mjs"
   },
   "dependencies": {
     "@protomaps/basemaps": "^5.7.2",
