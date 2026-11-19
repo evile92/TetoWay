@@ -33,6 +33,43 @@ Built with zero paid API keys, it combines OpenStreetMap stop datasets, OSRM str
 
 ---
 
+### Screenshots
+
+#### Desktop Experience
+<p align="center">
+  <img src="./docs/screenshots/desktop-overview.jpg" alt="TetoWay Desktop Map & Transit Explorer" width="100%" />
+</p>
+
+#### Mobile PWA Experience (Day, Night, English & Arabic RTL)
+<div align="center">
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <strong>Network Explorer</strong><br />
+      <sub>35 Lines &amp; Offline Map</sub><br /><br />
+      <img src="./docs/screenshots/mobile-network-en.jpg" alt="Mobile Network Explorer Day Mode" width="200" />
+    </td>
+    <td align="center" width="25%">
+      <strong>Route &amp; Schedule</strong><br />
+      <sub>Share, Report &amp; Live Status</sub><br /><br />
+      <img src="./docs/screenshots/mobile-line-en.jpg" alt="Mobile Route Detail View" width="200" />
+    </td>
+    <td align="center" width="25%">
+      <strong>Arabic RTL</strong><br />
+      <sub>Full Mirror &amp; Local Names</sub><br /><br />
+      <img src="./docs/screenshots/mobile-arabic-rtl.jpg" alt="Mobile Arabic RTL Interface" width="200" />
+    </td>
+    <td align="center" width="25%">
+      <strong>Night Mode</strong><br />
+      <sub>Dark Basemap &amp; UI</sub><br /><br />
+      <img src="./docs/screenshots/mobile-dark-night.jpg" alt="Mobile Dark Night Mode" width="200" />
+    </td>
+  </tr>
+</table>
+</div>
+
+---
+
 ### Core Features
 
 - **35 Real Road-Snapped Bus Lines (17 Urban + 18 Regional):**
@@ -172,6 +209,43 @@ npm run build
 تعمل المنصة بشكل ثابت بالكامل دون أي مفاتيح API مدفوعة، وتعتمد على خرائط **MapLibre GL** وتحليلات مكانية فورية عبر **Turf.js** مع بيانات محطات **OpenStreetMap** ومسارات حقيقية مسحوبة على الطرقات عبر **OSRM**، بتصميم مستلهم بالكامل من ألوان شعار تطوان في الوضعين النهاري والليلي.
 
 > **رابط المنصة المباشر:** [https://tetoway.vercel.app](https://tetoway.vercel.app)
+
+---
+
+### لقطات من المنصة (نسخة الحاسوب والهاتف)
+
+#### نسخة الحاسوب
+<p align="center">
+  <img src="./docs/screenshots/desktop-overview.jpg" alt="تيتوواي — نسخة الحاسوب" width="100%" />
+</p>
+
+#### نسخة الهاتف (الوضع النهاري والليلي — العربية والإنجليزية)
+<div align="center" dir="rtl">
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <strong>خريطة الشبكة</strong><br />
+      <sub>35 خطاً وعرض أوفلاين</sub><br /><br />
+      <img src="./docs/screenshots/mobile-network-en.jpg" alt="خريطة الشبكة على الهاتف" width="200" />
+    </td>
+    <td align="center" width="25%">
+      <strong>تفاصيل المسار</strong><br />
+      <sub>مشاركة، إبلاغ، وحالة الخدمة</sub><br /><br />
+      <img src="./docs/screenshots/mobile-line-en.jpg" alt="تفاصيل الخط على الهاتف" width="200" />
+    </td>
+    <td align="center" width="25%">
+      <strong>الواجهة العربية RTL</strong><br />
+      <sub>تجاوب كامل من اليمين لليسار</sub><br /><br />
+      <img src="./docs/screenshots/mobile-arabic-rtl.jpg" alt="الواجهة العربية على الهاتف" width="200" />
+    </td>
+    <td align="center" width="25%">
+      <strong>الوضع الليلي</strong><br />
+      <sub>خريطة وواجهة داكنة</sub><br /><br />
+      <img src="./docs/screenshots/mobile-dark-night.jpg" alt="الوضع الليلي على الهاتف" width="200" />
+    </td>
+  </tr>
+</table>
+</div>
 
 ---
 
