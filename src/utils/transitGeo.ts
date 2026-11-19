@@ -9,7 +9,8 @@ import type {
   TripLeg,
 } from '../types/transit';
 
-const TRANSFER_HUB_KEYS = ['dar_takafa', 'rommana'] as const;
+const MAX_WALK_METERS = 1500;
+const MAX_TRANSFER_WALK_METERS = 220;
 const WALK_SPEED_METERS_PER_MIN = 75;
 const URBAN_BUS_METERS_PER_MIN = 330;
 const REGIONAL_BUS_METERS_PER_MIN = 600;
@@ -373,6 +374,87 @@ function buildLeg(
   return leg;
 }
 
+interface TransferLink {
+  idx1: number;
+  idx2: number;
+  stop1: BusStop;
+  stop2: BusStop;
+  walkMeters: number;
+  hubKey?: string;
+}
+
+const transferGraphCache = new WeakMap<BusLine[], Map<string, TransferLink[]>>();
+
+/** Precompute all stop-to-stop transfer links (shared hubs or within walking transfer radius). */
+function getTransferGraph(lines: BusLine[]): Map<string, TransferLink[]> {
+  const cached = transferGraphCache.get(lines);
+  if (cached) return cached;
+
+  const graph = new Map<string, TransferLink[]>();
+  const marginDeg = 0.003;
+  const metas = lines.map((line) => getLineSpatialMeta(line));
+
+  for (let i = 0; i < lines.length; i++) {
+    const lineA = lines[i];
+    const bboxA = metas[i].bbox;
+
+    for (let j = 0; j < lines.length; j++) {
+      if (i === j) continue;
+      const lineB = lines[j];
+      const bboxB = metas[j].bbox;
+
+      if (
+        bboxA[2] + marginDeg < bboxB[0] ||
+        bboxB[2] + marginDeg < bboxA[0] ||
+        bboxA[3] + marginDeg < bboxB[1] ||
+        bboxB[3] + marginDeg < bboxA[1]
+      ) {
+        continue;
+      }
+
+      const links: TransferLink[] = [];
+      for (let idx1 = 0; idx1 < lineA.stops.length; idx1++) {
+        const stop1 = lineA.stops[idx1];
+        let bestIdx2 = -1;
+        let bestWalk = Infinity;
+
+        for (let idx2 = 0; idx2 < lineB.stops.length; idx2++) {
+          const stop2 = lineB.stops[idx2];
+          if (stop1.hub_key && stop1.hub_key === stop2.hub_key) {
+            bestIdx2 = idx2;
+            bestWalk = 0;
+            break;
+          }
+          const d = haversineMeters(stop1.lng, stop1.lat, stop2.lng, stop2.lat);
+          if (d <= MAX_TRANSFER_WALK_METERS && d < bestWalk) {
+            bestWalk = d;
+            bestIdx2 = idx2;
+          }
+        }
+
+        if (bestIdx2 !== -1) {
+          const stop2 = lineB.stops[bestIdx2];
+          links.push({
+            idx1,
+            idx2: bestIdx2,
+            stop1,
+            stop2,
+            walkMeters: Math.round(bestWalk),
+            hubKey: stop1.hub_key ?? stop2.hub_key ?? undefined,
+          });
+        }
+      }
+
+      if (links.length > 0) {
+        graph.set(`${lineA.id}|${lineB.id}`, links);
+      }
+    }
+  }
+
+  transferGraphCache.set(lines, graph);
+  return graph;
+}
+
 interface CandidateSpec {
   type: 'direct' | 'transfer';
   sig: string;
@@ -383,6 +465,7 @@ interface CandidateSpec {
   transferStop1?: BusStop;
   transferStop2?: BusStop;
   transferHubKey?: string;
+  transferWalkMeters?: number;
   score: number;
 }
 
@@ -402,9 +485,8 @@ export function planTripItineraries(
     return [];
   }
 
-  const maxWalk = 4500;
-  const originAccess = getClosestAccessPerLine(originPoint, lines, maxWalk);
-  const destAccess = getClosestAccessPerLine(destinationPoint, lines, maxWalk);
+  const originAccess = getClosestAccessPerLine(originPoint, lines, MAX_WALK_METERS);
+  const destAccess = getClosestAccessPerLine(destinationPoint, lines, MAX_WALK_METERS);
 
   const destByLine = new Map<string, LineStopAccess>();
   for (const d of destAccess) {
@@ -431,42 +513,46 @@ export function planTripItineraries(
     });
   }
 
-  // 2. Score 1-transfer routes at Dar Takafa or Rommana without calling lineSlice
-  const topOrigins = originAccess.slice(0, 12);
-  const topDests = destAccess.slice(0, 12);
+  // 2. Score 1-transfer routes across ALL shared hubs and nearby cross-line stops
+  const transferGraph = getTransferGraph(lines);
 
-  for (const hubKey of TRANSFER_HUB_KEYS) {
-    for (const orig of topOrigins) {
-      const transferIdx1 = orig.line.stops.findIndex((s) => s.hub_key === hubKey);
-      if (transferIdx1 === -1) continue;
-      const transferStop1 = orig.line.stops[transferIdx1];
-      if (transferStop1.id === orig.stop.id) continue;
+  for (const orig of originAccess) {
+    for (const dest of destAccess) {
+      if (orig.line.id === dest.line.id) continue;
+      const links = transferGraph.get(`${orig.line.id}|${dest.line.id}`);
+      if (!links) continue;
 
-      const estRide1 = estimateStopPairDistanceMeters(orig.line, orig.stopIndex, transferIdx1);
+      let bestLink: TransferLink | null = null;
+      let bestLinkCost = Infinity;
 
-      for (const dest of topDests) {
-        if (orig.line.id === dest.line.id) continue;
-        const transferIdx2 = dest.line.stops.findIndex((s) => s.hub_key === hubKey);
-        if (transferIdx2 === -1) continue;
-        const transferStop2 = dest.line.stops[transferIdx2];
-        if (transferStop2.id === dest.stop.id) continue;
-
-        const estRide2 = estimateStopPairDistanceMeters(dest.line, transferIdx2, dest.stopIndex);
-        const totalWalk = orig.walkMeters + dest.walkMeters;
-
-        candidates.push({
-          type: 'transfer',
-          sig: `${orig.line.id}>${dest.line.id}${hubKey}`,
-          orig,
-          dest,
-          transferIdx1,
-          transferIdx2,
-          transferStop1,
-          transferStop2,
-          transferHubKey: hubKey,
-          score: totalWalk + (estRide1 + estRide2) * 0.12 + 450,
-        });
+      for (const link of links) {
+        if (link.stop1.id === orig.stop.id || link.stop2.id === dest.stop.id) continue;
+        const estRide1 = estimateStopPairDistanceMeters(orig.line, orig.stopIndex, link.idx1);
+        const estRide2 = estimateStopPairDistanceMeters(dest.line, link.idx2, dest.stopIndex);
+        const hubBonus = link.hubKey ? 25 : 0;
+        const cost = (estRide1 + estRide2) * 0.12 + link.walkMeters * 1.5 - hubBonus;
+        if (cost < bestLinkCost) {
+          bestLinkCost = cost;
+          bestLink = link;
+        }
       }
+
+      if (!bestLink) continue;
+
+      const totalWalk = orig.walkMeters + dest.walkMeters;
+      candidates.push({
+        type: 'transfer',
+        sig: `${orig.line.id}>${dest.line.id}`,
+        orig,
+        dest,
+        transferIdx1: bestLink.idx1,
+        transferIdx2: bestLink.idx2,
+        transferStop1: bestLink.stop1,
+        transferStop2: bestLink.stop2,
+        transferHubKey: bestLink.hubKey,
+        transferWalkMeters: bestLink.walkMeters,
+        score: totalWalk + bestLinkCost + 450,
+      });
     }
   }
 
@@ -545,6 +631,8 @@ export function planTripItineraries(
       c.dest.stopIndex,
       legCache,
     );
+    const transferWalkMinutes =
+      (c.transferWalkMeters ?? 0) > 30 ? metersToWalkMinutes(c.transferWalkMeters!) : 0;
     const transferWaitMinutes = Math.min(
       12,
       Math.max(4, Math.round(c.dest.line.frequency_mins / 2)),
@@ -568,6 +656,7 @@ export function planTripItineraries(
       totalMinutes:
         walkToBoardMinutes +
         leg1.rideMinutes +
+        transferWalkMinutes +
         transferWaitMinutes +
         leg2.rideMinutes +
         walkFromAlightMinutes,

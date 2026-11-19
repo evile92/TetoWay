@@ -5,7 +5,10 @@
     "networkBadge": "35 خطا",
     "loading": "جار تحميل بيانات شبكة النقل...",
     "loadError": "تعذر تحميل بيانات شبكة النقل.",
-    "retry": "إعادة المحاولة"
+    "retry": "إعادة المحاولة",
+    "unexpectedErrorTitle": "حدث خطأ غير متوقع",
+    "unexpectedErrorDesc": "واجه التطبيق مشكلة غير متوقعة. أعد تحميل الصفحة للمتابعة.",
+    "reloadBtn": "إعادة تحميل التطبيق"
   },
   "nav": {
     "explorer": "الخطوط",
@@ -57,7 +60,9 @@
     "fitRoute": "تركيز المسار",
     "resetView": "عرض الشبكة",
     "useAsOrigin": "انطلاق من هنا",
-    "useAsDestination": "وجهة إلى هنا"
+    "useAsDestination": "وجهة إلى هنا",
+    "webglUnsupportedTitle": "تعذر تشغيل الخريطة التفاعلية",
+    "webglUnsupportedDesc": "هذا المتصفح أو الجهاز لا يدعم عرض الخرائط الرسومية. ما زال بإمكانك تصفح جميع الخطوط الـ 35 والمحطات ومخطط الرحلات."
   },
   "planner": {
     "nearMeTitle": "أقرب محطة إليك",

@@ -589,15 +589,16 @@ export function TripPlanner({
                           />
                         </div>
 
-                        {itinerary.type === 'transfer' && legIdx === 0 && itinerary.transferHubKey && (
+                        {itinerary.type === 'transfer' && legIdx === 0 && (
                           <div className="pt-1 text-amber-700 dark:text-amber-300 flex items-center gap-1 font-medium">
                             <Repeat className="w-3 h-3 shrink-0" strokeWidth={1.75} />
                             <span>{t.planner.transferAt}:</span>
                             <BidiText
-                              label={{
-                                text: resolveHubName(itinerary.transferHubKey, lang),
-                                dir,
-                              }}
+                              label={
+                                itinerary.transferHubKey
+                                  ? { text: resolveHubName(itinerary.transferHubKey, lang), dir }
+                                  : resolveStopLabel(leg.alightStop, lang)
+                              }
                               className="font-semibold"
                             />
                           </div>

@@ -9,8 +9,9 @@ import {
   setWorkerUrl,
 } from 'maplibre-gl';
 import type { GeoJSONSource, MapLayerMouseEvent, MapMouseEvent } from 'maplibre-gl';
+import { AlertTriangle } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { resolveStopLabel, TRANSLATIONS } from '../i18n';
+import { getDir, resolveStopLabel, TRANSLATIONS } from '../i18n';
 import type {
   AppMode,
   BusLine,
@@ -34,6 +35,20 @@ registerOfflinePmtilesProtocol(addProtocol);
 
 const TETOUAN_CENTER: [number, number] = [-5.365, 35.573];
 const INITIAL_ZOOM = 12.5;
+
+function detectWebGLSupport(): boolean {
+  if (typeof document === 'undefined') return true;
+  try {
+    const canvas = document.createElement('canvas');
+    return Boolean(
+      canvas.getContext('webgl2') ||
+        canvas.getContext('webgl') ||
+        canvas.getContext('experimental-webgl'),
+    );
+  } catch {
+    return false;
+  }
+}
 
 interface TransitMapProps {
   lang: Lang;
@@ -359,6 +374,7 @@ export function TransitMap({
   const appliedThemeRef = useRef<Theme>(theme);
   const appliedLangRef = useRef<Lang>(lang);
   const [styleRevision, setStyleRevision] = useState(0);
+  const [mapUnavailable, setMapUnavailable] = useState(() => !detectWebGLSupport());
 
   const langRef = useRef(lang);
   const themeRef = useRef(theme);
@@ -394,18 +410,25 @@ export function TransitMap({
 
   // Initialize MapLibre instance once
   useEffect(() => {
+    if (mapUnavailable) return;
     const container = mapContainerRef.current;
     if (!container) return;
 
     appliedThemeRef.current = themeRef.current;
     appliedLangRef.current = langRef.current;
-    const map = new MapLibreMap({
-      container,
-      style: buildTetouanMapStyle(themeRef.current, langRef.current),
-      center: TETOUAN_CENTER,
-      zoom: INITIAL_ZOOM,
-      attributionControl: { compact: true },
-    });
+    let map: MapLibreMap;
+    try {
+      map = new MapLibreMap({
+        container,
+        style: buildTetouanMapStyle(themeRef.current, langRef.current),
+        center: TETOUAN_CENTER,
+        zoom: INITIAL_ZOOM,
+        attributionControl: { compact: true },
+      });
+    } catch {
+      queueMicrotask(() => setMapUnavailable(true));
+      return;
+    }
 
     map.addControl(new NavigationControl({ showCompass: true }), 'top-right');
 
@@ -514,7 +537,7 @@ export function TransitMap({
       map.remove();
       mapRef.current = null;
     };
-  }, []);
+  }, [mapUnavailable]);
 
   // Switch Protomaps Light/Dark style and map label language
   useEffect(() => {
@@ -943,6 +966,28 @@ export function TransitMap({
       }
     }
   }, [styleRevision, focusTarget]);
+
+  if (mapUnavailable) {
+    const t = TRANSLATIONS[lang];
+    const dir = getDir(lang);
+    return (
+      <div
+        dir={dir}
+        data-testid="transit-map-fallback"
+        className="w-full h-[100dvh] flex items-center justify-center p-6 bg-[#EAF1F5] dark:bg-[#05101C] text-[#041626] dark:text-[#EFF6FA]"
+      >
+        <div className="max-w-xs rounded-xl border border-[#DCE6EE] dark:border-[#183550] bg-white dark:bg-[#081828] p-5 text-center space-y-2.5 shadow-sm">
+          <div className="mx-auto w-9 h-9 rounded-lg border border-amber-200 dark:border-amber-800/60 bg-amber-50 dark:bg-amber-950/50 inline-flex items-center justify-center">
+            <AlertTriangle className="w-4 h-4 text-amber-700 dark:text-amber-300" strokeWidth={1.75} />
+          </div>
+          <h2 className="text-xs font-semibold">{t.map.webglUnsupportedTitle}</h2>
+          <p className="text-[11px] text-[#526D82] dark:text-[#85A3BC] leading-relaxed">
+            {t.map.webglUnsupportedDesc}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

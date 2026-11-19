@@ -99,9 +99,9 @@ export function TopBar({
           </div>
         )}
 
-        {/* Active Line Context Bar (Desktop) */}
+        {/* Active Line Context Bar (Desktop >= 1024px) */}
         {!pickPrompt && selectedLine && mode !== 'planner' && (
-          <div className="hidden md:flex items-center gap-2 bg-white dark:bg-[#081828] border border-[#DCE6EE] dark:border-[#183550] rounded-lg px-2.5 py-1.5 shadow-sm max-w-full">
+          <div className="hidden lg:flex items-center gap-2 bg-white dark:bg-[#081828] border border-[#DCE6EE] dark:border-[#183550] rounded-lg px-2.5 py-1.5 shadow-sm max-w-full">
             <LineBadge number={selectedLine.number} color={selectedLine.color} size="sm" />
             <span className="text-xs font-medium text-[#041626] dark:text-[#EFF6FA] flex items-center gap-1.5 min-w-0">
               <BidiText
@@ -109,7 +109,7 @@ export function TopBar({
                   text: resolveHubName(selectedLine.origin_key, lang),
                   dir,
                 }}
-                className="truncate max-w-[115px] xl:max-w-[145px]"
+                className="truncate max-w-[100px] xl:max-w-[140px]"
               />
               <span className="text-[#85A3BC] dark:text-[#4A657A] shrink-0">{lang === 'ar' ? '←' : '→'}</span>
               <BidiText
@@ -117,7 +117,7 @@ export function TopBar({
                   text: resolveHubName(selectedLine.destination_key, lang),
                   dir,
                 }}
-                className="truncate max-w-[125px] xl:max-w-[155px]"
+                className="truncate max-w-[105px] xl:max-w-[145px]"
               />
             </span>
             <span className="h-3.5 w-px bg-[#DCE6EE] dark:bg-[#183550] shrink-0" />
@@ -153,6 +153,7 @@ export function TopBar({
           type="button"
           onClick={onToggleOsmStops}
           aria-pressed={showOsmStops}
+          title={showOsmStops ? t.nav.hideOsm : t.nav.showOsm}
           data-testid="toggle-osm-stops"
           className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium transition-colors cursor-pointer ${
             showOsmStops
@@ -161,7 +162,7 @@ export function TopBar({
           }`}
         >
           <Layers className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
-          <span className="hidden sm:inline whitespace-nowrap">
+          <span className="hidden xl:inline whitespace-nowrap">
             {showOsmStops ? t.nav.hideOsm : t.nav.showOsm}
           </span>
           <span dir="ltr" className="tabular-nums text-[11px] text-[#526D82] dark:text-[#85A3BC]">
@@ -207,18 +208,19 @@ export function TopBar({
           type="button"
           onClick={onToggleTheme}
           data-testid="toggle-theme"
+          title={theme === 'dark' ? t.nav.lightTheme : t.nav.darkTheme}
           aria-label={theme === 'dark' ? t.nav.lightTheme : t.nav.darkTheme}
           className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[#041626] dark:text-[#EFF6FA] hover:bg-[#F4F8FB] dark:hover:bg-[#0D2236] transition-colors cursor-pointer"
         >
           {theme === 'dark' ? (
             <>
               <Sun className="w-3.5 h-3.5 text-amber-400 shrink-0" strokeWidth={1.75} />
-              <span className="hidden sm:inline whitespace-nowrap">{t.nav.lightTheme}</span>
+              <span className="hidden xl:inline whitespace-nowrap">{t.nav.lightTheme}</span>
             </>
           ) : (
             <>
               <Moon className="w-3.5 h-3.5 text-[#0155A6] shrink-0" strokeWidth={1.75} />
-              <span className="hidden sm:inline whitespace-nowrap">{t.nav.darkTheme}</span>
+              <span className="hidden xl:inline whitespace-nowrap">{t.nav.darkTheme}</span>
             </>
           )}
         </button>

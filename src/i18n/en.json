@@ -5,7 +5,10 @@
     "networkBadge": "35 lines",
     "loading": "Loading transit network...",
     "loadError": "Unable to load transit network data.",
-    "retry": "Retry"
+    "retry": "Retry",
+    "unexpectedErrorTitle": "Something went wrong",
+    "unexpectedErrorDesc": "The application encountered an unexpected error. Reload to continue.",
+    "reloadBtn": "Reload app"
   },
   "nav": {
     "explorer": "Lines",
@@ -57,7 +60,9 @@
     "fitRoute": "Fit route",
     "resetView": "Reset map",
     "useAsOrigin": "Start here",
-    "useAsDestination": "Go here"
+    "useAsDestination": "Go here",
+    "webglUnsupportedTitle": "Interactive map unavailable",
+    "webglUnsupportedDesc": "This browser or device does not support WebGL map rendering. You can still browse all 35 bus lines, stops, and trip routes."
   },
   "planner": {
     "nearMeTitle": "Nearest bus stop",
