@@ -573,6 +573,7 @@ export function App() {
       <TripPlanner
         lang={lang}
         lines={lines}
+        osmStops={osmStops}
         pickMode={pickMode}
         onSetPickMode={handleSetPickMode}
         nearMeResult={nearMeResult}

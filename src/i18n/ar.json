@@ -49,7 +49,10 @@
     "favoritesSection": "الخطوط المفضلة",
     "allLinesSection": "جميع الخطوط",
     "addFavoriteAria": "إضافة الخط إلى المفضلة",
-    "removeFavoriteAria": "إزالة الخط من المفضلة"
+    "removeFavoriteAria": "إزالة الخط من المفضلة",
+    "serviceActive": "يعمل الآن",
+    "serviceEnded": "متوقف حالياً",
+    "serviceStarts": "يبدأ"
   },
   "map": {
     "stopPopupSequence": "محطة رقم",
@@ -95,7 +98,14 @@
     "totalFare": "التعريفة الإجمالية",
     "estimatedTimeLabel": "المدة التقديرية للرحلة",
     "noRouteFound": "لم يتم العثور على خط قريب ضمن مسافة مشي معقولة. حاول اختيار نقطة أقرب لطريق رئيسي.",
-    "promptSelectPoints": "حدد نقطة الانطلاق ونقطة الوصول على الخريطة أو من القائمة لإيجاد أفضل مسار.",
+    "promptSelectPoints": "حدد نقطة الانطلاق ونقطة الوصول على الخريطة أو ابحث عن أي محطة أو معلم أعلاه.",
+    "searchOriginPlaceholder": "ابحث عن محطة، حي، مستشفى، كلية...",
+    "searchDestPlaceholder": "ابحث عن الوجهة، محطة أو معلم...",
+    "clearPoint": "مسح النقطة",
+    "noMatchingPlaces": "لا توجد محطة مطابقة. جرّب كلمة أخرى أو حدد على الخريطة.",
+    "kindHub": "قطب",
+    "kindLandmark": "معلم",
+    "kindStop": "محطة",
     "shareTrip": "مشاركة"
   },
   "editor": {

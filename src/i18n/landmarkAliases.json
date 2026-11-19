@@ -1,0 +1,182 @@
+[
+  {
+    "pattern": "gare routiere",
+    "en": "Main Bus Terminal (Gare Routiere)",
+    "ar": "المحطة الطرقية للحافلات"
+  },
+  {
+    "pattern": "ancienne gare",
+    "en": "Old Railway Station (Autobus)",
+    "ar": "المحطة القديمة للسكك الحديدية"
+  },
+  {
+    "pattern": "supratour",
+    "en": "Supratours ONCF Station",
+    "ar": "محطة سوبراتور تطوان"
+  },
+  {
+    "pattern": "hopital civil",
+    "en": "Saniat Rmel Civil Hospital",
+    "ar": "المستشفى المدني سانية الرمل"
+  },
+  {
+    "pattern": "hopital espagnol",
+    "en": "Spanish Hospital (Hôpital Espagnol)",
+    "ar": "المستشفى الإسباني"
+  },
+  {
+    "pattern": "clinique nakhil",
+    "en": "Nakhil Clinic",
+    "ar": "مصحة النخيل"
+  },
+  {
+    "pattern": "bab el okla",
+    "en": "Bab El Okla Gate",
+    "ar": "باب العقلة"
+  },
+  {
+    "pattern": "bab saida",
+    "en": "Bab Saida Gate",
+    "ar": "باب السعيدة"
+  },
+  {
+    "pattern": "faculte des sciences",
+    "en": "Faculty of Sciences (M'hannech)",
+    "ar": "كلية العلوم تطوان (المحنش)"
+  },
+  {
+    "pattern": "faculte ossoul-eddine",
+    "en": "Faculty of Ossoul-Eddine",
+    "ar": "كلية أصول الدين"
+  },
+  {
+    "pattern": "faculte de lettres",
+    "en": "Faculty of Letters (Martil)",
+    "ar": "كلية الآداب والعلوم الإنسانية (مرتيل)"
+  },
+  {
+    "pattern": "cite universitaire",
+    "en": "University Residence (Cité Universitaire)",
+    "ar": "الإقامة الجامعية / الحي الجامعي"
+  },
+  {
+    "pattern": "lycee jaber",
+    "en": "Jaber Ibnou Hayane High School",
+    "ar": "ثانوية جابر بن حيان"
+  },
+  {
+    "pattern": "lycee charif al idrissi",
+    "en": "Charif Al Idrissi High School",
+    "ar": "ثانوية الشريف الإدريسي"
+  },
+  {
+    "pattern": "lycee cadi ayad",
+    "en": "Cadi Ayad High School",
+    "ar": "ثانوية القاضي عياض"
+  },
+  {
+    "pattern": "marjane",
+    "en": "Marjane Tetouan",
+    "ar": "مرجان تطوان"
+  },
+  {
+    "pattern": "wilaya",
+    "en": "Wilaya of Tetouan",
+    "ar": "ولاية تطوان"
+  },
+  {
+    "pattern": "aeroport",
+    "en": "Tetouan Sania Ramel Airport",
+    "ar": "مطار تطوان سانية الرمل"
+  },
+  {
+    "pattern": "marche de gros",
+    "en": "Wholesale Market (Marché de Gros)",
+    "ar": "سوق الجملة"
+  },
+  {
+    "pattern": "grand-taxi martil",
+    "en": "Grand Taxi Martil Station",
+    "ar": "محطة سيارات الأجرة الكبيرة مرتيل"
+  },
+  {
+    "pattern": "grand taxi",
+    "en": "Grand Taxi Station",
+    "ar": "محطة الطاكسيات الكبيرة"
+  },
+  {
+    "pattern": "jardin chellal",
+    "en": "Chellal Garden",
+    "ar": "حديقة الشلال"
+  },
+  {
+    "pattern": "souk el fahm",
+    "en": "Souk El Fahm",
+    "ar": "سوق الفحم"
+  },
+  {
+    "pattern": "souk ziana",
+    "en": "Souk Ziana",
+    "ar": "سوق الزيانة"
+  },
+  {
+    "pattern": "souk al imam malik",
+    "en": "Imam Malik Market",
+    "ar": "سوق الإمام مالك"
+  },
+  {
+    "pattern": "poste maroc",
+    "en": "Poste Maroc (City Center)",
+    "ar": "بريد المغرب وسط المدينة"
+  },
+  {
+    "pattern": "cinema victoria",
+    "en": "Cinema Victoria",
+    "ar": "سينما فيكتوريا"
+  },
+  {
+    "pattern": "marina smir",
+    "en": "Marina Smir",
+    "ar": "مارينا سمير"
+  },
+  {
+    "pattern": "restinga",
+    "en": "Restinga Beach",
+    "ar": "شاطئ ريستينغا"
+  },
+  {
+    "pattern": "kabila",
+    "en": "Kabila Marina",
+    "ar": "كابيلا"
+  },
+  {
+    "pattern": "abdelkhalek torres",
+    "en": "Avenue Abdelkhalek Torres",
+    "ar": "شارع عبد الخالق الطريس"
+  },
+  {
+    "pattern": "mohamed al kharaz",
+    "en": "Avenue Mohamed Al Kharaz",
+    "ar": "شارع محمد الخراز"
+  },
+  {
+    "pattern": "mosquee mohammed vi",
+    "en": "Mohammed VI Mosque",
+    "ar": "مسجد محمد السادس"
+  },
+  {
+    "pattern": "palais essalam",
+    "en": "Palais Essalam",
+    "ar": "قصر السلام"
+  },
+  {
+    "pattern": "taboula",
+    "en": "Taboula District",
+    "ar": "حي طبولة"
+  },
+  {
+    "pattern": "casa bloque",
+    "en": "Casa Bloque",
+    "ar": "كازا بلوك"
+  }
+]

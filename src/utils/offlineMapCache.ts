@@ -6,6 +6,51 @@ export const OFFLINE_MAP_CACHE = 'tetoway-offline-map-v1';
 export const OFFLINE_MAP_APPROX_MB = '6.5';
 
 const TILE_URL = '/tiles/tetouan.pmtiles';
+const TOTAL_PACK_BYTES_ESTIMATE = 6_835_434;
+
+async function fetchIntoCacheWithByteProgress(
+  cache: Cache,
+  url: string,
+  onBytesReceived: (deltaBytes: number) => void,
+): Promise<void> {
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} for ${url}`);
+  }
+
+  const contentType = res.headers.get('Content-Type') ?? 'application/octet-stream';
+  let blob: Blob;
+
+  if (res.body) {
+    const reader = res.body.getReader();
+    const chunks: BlobPart[] = [];
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (value && value.byteLength > 0) {
+        chunks.push(value);
+        onBytesReceived(value.byteLength);
+      }
+    }
+    blob = new Blob(chunks, { type: contentType });
+  } else {
+    blob = await res.blob();
+    onBytesReceived(blob.size);
+  }
+
+  // Strip Content-Encoding because Fetch stream delivers decoded bytes
+  const cleanHeaders = new Headers(res.headers);
+  cleanHeaders.delete('content-encoding');
+  cleanHeaders.set('content-length', String(blob.size));
+  await cache.put(
+    url,
+    new Response(blob, {
+      status: res.status,
+      statusText: res.statusText,
+      headers: cleanHeaders,
+    }),
+  );
+}
 
 const FONT_FAMILIES = ['Noto Sans Regular', 'Noto Sans Medium'] as const;
 const FONT_RANGES = [
@@ -156,41 +201,36 @@ export async function downloadOfflineMap(
   }
 
   const cache = await window.caches.open(OFFLINE_MAP_CACHE);
-  const totalAssets = OFFLINE_MAP_ASSETS.length;
-  let completed = 0;
-
-  const markDone = () => {
-    completed += 1;
-    if (onProgress) {
-      onProgress(Math.min(100, Math.round((completed / totalAssets) * 100)));
-    }
-  };
+  let receivedBytes = 0;
+  let lastPercent = 1;
 
   onProgress?.(1);
 
-  const tileRes = await fetch(TILE_URL, { cache: 'no-store' });
-  if (!tileRes.ok) {
-    throw new Error(`HTTP ${tileRes.status}`);
-  }
-  await cache.put(TILE_URL, tileRes);
-  markDone();
+  const reportDelta = (delta: number) => {
+    receivedBytes += delta;
+    if (!onProgress) return;
+    const nextPercent = Math.min(
+      99,
+      Math.max(1, Math.round((receivedBytes / TOTAL_PACK_BYTES_ESTIMATE) * 100)),
+    );
+    if (nextPercent > lastPercent) {
+      lastPercent = nextPercent;
+      onProgress(nextPercent);
+    }
+  };
+
+  await fetchIntoCacheWithByteProgress(cache, TILE_URL, reportDelta);
 
   const secondary = OFFLINE_MAP_ASSETS.slice(1);
   const BATCH_SIZE = 4;
   for (let i = 0; i < secondary.length; i += BATCH_SIZE) {
     const batch = secondary.slice(i, i + BATCH_SIZE);
     await Promise.all(
-      batch.map(async (url) => {
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status} for ${url}`);
-        }
-        await cache.put(url, res);
-        markDone();
-      }),
+      batch.map((url) => fetchIntoCacheWithByteProgress(cache, url, reportDelta)),
     );
   }
 
+  onProgress?.(100);
   await invalidateActiveArchive();
 }
 

@@ -17,15 +17,19 @@ import type {
   Lang,
   MapPickMode,
   NearMeResult,
+  OsmStop,
   TripItinerary,
 } from '../types/transit';
+import { buildShareUrl } from '../utils/deepLink';
+import { buildOfflineSearchPlaces } from '../utils/stopSearch';
 import { BidiText, LineBadge } from './BidiText';
 import { ShareButton } from './ShareButton';
-import { buildShareUrl } from '../utils/deepLink';
+import { StopSearchInput } from './StopSearchInput';
 
 interface TripPlannerProps {
   lang: Lang;
   lines: BusLine[];
+  osmStops: OsmStop[];
   pickMode: MapPickMode;
   onSetPickMode: (mode: MapPickMode) => void;
   nearMeResult: NearMeResult | null;
@@ -44,6 +48,7 @@ interface TripPlannerProps {
 export function TripPlanner({
   lang,
   lines,
+  osmStops,
   pickMode,
   onSetPickMode,
   nearMeResult,
@@ -63,23 +68,10 @@ export function TripPlanner({
   const [locating, setLocating] = useState(false);
   const [geoError, setGeoError] = useState(false);
 
-  const hubCoordsList = useMemo(() => {
-    const map = new Map<string, GeoPoint>();
-    for (const line of lines) {
-      for (const stop of line.stops) {
-        if (stop.hub_key && !map.has(stop.hub_key)) {
-          map.set(stop.hub_key, { lng: stop.lng, lat: stop.lat });
-        }
-      }
-    }
-    return Array.from(map.entries())
-      .map(([hubKey, point]) => ({
-        hubKey,
-        label: resolveHubName(hubKey, lang),
-        point,
-      }))
-      .sort((a, b) => a.label.localeCompare(b.label, lang));
-  }, [lines, lang]);
+  const searchablePlaces = useMemo(
+    () => buildOfflineSearchPlaces(lines, osmStops, lang),
+    [lines, osmStops, lang],
+  );
 
   function handleGeolocate() {
     setGeoError(false);
@@ -111,16 +103,6 @@ export function TripPlanner({
     const prevB = destinationPoint;
     onSetOriginPoint(prevB);
     onSetDestinationPoint(prevA);
-  }
-
-  function findClosestHubKey(pt: GeoPoint | null): string {
-    if (!pt) return '';
-    for (const h of hubCoordsList) {
-      if (Math.abs(h.point.lat - pt.lat) < 0.0001 && Math.abs(h.point.lng - pt.lng) < 0.0001) {
-        return h.hubKey;
-      }
-    }
-    return '';
   }
 
   return (
@@ -352,22 +334,14 @@ export function TripPlanner({
           </div>
 
           <div className="flex gap-1.5">
-            <select
-              value={findClosestHubKey(originPoint)}
-              onChange={(e) => {
-                const found = hubCoordsList.find((h) => h.hubKey === e.target.value);
-                onSetOriginPoint(found ? found.point : null);
-              }}
-              data-testid="trip-origin-select"
-              className="flex-1 min-w-0 bg-[#F4F8FB] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] focus:border-[#0155A6] dark:focus:border-[#34D399] focus:outline-none rounded-md px-2.5 py-2 text-xs text-[#041626] dark:text-[#EFF6FA]"
-            >
-              <option value="">{t.planner.orSelectHub}</option>
-              {hubCoordsList.map((hub) => (
-                <option key={hub.hubKey} value={hub.hubKey}>
-                  {hub.label}
-                </option>
-              ))}
-            </select>
+            <StopSearchInput
+              lang={lang}
+              value={originPoint}
+              places={searchablePlaces}
+              placeholder={t.planner.searchOriginPlaceholder}
+              testId="trip-origin-input"
+              onSelectPoint={(pt) => onSetOriginPoint(pt)}
+            />
 
             <button
               type="button"
@@ -408,22 +382,14 @@ export function TripPlanner({
           </div>
 
           <div className="flex gap-1.5">
-            <select
-              value={findClosestHubKey(destinationPoint)}
-              onChange={(e) => {
-                const found = hubCoordsList.find((h) => h.hubKey === e.target.value);
-                onSetDestinationPoint(found ? found.point : null);
-              }}
-              data-testid="trip-dest-select"
-              className="flex-1 min-w-0 bg-[#F4F8FB] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] focus:border-[#0155A6] dark:focus:border-[#34D399] focus:outline-none rounded-md px-2.5 py-2 text-xs text-[#041626] dark:text-[#EFF6FA]"
-            >
-              <option value="">{t.planner.orSelectHub}</option>
-              {hubCoordsList.map((hub) => (
-                <option key={hub.hubKey} value={hub.hubKey}>
-                  {hub.label}
-                </option>
-              ))}
-            </select>
+            <StopSearchInput
+              lang={lang}
+              value={destinationPoint}
+              places={searchablePlaces}
+              placeholder={t.planner.searchDestPlaceholder}
+              testId="trip-dest-input"
+              onSelectPoint={(pt) => onSetDestinationPoint(pt)}
+            />
 
             <button
               type="button"

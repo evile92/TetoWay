@@ -49,7 +49,10 @@
     "favoritesSection": "Favorite lines",
     "allLinesSection": "All lines",
     "addFavoriteAria": "Add line to favorites",
-    "removeFavoriteAria": "Remove line from favorites"
+    "removeFavoriteAria": "Remove line from favorites",
+    "serviceActive": "Active now",
+    "serviceEnded": "Off-hours",
+    "serviceStarts": "Starts"
   },
   "map": {
     "stopPopupSequence": "Stop",
@@ -95,7 +98,14 @@
     "totalFare": "Total fare",
     "estimatedTimeLabel": "Est. trip time",
     "noRouteFound": "No route found within reasonable walking distance. Try selecting closer points.",
-    "promptSelectPoints": "Set an origin and destination on the map or choose hubs above to compute your trip.",
+    "promptSelectPoints": "Set an origin and destination on the map or search stops above to compute your trip.",
+    "searchOriginPlaceholder": "Search stop, hub, hospital, faculty...",
+    "searchDestPlaceholder": "Search destination stop or landmark...",
+    "clearPoint": "Clear point",
+    "noMatchingPlaces": "No matching stops found. Try another keyword or pick on map.",
+    "kindHub": "Hub",
+    "kindLandmark": "Landmark",
+    "kindStop": "Stop",
     "shareTrip": "Share"
   },
   "editor": {

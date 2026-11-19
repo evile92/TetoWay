@@ -8,7 +8,7 @@ import {
   Star,
   X,
 } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { formatMad, resolveHubName, resolveStopLabel, TRANSLATIONS } from '../i18n';
 import type {
   BusLine,
@@ -18,6 +18,8 @@ import type {
   LineCategoryFilter,
 } from '../types/transit';
 import { buildShareUrl } from '../utils/deepLink';
+import { normalizeSearchText } from '../utils/stopSearch';
+import { getLineServiceStatus } from '../utils/transitSchedule';
 import { BidiText, LineBadge } from './BidiText';
 import { ShareButton } from './ShareButton';
 
@@ -37,6 +39,7 @@ interface LineExplorerProps {
 interface LineListRowProps {
   line: BusLine;
   lang: Lang;
+  now: Date;
   isFavorite: boolean;
   onSelectLine: (line: BusLine) => void;
   onToggleFavorite: (lineId: string) => void;
@@ -45,12 +48,14 @@ interface LineListRowProps {
 function LineListRow({
   line,
   lang,
+  now,
   isFavorite,
   onSelectLine,
   onToggleFavorite,
 }: LineListRowProps) {
   const t = TRANSLATIONS[lang];
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
+  const status = getLineServiceStatus(line.first_departure, line.last_departure, now);
 
   return (
     <div className="flex items-center hover:bg-[#F4F8FB] dark:hover:bg-[#0D2236] transition-colors">
@@ -79,7 +84,19 @@ function LineListRow({
               {t.explorer.currency}
             </span>
           </div>
-          <div className="text-[10px] text-[#7C97AE] dark:text-[#6B8BA5] tabular-nums flex items-center justify-end gap-1">
+          <div className="text-[10px] text-[#7C97AE] dark:text-[#6B8BA5] tabular-nums flex items-center justify-end gap-1.5">
+            {status && (
+              <span
+                title={
+                  status.isActive
+                    ? t.explorer.serviceActive
+                    : `${t.explorer.serviceEnded} · ${t.explorer.serviceStarts} ${status.firstDeparture}`
+                }
+                className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                  status.isActive ? 'bg-[#01A069] dark:bg-[#34D399]' : 'bg-[#94A3B8] dark:bg-[#475569]'
+                }`}
+              />
+            )}
             <span dir="ltr">{line.frequency_mins}</span>
             <span>{t.explorer.minutesUnit}</span>
           </div>
@@ -108,15 +125,6 @@ function LineListRow({
   );
 }
 
-function normalizeSearch(value: string): string {
-  return value
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .replace(/[\u0622\u0623\u0625]/g, '\u0627')
-    .toLowerCase()
-    .trim();
-}
-
 export function LineExplorer({
   lang,
   lines,
@@ -133,6 +141,12 @@ export function LineExplorer({
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
   const [category, setCategory] = useState<LineCategoryFilter>('all');
   const [query, setQuery] = useState('');
+  const [now, setNow] = useState(() => new Date());
+
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(new Date()), 60_000);
+    return () => window.clearInterval(id);
+  }, []);
 
   const counts = useMemo(() => {
     let urban = 0;
@@ -145,7 +159,7 @@ export function LineExplorer({
   }, [lines]);
 
   const filteredLines = useMemo(() => {
-    const q = normalizeSearch(query);
+    const q = normalizeSearchText(query);
     return lines.filter((line) => {
       if (category !== 'all' && line.category !== category) {
         return false;
@@ -153,16 +167,16 @@ export function LineExplorer({
       if (!q) return true;
 
       if (
-        normalizeSearch(line.number).includes(q) ||
-        normalizeSearch(line.id).includes(q)
+        normalizeSearchText(line.number).includes(q) ||
+        normalizeSearchText(line.id).includes(q)
       ) {
         return true;
       }
 
-      const originEn = normalizeSearch(resolveHubName(line.origin_key, 'en'));
-      const originAr = normalizeSearch(resolveHubName(line.origin_key, 'ar'));
-      const destEn = normalizeSearch(resolveHubName(line.destination_key, 'en'));
-      const destAr = normalizeSearch(resolveHubName(line.destination_key, 'ar'));
+      const originEn = normalizeSearchText(resolveHubName(line.origin_key, 'en'));
+      const originAr = normalizeSearchText(resolveHubName(line.origin_key, 'ar'));
+      const destEn = normalizeSearchText(resolveHubName(line.destination_key, 'en'));
+      const destAr = normalizeSearchText(resolveHubName(line.destination_key, 'ar'));
       if (
         originEn.includes(q) ||
         originAr.includes(q) ||
@@ -173,10 +187,10 @@ export function LineExplorer({
       }
 
       return line.stops.some((stop) => {
-        const sEn = normalizeSearch(stop.name_en);
-        const sAr = normalizeSearch(stop.name_ar);
-        const hEn = stop.hub_key ? normalizeSearch(resolveHubName(stop.hub_key, 'en')) : '';
-        const hAr = stop.hub_key ? normalizeSearch(resolveHubName(stop.hub_key, 'ar')) : '';
+        const sEn = normalizeSearchText(stop.name_en);
+        const sAr = normalizeSearchText(stop.name_ar);
+        const hEn = stop.hub_key ? normalizeSearchText(resolveHubName(stop.hub_key, 'en')) : '';
+        const hAr = stop.hub_key ? normalizeSearchText(resolveHubName(stop.hub_key, 'ar')) : '';
         return sEn.includes(q) || sAr.includes(q) || hEn.includes(q) || hAr.includes(q);
       });
     });
@@ -199,6 +213,11 @@ export function LineExplorer({
 
   if (selectedLine) {
     const isSelectedFavorite = favoriteSet.has(selectedLine.id);
+    const serviceStatus = getLineServiceStatus(
+      selectedLine.first_departure,
+      selectedLine.last_departure,
+      now,
+    );
     const orderedStops =
       direction === 'outbound' ? selectedLine.stops : [...selectedLine.stops].reverse();
     const startHubKey =
@@ -275,6 +294,36 @@ export function LineExplorer({
                 <span>{lang === 'ar' ? '←' : '→'}</span>
                 <BidiText label={{ text: resolveHubName(endHubKey, lang), dir }} />
               </div>
+              {serviceStatus && (
+                <div className="mt-1.5">
+                  <span
+                    data-testid="line-service-status"
+                    className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border text-[10px] font-semibold tabular-nums ${
+                      serviceStatus.isActive
+                        ? 'bg-emerald-50 border-emerald-200 text-[#018A5B] dark:bg-emerald-950/60 dark:border-emerald-800/70 dark:text-[#34D399]'
+                        : 'bg-[#F4F8FB] border-[#DCE6EE] text-[#526D82] dark:bg-[#0D2236] dark:border-[#183550] dark:text-[#85A3BC]'
+                    }`}
+                  >
+                    <span
+                      className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                        serviceStatus.isActive
+                          ? 'bg-[#01A069] dark:bg-[#34D399]'
+                          : 'bg-[#94A3B8] dark:bg-[#64748B]'
+                      }`}
+                    />
+                    {serviceStatus.isActive ? (
+                      <span>{t.explorer.serviceActive}</span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1">
+                        <span>{t.explorer.serviceEnded}</span>
+                        <span>·</span>
+                        <span>{t.explorer.serviceStarts}</span>
+                        <span dir="ltr">{serviceStatus.firstDeparture}</span>
+                      </span>
+                    )}
+                  </span>
+                </div>
+              )}
             </div>
             <button
               type="button"
@@ -548,6 +597,7 @@ export function LineExplorer({
                     key={line.id}
                     line={line}
                     lang={lang}
+                    now={now}
                     isFavorite
                     onSelectLine={onSelectLine}
                     onToggleFavorite={onToggleFavorite}
@@ -566,6 +616,7 @@ export function LineExplorer({
                 key={line.id}
                 line={line}
                 lang={lang}
+                now={now}
                 isFavorite={false}
                 onSelectLine={onSelectLine}
                 onToggleFavorite={onToggleFavorite}
