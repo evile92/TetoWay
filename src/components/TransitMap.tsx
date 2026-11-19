@@ -1075,15 +1075,15 @@ export function TransitMap({
       wrapper.dataset.testid = 'ride-live-gps-dot';
       wrapper.style.zIndex = '20';
       wrapper.className =
-        'relative flex items-center justify-center w-16 h-9 pointer-events-none select-none';
+        'relative flex items-center justify-center w-14 h-8 pointer-events-none select-none';
 
       const halo = document.createElement('span');
       halo.className =
-        'absolute bottom-0.5 w-9 h-3 rounded-full bg-[#01A069]/35 dark:bg-[#34D399]/40 animate-ping';
+        'absolute bottom-0.5 w-8 h-2.5 rounded-full bg-[#01A069]/35 dark:bg-[#34D399]/40 animate-ping';
 
       const shadow = document.createElement('span');
       shadow.className =
-        'absolute bottom-0.5 w-12 h-2 rounded-full bg-[#041626]/25 dark:bg-black/55 blur-[1.5px]';
+        'absolute bottom-0.5 w-10 h-1.5 rounded-full bg-[#041626]/25 dark:bg-black/55 blur-[1.5px]';
 
       const busImg = document.createElement('img');
       busImg.src = '/tetouan-bus-marker.png';
@@ -1091,7 +1091,7 @@ export function TransitMap({
       busImg.setAttribute('aria-hidden', 'true');
       busImg.draggable = false;
       busImg.className =
-        'relative w-[58px] h-auto object-contain transition-transform duration-300 drop-shadow-[0_2px_4px_rgba(4,22,38,0.35)] dark:drop-shadow-[0_2px_6px_rgba(0,0,0,0.75)]';
+        'relative w-[48px] h-auto object-contain transition-transform duration-300 drop-shadow-[0_2px_4px_rgba(4,22,38,0.35)] dark:drop-shadow-[0_2px_6px_rgba(0,0,0,0.75)]';
       busImg.style.transform = busFacingRightRef.current ? 'scaleX(-1)' : 'scaleX(1)';
 
       wrapper.appendChild(halo);
