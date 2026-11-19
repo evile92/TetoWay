@@ -383,6 +383,9 @@ export function TransitMap({
   const mapRef = useRef<MapLibreMap | null>(null);
   const markersRef = useRef<Marker[]>([]);
   const liveGpsMarkerRef = useRef<Marker | null>(null);
+  const liveGpsImgRef = useRef<HTMLImageElement | null>(null);
+  const prevLiveLngRef = useRef<number | null>(null);
+  const busFacingRightRef = useRef<boolean>(false);
   const stopMarkersByIdRef = useRef<globalThis.Map<string, Marker>>(new globalThis.Map());
   const popupRef = useRef<Popup | null>(null);
   const appliedThemeRef = useRef<Theme>(theme);
@@ -562,6 +565,8 @@ export function TransitMap({
       popupRef.current?.remove();
       liveGpsMarkerRef.current?.remove();
       liveGpsMarkerRef.current = null;
+      liveGpsImgRef.current = null;
+      prevLiveLngRef.current = null;
       markersRef.current.forEach((m) => m.remove());
       markersRef.current = [];
       stopMarkersMap.clear();
@@ -1029,7 +1034,7 @@ export function TransitMap({
     rideCurrentStopIndex,
   ]);
 
-  // Dedicated live GPS blue dot during Ride Mode (updated in-place without re-creating stop markers)
+  // Dedicated live Tetouan bus marker during Ride Mode (updated in-place without re-creating stop markers)
   useEffect(() => {
     const map = mapRef.current;
     if (!map || styleRevision === 0) return;
@@ -1037,30 +1042,73 @@ export function TransitMap({
     if (!rideLeg || !rideGpsPosition) {
       liveGpsMarkerRef.current?.remove();
       liveGpsMarkerRef.current = null;
+      liveGpsImgRef.current = null;
+      prevLiveLngRef.current = null;
+      busFacingRightRef.current = false;
       return;
     }
+
+    // Determine horizontal bus facing (source artwork faces West/left; mirror via scaleX(-1) for East/right)
+    if (rideGpsPosition.heading !== null && Number.isFinite(rideGpsPosition.heading)) {
+      const normalizedHeading = ((rideGpsPosition.heading % 360) + 360) % 360;
+      if (normalizedHeading >= 15 && normalizedHeading <= 165) {
+        busFacingRightRef.current = true;
+      } else if (normalizedHeading >= 195 && normalizedHeading <= 345) {
+        busFacingRightRef.current = false;
+      }
+    } else if (prevLiveLngRef.current !== null) {
+      const deltaLng = rideGpsPosition.lng - prevLiveLngRef.current;
+      if (deltaLng > 0.00004) {
+        busFacingRightRef.current = true;
+      } else if (deltaLng < -0.00004) {
+        busFacingRightRef.current = false;
+      }
+    } else if (rideLeg.stops.length >= 2) {
+      const targetStop =
+        rideLeg.stops[rideLeg.targetStopIndex] ?? rideLeg.stops[rideLeg.stops.length - 1];
+      busFacingRightRef.current = targetStop.lng > rideGpsPosition.lng;
+    }
+    prevLiveLngRef.current = rideGpsPosition.lng;
 
     if (!liveGpsMarkerRef.current) {
       const wrapper = document.createElement('div');
       wrapper.dataset.testid = 'ride-live-gps-dot';
-      wrapper.className = 'relative flex items-center justify-center w-6 h-6 pointer-events-none';
+      wrapper.style.zIndex = '20';
+      wrapper.className =
+        'relative flex items-center justify-center w-16 h-9 pointer-events-none select-none';
 
       const halo = document.createElement('span');
       halo.className =
-        'absolute inset-0 rounded-full bg-sky-500/35 animate-ping';
+        'absolute bottom-0.5 w-9 h-3 rounded-full bg-[#01A069]/35 dark:bg-[#34D399]/40 animate-ping';
 
-      const dot = document.createElement('span');
-      dot.className =
-        'relative w-4 h-4 rounded-full bg-[#0284C7] border-2 border-white shadow-[0_0_0_3px_rgba(2,132,199,0.28)]';
+      const shadow = document.createElement('span');
+      shadow.className =
+        'absolute bottom-0.5 w-12 h-2 rounded-full bg-[#041626]/25 dark:bg-black/55 blur-[1.5px]';
+
+      const busImg = document.createElement('img');
+      busImg.src = '/tetouan-bus-marker.png';
+      busImg.alt = '';
+      busImg.setAttribute('aria-hidden', 'true');
+      busImg.draggable = false;
+      busImg.className =
+        'relative w-[58px] h-auto object-contain transition-transform duration-300 drop-shadow-[0_2px_4px_rgba(4,22,38,0.35)] dark:drop-shadow-[0_2px_6px_rgba(0,0,0,0.75)]';
+      busImg.style.transform = busFacingRightRef.current ? 'scaleX(-1)' : 'scaleX(1)';
 
       wrapper.appendChild(halo);
-      wrapper.appendChild(dot);
+      wrapper.appendChild(shadow);
+      wrapper.appendChild(busImg);
+      liveGpsImgRef.current = busImg;
 
-      liveGpsMarkerRef.current = new Marker({ element: wrapper })
+      liveGpsMarkerRef.current = new Marker({ element: wrapper, anchor: 'center' })
         .setLngLat([rideGpsPosition.lng, rideGpsPosition.lat])
         .addTo(map);
     } else {
       liveGpsMarkerRef.current.setLngLat([rideGpsPosition.lng, rideGpsPosition.lat]);
+      if (liveGpsImgRef.current) {
+        liveGpsImgRef.current.style.transform = busFacingRightRef.current
+          ? 'scaleX(-1)'
+          : 'scaleX(1)';
+      }
     }
 
     if (rideFollowGps) {
