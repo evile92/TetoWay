@@ -77,7 +77,35 @@ const LINES_SPEC = [
   { id: 'L4', number: '4', category: 'urban', color: '#059669', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['dar_takafa', 'abderrahmane_dakhel', 'dar_zkik'] },
   { id: 'L5', number: '5', category: 'urban', color: '#DB2777', price_mad: 3.5, frequency_mins: 15, first_departure: '06:00', last_departure: '22:00', corridor: ['dar_takafa', 'jamaa_mezouak', 'hay_nassim'] },
   { id: 'L6', number: '6', category: 'urban', color: '#D97706', price_mad: 3.5, frequency_mins: 15, first_departure: '06:00', last_departure: '22:00', corridor: ['dar_takafa', 'omar_mokhtar'] },
-  { id: 'L7', number: '7', category: 'urban', color: '#0891B2', price_mad: 3.5, frequency_mins: 12, first_departure: '06:00', last_departure: '22:15', corridor: ['rommana', 'dar_takafa', 'saniat_rmel', 'place_palestine'] },
+  {
+    id: 'L7',
+    number: '7',
+    category: 'urban',
+    color: '#0891B2',
+    price_mad: 3.5,
+    frequency_mins: 12,
+    first_departure: '06:00',
+    last_departure: '22:15',
+    corridor: ['rommana', 'dar_takafa', 'saniat_rmel', 'place_palestine'],
+    // Verified Touabel -> Avenue Al Joulane -> Avenue Mehdi Ben Barka -> Wilaya -> Aeroport corridor
+    routeWaypoints: [
+      [-5.39242, 35.56549],
+      [-5.383003, 35.57058],
+      [-5.348838, 35.574001],
+      [-5.349432, 35.575456],
+      [-5.350707, 35.577954],
+      [-5.349217, 35.578908],
+      [-5.346481, 35.579814],
+      [-5.345082, 35.580041],
+      [-5.343826, 35.582914],
+      [-5.337336, 35.586204],
+      [-5.338175, 35.589811],
+      [-5.3383, 35.5919],
+      [-5.336, 35.5917],
+      [-5.332204, 35.59349],
+      [-5.326428, 35.600447],
+    ],
+  },
   { id: 'L8', number: '8', category: 'urban', color: '#E11D48', price_mad: 3.5, frequency_mins: 15, first_departure: '06:15', last_departure: '21:30', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'hajrat_aroussa'] },
   { id: 'L9', number: '9', category: 'urban', color: '#7C3AED', price_mad: 3.5, frequency_mins: 15, first_departure: '06:15', last_departure: '21:30', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'karyane'] },
   { id: 'L10', number: '10', category: 'urban', color: '#16A34A', price_mad: 3.5, frequency_mins: 15, first_departure: '06:00', last_departure: '22:00', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'mokhtar_soussi'] },
@@ -200,14 +228,17 @@ async function fetchOsmStops() {
   return [];
 }
 
-async function fetchOsrmRoute(corridorKeys, lineId) {
-  const coords = corridorKeys.map((key) => {
-    const pt = HUBS[key];
-    if (!pt) {
-      throw new Error(`Missing hub coordinate for "${key}" in line ${lineId}`);
-    }
-    return pt;
-  });
+async function fetchOsrmRoute(spec) {
+  const coords = Array.isArray(spec.routeWaypoints)
+    ? spec.routeWaypoints
+    : spec.corridor.map((key) => {
+        const pt = HUBS[key];
+        if (!pt) {
+          throw new Error(`Missing hub coordinate for "${key}" in line ${spec.id}`);
+        }
+        return pt;
+      });
+  const lineId = spec.id;
 
   const coordsParam = coords.map(([lng, lat]) => `${lng},${lat}`).join(';');
   const url = `https://router.project-osrm.org/route/v1/driving/${coordsParam}?overview=full&geometries=geojson`;
@@ -329,19 +360,45 @@ function buildOrderedStops(lineSpec, geometry, osmStops, enHubs, arHubs) {
 async function main() {
   await fs.mkdir(PUBLIC_DATA_DIR, { recursive: true });
 
-  const { enHubs, arHubs } = await loadHubDictionaries();
-  const osmStops = await fetchOsmStops();
+  const onlyArg = process.argv.find((arg) => arg.startsWith('--only='));
+  const onlyIds = onlyArg
+    ? new Set(onlyArg.slice('--only='.length).split(',').map((s) => s.trim().toUpperCase()))
+    : null;
 
+  const { enHubs, arHubs } = await loadHubDictionaries();
   const osmOutPath = path.join(PUBLIC_DATA_DIR, 'osm-stops.json');
-  await fs.writeFile(osmOutPath, JSON.stringify(osmStops, null, 2), 'utf8');
-  console.log(`[Output] Wrote ${osmStops.length} stops to ${osmOutPath}`);
+  const linesOutPath = path.join(PUBLIC_DATA_DIR, 'tetouan-lines.json');
+
+  let osmStops;
+  let existingLinesById = new Map();
+
+  if (onlyIds) {
+    osmStops = JSON.parse(await fs.readFile(osmOutPath, 'utf8'));
+    const existingLines = JSON.parse(await fs.readFile(linesOutPath, 'utf8'));
+    for (const line of existingLines) {
+      existingLinesById.set(line.id, line);
+    }
+    console.log(`[Targeted] Updating only: ${Array.from(onlyIds).join(', ')} using cached OSM stops (${osmStops.length}).`);
+  } else {
+    osmStops = await fetchOsmStops();
+    await fs.writeFile(osmOutPath, JSON.stringify(osmStops, null, 2), 'utf8');
+    console.log(`[Output] Wrote ${osmStops.length} stops to ${osmOutPath}`);
+  }
 
   const lines = [];
   let snappedCount = 0;
 
   for (let i = 0; i < LINES_SPEC.length; i++) {
     const spec = LINES_SPEC[i];
-    const { geometry, snapped } = await fetchOsrmRoute(spec.corridor, spec.id);
+    if (onlyIds && !onlyIds.has(spec.id.toUpperCase()) && !onlyIds.has(spec.number.toUpperCase())) {
+      const preserved = existingLinesById.get(spec.id);
+      if (preserved) {
+        lines.push(preserved);
+        continue;
+      }
+    }
+
+    const { geometry, snapped } = await fetchOsrmRoute(spec);
     if (snapped) snappedCount++;
 
     const stops = buildOrderedStops(spec, geometry, osmStops, enHubs, arHubs);
@@ -367,15 +424,14 @@ async function main() {
       `[Line ${i + 1}/${LINES_SPEC.length}] ${spec.id}: ${geometry.coordinates.length} pts (${snapped ? 'OSRM' : 'fallback'}), ${stops.length} stops`,
     );
 
-    if (i < LINES_SPEC.length - 1) {
+    if (!onlyIds && i < LINES_SPEC.length - 1) {
       await sleep(400);
     }
   }
 
-  const linesOutPath = path.join(PUBLIC_DATA_DIR, 'tetouan-lines.json');
   await fs.writeFile(linesOutPath, JSON.stringify(lines, null, 2), 'utf8');
   console.log(
-    `[Output] Wrote ${lines.length} lines (${snappedCount} OSRM road-snapped) to ${linesOutPath}`,
+    `[Output] Wrote ${lines.length} lines (${snappedCount} updated via OSRM) to ${linesOutPath}`,
   );
 }
 
