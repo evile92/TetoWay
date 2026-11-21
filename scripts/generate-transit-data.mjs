@@ -72,7 +72,32 @@ const HUBS = {
 // Complete 35 Bus Lines (17 Urban + 18 Regional)
 const LINES_SPEC = [
   // Urban Network (17 Lines - 3.50 MAD)
-  { id: 'L1', number: '1', category: 'urban', color: '#0284C7', price_mad: 3.5, frequency_mins: 12, first_departure: '06:00', last_departure: '22:00', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'boujarrah'] },
+  {
+    id: 'L1',
+    number: '1',
+    category: 'urban',
+    color: '#0284C7',
+    price_mad: 3.5,
+    frequency_mins: 12,
+    first_departure: '06:00',
+    last_departure: '22:00',
+    corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'boujarrah'],
+    // Verified full Avenue des FAR -> Boussafou -> Bennouna Boussafou -> Boujarrah 1/2/3 -> Boujarrah Station corridor
+    routeWaypoints: [
+      [-5.39242, 35.56549],
+      [-5.383003, 35.57058],
+      [-5.353034, 35.580984],
+      [-5.347391, 35.586294],
+      [-5.3451, 35.589631],
+      [-5.342964, 35.592158],
+      [-5.345871, 35.593516],
+      [-5.347742, 35.594675],
+      [-5.350566, 35.593005],
+      [-5.353571, 35.591397],
+      [-5.35569, 35.587709],
+      [-5.35418, 35.58501],
+    ],
+  },
   { id: 'L3', number: '3', category: 'urban', color: '#4F46E5', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['rommana', 'dar_takafa', 'boujarrah', 'qalaline'] },
   { id: 'L4', number: '4', category: 'urban', color: '#059669', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['dar_takafa', 'abderrahmane_dakhel', 'dar_zkik'] },
   { id: 'L5', number: '5', category: 'urban', color: '#DB2777', price_mad: 3.5, frequency_mins: 15, first_departure: '06:00', last_departure: '22:00', corridor: ['dar_takafa', 'jamaa_mezouak', 'hay_nassim'] },
@@ -322,10 +347,20 @@ function buildOrderedStops(lineSpec, geometry, osmStops, enHubs, arHubs) {
     );
     if (tooCloseToHub) continue;
 
-    const tooCloseToOsm = matchedOsmEntries.some(
-      (existing) =>
-        turf.distance(osmPoint, turf.point([existing.lng, existing.lat]), { units: 'meters' }) < 35,
-    );
+    const tooCloseToOsm = matchedOsmEntries.some((existing) => {
+      const dist = turf.distance(osmPoint, turf.point([existing.lng, existing.lat]), {
+        units: 'meters',
+      });
+      if (dist < 35) return true;
+      if (
+        dist < 85 &&
+        osm.name_en !== 'Bus Stop' &&
+        existing.name_en.toLowerCase() === osm.name_en.toLowerCase()
+      ) {
+        return true;
+      }
+      return false;
+    });
     if (tooCloseToOsm) continue;
 
     const snapped = turf.nearestPointOnLine(lineFeature, osmPoint, { units: 'kilometers' });
