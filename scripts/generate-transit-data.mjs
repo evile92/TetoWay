@@ -32,7 +32,8 @@ const HUBS = {
   avenue_des_far: [-5.353034, 35.580984],
   saniat_rmel: [-5.34879, 35.574079],
   place_palestine: [-5.326428, 35.600447], // Lotissement Souani (Place Palestine)
-  quartier_universitaire: [-5.36241, 35.56143], // Mhannech / Faculte des Sciences
+  quartier_universitaire: [-5.299312, 35.622826], // Cite Universitaire Martil (next to Riad Sofia)
+  mhannech_sciences: [-5.36241, 35.56143], // Mhannech / Faculte des Sciences (Av. 9 Avril)
   boujarrah: [-5.35418, 35.58501],
   qalaline: [-5.34433, 35.6215],
   dar_zkik: [-5.397175, 35.549853], // Ain Dar Zkik
@@ -67,6 +68,7 @@ const HUBS = {
   mdiq: [-5.322959, 35.685441],
   fnideq: [-5.355107, 35.841411],
   martil: [-5.275194, 35.617984],
+  martil_facultes: [-5.294097, 35.609848], // Faculte des Lettres / Martil Faculties
 };
 
 // Complete 35 Bus Lines (17 Urban + 18 Regional)
@@ -138,15 +140,53 @@ const LINES_SPEC = [
   { id: 'L12', number: '12', category: 'urban', color: '#0D9488', price_mad: 3.5, frequency_mins: 12, first_departure: '06:00', last_departure: '22:00', corridor: ['ancienne_gare', 'dar_takafa', 'jamaa_mezouak'] },
   { id: 'L13', number: '13', category: 'urban', color: '#C026D3', price_mad: 3.5, frequency_mins: 25, first_departure: '06:30', last_departure: '21:00', corridor: ['rommana', 'ancienne_gare', 'torreta', 'bouanane'] },
   { id: 'L14', number: '14', category: 'urban', color: '#2563EB', price_mad: 3.5, frequency_mins: 15, first_departure: '06:00', last_departure: '22:00', corridor: ['dar_takafa', 'abderrahmane_dakhel'] },
-  { id: 'L15', number: '15', category: 'urban', color: '#DC2626', price_mad: 3.5, frequency_mins: 12, first_departure: '06:00', last_departure: '22:15', corridor: ['quartier_universitaire', 'ancienne_gare', 'torreta'] },
+  {
+    id: 'L15',
+    number: '15',
+    category: 'urban',
+    color: '#DC2626',
+    price_mad: 3.5,
+    frequency_mins: 12,
+    first_departure: '06:00',
+    last_departure: '22:15',
+    corridor: ['quartier_universitaire', 'ancienne_gare', 'torreta'],
+    // Verified Cite Universitaire Martil (Riad Sofia) -> Islamic Cemetery -> Hay Mixta / Hopital de Jour -> Rond-point Aya -> Facultes -> Zone Industrielle -> Rond-point Chairi (9 Avril) -> Saniat Rmel -> Ancienne Gare -> Torreta
+    routeWaypoints: [
+      [-5.299312, 35.622826],
+      [-5.2925, 35.6248],
+      [-5.2888, 35.6185],
+      [-5.287722, 35.612383],
+      [-5.294097, 35.609848],
+      [-5.304776, 35.601027],
+      [-5.332224, 35.583209],
+      [-5.34879, 35.574079],
+      [-5.366764, 35.566002],
+      [-5.371018, 35.560486],
+      [-5.369056, 35.5503],
+    ],
+    extraStops: [
+      {
+        name_en: 'Cimetière Musulman Martil',
+        name_ar: 'المقبرة الإسلامية بمرتيل',
+        lat: 35.6248,
+        lng: -5.2925,
+      },
+      {
+        name_en: 'Hôpital de Jour Martil',
+        name_ar: 'مصحة النهار مرتيل',
+        lat: 35.6185,
+        lng: -5.2888,
+      },
+    ],
+  },
   { id: 'L16', number: '16', category: 'urban', color: '#65A30D', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine'] },
   { id: 'L17', number: '17', category: 'urban', color: '#9333EA', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:30', corridor: ['rommana', 'dar_takafa', 'ancienne_gare', 'abdellah_fakhar'] },
   { id: 'L18', number: '18', category: 'urban', color: '#F97316', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:30', corridor: ['rommana', 'dar_takafa', 'barbourine'] },
 
   // Regional / Suburban Network (18 Lines - 4.00 to 8.00 MAD)
-  { id: 'L19', number: '19', category: 'regional', color: '#0284C7', price_mad: 4.5, frequency_mins: 35, first_departure: '06:30', last_departure: '21:00', corridor: ['rommana', 'dar_takafa', 'quartier_universitaire', 'amsa'] },
-  { id: 'L20', number: '20', category: 'regional', color: '#0F766E', price_mad: 4.5, frequency_mins: 30, first_departure: '06:30', last_departure: '20:30', corridor: ['rommana', 'dar_takafa', 'quartier_universitaire', 'azla'] },
-  { id: 'L21', number: '21', category: 'regional', color: '#0369A1', price_mad: 8.0, frequency_mins: 40, first_departure: '06:30', last_departure: '20:30', corridor: ['ancienne_gare', 'quartier_universitaire', 'amsa', 'oued_laou'] },
+  { id: 'L19', number: '19', category: 'regional', color: '#0284C7', price_mad: 4.5, frequency_mins: 35, first_departure: '06:30', last_departure: '21:00', corridor: ['rommana', 'dar_takafa', 'mhannech_sciences', 'amsa'] },
+  { id: 'L20', number: '20', category: 'regional', color: '#0F766E', price_mad: 4.5, frequency_mins: 30, first_departure: '06:30', last_departure: '20:30', corridor: ['rommana', 'dar_takafa', 'mhannech_sciences', 'azla'] },
+  { id: 'L21', number: '21', category: 'regional', color: '#0369A1', price_mad: 8.0, frequency_mins: 40, first_departure: '06:30', last_departure: '20:30', corridor: ['ancienne_gare', 'mhannech_sciences', 'amsa', 'oued_laou'] },
   { id: 'L22', number: '22', category: 'regional', color: '#BE185D', price_mad: 4.0, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['khalid_ibn_walid', 'dar_takafa', 'omar_mokhtar', 'sahtriyine'] },
   { id: 'L23', number: '23', category: 'regional', color: '#CA8A04', price_mad: 5.0, frequency_mins: 30, first_departure: '06:15', last_departure: '21:00', corridor: ['dar_takafa', 'omar_mokhtar', 'sahtriyine', 'ain_lahcen'] },
   { id: 'L24', number: '24', category: 'regional', color: '#E11D48', price_mad: 6.0, frequency_mins: 40, first_departure: '06:30', last_departure: '20:30', corridor: ['dar_takafa', 'saddina', 'khemis_anjra'] },
@@ -158,7 +198,47 @@ const LINES_SPEC = [
   { id: 'L30', number: '30', category: 'regional', color: '#14B8A6', price_mad: 4.0, frequency_mins: 30, first_departure: '06:30', last_departure: '20:30', corridor: ['ancienne_gare', 'torreta', 'beni_salah'] },
   { id: 'L31', number: '31', category: 'regional', color: '#6366F1', price_mad: 4.5, frequency_mins: 35, first_departure: '06:30', last_departure: '20:30', corridor: ['ancienne_gare', 'torreta', 'beni_salah', 'ain_zarka'] },
   { id: 'L32', number: '32', category: 'regional', color: '#0EA5E9', price_mad: 4.5, frequency_mins: 25, first_departure: '06:15', last_departure: '21:30', corridor: ['hay_bouzaghlal', 'mdiq', 'martil'] },
-  { id: 'L33', number: '33', category: 'regional', color: '#EC4899', price_mad: 6.0, frequency_mins: 25, first_departure: '06:15', last_departure: '21:30', corridor: ['fnideq', 'mdiq', 'martil'] },
+  {
+    id: 'L33',
+    number: '33',
+    category: 'regional',
+    color: '#EC4899',
+    price_mad: 6.0,
+    frequency_mins: 25,
+    first_departure: '06:15',
+    last_departure: '21:30',
+    corridor: ['fnideq', 'mdiq', 'martil_facultes'],
+    // Verified Fnideq -> Mdiq -> Rond-point Hacienda -> Islamic Cemetery -> Hay Mixta / Hopital de Jour -> Rond-point Aya -> Martil Faculties
+    routeWaypoints: [
+      [-5.355107, 35.841411],
+      [-5.322959, 35.685441],
+      [-5.2852, 35.6319],
+      [-5.2925, 35.6265],
+      [-5.2888, 35.6185],
+      [-5.287722, 35.612383],
+      [-5.294097, 35.609848],
+    ],
+    extraStops: [
+      {
+        name_en: 'Rond-point Hacienda',
+        name_ar: 'مدار فندق اسيندا',
+        lat: 35.6319,
+        lng: -5.2852,
+      },
+      {
+        name_en: 'Cimetière Musulman Martil',
+        name_ar: 'المقبرة الإسلامية بمرتيل',
+        lat: 35.6248,
+        lng: -5.2925,
+      },
+      {
+        name_en: 'Hôpital de Jour Martil',
+        name_ar: 'مصحة النهار مرتيل',
+        lat: 35.6185,
+        lng: -5.2888,
+      },
+    ],
+  },
   { id: 'L34', number: '34', category: 'regional', color: '#0891B2', price_mad: 5.0, frequency_mins: 15, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine', 'mdiq'] },
   { id: 'L35', number: '35', category: 'regional', color: '#2563EB', price_mad: 7.0, frequency_mins: 15, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine', 'mdiq', 'fnideq'] },
   { id: 'L36', number: '36', category: 'regional', color: '#10B981', price_mad: 4.0, frequency_mins: 10, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'saniat_rmel', 'tamouda', 'martil'] },
@@ -342,9 +422,18 @@ function buildOrderedStops(lineSpec, geometry, osmStops, enHubs, arHubs) {
     const distToLineMeters = turf.pointToLineDistance(osmPoint, lineFeature, { units: 'meters' });
     if (distToLineMeters > 60) continue;
 
-    const tooCloseToHub = hubEntries.some(
-      (hub) => turf.distance(osmPoint, turf.point([hub.lng, hub.lat]), { units: 'meters' }) < 45,
-    );
+    const tooCloseToHub = hubEntries.some((hub) => {
+      const dist = turf.distance(osmPoint, turf.point([hub.lng, hub.lat]), { units: 'meters' });
+      if (dist < 45) return true;
+      if (
+        dist < 95 &&
+        hub.hub_key === 'ancienne_gare' &&
+        osm.name_en.toLowerCase().includes('ancienne gare')
+      ) {
+        return true;
+      }
+      return false;
+    });
     if (tooCloseToHub) continue;
 
     const tooCloseToOsm = matchedOsmEntries.some((existing) => {
@@ -376,7 +465,25 @@ function buildOrderedStops(lineSpec, geometry, osmStops, enHubs, arHubs) {
     });
   }
 
-  const combined = [...hubEntries, ...matchedOsmEntries].sort((a, b) => a.location - b.location);
+  const extraEntries = Array.isArray(lineSpec.extraStops)
+    ? lineSpec.extraStops.map((extra) => {
+        const snapped = turf.nearestPointOnLine(lineFeature, turf.point([extra.lng, extra.lat]), {
+          units: 'kilometers',
+        });
+        return {
+          hub_key: null,
+          name_en: extra.name_en,
+          name_ar: extra.name_ar || '',
+          lat: extra.lat,
+          lng: extra.lng,
+          location: snapped?.properties?.location ?? 0,
+        };
+      })
+    : [];
+
+  const combined = [...hubEntries, ...extraEntries, ...matchedOsmEntries].sort(
+    (a, b) => a.location - b.location,
+  );
 
   return combined.map((stop, index) => {
     const order = index + 1;
