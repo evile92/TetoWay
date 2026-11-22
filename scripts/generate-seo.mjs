@@ -48,6 +48,7 @@ async function main() {
     'User-agent: *',
     'Allow: /',
     'Disallow: /*?*editor=',
+    'Disallow: /*?*admin=',
     '',
     `Sitemap: ${SITE_ORIGIN}/sitemap.xml`,
     '',

@@ -1,5 +1,5 @@
 import * as turf from '@turf/turf';
-import { Compass, PencilRuler, Radio, RotateCcw, Route } from 'lucide-react';
+import { Compass, Megaphone, PencilRuler, Radio, RotateCcw, Route, X } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { LineBadge } from './components/BidiText';
 import { ContactFooter } from './components/ContactFooter';
@@ -29,10 +29,12 @@ import type {
   MapPickMode,
   OsmStop,
   SheetSnap,
+  SiteConfig,
   Theme,
   TripItinerary,
 } from './types/transit';
 import { buildDeepLinkSearch, findLineByParam, parseDeepLink } from './utils/deepLink';
+import { readStoredAdminToken } from './utils/githubAdmin';
 import { formatStopsRemainingLabel } from './utils/rideTracker';
 import {
   findNearestServedStop,
@@ -46,6 +48,14 @@ const TETOUAN_CENTER: [number, number] = [-5.365, 35.573];
 const THEME_STORAGE_KEY = 'tetoway-theme';
 const LANG_STORAGE_KEY = 'tetoway-lang';
 const FAVORITES_STORAGE_KEY = 'tetoway-favorites';
+const DEFAULT_SITE_CONFIG: SiteConfig = {
+  announcement: {
+    enabled: false,
+    type: 'info',
+    text_en: '',
+    text_ar: '',
+  },
+};
 
 function readInitialTheme(): Theme {
   try {
@@ -82,9 +92,13 @@ function readInitialFavorites(): string[] {
 
 export function App() {
   const [initialDeepLink] = useState(() => parseDeepLink(window.location.search));
-  const editorEnabled = initialDeepLink.editorAccess;
+  const [editorEnabled, setEditorEnabled] = useState(
+    () => initialDeepLink.editorAccess || Boolean(readStoredAdminToken()),
+  );
+  const [adminUnlocked, setAdminUnlocked] = useState(false);
+  const [hasUnsavedLines, setHasUnsavedLines] = useState(false);
   const initialMode: AppMode =
-    editorEnabled &&
+    initialDeepLink.editorAccess &&
     !initialDeepLink.lineParam &&
     !initialDeepLink.from &&
     !initialDeepLink.to &&
@@ -99,6 +113,8 @@ export function App() {
   const [lines, setLines] = useState<BusLine[]>([]);
   const [osmStops, setOsmStops] = useState<OsmStop[]>([]);
   const [walkGraph, setWalkGraph] = useState<WalkGraph | null>(null);
+  const [siteConfig, setSiteConfig] = useState<SiteConfig>(DEFAULT_SITE_CONFIG);
+  const [bannerDismissed, setBannerDismissed] = useState(false);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(false);
 
@@ -174,10 +190,11 @@ export function App() {
   }, [theme]);
 
   const fetchTransitDataset = useCallback(async () => {
-    const [linesRes, osmRes, loadedWalkGraph] = await Promise.all([
+    const [linesRes, osmRes, loadedWalkGraph, configRes] = await Promise.all([
       fetch('/data/tetouan-lines.json'),
       fetch('/data/osm-stops.json'),
       loadWalkGraph(),
+      fetch('/data/site-config.json').catch(() => null),
     ]);
 
     if (!linesRes.ok) {
@@ -185,7 +202,11 @@ export function App() {
     }
     const linesJson = (await linesRes.json()) as BusLine[];
     const osmJson = osmRes.ok ? ((await osmRes.json()) as OsmStop[]) : [];
-    return { linesJson, osmJson, loadedWalkGraph };
+    const loadedConfig =
+      configRes && configRes.ok
+        ? ((await configRes.json().catch(() => DEFAULT_SITE_CONFIG)) as SiteConfig)
+        : DEFAULT_SITE_CONFIG;
+    return { linesJson, osmJson, loadedWalkGraph, loadedConfig };
   }, []);
 
   const hydrateDeepLink = useCallback(
@@ -234,10 +255,11 @@ export function App() {
     setLoading(true);
     setLoadError(false);
     try {
-      const { linesJson, osmJson, loadedWalkGraph } = await fetchTransitDataset();
+      const { linesJson, osmJson, loadedWalkGraph, loadedConfig } = await fetchTransitDataset();
       setLines(linesJson);
       setOsmStops(osmJson);
       setWalkGraph(loadedWalkGraph);
+      setSiteConfig(loadedConfig);
       hydrateDeepLink(linesJson, loadedWalkGraph);
     } catch {
       setLoadError(true);
@@ -249,11 +271,12 @@ export function App() {
   useEffect(() => {
     let active = true;
     fetchTransitDataset()
-      .then(({ linesJson, osmJson, loadedWalkGraph }) => {
+      .then(({ linesJson, osmJson, loadedWalkGraph, loadedConfig }) => {
         if (!active) return;
         setLines(linesJson);
         setOsmStops(osmJson);
         setWalkGraph(loadedWalkGraph);
+        setSiteConfig(loadedConfig);
         hydrateDeepLink(linesJson, loadedWalkGraph);
         setLoading(false);
       })
@@ -358,7 +381,7 @@ export function App() {
         destinationPoint,
         nearMePoint,
         selectedItineraryIndex,
-        editorEnabled,
+        editorEnabled: initialDeepLink.editorAccess || mode === 'editor',
       },
       { includeEditor: true },
     );
@@ -376,7 +399,7 @@ export function App() {
     destinationPoint,
     nearMePoint,
     selectedItineraryIndex,
-    editorEnabled,
+    initialDeepLink.editorAccess,
   ]);
 
   // Update document title and meta description dynamically for shareable deep links & SEO
@@ -440,18 +463,62 @@ export function App() {
   }, [triggerFocus]);
 
   const handleUpdateLine = useCallback((updated: BusLine) => {
+    setHasUnsavedLines(true);
     setLines((prev) => prev.map((l) => (l.id === updated.id ? updated : l)));
   }, []);
 
+  const handleAddLine = useCallback(
+    (newLine: BusLine) => {
+      setHasUnsavedLines(true);
+      setLines((prev) => [...prev, newLine]);
+      setSelectedLineId(newLine.id);
+      const bounds = getBboxForCoordinates(newLine.geometry.coordinates);
+      if (bounds) triggerFocus({ bounds });
+    },
+    [triggerFocus],
+  );
+
+  const handleDeleteLine = useCallback(
+    (lineId: string) => {
+      setHasUnsavedLines(true);
+      setLines((prev) => {
+        const remaining = prev.filter((l) => l.id !== lineId);
+        const nextLine = remaining[0] ?? null;
+        setSelectedLineId(nextLine ? nextLine.id : null);
+        if (nextLine) {
+          const bounds = getBboxForCoordinates(nextLine.geometry.coordinates);
+          if (bounds) triggerFocus({ bounds });
+        }
+        return remaining;
+      });
+    },
+    [triggerFocus],
+  );
+
+  const handleAdminUnlockChange = useCallback((unlocked: boolean) => {
+    setAdminUnlocked(unlocked);
+    if (unlocked) {
+      setEditorEnabled(true);
+    }
+  }, []);
+
+  const handleExitAdmin = useCallback(() => {
+    setPickMode('none');
+    setMode('explorer');
+    if (!initialDeepLink.editorAccess) {
+      setEditorEnabled(false);
+    }
+  }, [initialDeepLink.editorAccess]);
+
   const handleEditorDragStop = useCallback(
     (stopIndex: number, lng: number, lat: number) => {
-      if (!editorLine) return;
+      if (!adminUnlocked || !editorLine) return;
       const nextStops = editorLine.stops.map((s, idx) =>
         idx === stopIndex ? { ...s, lng, lat } : s,
       );
       handleUpdateLine({ ...editorLine, stops: nextStops });
     },
-    [editorLine, handleUpdateLine],
+    [adminUnlocked, editorLine, handleUpdateLine],
   );
 
   const handleSetTripPointFromStop = useCallback(
@@ -493,7 +560,7 @@ export function App() {
         return;
       }
 
-      if (pickMode === 'editor_add_stop' && editorLine) {
+      if (pickMode === 'editor_add_stop' && adminUnlocked && editorLine) {
         const newNum = editorLine.stops.length + 1;
         const newStop: BusStop = {
           id: `${editorLine.id}_S${newNum}`,
@@ -545,7 +612,16 @@ export function App() {
         setMobileSnap('half');
       }
     },
-    [pickMode, lines, walkGraph, editorLine, handleUpdateLine, handleSetTripPointFromStop, triggerFocus],
+    [
+      pickMode,
+      adminUnlocked,
+      lines,
+      walkGraph,
+      editorLine,
+      handleUpdateLine,
+      handleSetTripPointFromStop,
+      triggerFocus,
+    ],
   );
 
   // Auto-fit bounds when a new itinerary is computed or selected
@@ -654,15 +730,24 @@ export function App() {
         lang={lang}
         lines={lines}
         selectedLine={editorLine}
+        siteConfig={siteConfig}
+        isUnlocked={adminUnlocked}
+        onUnlockChange={handleAdminUnlockChange}
+        hasUnsavedLines={hasUnsavedLines}
+        onMarkLinesSaved={() => setHasUnsavedLines(false)}
         onSelectLine={(line) => {
           setSelectedLineId(line.id);
           const bounds = getBboxForCoordinates(line.geometry.coordinates);
           if (bounds) triggerFocus({ bounds });
         }}
         onUpdateLine={handleUpdateLine}
+        onAddLine={handleAddLine}
+        onDeleteLine={handleDeleteLine}
+        onUpdateSiteConfig={setSiteConfig}
         pickMode={pickMode}
         onSetPickMode={handleSetPickMode}
         onFocusStop={handleFocusStop}
+        onExitAdmin={handleExitAdmin}
       />
     ) : mode === 'planner' ? (
       <TripPlanner
@@ -747,6 +832,38 @@ export function App() {
         </span>
       </div>
     ) : undefined;
+
+  const bannerText =
+    lang === 'ar'
+      ? siteConfig.announcement.text_ar || siteConfig.announcement.text_en
+      : siteConfig.announcement.text_en || siteConfig.announcement.text_ar;
+
+  const announcementBanner =
+    siteConfig.announcement.enabled && !bannerDismissed && mode !== 'editor' && bannerText.trim() ? (
+      <div
+        data-testid="public-announcement-banner"
+        className={`px-3.5 py-2 border-b text-[11px] flex items-start justify-between gap-2 shrink-0 ${
+          siteConfig.announcement.type === 'warning'
+            ? 'bg-amber-50 border-amber-200 text-amber-900 dark:bg-amber-950/60 dark:border-amber-800/70 dark:text-amber-200'
+            : siteConfig.announcement.type === 'success'
+              ? 'bg-emerald-50 border-emerald-200 text-emerald-900 dark:bg-emerald-950/60 dark:border-emerald-800/70 dark:text-emerald-200'
+              : 'bg-sky-50 border-sky-200 text-sky-900 dark:bg-sky-950/60 dark:border-sky-800/70 dark:text-sky-200'
+        }`}
+      >
+        <div className="flex items-start gap-2 min-w-0">
+          <Megaphone className="w-3.5 h-3.5 shrink-0 mt-0.5" strokeWidth={1.75} />
+          <p className="leading-snug font-medium">{bannerText}</p>
+        </div>
+        <button
+          type="button"
+          onClick={() => setBannerDismissed(true)}
+          aria-label="Close"
+          className="p-0.5 rounded opacity-70 hover:opacity-100 shrink-0 cursor-pointer"
+        >
+          <X className="w-3.5 h-3.5" strokeWidth={1.75} />
+        </button>
+      </div>
+    ) : null;
 
   return (
     <div
@@ -873,6 +990,7 @@ export function App() {
         </div>
 
         {/* Sidebar Body */}
+        {announcementBanner}
         <div className="flex-1 min-h-0 overflow-hidden">
           {loading ? (
             <div className="flex flex-col items-center justify-center h-full p-6 text-center space-y-2">
@@ -925,7 +1043,7 @@ export function App() {
         <TransitMap
           lang={lang}
           theme={theme}
-          mode={mode}
+          mode={mode === 'editor' && !adminUnlocked ? 'explorer' : mode}
           lines={lines}
           osmStops={osmStops}
           showOsmStops={showOsmStops}
@@ -978,7 +1096,10 @@ export function App() {
               </button>
             </div>
           ) : (
-            panelContent
+            <div className="flex flex-col h-full min-h-0">
+              {announcementBanner}
+              <div className="flex-1 min-h-0 overflow-hidden">{panelContent}</div>
+            </div>
           )}
         </MobileBottomSheet>
       </main>

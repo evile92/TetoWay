@@ -158,3 +158,16 @@ export interface RideProgress {
   offRoute: boolean;
   stage: RideAlertStage;
 }
+
+export type AnnouncementType = 'info' | 'success' | 'warning';
+
+export interface AnnouncementBanner {
+  enabled: boolean;
+  type: AnnouncementType;
+  text_en: string;
+  text_ar: string;
+}
+
+export interface SiteConfig {
+  announcement: AnnouncementBanner;
+}

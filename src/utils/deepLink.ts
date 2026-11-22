@@ -39,11 +39,17 @@ function formatGeoParam(pt: GeoPoint): string {
   return `${pt.lat.toFixed(4)},${pt.lng.toFixed(4)}`;
 }
 
-/** Check whether the hidden `?editor=1` developer access parameter is set. */
+/** Check whether the hidden `?admin=1` or `?editor=1` owner access parameter is set. */
 export function hasEditorAccessParam(search: string): boolean {
   const params = new URLSearchParams(search);
-  const val = params.get('editor')?.toLowerCase();
-  return val === '1' || val === 'true';
+  const adminVal = params.get('admin')?.toLowerCase();
+  const editorVal = params.get('editor')?.toLowerCase();
+  return (
+    adminVal === '1' ||
+    adminVal === 'true' ||
+    editorVal === '1' ||
+    editorVal === 'true'
+  );
 }
 
 /** Parse shareable deep-link query parameters safely. */
