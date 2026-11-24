@@ -25,7 +25,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -34,7 +34,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -43,7 +43,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -61,7 +61,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -70,7 +70,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -79,7 +79,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -88,7 +88,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -97,7 +97,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -106,7 +106,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -115,7 +115,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -124,7 +124,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -133,7 +133,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -142,7 +142,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rettaha",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الرتاحة",
         "lat": 35.578154,
         "lng": -5.356204
       },
@@ -160,7 +160,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586294,
         "lng": -5.347391
       },
@@ -169,7 +169,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Avenue Des Far - Wilaya",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الولاية",
         "lat": 35.589631,
         "lng": -5.3451
       },
@@ -178,7 +178,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Avenue Des Far - El Yazidi",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - اليزيدي",
         "lat": 35.592158,
         "lng": -5.342964
       },
@@ -187,7 +187,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Boussafou",
-        "name_ar": "",
+        "name_ar": "بوصافو",
         "lat": 35.593616,
         "lng": -5.346002
       },
@@ -196,7 +196,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Bennouna Boussafou",
-        "name_ar": "",
+        "name_ar": "بنونة بوصافو",
         "lat": 35.594675,
         "lng": -5.347742
       },
@@ -205,7 +205,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Boujarrah 1",
-        "name_ar": "",
+        "name_ar": "بوجراح 1",
         "lat": 35.593005,
         "lng": -5.350566
       },
@@ -214,7 +214,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Boujarrah 2",
-        "name_ar": "",
+        "name_ar": "بوجراح 2",
         "lat": 35.591486,
         "lng": -5.35365
       },
@@ -223,7 +223,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Boujarrah 3",
-        "name_ar": "",
+        "name_ar": "بوجراح 3",
         "lat": 35.587709,
         "lng": -5.35569
       },
@@ -1897,7 +1897,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -1906,7 +1906,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -1915,7 +1915,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -1933,7 +1933,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -1942,7 +1942,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -1951,7 +1951,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -1960,7 +1960,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -1969,7 +1969,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -1978,7 +1978,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -1987,7 +1987,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -1996,7 +1996,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -2005,7 +2005,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -2014,7 +2014,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Mohamed Al Kharaz 2",
-        "name_ar": "",
+        "name_ar": "محمد الخراز 2",
         "lat": 35.579394,
         "lng": -5.35896
       },
@@ -2023,7 +2023,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Mohamed Al Kharaz 3",
-        "name_ar": "",
+        "name_ar": "محمد الخراز 3",
         "lat": 35.581585,
         "lng": -5.35612
       },
@@ -2041,7 +2041,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Boujarrah 3",
-        "name_ar": "",
+        "name_ar": "بوجراح 3",
         "lat": 35.587709,
         "lng": -5.35569
       },
@@ -2050,7 +2050,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Boujarrah 2",
-        "name_ar": "",
+        "name_ar": "بوجراح 2",
         "lat": 35.591486,
         "lng": -5.35365
       },
@@ -2059,7 +2059,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Boujarrah 1",
-        "name_ar": "",
+        "name_ar": "بوجراح 1",
         "lat": 35.593005,
         "lng": -5.350566
       },
@@ -2068,7 +2068,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Bennouna Boussafou",
-        "name_ar": "",
+        "name_ar": "بنونة بوصافو",
         "lat": 35.594675,
         "lng": -5.347742
       },
@@ -2077,7 +2077,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Mohamed Smaili",
-        "name_ar": "",
+        "name_ar": "محمد السمايلي (Mohamed Smaili)",
         "lat": 35.597047,
         "lng": -5.343409
       },
@@ -2086,7 +2086,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Jnan El Haouzi",
-        "name_ar": "",
+        "name_ar": "جنان الحوزي",
         "lat": 35.600103,
         "lng": -5.340555
       },
@@ -4560,7 +4560,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -4569,7 +4569,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -4578,7 +4578,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Saf Al Hamam 2",
-        "name_ar": "",
+        "name_ar": "صف الحمام 2",
         "lat": 35.555249,
         "lng": -5.376743
       },
@@ -4587,7 +4587,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Saf Al Hamam 1",
-        "name_ar": "",
+        "name_ar": "صف الحمام 1",
         "lat": 35.555183,
         "lng": -5.378905
       },
@@ -4596,7 +4596,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Les Jardins d'Andalous",
-        "name_ar": "",
+        "name_ar": "حدائق الأندلس",
         "lat": 35.555401,
         "lng": -5.381268
       },
@@ -4605,7 +4605,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Pharmacie Rkaina",
-        "name_ar": "",
+        "name_ar": "صيدلية الركينة",
         "lat": 35.557216,
         "lng": -5.383532
       },
@@ -5876,7 +5876,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -5903,7 +5903,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Résidence El Wikaya",
-        "name_ar": "",
+        "name_ar": "إقامة الوقاية",
         "lat": 35.575549,
         "lng": -5.40855
       },
@@ -5912,7 +5912,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Nassim",
-        "name_ar": "",
+        "name_ar": "النسيم",
         "lat": 35.571589,
         "lng": -5.418826
       },
@@ -7390,7 +7390,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -7399,7 +7399,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -7408,7 +7408,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -7417,7 +7417,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -7426,7 +7426,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Rommana",
-        "name_ar": "",
+        "name_ar": "رمانة",
         "lat": 35.565491,
         "lng": -5.392422
       },
@@ -7435,7 +7435,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.565183,
         "lng": -5.397679
       },
@@ -7444,7 +7444,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.56557,
         "lng": -5.398466
       },
@@ -7453,7 +7453,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565163,
         "lng": -5.401229
       },
@@ -7462,7 +7462,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565404,
         "lng": -5.401491
       },
@@ -7924,7 +7924,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -7933,7 +7933,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -7942,7 +7942,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -7960,7 +7960,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -7969,7 +7969,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -7978,7 +7978,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -7987,7 +7987,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -7996,7 +7996,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -8005,7 +8005,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -8014,7 +8014,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -8023,7 +8023,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -8032,7 +8032,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Hopital Civil",
-        "name_ar": "",
+        "name_ar": "المستشفى المدني (سانية الرمل)",
         "lat": 35.572543,
         "lng": -5.355339
       },
@@ -8041,7 +8041,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Mosquée Al Oumma",
-        "name_ar": "",
+        "name_ar": "مسجد الأمة",
         "lat": 35.572956,
         "lng": -5.35345
       },
@@ -8059,7 +8059,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Kaboul - Tekniya",
-        "name_ar": "",
+        "name_ar": "كابول - التقنية",
         "lat": 35.575456,
         "lng": -5.349432
       },
@@ -8068,7 +8068,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Ecole Omar Ibn Abdelaziz",
-        "name_ar": "",
+        "name_ar": "مدرسة عمر بن عبد العزيز",
         "lat": 35.576522,
         "lng": -5.350217
       },
@@ -8077,7 +8077,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Résidence El Manar",
-        "name_ar": "",
+        "name_ar": "إقامة المنار",
         "lat": 35.577954,
         "lng": -5.350707
       },
@@ -8086,7 +8086,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Pharmacie Afassi",
-        "name_ar": "",
+        "name_ar": "صيدلية العفاسي",
         "lat": 35.578908,
         "lng": -5.349217
       },
@@ -8095,7 +8095,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Etablissement Tofola",
-        "name_ar": "",
+        "name_ar": "مؤسسة الطفولة",
         "lat": 35.579814,
         "lng": -5.346481
       },
@@ -8104,7 +8104,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Supermarché Taw",
-        "name_ar": "",
+        "name_ar": "متجر طاو (Supermarché Taw)",
         "lat": 35.580041,
         "lng": -5.345082
       },
@@ -8113,7 +8113,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Café Warda",
-        "name_ar": "",
+        "name_ar": "مقهى وردة",
         "lat": 35.582914,
         "lng": -5.343826
       },
@@ -8122,7 +8122,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Ain Maloul",
-        "name_ar": "",
+        "name_ar": "عين ملول",
         "lat": 35.583708,
         "lng": -5.342419
       },
@@ -8140,7 +8140,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Ecole Mohamed Aziman",
-        "name_ar": "",
+        "name_ar": "مدرسة محمد أزيمان",
         "lat": 35.586204,
         "lng": -5.337336
       },
@@ -8149,7 +8149,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "Mosquée Mohammed VI",
-        "name_ar": "",
+        "name_ar": "مسجد محمد السادس",
         "lat": 35.58744,
         "lng": -5.337648
       },
@@ -8158,7 +8158,7 @@
         "order": 28,
         "hub_key": null,
         "name_en": "Wilaya",
-        "name_ar": "",
+        "name_ar": "الولاية",
         "lat": 35.589811,
         "lng": -5.338175
       },
@@ -8167,7 +8167,7 @@
         "order": 29,
         "hub_key": null,
         "name_en": "Aéroport",
-        "name_ar": "",
+        "name_ar": "المطار",
         "lat": 35.591007,
         "lng": -5.334067
       },
@@ -8176,7 +8176,7 @@
         "order": 30,
         "hub_key": null,
         "name_en": "I.T.A",
-        "name_ar": "",
+        "name_ar": "معهد التكنولوجيا التطبيقية (ITA)",
         "lat": 35.59349,
         "lng": -5.332204
       },
@@ -8185,7 +8185,7 @@
         "order": 31,
         "hub_key": null,
         "name_en": "Cité Universitaire",
-        "name_ar": "",
+        "name_ar": "الحي الجامعي",
         "lat": 35.59609,
         "lng": -5.328517
       },
@@ -8194,7 +8194,7 @@
         "order": 32,
         "hub_key": null,
         "name_en": "Avenue D'Egypte",
-        "name_ar": "",
+        "name_ar": "شارع مصر",
         "lat": 35.598036,
         "lng": -5.324566
       },
@@ -10072,7 +10072,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -10081,7 +10081,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -10090,7 +10090,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -10108,7 +10108,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -10117,7 +10117,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -10126,7 +10126,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -10135,7 +10135,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -10144,7 +10144,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -10153,7 +10153,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -10162,7 +10162,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -10171,7 +10171,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -10180,7 +10180,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -10189,7 +10189,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rettaha",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الرتاحة",
         "lat": 35.578154,
         "lng": -5.356204
       },
@@ -10207,7 +10207,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586158,
         "lng": -5.347754
       },
@@ -10216,7 +10216,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586294,
         "lng": -5.347391
       },
@@ -10225,7 +10225,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Avenue Des Far - Wilaya",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الولاية",
         "lat": 35.589631,
         "lng": -5.3451
       },
@@ -10234,7 +10234,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Avenue Des Far - El Yazidi",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - اليزيدي",
         "lat": 35.592158,
         "lng": -5.342964
       },
@@ -10243,7 +10243,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Mohamed Smaili",
-        "name_ar": "",
+        "name_ar": "محمد السمايلي (Mohamed Smaili)",
         "lat": 35.597047,
         "lng": -5.343409
       },
@@ -11765,7 +11765,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -11774,7 +11774,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -11783,7 +11783,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -11801,7 +11801,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -11810,7 +11810,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -11819,7 +11819,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -11828,7 +11828,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -11837,7 +11837,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -11846,7 +11846,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -11855,7 +11855,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -11864,7 +11864,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -11873,7 +11873,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -11882,7 +11882,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rettaha",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الرتاحة",
         "lat": 35.578154,
         "lng": -5.356204
       },
@@ -11900,7 +11900,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586158,
         "lng": -5.347754
       },
@@ -11909,7 +11909,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586294,
         "lng": -5.347391
       },
@@ -11918,7 +11918,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Avenue Des Far - Wilaya",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الولاية",
         "lat": 35.589631,
         "lng": -5.3451
       },
@@ -11927,7 +11927,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Avenue Des Far - El Yazidi",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - اليزيدي",
         "lat": 35.592158,
         "lng": -5.342964
       },
@@ -11936,7 +11936,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Mohamed El Yazidi",
-        "name_ar": "",
+        "name_ar": "محمد اليزيدي",
         "lat": 35.592501,
         "lng": -5.339873
       },
@@ -11945,7 +11945,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Aéroport",
-        "name_ar": "",
+        "name_ar": "المطار",
         "lat": 35.591007,
         "lng": -5.334067
       },
@@ -13347,7 +13347,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -13356,7 +13356,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -13365,7 +13365,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -13383,7 +13383,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -13392,7 +13392,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -13401,7 +13401,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -13410,7 +13410,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -13419,7 +13419,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -13428,7 +13428,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -13437,7 +13437,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -13446,7 +13446,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -13455,7 +13455,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -13464,7 +13464,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rettaha",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الرتاحة",
         "lat": 35.578154,
         "lng": -5.356204
       },
@@ -13482,7 +13482,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586294,
         "lng": -5.347391
       },
@@ -13491,7 +13491,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586158,
         "lng": -5.347754
       },
@@ -13500,7 +13500,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Jbel Atlas",
-        "name_ar": "",
+        "name_ar": "جبل الأطلس",
         "lat": 35.586609,
         "lng": -5.349218
       },
@@ -13509,7 +13509,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Boujarrah 3",
-        "name_ar": "",
+        "name_ar": "بوجراح 3",
         "lat": 35.587709,
         "lng": -5.35569
       },
@@ -14791,7 +14791,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -14818,7 +14818,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Route Semsa",
-        "name_ar": "",
+        "name_ar": "طريق سمسة",
         "lat": 35.57859,
         "lng": -5.3993
       },
@@ -14827,7 +14827,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Route Semsa 2",
-        "name_ar": "",
+        "name_ar": "طريق سمسة 2",
         "lat": 35.582294,
         "lng": -5.401123
       },
@@ -15884,7 +15884,7 @@
         "order": 1,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -15893,7 +15893,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -15902,7 +15902,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -15911,7 +15911,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -15920,7 +15920,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -15929,7 +15929,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -15947,7 +15947,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -16725,7 +16725,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -16734,7 +16734,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -16743,7 +16743,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -16752,7 +16752,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -16761,7 +16761,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -16770,7 +16770,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -16779,7 +16779,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -16788,7 +16788,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -16797,7 +16797,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -16806,7 +16806,7 @@
         "order": 11,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -16815,7 +16815,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -16824,7 +16824,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -16833,7 +16833,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 2",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 2",
         "lat": 35.562961,
         "lng": -5.368759
       },
@@ -16842,7 +16842,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Gare Routière",
-        "name_ar": "",
+        "name_ar": "المحطة الطرقية",
         "lat": 35.560486,
         "lng": -5.371018
       },
@@ -16851,7 +16851,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Saf Al Hamam 2",
-        "name_ar": "",
+        "name_ar": "صف الحمام 2",
         "lat": 35.555249,
         "lng": -5.376743
       },
@@ -18410,7 +18410,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -18419,7 +18419,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -18428,7 +18428,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Saf Al Hamam 2",
-        "name_ar": "",
+        "name_ar": "صف الحمام 2",
         "lat": 35.555249,
         "lng": -5.376743
       },
@@ -18437,7 +18437,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Saf Al Hamam 1",
-        "name_ar": "",
+        "name_ar": "صف الحمام 1",
         "lat": 35.555183,
         "lng": -5.378905
       },
@@ -18446,7 +18446,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Les Jardins d'Andalous",
-        "name_ar": "",
+        "name_ar": "حدائق الأندلس",
         "lat": 35.555401,
         "lng": -5.381268
       },
@@ -18455,7 +18455,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Pharmacie Rkaina",
-        "name_ar": "",
+        "name_ar": "صيدلية الركينة",
         "lat": 35.557216,
         "lng": -5.383532
       },
@@ -19203,7 +19203,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Chonbira",
-        "name_ar": "",
+        "name_ar": "الشومبيرا",
         "lat": 35.612241,
         "lng": -5.287572
       },
@@ -19212,7 +19212,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Faculté De Lettres",
-        "name_ar": "",
+        "name_ar": "كلية الآداب",
         "lat": 35.609726,
         "lng": -5.293906
       },
@@ -19221,7 +19221,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Oum Keltoum",
-        "name_ar": "",
+        "name_ar": "أم كلثوم",
         "lat": 35.60779,
         "lng": -5.29749
       },
@@ -19230,7 +19230,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Zone Industrielle",
-        "name_ar": "",
+        "name_ar": "المنطقة الصناعية",
         "lat": 35.600822,
         "lng": -5.304363
       },
@@ -19239,7 +19239,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Avenue D'Egypte",
-        "name_ar": "",
+        "name_ar": "شارع مصر",
         "lat": 35.598036,
         "lng": -5.324566
       },
@@ -19248,7 +19248,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Cité Universitaire",
-        "name_ar": "",
+        "name_ar": "الحي الجامعي",
         "lat": 35.59609,
         "lng": -5.328517
       },
@@ -19257,7 +19257,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "I.T.A",
-        "name_ar": "",
+        "name_ar": "معهد التكنولوجيا التطبيقية (ITA)",
         "lat": 35.59349,
         "lng": -5.332204
       },
@@ -19266,7 +19266,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Aéroport",
-        "name_ar": "",
+        "name_ar": "المطار",
         "lat": 35.591093,
         "lng": -5.334134
       },
@@ -19275,7 +19275,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "9 Avril",
-        "name_ar": "",
+        "name_ar": "9 أبريل",
         "lat": 35.583209,
         "lng": -5.332224
       },
@@ -19284,7 +19284,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Faculté Ossoul-Eddine",
-        "name_ar": "",
+        "name_ar": "كلية أصول الدين",
         "lat": 35.580337,
         "lng": -5.336859
       },
@@ -19293,7 +19293,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Nada",
-        "name_ar": "",
+        "name_ar": "ندى",
         "lat": 35.57661,
         "lng": -5.34076
       },
@@ -19302,7 +19302,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Cnss",
-        "name_ar": "",
+        "name_ar": "الضمان الاجتماعي (CNSS)",
         "lat": 35.574726,
         "lng": -5.345031
       },
@@ -19311,7 +19311,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Terrain Saniat Rmel",
-        "name_ar": "",
+        "name_ar": "ملعب سانية الرمل",
         "lat": 35.574079,
         "lng": -5.34879
       },
@@ -19320,7 +19320,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Mosquée Al Oumma",
-        "name_ar": "",
+        "name_ar": "مسجد الأمة",
         "lat": 35.572956,
         "lng": -5.35345
       },
@@ -19329,7 +19329,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Hopital Civil",
-        "name_ar": "",
+        "name_ar": "المستشفى المدني (سانية الرمل)",
         "lat": 35.572543,
         "lng": -5.355339
       },
@@ -19338,7 +19338,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -19347,7 +19347,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -19356,7 +19356,7 @@
         "order": 21,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -19365,7 +19365,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -19374,7 +19374,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -19383,7 +19383,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 2",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 2",
         "lat": 35.562961,
         "lng": -5.368759
       },
@@ -19392,7 +19392,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "Gare Routière",
-        "name_ar": "",
+        "name_ar": "المحطة الطرقية",
         "lat": 35.560486,
         "lng": -5.371018
       },
@@ -19401,7 +19401,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Saf Al Hamam 2",
-        "name_ar": "",
+        "name_ar": "صف الحمام 2",
         "lat": 35.555249,
         "lng": -5.376743
       },
@@ -22131,7 +22131,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -22140,7 +22140,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -22149,7 +22149,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -22167,7 +22167,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -22176,7 +22176,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -22185,7 +22185,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -22194,7 +22194,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -22203,7 +22203,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -22212,7 +22212,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -22221,7 +22221,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -22230,7 +22230,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -22239,7 +22239,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -22248,7 +22248,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rettaha",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الرتاحة",
         "lat": 35.578154,
         "lng": -5.356204
       },
@@ -22266,7 +22266,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586158,
         "lng": -5.347754
       },
@@ -22275,7 +22275,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586294,
         "lng": -5.347391
       },
@@ -22284,7 +22284,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Avenue Des Far - Wilaya",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الولاية",
         "lat": 35.589631,
         "lng": -5.3451
       },
@@ -22293,7 +22293,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Avenue Des Far - El Yazidi",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - اليزيدي",
         "lat": 35.592158,
         "lng": -5.342964
       },
@@ -22302,7 +22302,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Marjane",
-        "name_ar": "",
+        "name_ar": "مرجان",
         "lat": 35.602661,
         "lng": -5.336157
       },
@@ -22311,7 +22311,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Setine 60",
-        "name_ar": "",
+        "name_ar": "ستين 60 (Setine 60)",
         "lat": 35.6079,
         "lng": -5.334637
       },
@@ -22320,7 +22320,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Setine 60",
-        "name_ar": "",
+        "name_ar": "ستين 60 (Setine 60)",
         "lat": 35.608204,
         "lng": -5.334402
       },
@@ -22329,7 +22329,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Koudia",
-        "name_ar": "",
+        "name_ar": "الكدية",
         "lat": 35.613189,
         "lng": -5.332723
       },
@@ -22338,7 +22338,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "R'Milat",
-        "name_ar": "",
+        "name_ar": "الرميلات",
         "lat": 35.62074,
         "lng": -5.329086
       },
@@ -24196,7 +24196,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -24205,7 +24205,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -24214,7 +24214,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -24232,7 +24232,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -24241,7 +24241,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -24250,7 +24250,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -24259,7 +24259,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -24268,7 +24268,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -24277,7 +24277,7 @@
         "order": 11,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -24286,7 +24286,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -24295,7 +24295,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -24304,7 +24304,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Casablanca 1",
-        "name_ar": "",
+        "name_ar": "الدار البيضاء 1",
         "lat": 35.56626,
         "lng": -5.360151
       },
@@ -24313,7 +24313,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Casablanca 2",
-        "name_ar": "",
+        "name_ar": "الدار البيضاء 2",
         "lat": 35.565278,
         "lng": -5.356494
       },
@@ -25427,7 +25427,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -25436,7 +25436,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -25445,7 +25445,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -25454,7 +25454,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -25472,7 +25472,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Diour Lahjar",
-        "name_ar": "",
+        "name_ar": "ديور الحجر",
         "lat": 35.573504,
         "lng": -5.379584
       },
@@ -26510,7 +26510,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -26519,7 +26519,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -26528,7 +26528,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -26546,7 +26546,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -26555,7 +26555,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -26564,7 +26564,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -26573,7 +26573,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -26582,7 +26582,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -26591,7 +26591,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 2",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 2",
         "lat": 35.562961,
         "lng": -5.368759
       },
@@ -26600,7 +26600,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Faculté Des Sciences",
-        "name_ar": "",
+        "name_ar": "كلية العلوم",
         "lat": 35.562623,
         "lng": -5.363179
       },
@@ -26609,7 +26609,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Faculté Des Sciences",
-        "name_ar": "",
+        "name_ar": "كلية العلوم",
         "lat": 35.562339,
         "lng": -5.362924
       },
@@ -26627,7 +26627,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Abdellah El Fakhar - Afriquia",
-        "name_ar": "",
+        "name_ar": "عبد الله الفخار - أفريقيا",
         "lat": 35.564595,
         "lng": -5.352505
       },
@@ -26636,7 +26636,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Grt Coelma",
-        "name_ar": "",
+        "name_ar": "كويلما (Grt Coelma)",
         "lat": 35.56481,
         "lng": -5.347428
       },
@@ -26645,7 +26645,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Coelma",
-        "name_ar": "",
+        "name_ar": "كويلما",
         "lat": 35.565059,
         "lng": -5.34499
       },
@@ -26654,7 +26654,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "El Manar",
-        "name_ar": "",
+        "name_ar": "المنار",
         "lat": 35.567701,
         "lng": -5.336648
       },
@@ -26663,7 +26663,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Fabrique Rbahi",
-        "name_ar": "",
+        "name_ar": "معمل الرباحي",
         "lat": 35.569583,
         "lng": -5.33076
       },
@@ -26672,7 +26672,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.57701,
         "lng": -5.30724
       },
@@ -26681,7 +26681,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "El Kharrouba",
-        "name_ar": "",
+        "name_ar": "الخروبة",
         "lat": 35.580674,
         "lng": -5.290164
       },
@@ -26690,7 +26690,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Sidi Abdeslam",
-        "name_ar": "",
+        "name_ar": "سيدي عبد السلام",
         "lat": 35.572269,
         "lng": -5.263645
       },
@@ -26699,7 +26699,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Chwabel",
-        "name_ar": "",
+        "name_ar": "الشوابل",
         "lat": 35.563412,
         "lng": -5.249671
       },
@@ -26708,7 +26708,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Azla",
-        "name_ar": "",
+        "name_ar": "أزلا",
         "lat": 35.550609,
         "lng": -5.242701
       },
@@ -26717,7 +26717,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "Kae El Mejri",
-        "name_ar": "",
+        "name_ar": "قاع المجري",
         "lat": 35.547072,
         "lng": -5.235696
       },
@@ -26726,7 +26726,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Senssla",
-        "name_ar": "",
+        "name_ar": "السنسلة",
         "lat": 35.544971,
         "lng": -5.225513
       },
@@ -29600,7 +29600,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -29609,7 +29609,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -29618,7 +29618,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -29636,7 +29636,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -29645,7 +29645,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -29654,7 +29654,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -29663,7 +29663,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -29672,7 +29672,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -29681,7 +29681,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 2",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 2",
         "lat": 35.562961,
         "lng": -5.368759
       },
@@ -29690,7 +29690,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Faculté Des Sciences",
-        "name_ar": "",
+        "name_ar": "كلية العلوم",
         "lat": 35.562623,
         "lng": -5.363179
       },
@@ -29699,7 +29699,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Faculté Des Sciences",
-        "name_ar": "",
+        "name_ar": "كلية العلوم",
         "lat": 35.562339,
         "lng": -5.362924
       },
@@ -29717,7 +29717,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Abdellah El Fakhar - Afriquia",
-        "name_ar": "",
+        "name_ar": "عبد الله الفخار - أفريقيا",
         "lat": 35.564595,
         "lng": -5.352505
       },
@@ -29726,7 +29726,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Grt Coelma",
-        "name_ar": "",
+        "name_ar": "كويلما (Grt Coelma)",
         "lat": 35.56481,
         "lng": -5.347428
       },
@@ -29735,7 +29735,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Coelma",
-        "name_ar": "",
+        "name_ar": "كويلما",
         "lat": 35.565059,
         "lng": -5.34499
       },
@@ -29744,7 +29744,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "El Manar",
-        "name_ar": "",
+        "name_ar": "المنار",
         "lat": 35.567701,
         "lng": -5.336648
       },
@@ -29753,7 +29753,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Fabrique Rbahi",
-        "name_ar": "",
+        "name_ar": "معمل الرباحي",
         "lat": 35.569583,
         "lng": -5.33076
       },
@@ -29762,7 +29762,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.57701,
         "lng": -5.30724
       },
@@ -29771,7 +29771,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "El Kharrouba",
-        "name_ar": "",
+        "name_ar": "الخروبة",
         "lat": 35.580674,
         "lng": -5.290164
       },
@@ -29780,7 +29780,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Sidi Abdeslam",
-        "name_ar": "",
+        "name_ar": "سيدي عبد السلام",
         "lat": 35.572269,
         "lng": -5.263645
       },
@@ -29789,7 +29789,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Chwabel",
-        "name_ar": "",
+        "name_ar": "الشوابل",
         "lat": 35.563412,
         "lng": -5.249671
       },
@@ -31930,7 +31930,7 @@
         "order": 1,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -31939,7 +31939,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Faculté Des Sciences",
-        "name_ar": "",
+        "name_ar": "كلية العلوم",
         "lat": 35.562623,
         "lng": -5.363179
       },
@@ -31948,7 +31948,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Faculté Des Sciences",
-        "name_ar": "",
+        "name_ar": "كلية العلوم",
         "lat": 35.562339,
         "lng": -5.362924
       },
@@ -31966,7 +31966,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Abdellah El Fakhar - Afriquia",
-        "name_ar": "",
+        "name_ar": "عبد الله الفخار - أفريقيا",
         "lat": 35.564595,
         "lng": -5.352505
       },
@@ -31975,7 +31975,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Grt Coelma",
-        "name_ar": "",
+        "name_ar": "كويلما (Grt Coelma)",
         "lat": 35.56481,
         "lng": -5.347428
       },
@@ -31984,7 +31984,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Coelma",
-        "name_ar": "",
+        "name_ar": "كويلما",
         "lat": 35.565059,
         "lng": -5.34499
       },
@@ -31993,7 +31993,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "El Manar",
-        "name_ar": "",
+        "name_ar": "المنار",
         "lat": 35.567701,
         "lng": -5.336648
       },
@@ -32002,7 +32002,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Fabrique Rbahi",
-        "name_ar": "",
+        "name_ar": "معمل الرباحي",
         "lat": 35.569583,
         "lng": -5.33076
       },
@@ -32011,7 +32011,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.57701,
         "lng": -5.30724
       },
@@ -32020,7 +32020,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "El Kharrouba",
-        "name_ar": "",
+        "name_ar": "الخروبة",
         "lat": 35.580674,
         "lng": -5.290164
       },
@@ -32029,7 +32029,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Sidi Abdeslam",
-        "name_ar": "",
+        "name_ar": "سيدي عبد السلام",
         "lat": 35.572269,
         "lng": -5.263645
       },
@@ -32038,7 +32038,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Chwabel",
-        "name_ar": "",
+        "name_ar": "الشوابل",
         "lat": 35.563412,
         "lng": -5.249671
       },
@@ -32047,7 +32047,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Azla",
-        "name_ar": "",
+        "name_ar": "أزلا",
         "lat": 35.550609,
         "lng": -5.242701
       },
@@ -32056,7 +32056,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Kae El Mejri",
-        "name_ar": "",
+        "name_ar": "قاع المجري",
         "lat": 35.547072,
         "lng": -5.235696
       },
@@ -32065,7 +32065,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Senssla",
-        "name_ar": "",
+        "name_ar": "السنسلة",
         "lat": 35.544971,
         "lng": -5.225513
       },
@@ -32083,7 +32083,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Campigne",
-        "name_ar": "",
+        "name_ar": "المخيم (الكامبينغ)",
         "lat": 35.53744,
         "lng": -5.21337
       },
@@ -32092,7 +32092,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Tamrabet",
-        "name_ar": "",
+        "name_ar": "تامرابط",
         "lat": 35.529737,
         "lng": -5.1968
       },
@@ -32101,7 +32101,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Tamernout",
-        "name_ar": "",
+        "name_ar": "تامرنوت",
         "lat": 35.519675,
         "lng": -5.176646
       },
@@ -32110,7 +32110,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Awchtam",
-        "name_ar": "",
+        "name_ar": "أوشتام",
         "lat": 35.508275,
         "lng": -5.156796
       },
@@ -32119,7 +32119,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Abita",
-        "name_ar": "",
+        "name_ar": "أبيتا (Abita)",
         "lat": 35.487884,
         "lng": -5.135705
       },
@@ -32128,7 +32128,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Tamgart",
-        "name_ar": "",
+        "name_ar": "تمغارت",
         "lat": 35.482682,
         "lng": -5.124549
       },
@@ -32137,7 +32137,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Khandak De Riyas",
-        "name_ar": "",
+        "name_ar": "خندق الرياس (Khandak De Riyas)",
         "lat": 35.477174,
         "lng": -5.117107
       },
@@ -32146,7 +32146,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "Mkad",
-        "name_ar": "",
+        "name_ar": "مكاد",
         "lat": 35.46346,
         "lng": -5.100193
       },
@@ -38983,7 +38983,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -38992,7 +38992,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -39001,7 +39001,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -39010,7 +39010,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -39019,7 +39019,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Rommana",
-        "name_ar": "",
+        "name_ar": "رمانة",
         "lat": 35.565491,
         "lng": -5.392422
       },
@@ -39028,7 +39028,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.565183,
         "lng": -5.397679
       },
@@ -39037,7 +39037,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.56557,
         "lng": -5.398466
       },
@@ -39046,7 +39046,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Koudia",
-        "name_ar": "",
+        "name_ar": "الكدية",
         "lat": 35.566595,
         "lng": -5.401635
       },
@@ -39064,7 +39064,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565163,
         "lng": -5.401229
       },
@@ -39073,7 +39073,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565404,
         "lng": -5.401491
       },
@@ -39082,7 +39082,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567302,
         "lng": -5.406294
       },
@@ -39091,7 +39091,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567044,
         "lng": -5.407162
       },
@@ -39100,7 +39100,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Afriquia - Mly Hassan Bel Mehdi",
-        "name_ar": "",
+        "name_ar": "أفريقيا - مولاي الحسن بلمهدي",
         "lat": 35.565662,
         "lng": -5.411768
       },
@@ -39109,7 +39109,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "La Paloma",
-        "name_ar": "",
+        "name_ar": "لا بالوما",
         "lat": 35.565304,
         "lng": -5.412072
       },
@@ -39118,7 +39118,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Nakkata",
-        "name_ar": "",
+        "name_ar": "النقاطة",
         "lat": 35.5651,
         "lng": -5.414894
       },
@@ -39127,7 +39127,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Louziyen",
-        "name_ar": "",
+        "name_ar": "اللوزيين",
         "lat": 35.564925,
         "lng": -5.420797
       },
@@ -39136,7 +39136,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Louziyen",
-        "name_ar": "",
+        "name_ar": "اللوزيين",
         "lat": 35.565049,
         "lng": -5.421433
       },
@@ -39145,7 +39145,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Soussi",
-        "name_ar": "",
+        "name_ar": "السوسي",
         "lat": 35.562943,
         "lng": -5.428942
       },
@@ -39154,7 +39154,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Soussi",
-        "name_ar": "",
+        "name_ar": "السوسي",
         "lat": 35.562725,
         "lng": -5.429261
       },
@@ -39163,7 +39163,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Traksat",
-        "name_ar": "",
+        "name_ar": "طراكسات",
         "lat": 35.561427,
         "lng": -5.432971
       },
@@ -39172,7 +39172,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Dechrien",
-        "name_ar": "",
+        "name_ar": "الدشريين",
         "lat": 35.559767,
         "lng": -5.43643
       },
@@ -39181,7 +39181,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "Grankha",
-        "name_ar": "",
+        "name_ar": "لاكرانخا",
         "lat": 35.559759,
         "lng": -5.445002
       },
@@ -39190,7 +39190,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Khmis",
-        "name_ar": "",
+        "name_ar": "الخميس",
         "lat": 35.558019,
         "lng": -5.453507
       },
@@ -39199,7 +39199,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "Trik",
-        "name_ar": "",
+        "name_ar": "الطريق (Trik)",
         "lat": 35.559311,
         "lng": -5.461384
       },
@@ -39208,7 +39208,7 @@
         "order": 28,
         "hub_key": null,
         "name_en": "El Harcha",
-        "name_ar": "",
+        "name_ar": "الحرشة",
         "lat": 35.561124,
         "lng": -5.473662
       },
@@ -39217,7 +39217,7 @@
         "order": 29,
         "hub_key": null,
         "name_en": "Boukhari",
-        "name_ar": "",
+        "name_ar": "البخاري",
         "lat": 35.5617,
         "lng": -5.481418
       },
@@ -40859,7 +40859,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -40868,7 +40868,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -40877,7 +40877,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -40886,7 +40886,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -40895,7 +40895,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Rommana",
-        "name_ar": "",
+        "name_ar": "رمانة",
         "lat": 35.565491,
         "lng": -5.392422
       },
@@ -40904,7 +40904,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.565183,
         "lng": -5.397679
       },
@@ -40913,7 +40913,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.56557,
         "lng": -5.398466
       },
@@ -40922,7 +40922,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Koudia",
-        "name_ar": "",
+        "name_ar": "الكدية",
         "lat": 35.566595,
         "lng": -5.401635
       },
@@ -40940,7 +40940,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565163,
         "lng": -5.401229
       },
@@ -40949,7 +40949,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565404,
         "lng": -5.401491
       },
@@ -40958,7 +40958,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567302,
         "lng": -5.406294
       },
@@ -40967,7 +40967,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567044,
         "lng": -5.407162
       },
@@ -40976,7 +40976,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Afriquia - Mly Hassan Bel Mehdi",
-        "name_ar": "",
+        "name_ar": "أفريقيا - مولاي الحسن بلمهدي",
         "lat": 35.565662,
         "lng": -5.411768
       },
@@ -40985,7 +40985,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "La Paloma",
-        "name_ar": "",
+        "name_ar": "لا بالوما",
         "lat": 35.565304,
         "lng": -5.412072
       },
@@ -40994,7 +40994,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Nakkata",
-        "name_ar": "",
+        "name_ar": "النقاطة",
         "lat": 35.5651,
         "lng": -5.414894
       },
@@ -41003,7 +41003,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Louziyen",
-        "name_ar": "",
+        "name_ar": "اللوزيين",
         "lat": 35.564925,
         "lng": -5.420797
       },
@@ -41012,7 +41012,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Louziyen",
-        "name_ar": "",
+        "name_ar": "اللوزيين",
         "lat": 35.565049,
         "lng": -5.421433
       },
@@ -41021,7 +41021,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Soussi",
-        "name_ar": "",
+        "name_ar": "السوسي",
         "lat": 35.562943,
         "lng": -5.428942
       },
@@ -41030,7 +41030,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Soussi",
-        "name_ar": "",
+        "name_ar": "السوسي",
         "lat": 35.562725,
         "lng": -5.429261
       },
@@ -41039,7 +41039,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Traksat",
-        "name_ar": "",
+        "name_ar": "طراكسات",
         "lat": 35.561427,
         "lng": -5.432971
       },
@@ -41048,7 +41048,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Dechrien",
-        "name_ar": "",
+        "name_ar": "الدشريين",
         "lat": 35.559767,
         "lng": -5.43643
       },
@@ -41057,7 +41057,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Grankha",
-        "name_ar": "",
+        "name_ar": "لاكرانخا",
         "lat": 35.559759,
         "lng": -5.445002
       },
@@ -41066,7 +41066,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "Khmis",
-        "name_ar": "",
+        "name_ar": "الخميس",
         "lat": 35.558019,
         "lng": -5.453507
       },
@@ -41075,7 +41075,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Trik",
-        "name_ar": "",
+        "name_ar": "الطريق (Trik)",
         "lat": 35.559311,
         "lng": -5.461384
       },
@@ -41084,7 +41084,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "El Harcha",
-        "name_ar": "",
+        "name_ar": "الحرشة",
         "lat": 35.561124,
         "lng": -5.473662
       },
@@ -41093,7 +41093,7 @@
         "order": 28,
         "hub_key": null,
         "name_en": "Boukhari",
-        "name_ar": "",
+        "name_ar": "البخاري",
         "lat": 35.5617,
         "lng": -5.481418
       },
@@ -41111,7 +41111,7 @@
         "order": 30,
         "hub_key": null,
         "name_en": "Barrage",
-        "name_ar": "",
+        "name_ar": "السد",
         "lat": 35.563204,
         "lng": -5.489351
       },
@@ -41120,7 +41120,7 @@
         "order": 31,
         "hub_key": null,
         "name_en": "Barrage",
-        "name_ar": "",
+        "name_ar": "السد",
         "lat": 35.563297,
         "lng": -5.489985
       },
@@ -41129,7 +41129,7 @@
         "order": 32,
         "hub_key": null,
         "name_en": "El Manar",
-        "name_ar": "",
+        "name_ar": "المنار",
         "lat": 35.559582,
         "lng": -5.499769
       },
@@ -41138,7 +41138,7 @@
         "order": 33,
         "hub_key": null,
         "name_en": "El Manar",
-        "name_ar": "",
+        "name_ar": "المنار",
         "lat": 35.559332,
         "lng": -5.500544
       },
@@ -41147,7 +41147,7 @@
         "order": 34,
         "hub_key": null,
         "name_en": "Chtab",
-        "name_ar": "",
+        "name_ar": "الشطاب (Chtab)",
         "lat": 35.55574,
         "lng": -5.505167
       },
@@ -41156,7 +41156,7 @@
         "order": 35,
         "hub_key": null,
         "name_en": "El Hjar",
-        "name_ar": "",
+        "name_ar": "الحجر",
         "lat": 35.552675,
         "lng": -5.513377
       },
@@ -41165,7 +41165,7 @@
         "order": 36,
         "hub_key": null,
         "name_en": "El Hjar",
-        "name_ar": "",
+        "name_ar": "الحجر",
         "lat": 35.552358,
         "lng": -5.513264
       },
@@ -41174,7 +41174,7 @@
         "order": 37,
         "hub_key": null,
         "name_en": "Spirada",
-        "name_ar": "",
+        "name_ar": "سبيرادا",
         "lat": 35.549631,
         "lng": -5.522785
       },
@@ -41183,7 +41183,7 @@
         "order": 38,
         "hub_key": null,
         "name_en": "Ain Lahcen",
-        "name_ar": "",
+        "name_ar": "عين الحصن",
         "lat": 35.548172,
         "lng": -5.554703
       },
@@ -43713,7 +43713,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Hôpital Espagnol",
-        "name_ar": "",
+        "name_ar": "المستشفى الإسباني",
         "lat": 35.572452,
         "lng": -5.387677
       },
@@ -43722,7 +43722,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Cafe Terasa",
-        "name_ar": "",
+        "name_ar": "مقهى طيراسا",
         "lat": 35.574661,
         "lng": -5.389826
       },
@@ -43731,7 +43731,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Snack Loujdi",
-        "name_ar": "",
+        "name_ar": "سناك الوجدي",
         "lat": 35.57498,
         "lng": -5.391325
       },
@@ -43740,7 +43740,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Palais Essalam",
-        "name_ar": "",
+        "name_ar": "قصر السلام",
         "lat": 35.575288,
         "lng": -5.393783
       },
@@ -43758,7 +43758,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Route Semsa",
-        "name_ar": "",
+        "name_ar": "طريق سمسة",
         "lat": 35.57859,
         "lng": -5.3993
       },
@@ -43767,7 +43767,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Route Semsa 2",
-        "name_ar": "",
+        "name_ar": "طريق سمسة 2",
         "lat": 35.582294,
         "lng": -5.401123
       },
@@ -43776,7 +43776,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Lafarge",
-        "name_ar": "",
+        "name_ar": "لافارج",
         "lat": 35.597237,
         "lng": -5.430764
       },
@@ -43794,7 +43794,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Laalaouia",
-        "name_ar": "",
+        "name_ar": "العلوية",
         "lat": 35.638405,
         "lng": -5.446945
       },
@@ -50629,7 +50629,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -50638,7 +50638,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -50647,7 +50647,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -50665,7 +50665,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -50674,7 +50674,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -50683,7 +50683,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -50692,7 +50692,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -50701,7 +50701,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -50710,7 +50710,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -50719,7 +50719,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -50728,7 +50728,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -50737,7 +50737,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -50746,7 +50746,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rettaha",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الرتاحة",
         "lat": 35.578154,
         "lng": -5.356204
       },
@@ -50764,7 +50764,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586158,
         "lng": -5.347754
       },
@@ -50773,7 +50773,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586294,
         "lng": -5.347391
       },
@@ -50782,7 +50782,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Avenue Des Far - Wilaya",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الولاية",
         "lat": 35.589631,
         "lng": -5.3451
       },
@@ -50791,7 +50791,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Avenue Des Far - El Yazidi",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - اليزيدي",
         "lat": 35.592158,
         "lng": -5.342964
       },
@@ -50800,7 +50800,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Marjane",
-        "name_ar": "",
+        "name_ar": "مرجان",
         "lat": 35.602661,
         "lng": -5.336157
       },
@@ -50809,7 +50809,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Setine 60",
-        "name_ar": "",
+        "name_ar": "ستين 60 (Setine 60)",
         "lat": 35.6079,
         "lng": -5.334637
       },
@@ -50818,7 +50818,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Setine 60",
-        "name_ar": "",
+        "name_ar": "ستين 60 (Setine 60)",
         "lat": 35.608204,
         "lng": -5.334402
       },
@@ -50827,7 +50827,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Koudia",
-        "name_ar": "",
+        "name_ar": "الكدية",
         "lat": 35.613189,
         "lng": -5.332723
       },
@@ -50836,7 +50836,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "R'Milat",
-        "name_ar": "",
+        "name_ar": "الرميلات",
         "lat": 35.62074,
         "lng": -5.329086
       },
@@ -50845,7 +50845,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Rp El Mallalienne",
-        "name_ar": "",
+        "name_ar": "مدار الملاليين",
         "lat": 35.624908,
         "lng": -5.327287
       },
@@ -50854,7 +50854,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "Mandi",
-        "name_ar": "",
+        "name_ar": "مندي (Mandi)",
         "lat": 35.62617,
         "lng": -5.33138
       },
@@ -52959,7 +52959,7 @@
         "order": 1,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -52968,7 +52968,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -52977,7 +52977,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -52986,7 +52986,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -52995,7 +52995,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -53004,7 +53004,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -53013,7 +53013,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -53022,7 +53022,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -53031,7 +53031,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -53040,7 +53040,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Rommana",
-        "name_ar": "",
+        "name_ar": "رمانة",
         "lat": 35.565491,
         "lng": -5.392422
       },
@@ -53049,7 +53049,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.565183,
         "lng": -5.397679
       },
@@ -53058,7 +53058,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.56557,
         "lng": -5.398466
       },
@@ -53067,7 +53067,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565163,
         "lng": -5.401229
       },
@@ -53076,7 +53076,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565404,
         "lng": -5.401491
       },
@@ -53085,7 +53085,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567302,
         "lng": -5.406294
       },
@@ -53094,7 +53094,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567044,
         "lng": -5.407162
       },
@@ -53103,7 +53103,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Afriquia - Mly Hassan Bel Mehdi",
-        "name_ar": "",
+        "name_ar": "أفريقيا - مولاي الحسن بلمهدي",
         "lat": 35.565662,
         "lng": -5.411768
       },
@@ -53112,7 +53112,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "La Paloma",
-        "name_ar": "",
+        "name_ar": "لا بالوما",
         "lat": 35.565304,
         "lng": -5.412072
       },
@@ -53121,7 +53121,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Grt Louha",
-        "name_ar": "",
+        "name_ar": "اللوحة (Grt Louha)",
         "lat": 35.558152,
         "lng": -5.412594
       },
@@ -53130,7 +53130,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Borojo",
-        "name_ar": "",
+        "name_ar": "بوروخو (Borojo)",
         "lat": 35.54819,
         "lng": -5.423283
       },
@@ -53139,7 +53139,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Dar El Khayat",
-        "name_ar": "",
+        "name_ar": "دار الخياط",
         "lat": 35.532034,
         "lng": -5.428877
       },
@@ -53148,7 +53148,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Ben Karrich",
-        "name_ar": "",
+        "name_ar": "بن قريش",
         "lat": 35.506509,
         "lng": -5.438979
       },
@@ -53157,7 +53157,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "El Akba",
-        "name_ar": "",
+        "name_ar": "العقبة",
         "lat": 35.503819,
         "lng": -5.435828
       },
@@ -53166,7 +53166,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "El Akba",
-        "name_ar": "",
+        "name_ar": "العقبة",
         "lat": 35.503543,
         "lng": -5.436051
       },
@@ -55579,7 +55579,7 @@
         "order": 1,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -55588,7 +55588,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -55597,7 +55597,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -55606,7 +55606,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -55615,7 +55615,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -55624,7 +55624,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -55633,7 +55633,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -55642,7 +55642,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -55651,7 +55651,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -55660,7 +55660,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Rommana",
-        "name_ar": "",
+        "name_ar": "رمانة",
         "lat": 35.565491,
         "lng": -5.392422
       },
@@ -55669,7 +55669,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.565183,
         "lng": -5.397679
       },
@@ -55678,7 +55678,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.56557,
         "lng": -5.398466
       },
@@ -55687,7 +55687,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565163,
         "lng": -5.401229
       },
@@ -55696,7 +55696,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565404,
         "lng": -5.401491
       },
@@ -55705,7 +55705,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567302,
         "lng": -5.406294
       },
@@ -55714,7 +55714,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567044,
         "lng": -5.407162
       },
@@ -55723,7 +55723,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Afriquia - Mly Hassan Bel Mehdi",
-        "name_ar": "",
+        "name_ar": "أفريقيا - مولاي الحسن بلمهدي",
         "lat": 35.565662,
         "lng": -5.411768
       },
@@ -55732,7 +55732,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "La Paloma",
-        "name_ar": "",
+        "name_ar": "لا بالوما",
         "lat": 35.565304,
         "lng": -5.412072
       },
@@ -55741,7 +55741,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Grt Louha",
-        "name_ar": "",
+        "name_ar": "اللوحة (Grt Louha)",
         "lat": 35.558152,
         "lng": -5.412594
       },
@@ -55750,7 +55750,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Borojo",
-        "name_ar": "",
+        "name_ar": "بوروخو (Borojo)",
         "lat": 35.54819,
         "lng": -5.423283
       },
@@ -55759,7 +55759,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Dar El Khayat",
-        "name_ar": "",
+        "name_ar": "دار الخياط",
         "lat": 35.532034,
         "lng": -5.428877
       },
@@ -55768,7 +55768,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Ben Karrich",
-        "name_ar": "",
+        "name_ar": "بن قريش",
         "lat": 35.506509,
         "lng": -5.438979
       },
@@ -55777,7 +55777,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "El Akba",
-        "name_ar": "",
+        "name_ar": "العقبة",
         "lat": 35.503819,
         "lng": -5.435828
       },
@@ -55786,7 +55786,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "El Akba",
-        "name_ar": "",
+        "name_ar": "العقبة",
         "lat": 35.503543,
         "lng": -5.436051
       },
@@ -55804,7 +55804,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Aboudi",
-        "name_ar": "",
+        "name_ar": "عبودي (Aboudi)",
         "lat": 35.49717,
         "lng": -5.43449
       },
@@ -55813,7 +55813,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "Ain Aicha",
-        "name_ar": "",
+        "name_ar": "عين عائشة",
         "lat": 35.494786,
         "lng": -5.428433
       },
@@ -55822,7 +55822,7 @@
         "order": 28,
         "hub_key": null,
         "name_en": "Ben Dakoo",
-        "name_ar": "",
+        "name_ar": "بن داكو (Ben Dakoo)",
         "lat": 35.491558,
         "lng": -5.423818
       },
@@ -55831,7 +55831,7 @@
         "order": 29,
         "hub_key": null,
         "name_en": "Barrage Martil",
-        "name_ar": "",
+        "name_ar": "سد مرتيل",
         "lat": 35.48685,
         "lng": -5.420065
       },
@@ -55840,7 +55840,7 @@
         "order": 30,
         "hub_key": null,
         "name_en": "El Ksab",
-        "name_ar": "",
+        "name_ar": "القصب",
         "lat": 35.482558,
         "lng": -5.41159
       },
@@ -55849,7 +55849,7 @@
         "order": 31,
         "hub_key": null,
         "name_en": "El Ksab",
-        "name_ar": "",
+        "name_ar": "القصب",
         "lat": 35.482761,
         "lng": -5.411204
       },
@@ -59902,7 +59902,7 @@
         "order": 1,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -59911,7 +59911,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -59920,7 +59920,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -59929,7 +59929,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -59938,7 +59938,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -59947,7 +59947,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -59956,7 +59956,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -59965,7 +59965,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -59974,7 +59974,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -59983,7 +59983,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Rommana",
-        "name_ar": "",
+        "name_ar": "رمانة",
         "lat": 35.565491,
         "lng": -5.392422
       },
@@ -59992,7 +59992,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.565183,
         "lng": -5.397679
       },
@@ -60001,7 +60001,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Marché De Gros",
-        "name_ar": "",
+        "name_ar": "سوق الجملة",
         "lat": 35.56557,
         "lng": -5.398466
       },
@@ -60010,7 +60010,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565163,
         "lng": -5.401229
       },
@@ -60019,7 +60019,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Taboula",
-        "name_ar": "",
+        "name_ar": "طابولة",
         "lat": 35.565404,
         "lng": -5.401491
       },
@@ -60028,7 +60028,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567302,
         "lng": -5.406294
       },
@@ -60037,7 +60037,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Abattoirs",
-        "name_ar": "",
+        "name_ar": "المجازر (الكرنة)",
         "lat": 35.567044,
         "lng": -5.407162
       },
@@ -60046,7 +60046,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Afriquia - Mly Hassan Bel Mehdi",
-        "name_ar": "",
+        "name_ar": "أفريقيا - مولاي الحسن بلمهدي",
         "lat": 35.565662,
         "lng": -5.411768
       },
@@ -60055,7 +60055,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "La Paloma",
-        "name_ar": "",
+        "name_ar": "لا بالوما",
         "lat": 35.565304,
         "lng": -5.412072
       },
@@ -60064,7 +60064,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Grt Louha",
-        "name_ar": "",
+        "name_ar": "اللوحة (Grt Louha)",
         "lat": 35.558152,
         "lng": -5.412594
       },
@@ -60073,7 +60073,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Borojo",
-        "name_ar": "",
+        "name_ar": "بوروخو (Borojo)",
         "lat": 35.54819,
         "lng": -5.423283
       },
@@ -60082,7 +60082,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Dar El Khayat",
-        "name_ar": "",
+        "name_ar": "دار الخياط",
         "lat": 35.532034,
         "lng": -5.428877
       },
@@ -60091,7 +60091,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Ben Karrich",
-        "name_ar": "",
+        "name_ar": "بن قريش",
         "lat": 35.506509,
         "lng": -5.438979
       },
@@ -60100,7 +60100,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "El Akba",
-        "name_ar": "",
+        "name_ar": "العقبة",
         "lat": 35.503819,
         "lng": -5.435828
       },
@@ -60109,7 +60109,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "El Akba",
-        "name_ar": "",
+        "name_ar": "العقبة",
         "lat": 35.503543,
         "lng": -5.436051
       },
@@ -60127,7 +60127,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Aboudi",
-        "name_ar": "",
+        "name_ar": "عبودي (Aboudi)",
         "lat": 35.49717,
         "lng": -5.43449
       },
@@ -60136,7 +60136,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "Ain Aicha",
-        "name_ar": "",
+        "name_ar": "عين عائشة",
         "lat": 35.494786,
         "lng": -5.428433
       },
@@ -60145,7 +60145,7 @@
         "order": 28,
         "hub_key": null,
         "name_en": "Ben Dakoo",
-        "name_ar": "",
+        "name_ar": "بن داكو (Ben Dakoo)",
         "lat": 35.491558,
         "lng": -5.423818
       },
@@ -60154,7 +60154,7 @@
         "order": 29,
         "hub_key": null,
         "name_en": "Barrage Martil",
-        "name_ar": "",
+        "name_ar": "سد مرتيل",
         "lat": 35.48685,
         "lng": -5.420065
       },
@@ -60163,7 +60163,7 @@
         "order": 30,
         "hub_key": null,
         "name_en": "El Ksab",
-        "name_ar": "",
+        "name_ar": "القصب",
         "lat": 35.482558,
         "lng": -5.41159
       },
@@ -60172,7 +60172,7 @@
         "order": 31,
         "hub_key": null,
         "name_en": "El Ksab",
-        "name_ar": "",
+        "name_ar": "القصب",
         "lat": 35.482761,
         "lng": -5.411204
       },
@@ -60190,7 +60190,7 @@
         "order": 33,
         "hub_key": null,
         "name_en": "Moulay Abdessalam",
-        "name_ar": "",
+        "name_ar": "مولاي عبد السلام",
         "lat": 35.460184,
         "lng": -5.404822
       },
@@ -60199,7 +60199,7 @@
         "order": 34,
         "hub_key": null,
         "name_en": "Barrage Nakhla",
-        "name_ar": "",
+        "name_ar": "سد النخلة",
         "lat": 35.45128,
         "lng": -5.396582
       },
@@ -60208,7 +60208,7 @@
         "order": 35,
         "hub_key": null,
         "name_en": "Café Sed",
-        "name_ar": "",
+        "name_ar": "مقهى السد",
         "lat": 35.446885,
         "lng": -5.39376
       },
@@ -60217,7 +60217,7 @@
         "order": 36,
         "hub_key": null,
         "name_en": "Café Ayad",
-        "name_ar": "",
+        "name_ar": "مقهى عياد",
         "lat": 35.439914,
         "lng": -5.39107
       },
@@ -60226,7 +60226,7 @@
         "order": 37,
         "hub_key": null,
         "name_en": "Enissar Joue",
-        "name_ar": "",
+        "name_ar": "عنصر الجوع (Enissar Joue)",
         "lat": 35.434661,
         "lng": -5.390904
       },
@@ -60235,7 +60235,7 @@
         "order": 38,
         "hub_key": null,
         "name_en": "Kchoue",
-        "name_ar": "",
+        "name_ar": "كشوع (Kchoue)",
         "lat": 35.423453,
         "lng": -5.392396
       },
@@ -60244,7 +60244,7 @@
         "order": 39,
         "hub_key": null,
         "name_en": "Café El Mrabet",
-        "name_ar": "",
+        "name_ar": "مقهى المرابط",
         "lat": 35.414368,
         "lng": -5.384466
       },
@@ -60253,7 +60253,7 @@
         "order": 40,
         "hub_key": null,
         "name_en": "Mrija",
-        "name_ar": "",
+        "name_ar": "المريجة",
         "lat": 35.408706,
         "lng": -5.379372
       },
@@ -60262,7 +60262,7 @@
         "order": 41,
         "hub_key": null,
         "name_en": "Mrija",
-        "name_ar": "",
+        "name_ar": "المريجة",
         "lat": 35.409021,
         "lng": -5.37935
       },
@@ -60271,7 +60271,7 @@
         "order": 42,
         "hub_key": null,
         "name_en": "Beni Moussa",
-        "name_ar": "",
+        "name_ar": "بني موسى",
         "lat": 35.388523,
         "lng": -5.373295
       },
@@ -60280,7 +60280,7 @@
         "order": 43,
         "hub_key": null,
         "name_en": "Koades",
-        "name_ar": "",
+        "name_ar": "القوادس",
         "lat": 35.377681,
         "lng": -5.374583
       },
@@ -60289,7 +60289,7 @@
         "order": 44,
         "hub_key": null,
         "name_en": "Berraka",
-        "name_ar": "",
+        "name_ar": "البراكة",
         "lat": 35.36773,
         "lng": -5.37359
       },
@@ -67386,7 +67386,7 @@
         "order": 1,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -67395,7 +67395,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -67404,7 +67404,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -67413,7 +67413,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 2",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 2",
         "lat": 35.562961,
         "lng": -5.368759
       },
@@ -67422,7 +67422,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Gare Routière",
-        "name_ar": "",
+        "name_ar": "المحطة الطرقية",
         "lat": 35.560486,
         "lng": -5.371018
       },
@@ -67431,7 +67431,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Saf Al Hamam 2",
-        "name_ar": "",
+        "name_ar": "صف الحمام 2",
         "lat": 35.555249,
         "lng": -5.376743
       },
@@ -67440,7 +67440,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Bouanane",
-        "name_ar": "",
+        "name_ar": "بوعنان",
         "lat": 35.548426,
         "lng": -5.371899
       },
@@ -67458,7 +67458,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Mgaz Lhjar 3",
-        "name_ar": "",
+        "name_ar": "مجاز الحجر 3",
         "lat": 35.552231,
         "lng": -5.367492
       },
@@ -67467,7 +67467,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Mgaz Lhjar 2",
-        "name_ar": "",
+        "name_ar": "مجاز الحجر 2",
         "lat": 35.552471,
         "lng": -5.365588
       },
@@ -67476,7 +67476,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Mgaz Lhjar 1",
-        "name_ar": "",
+        "name_ar": "مجاز الحجر 1",
         "lat": 35.550818,
         "lng": -5.363524
       },
@@ -68957,7 +68957,7 @@
         "order": 1,
         "hub_key": "ancienne_gare",
         "name_en": "Old Railway Station",
-        "name_ar": "محطة السكك الحديدية القديمة",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566002,
         "lng": -5.366764
       },
@@ -68966,7 +68966,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Mekki Nassiri - Aakbat El Halouf",
-        "name_ar": "",
+        "name_ar": "المكي الناصري - عقبة الحلوف",
         "lat": 35.565745,
         "lng": -5.368628
       },
@@ -68975,7 +68975,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 1",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 1",
         "lat": 35.565084,
         "lng": -5.368615
       },
@@ -68984,7 +68984,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Aakbat El Halouf 2",
-        "name_ar": "",
+        "name_ar": "عقبة الحلوف 2",
         "lat": 35.562961,
         "lng": -5.368759
       },
@@ -68993,7 +68993,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Gare Routière",
-        "name_ar": "",
+        "name_ar": "المحطة الطرقية",
         "lat": 35.560486,
         "lng": -5.371018
       },
@@ -69002,7 +69002,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Saf Al Hamam 2",
-        "name_ar": "",
+        "name_ar": "صف الحمام 2",
         "lat": 35.555249,
         "lng": -5.376743
       },
@@ -69011,7 +69011,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Bouanane",
-        "name_ar": "",
+        "name_ar": "بوعنان",
         "lat": 35.548426,
         "lng": -5.371899
       },
@@ -69029,7 +69029,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Mgaz Lhjar 3",
-        "name_ar": "",
+        "name_ar": "مجاز الحجر 3",
         "lat": 35.552231,
         "lng": -5.367492
       },
@@ -69038,7 +69038,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Mgaz Lhjar 2",
-        "name_ar": "",
+        "name_ar": "مجاز الحجر 2",
         "lat": 35.552471,
         "lng": -5.365588
       },
@@ -69047,7 +69047,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Mgaz Lhjar 1",
-        "name_ar": "",
+        "name_ar": "مجاز الحجر 1",
         "lat": 35.550818,
         "lng": -5.363524
       },
@@ -69065,7 +69065,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Jamaat Zitoune",
-        "name_ar": "",
+        "name_ar": "جماعة الزيتون",
         "lat": 35.553101,
         "lng": -5.360102
       },
@@ -69074,7 +69074,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Kharrouba",
-        "name_ar": "",
+        "name_ar": "الخروبة",
         "lat": 35.554031,
         "lng": -5.355025
       },
@@ -71809,7 +71809,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "El Marssa",
-        "name_ar": "",
+        "name_ar": "المرسى",
         "lat": 35.682789,
         "lng": -5.320755
       },
@@ -71818,7 +71818,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Gorna",
-        "name_ar": "",
+        "name_ar": "الكرنة",
         "lat": 35.676779,
         "lng": -5.321396
       },
@@ -71827,7 +71827,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "Krouche",
-        "name_ar": "",
+        "name_ar": "كروش (Krouche)",
         "lat": 35.666808,
         "lng": -5.318495
       },
@@ -71836,7 +71836,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Krouche",
-        "name_ar": "",
+        "name_ar": "كروش (Krouche)",
         "lat": 35.666621,
         "lng": -5.31805
       },
@@ -71845,7 +71845,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.660093,
         "lng": -5.318609
       },
@@ -71854,7 +71854,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.659783,
         "lng": -5.318902
       },
@@ -71863,7 +71863,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Colinord",
-        "name_ar": "",
+        "name_ar": "كولينور",
         "lat": 35.655375,
         "lng": -5.319148
       },
@@ -71872,7 +71872,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ahrik",
-        "name_ar": "",
+        "name_ar": "أحريق",
         "lat": 35.630944,
         "lng": -5.284525
       },
@@ -71881,7 +71881,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Grand Taxi",
-        "name_ar": "",
+        "name_ar": "محطة سيارات الأجرة الكبيرة",
         "lat": 35.627651,
         "lng": -5.282327
       },
@@ -71890,7 +71890,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Dalia",
-        "name_ar": "",
+        "name_ar": "دالية",
         "lat": 35.627468,
         "lng": -5.281391
       },
@@ -71899,7 +71899,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Chbar",
-        "name_ar": "",
+        "name_ar": "شبار",
         "lat": 35.62493,
         "lng": -5.2747
       },
@@ -71908,7 +71908,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Miramar",
-        "name_ar": "",
+        "name_ar": "ميرامار",
         "lat": 35.619198,
         "lng": -5.272936
       },
@@ -71917,7 +71917,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Grand-Taxi Tétouan",
-        "name_ar": "",
+        "name_ar": "طاكسيات تطوان الكبيرة",
         "lat": 35.618408,
         "lng": -5.272942
       },
@@ -73831,7 +73831,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Kondisa",
-        "name_ar": "",
+        "name_ar": "كونديسا",
         "lat": 35.837275,
         "lng": -5.355397
       },
@@ -73840,7 +73840,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Rifiyenne",
-        "name_ar": "",
+        "name_ar": "الريفيين",
         "lat": 35.821607,
         "lng": -5.353755
       },
@@ -73849,7 +73849,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Fadesa",
-        "name_ar": "",
+        "name_ar": "فاديسا",
         "lat": 35.80739,
         "lng": -5.352609
       },
@@ -73858,7 +73858,7 @@
         "order": 5,
         "hub_key": null,
         "name_en": "El Amin",
-        "name_ar": "",
+        "name_ar": "الأمين",
         "lat": 35.795942,
         "lng": -5.356136
       },
@@ -73867,7 +73867,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Al Mina",
-        "name_ar": "",
+        "name_ar": "الميناء",
         "lat": 35.787674,
         "lng": -5.353489
       },
@@ -73876,7 +73876,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Grand Hôtel",
-        "name_ar": "",
+        "name_ar": "الفندق الكبير (غران أوتيل)",
         "lat": 35.777713,
         "lng": -5.3484
       },
@@ -73885,7 +73885,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Restinga",
-        "name_ar": "",
+        "name_ar": "ريستينغا",
         "lat": 35.76637,
         "lng": -5.348635
       },
@@ -73894,7 +73894,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Marina 2",
-        "name_ar": "",
+        "name_ar": "مارينا 2",
         "lat": 35.761213,
         "lng": -5.34849
       },
@@ -73903,7 +73903,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Marina",
-        "name_ar": "",
+        "name_ar": "مارينا",
         "lat": 35.75474,
         "lng": -5.347181
       },
@@ -73912,7 +73912,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Marina",
-        "name_ar": "",
+        "name_ar": "مارينا",
         "lat": 35.75348,
         "lng": -5.346425
       },
@@ -73921,7 +73921,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Marina Smir",
-        "name_ar": "",
+        "name_ar": "مارينا سمير",
         "lat": 35.749857,
         "lng": -5.346183
       },
@@ -73930,7 +73930,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Studio",
-        "name_ar": "",
+        "name_ar": "ستوديو",
         "lat": 35.74213,
         "lng": -5.343779
       },
@@ -73939,7 +73939,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Sania",
-        "name_ar": "",
+        "name_ar": "السانية",
         "lat": 35.735958,
         "lng": -5.341975
       },
@@ -73948,7 +73948,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Kabila 2",
-        "name_ar": "",
+        "name_ar": "كابيلا 2",
         "lat": 35.726573,
         "lng": -5.340057
       },
@@ -73957,7 +73957,7 @@
         "order": 16,
         "hub_key": null,
         "name_en": "Kabila",
-        "name_ar": "",
+        "name_ar": "كابيلا",
         "lat": 35.720161,
         "lng": -5.337997
       },
@@ -73966,7 +73966,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Holiday",
-        "name_ar": "",
+        "name_ar": "هوليداي",
         "lat": 35.698959,
         "lng": -5.331394
       },
@@ -73984,7 +73984,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "El Marssa",
-        "name_ar": "",
+        "name_ar": "المرسى",
         "lat": 35.682789,
         "lng": -5.320755
       },
@@ -73993,7 +73993,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Gorna",
-        "name_ar": "",
+        "name_ar": "الكرنة",
         "lat": 35.676779,
         "lng": -5.321396
       },
@@ -74002,7 +74002,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Krouche",
-        "name_ar": "",
+        "name_ar": "كروش (Krouche)",
         "lat": 35.666621,
         "lng": -5.31805
       },
@@ -74011,7 +74011,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.660093,
         "lng": -5.318609
       },
@@ -74020,7 +74020,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Colinord",
-        "name_ar": "",
+        "name_ar": "كولينور",
         "lat": 35.655375,
         "lng": -5.319148
       },
@@ -74038,7 +74038,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "Ahrik",
-        "name_ar": "",
+        "name_ar": "أحريق",
         "lat": 35.630944,
         "lng": -5.284525
       },
@@ -74065,7 +74065,7 @@
         "order": 28,
         "hub_key": null,
         "name_en": "Chonbira",
-        "name_ar": "",
+        "name_ar": "الشومبيرا",
         "lat": 35.612241,
         "lng": -5.287572
       },
@@ -77407,7 +77407,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -77416,7 +77416,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -77425,7 +77425,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -77443,7 +77443,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -77452,7 +77452,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -77461,7 +77461,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -77470,7 +77470,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -77479,7 +77479,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -77488,7 +77488,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -77497,7 +77497,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -77506,7 +77506,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -77515,7 +77515,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -77524,7 +77524,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rettaha",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الرتاحة",
         "lat": 35.578154,
         "lng": -5.356204
       },
@@ -77542,7 +77542,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586158,
         "lng": -5.347754
       },
@@ -77551,7 +77551,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586294,
         "lng": -5.347391
       },
@@ -77560,7 +77560,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Avenue Des Far - Wilaya",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الولاية",
         "lat": 35.589631,
         "lng": -5.3451
       },
@@ -77569,7 +77569,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Avenue Des Far - El Yazidi",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - اليزيدي",
         "lat": 35.592158,
         "lng": -5.342964
       },
@@ -77578,7 +77578,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Marjane",
-        "name_ar": "",
+        "name_ar": "مرجان",
         "lat": 35.602661,
         "lng": -5.336157
       },
@@ -77587,7 +77587,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Setine 60",
-        "name_ar": "",
+        "name_ar": "ستين 60 (Setine 60)",
         "lat": 35.6079,
         "lng": -5.334637
       },
@@ -77596,7 +77596,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Setine 60",
-        "name_ar": "",
+        "name_ar": "ستين 60 (Setine 60)",
         "lat": 35.608204,
         "lng": -5.334402
       },
@@ -77605,7 +77605,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Koudia",
-        "name_ar": "",
+        "name_ar": "الكدية",
         "lat": 35.613189,
         "lng": -5.332723
       },
@@ -77614,7 +77614,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "R'Milat",
-        "name_ar": "",
+        "name_ar": "الرميلات",
         "lat": 35.62074,
         "lng": -5.329086
       },
@@ -77632,7 +77632,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "Sdouki",
-        "name_ar": "",
+        "name_ar": "الصدوقي",
         "lat": 35.63099,
         "lng": -5.325693
       },
@@ -77641,7 +77641,7 @@
         "order": 28,
         "hub_key": null,
         "name_en": "Rayhana",
-        "name_ar": "",
+        "name_ar": "ريحانة",
         "lat": 35.636839,
         "lng": -5.32436
       },
@@ -77650,7 +77650,7 @@
         "order": 29,
         "hub_key": null,
         "name_en": "Rayhana",
-        "name_ar": "",
+        "name_ar": "ريحانة",
         "lat": 35.637019,
         "lng": -5.324041
       },
@@ -77659,7 +77659,7 @@
         "order": 30,
         "hub_key": null,
         "name_en": "El Filaha",
-        "name_ar": "",
+        "name_ar": "الفلاحة",
         "lat": 35.640204,
         "lng": -5.323234
       },
@@ -77668,7 +77668,7 @@
         "order": 31,
         "hub_key": null,
         "name_en": "Campo",
-        "name_ar": "",
+        "name_ar": "كامبو (Campo)",
         "lat": 35.64511,
         "lng": -5.321922
       },
@@ -77677,7 +77677,7 @@
         "order": 32,
         "hub_key": null,
         "name_en": "Ghniwat",
-        "name_ar": "",
+        "name_ar": "غنيوات",
         "lat": 35.650002,
         "lng": -5.320593
       },
@@ -77686,7 +77686,7 @@
         "order": 33,
         "hub_key": null,
         "name_en": "Colinord",
-        "name_ar": "",
+        "name_ar": "كولينور",
         "lat": 35.655375,
         "lng": -5.319148
       },
@@ -77695,7 +77695,7 @@
         "order": 34,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.659783,
         "lng": -5.318902
       },
@@ -77704,7 +77704,7 @@
         "order": 35,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.660093,
         "lng": -5.318609
       },
@@ -77713,7 +77713,7 @@
         "order": 36,
         "hub_key": null,
         "name_en": "Krouche",
-        "name_ar": "",
+        "name_ar": "كروش (Krouche)",
         "lat": 35.666621,
         "lng": -5.31805
       },
@@ -77722,7 +77722,7 @@
         "order": 37,
         "hub_key": null,
         "name_en": "Krouche",
-        "name_ar": "",
+        "name_ar": "كروش (Krouche)",
         "lat": 35.666808,
         "lng": -5.318495
       },
@@ -77731,7 +77731,7 @@
         "order": 38,
         "hub_key": null,
         "name_en": "Gorna",
-        "name_ar": "",
+        "name_ar": "الكرنة",
         "lat": 35.676779,
         "lng": -5.321396
       },
@@ -77740,7 +77740,7 @@
         "order": 39,
         "hub_key": null,
         "name_en": "El Marssa",
-        "name_ar": "",
+        "name_ar": "المرسى",
         "lat": 35.682789,
         "lng": -5.320755
       },
@@ -80294,7 +80294,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -80303,7 +80303,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -80312,7 +80312,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -80330,7 +80330,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -80339,7 +80339,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -80348,7 +80348,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -80357,7 +80357,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -80366,7 +80366,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -80375,7 +80375,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -80384,7 +80384,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -80393,7 +80393,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -80402,7 +80402,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Avenue Des Far",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي",
         "lat": 35.572284,
         "lng": -5.359749
       },
@@ -80411,7 +80411,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rettaha",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الرتاحة",
         "lat": 35.578154,
         "lng": -5.356204
       },
@@ -80429,7 +80429,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586158,
         "lng": -5.347754
       },
@@ -80438,7 +80438,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Avenue Des Far - Rif",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الريف",
         "lat": 35.586294,
         "lng": -5.347391
       },
@@ -80447,7 +80447,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Avenue Des Far - Wilaya",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - الولاية",
         "lat": 35.589631,
         "lng": -5.3451
       },
@@ -80456,7 +80456,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "Avenue Des Far - El Yazidi",
-        "name_ar": "",
+        "name_ar": "شارع الجيش الملكي - اليزيدي",
         "lat": 35.592158,
         "lng": -5.342964
       },
@@ -80465,7 +80465,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "Marjane",
-        "name_ar": "",
+        "name_ar": "مرجان",
         "lat": 35.602661,
         "lng": -5.336157
       },
@@ -80474,7 +80474,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Setine 60",
-        "name_ar": "",
+        "name_ar": "ستين 60 (Setine 60)",
         "lat": 35.6079,
         "lng": -5.334637
       },
@@ -80483,7 +80483,7 @@
         "order": 23,
         "hub_key": null,
         "name_en": "Setine 60",
-        "name_ar": "",
+        "name_ar": "ستين 60 (Setine 60)",
         "lat": 35.608204,
         "lng": -5.334402
       },
@@ -80492,7 +80492,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Koudia",
-        "name_ar": "",
+        "name_ar": "الكدية",
         "lat": 35.613189,
         "lng": -5.332723
       },
@@ -80501,7 +80501,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "R'Milat",
-        "name_ar": "",
+        "name_ar": "الرميلات",
         "lat": 35.62074,
         "lng": -5.329086
       },
@@ -80519,7 +80519,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "Sdouki",
-        "name_ar": "",
+        "name_ar": "الصدوقي",
         "lat": 35.63099,
         "lng": -5.325693
       },
@@ -80528,7 +80528,7 @@
         "order": 28,
         "hub_key": null,
         "name_en": "Rayhana",
-        "name_ar": "",
+        "name_ar": "ريحانة",
         "lat": 35.636839,
         "lng": -5.32436
       },
@@ -80537,7 +80537,7 @@
         "order": 29,
         "hub_key": null,
         "name_en": "Rayhana",
-        "name_ar": "",
+        "name_ar": "ريحانة",
         "lat": 35.637019,
         "lng": -5.324041
       },
@@ -80546,7 +80546,7 @@
         "order": 30,
         "hub_key": null,
         "name_en": "El Filaha",
-        "name_ar": "",
+        "name_ar": "الفلاحة",
         "lat": 35.640204,
         "lng": -5.323234
       },
@@ -80555,7 +80555,7 @@
         "order": 31,
         "hub_key": null,
         "name_en": "Campo",
-        "name_ar": "",
+        "name_ar": "كامبو (Campo)",
         "lat": 35.64511,
         "lng": -5.321922
       },
@@ -80564,7 +80564,7 @@
         "order": 32,
         "hub_key": null,
         "name_en": "Ghniwat",
-        "name_ar": "",
+        "name_ar": "غنيوات",
         "lat": 35.650002,
         "lng": -5.320593
       },
@@ -80573,7 +80573,7 @@
         "order": 33,
         "hub_key": null,
         "name_en": "Colinord",
-        "name_ar": "",
+        "name_ar": "كولينور",
         "lat": 35.655375,
         "lng": -5.319148
       },
@@ -80582,7 +80582,7 @@
         "order": 34,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.659783,
         "lng": -5.318902
       },
@@ -80591,7 +80591,7 @@
         "order": 35,
         "hub_key": null,
         "name_en": "Jamae",
-        "name_ar": "",
+        "name_ar": "الجامع",
         "lat": 35.660093,
         "lng": -5.318609
       },
@@ -80600,7 +80600,7 @@
         "order": 36,
         "hub_key": null,
         "name_en": "Krouche",
-        "name_ar": "",
+        "name_ar": "كروش (Krouche)",
         "lat": 35.666621,
         "lng": -5.31805
       },
@@ -80609,7 +80609,7 @@
         "order": 37,
         "hub_key": null,
         "name_en": "Krouche",
-        "name_ar": "",
+        "name_ar": "كروش (Krouche)",
         "lat": 35.666808,
         "lng": -5.318495
       },
@@ -80618,7 +80618,7 @@
         "order": 38,
         "hub_key": null,
         "name_en": "Gorna",
-        "name_ar": "",
+        "name_ar": "الكرنة",
         "lat": 35.676779,
         "lng": -5.321396
       },
@@ -80627,7 +80627,7 @@
         "order": 39,
         "hub_key": null,
         "name_en": "El Marssa",
-        "name_ar": "",
+        "name_ar": "المرسى",
         "lat": 35.682789,
         "lng": -5.320755
       },
@@ -80645,7 +80645,7 @@
         "order": 41,
         "hub_key": null,
         "name_en": "Kondisa",
-        "name_ar": "",
+        "name_ar": "كونديسا",
         "lat": 35.837275,
         "lng": -5.355397
       },
@@ -84671,7 +84671,7 @@
         "order": 2,
         "hub_key": null,
         "name_en": "Avenue Moulay Al Hassan Belmehdi",
-        "name_ar": "",
+        "name_ar": "شارع مولاي الحسن بلمهدي",
         "lat": 35.568464,
         "lng": -5.388939
       },
@@ -84680,7 +84680,7 @@
         "order": 3,
         "hub_key": null,
         "name_en": "Supratour Tetouan oncf",
-        "name_ar": "",
+        "name_ar": "سوبراتور تطوان (ONCF)",
         "lat": 35.569404,
         "lng": -5.387727
       },
@@ -84689,7 +84689,7 @@
         "order": 4,
         "hub_key": null,
         "name_en": "Souk Al Imam Malik",
-        "name_ar": "",
+        "name_ar": "سوق الإمام مالك",
         "lat": 35.570126,
         "lng": -5.387292
       },
@@ -84707,7 +84707,7 @@
         "order": 6,
         "hub_key": null,
         "name_en": "Lycée Jaber Ibnou Hayane",
-        "name_ar": "",
+        "name_ar": "ثانوية جابر بن حيان",
         "lat": 35.569629,
         "lng": -5.383448
       },
@@ -84716,7 +84716,7 @@
         "order": 7,
         "hub_key": null,
         "name_en": "Clinique Nakhil",
-        "name_ar": "",
+        "name_ar": "مصحة النخيل",
         "lat": 35.569302,
         "lng": -5.38216
       },
@@ -84725,7 +84725,7 @@
         "order": 8,
         "hub_key": null,
         "name_en": "Jardin Chellal",
-        "name_ar": "",
+        "name_ar": "حديقة الشلال",
         "lat": 35.567884,
         "lng": -5.373598
       },
@@ -84734,7 +84734,7 @@
         "order": 9,
         "hub_key": null,
         "name_en": "Grand-Taxi Martil",
-        "name_ar": "",
+        "name_ar": "طاكسيات مرتيل الكبيرة",
         "lat": 35.567089,
         "lng": -5.369325
       },
@@ -84743,7 +84743,7 @@
         "order": 10,
         "hub_key": null,
         "name_en": "Ancienne Gare",
-        "name_ar": "",
+        "name_ar": "محطة القطار القديمة",
         "lat": 35.566775,
         "lng": -5.366529
       },
@@ -84752,7 +84752,7 @@
         "order": 11,
         "hub_key": null,
         "name_en": "Casa Bloque",
-        "name_ar": "",
+        "name_ar": "كاسا بلوك",
         "lat": 35.567478,
         "lng": -5.365786
       },
@@ -84761,7 +84761,7 @@
         "order": 12,
         "hub_key": null,
         "name_en": "Lycée Charif Al Idrissi",
-        "name_ar": "",
+        "name_ar": "ثانوية الشريف الإدريسي",
         "lat": 35.56867,
         "lng": -5.361224
       },
@@ -84770,7 +84770,7 @@
         "order": 13,
         "hub_key": null,
         "name_en": "Abdelkhalek Torres - Esso",
-        "name_ar": "",
+        "name_ar": "عبد الخالق الطريس - إيسو",
         "lat": 35.571735,
         "lng": -5.35886
       },
@@ -84779,7 +84779,7 @@
         "order": 14,
         "hub_key": null,
         "name_en": "Hopital Civil",
-        "name_ar": "",
+        "name_ar": "المستشفى المدني (سانية الرمل)",
         "lat": 35.572543,
         "lng": -5.355339
       },
@@ -84788,7 +84788,7 @@
         "order": 15,
         "hub_key": null,
         "name_en": "Mosquée Al Oumma",
-        "name_ar": "",
+        "name_ar": "مسجد الأمة",
         "lat": 35.572956,
         "lng": -5.35345
       },
@@ -84806,7 +84806,7 @@
         "order": 17,
         "hub_key": null,
         "name_en": "Cnss",
-        "name_ar": "",
+        "name_ar": "الضمان الاجتماعي (CNSS)",
         "lat": 35.574726,
         "lng": -5.345031
       },
@@ -84815,7 +84815,7 @@
         "order": 18,
         "hub_key": null,
         "name_en": "Nada",
-        "name_ar": "",
+        "name_ar": "ندى",
         "lat": 35.57661,
         "lng": -5.34076
       },
@@ -84824,7 +84824,7 @@
         "order": 19,
         "hub_key": null,
         "name_en": "Faculté Ossoul-Eddine",
-        "name_ar": "",
+        "name_ar": "كلية أصول الدين",
         "lat": 35.580337,
         "lng": -5.336859
       },
@@ -84833,7 +84833,7 @@
         "order": 20,
         "hub_key": null,
         "name_en": "9 Avril",
-        "name_ar": "",
+        "name_ar": "9 أبريل",
         "lat": 35.583004,
         "lng": -5.333021
       },
@@ -84842,7 +84842,7 @@
         "order": 21,
         "hub_key": null,
         "name_en": "9 Avril",
-        "name_ar": "",
+        "name_ar": "9 أبريل",
         "lat": 35.583209,
         "lng": -5.332224
       },
@@ -84851,7 +84851,7 @@
         "order": 22,
         "hub_key": null,
         "name_en": "Palais Riad",
-        "name_ar": "",
+        "name_ar": "قصر الرياض",
         "lat": 35.58871,
         "lng": -5.324263
       },
@@ -84869,7 +84869,7 @@
         "order": 24,
         "hub_key": null,
         "name_en": "Faculté De Lettres",
-        "name_ar": "",
+        "name_ar": "كلية الآداب",
         "lat": 35.609726,
         "lng": -5.293906
       },
@@ -84878,7 +84878,7 @@
         "order": 25,
         "hub_key": null,
         "name_en": "Chonbira",
-        "name_ar": "",
+        "name_ar": "الشومبيرا",
         "lat": 35.612241,
         "lng": -5.287572
       },
@@ -84887,7 +84887,7 @@
         "order": 26,
         "hub_key": null,
         "name_en": "Café Bohour",
-        "name_ar": "",
+        "name_ar": "مقهى بحور",
         "lat": 35.61358,
         "lng": -5.283642
       },
@@ -84896,7 +84896,7 @@
         "order": 27,
         "hub_key": null,
         "name_en": "Chomouae",
-        "name_ar": "",
+        "name_ar": "الشموع",
         "lat": 35.61493,
         "lng": -5.27938
       },

@@ -4,455 +4,455 @@
     "lat": 35.560486,
     "lng": -5.371018,
     "name_en": "Gare Routière",
-    "name_ar": ""
+    "name_ar": "المحطة الطرقية"
   },
   {
     "id": "1872001921",
     "lat": 35.777713,
     "lng": -5.3484,
     "name_en": "Grand Hôtel",
-    "name_ar": ""
+    "name_ar": "الفندق الكبير (غران أوتيل)"
   },
   {
     "id": "1872002247",
     "lat": 35.75474,
     "lng": -5.347181,
     "name_en": "Marina",
-    "name_ar": ""
+    "name_ar": "مارينا"
   },
   {
     "id": "1872002938",
     "lat": 35.761213,
     "lng": -5.34849,
     "name_en": "Marina 2",
-    "name_ar": ""
+    "name_ar": "مارينا 2"
   },
   {
     "id": "1872003110",
     "lat": 35.75348,
     "lng": -5.346425,
     "name_en": "Marina",
-    "name_ar": ""
+    "name_ar": "مارينا"
   },
   {
     "id": "1872003113",
     "lat": 35.749857,
     "lng": -5.346183,
     "name_en": "Marina Smir",
-    "name_ar": ""
+    "name_ar": "مارينا سمير"
   },
   {
     "id": "2134361904",
     "lat": 35.74213,
     "lng": -5.343779,
     "name_en": "Studio",
-    "name_ar": ""
+    "name_ar": "ستوديو"
   },
   {
     "id": "2134361957",
     "lat": 35.720161,
     "lng": -5.337997,
     "name_en": "Kabila",
-    "name_ar": ""
+    "name_ar": "كابيلا"
   },
   {
     "id": "2134361984",
     "lat": 35.676779,
     "lng": -5.321396,
     "name_en": "Gorna",
-    "name_ar": ""
+    "name_ar": "الكرنة"
   },
   {
     "id": "4066473836",
     "lat": 35.787674,
     "lng": -5.353489,
     "name_en": "Al Mina",
-    "name_ar": ""
+    "name_ar": "الميناء"
   },
   {
     "id": "4613737094",
     "lat": 35.567884,
     "lng": -5.373598,
     "name_en": "Jardin Chellal",
-    "name_ar": ""
+    "name_ar": "حديقة الشلال"
   },
   {
     "id": "4613737391",
     "lat": 35.569629,
     "lng": -5.383448,
     "name_en": "Lycée Jaber Ibnou Hayane",
-    "name_ar": ""
+    "name_ar": "ثانوية جابر بن حيان"
   },
   {
     "id": "4613785689",
     "lat": 35.570126,
     "lng": -5.387292,
     "name_en": "Souk Al Imam Malik",
-    "name_ar": ""
+    "name_ar": "سوق الإمام مالك"
   },
   {
     "id": "5048242221",
     "lat": 35.859383,
     "lng": -5.532497,
     "name_en": "Ksar sghir en face Tanger Med 210817",
-    "name_ar": ""
+    "name_ar": "القصر الصغير (قبالة طنجة المتوسط)"
   },
   {
     "id": "6247573987",
     "lat": 35.627651,
     "lng": -5.282327,
     "name_en": "Grand Taxi",
-    "name_ar": ""
+    "name_ar": "محطة سيارات الأجرة الكبيرة"
   },
   {
     "id": "6255853687",
     "lat": 35.567089,
     "lng": -5.369325,
     "name_en": "Grand-Taxi Martil",
-    "name_ar": ""
+    "name_ar": "طاكسيات مرتيل الكبيرة"
   },
   {
     "id": "6539347336",
     "lat": 35.568464,
     "lng": -5.388939,
     "name_en": "Avenue Moulay Al Hassan Belmehdi",
-    "name_ar": ""
+    "name_ar": "شارع مولاي الحسن بلمهدي"
   },
   {
     "id": "6894216890",
     "lat": 35.735958,
     "lng": -5.341975,
     "name_en": "Sania",
-    "name_ar": ""
+    "name_ar": "السانية"
   },
   {
     "id": "6897143972",
     "lat": 35.58871,
     "lng": -5.324263,
     "name_en": "Palais Riad",
-    "name_ar": ""
+    "name_ar": "قصر الرياض"
   },
   {
     "id": "6897143977",
     "lat": 35.627468,
     "lng": -5.281391,
     "name_en": "Dalia",
-    "name_ar": ""
+    "name_ar": "دالية"
   },
   {
     "id": "6897143980",
     "lat": 35.569378,
     "lng": -5.363528,
     "name_en": "Bab El Okla",
-    "name_ar": ""
+    "name_ar": "باب العقلة"
   },
   {
     "id": "6897145301",
     "lat": 35.612241,
     "lng": -5.287572,
     "name_en": "Chonbira",
-    "name_ar": ""
+    "name_ar": "الشومبيرا"
   },
   {
     "id": "6897145353",
     "lat": 35.61358,
     "lng": -5.283642,
     "name_en": "Café Bohour",
-    "name_ar": ""
+    "name_ar": "مقهى بحور"
   },
   {
     "id": "6897145384",
     "lat": 35.619198,
     "lng": -5.272936,
     "name_en": "Miramar",
-    "name_ar": ""
+    "name_ar": "ميرامار"
   },
   {
     "id": "6897145456",
     "lat": 35.571735,
     "lng": -5.35886,
     "name_en": "Abdelkhalek Torres - Esso",
-    "name_ar": ""
+    "name_ar": "عبد الخالق الطريس - إيسو"
   },
   {
     "id": "6897145457",
     "lat": 35.580337,
     "lng": -5.336859,
     "name_en": "Faculté Ossoul-Eddine",
-    "name_ar": ""
+    "name_ar": "كلية أصول الدين"
   },
   {
     "id": "6897145472",
     "lat": 35.62493,
     "lng": -5.2747,
     "name_en": "Chbar",
-    "name_ar": ""
+    "name_ar": "شبار"
   },
   {
     "id": "6897145480",
     "lat": 35.572956,
     "lng": -5.35345,
     "name_en": "Mosquée Al Oumma",
-    "name_ar": ""
+    "name_ar": "مسجد الأمة"
   },
   {
     "id": "6897145507",
     "lat": 35.630944,
     "lng": -5.284525,
     "name_en": "Ahrik",
-    "name_ar": ""
+    "name_ar": "أحريق"
   },
   {
     "id": "6897145541",
     "lat": 35.574079,
     "lng": -5.34879,
     "name_en": "Terrain Saniat Rmel",
-    "name_ar": ""
+    "name_ar": "ملعب سانية الرمل"
   },
   {
     "id": "6898257881",
     "lat": 35.568433,
     "lng": -5.46472,
     "name_en": "Poste Electricité",
-    "name_ar": ""
+    "name_ar": "محطة الكهرباء"
   },
   {
     "id": "6898279952",
     "lat": 35.59856,
     "lng": -5.481817,
     "name_en": "Lafarge",
-    "name_ar": ""
+    "name_ar": "لافارج"
   },
   {
     "id": "6898279955",
     "lat": 35.565304,
     "lng": -5.412072,
     "name_en": "La Paloma",
-    "name_ar": ""
+    "name_ar": "لا بالوما"
   },
   {
     "id": "6898279962",
     "lat": 35.664526,
     "lng": -5.510734,
     "name_en": "Kmis Anjra",
-    "name_ar": ""
+    "name_ar": "خميس أنجرة"
   },
   {
     "id": "6898279984",
     "lat": 35.63245,
     "lng": -5.500783,
     "name_en": "Zouada",
-    "name_ar": ""
+    "name_ar": "الزوادة"
   },
   {
     "id": "6898280082",
     "lat": 35.620932,
     "lng": -5.495715,
     "name_en": "Souk Lakdim",
-    "name_ar": ""
+    "name_ar": "السوق القديم"
   },
   {
     "id": "6898280116",
     "lat": 35.593846,
     "lng": -5.47741,
     "name_en": "Bounazzal 2",
-    "name_ar": ""
+    "name_ar": "بونزال 2"
   },
   {
     "id": "6898280152",
     "lat": 35.5651,
     "lng": -5.414894,
     "name_en": "Nakkata",
-    "name_ar": ""
+    "name_ar": "النقاطة"
   },
   {
     "id": "6898280162",
     "lat": 35.573984,
     "lng": -5.466697,
     "name_en": "Usine De Carreaux",
-    "name_ar": ""
+    "name_ar": "معمل الزليج"
   },
   {
     "id": "6898280186",
     "lat": 35.56557,
     "lng": -5.398466,
     "name_en": "Marché De Gros",
-    "name_ar": ""
+    "name_ar": "سوق الجملة"
   },
   {
     "id": "6898280222",
     "lat": 35.565183,
     "lng": -5.397679,
     "name_en": "Marché De Gros",
-    "name_ar": ""
+    "name_ar": "سوق الجملة"
   },
   {
     "id": "6898280314",
     "lat": 35.604736,
     "lng": -5.484145,
     "name_en": "Rwida",
-    "name_ar": ""
+    "name_ar": "الرويضة"
   },
   {
     "id": "6898503413",
     "lat": 35.576686,
     "lng": -5.410808,
     "name_en": "Mosquée El Kabdani",
-    "name_ar": ""
+    "name_ar": "مسجد الكبداني"
   },
   {
     "id": "6898503457",
     "lat": 35.638405,
     "lng": -5.446945,
     "name_en": "Laalaouia",
-    "name_ar": ""
+    "name_ar": "العلوية"
   },
   {
     "id": "6898503462",
     "lat": 35.597237,
     "lng": -5.430764,
     "name_en": "Lafarge",
-    "name_ar": ""
+    "name_ar": "لافارج"
   },
   {
     "id": "6898503606",
     "lat": 35.620427,
     "lng": -5.452721,
     "name_en": "Seddina",
-    "name_ar": ""
+    "name_ar": "صدينة"
   },
   {
     "id": "6898562579",
     "lat": 35.575549,
     "lng": -5.40855,
     "name_en": "Résidence El Wikaya",
-    "name_ar": ""
+    "name_ar": "إقامة الوقاية"
   },
   {
     "id": "6898562580",
     "lat": 35.572571,
     "lng": -5.404657,
     "name_en": "Orangina",
-    "name_ar": ""
+    "name_ar": "أورونجينا"
   },
   {
     "id": "6898562582",
     "lat": 35.574739,
     "lng": -5.405158,
     "name_en": "Résidence Jardin Taboula",
-    "name_ar": ""
+    "name_ar": "إقامة جنان طابولة"
   },
   {
     "id": "6898570087",
     "lat": 35.566595,
     "lng": -5.401635,
     "name_en": "Koudia",
-    "name_ar": ""
+    "name_ar": "الكدية"
   },
   {
     "id": "6898570089",
     "lat": 35.57058,
     "lng": -5.383003,
     "name_en": "Dar Takafa",
-    "name_ar": ""
+    "name_ar": "دار الثقافة"
   },
   {
     "id": "6898570092",
     "lat": 35.57038,
     "lng": -5.40396,
     "name_en": "Gorna Abattoirs",
-    "name_ar": ""
+    "name_ar": "المجازر / الكرنة"
   },
   {
     "id": "6899069778",
     "lat": 35.565084,
     "lng": -5.368615,
     "name_en": "Aakbat El Halouf 1",
-    "name_ar": ""
+    "name_ar": "عقبة الحلوف 1"
   },
   {
     "id": "6899167636",
     "lat": 35.470403,
     "lng": -5.402961,
     "name_en": "Zinat",
-    "name_ar": ""
+    "name_ar": "الزينات"
   },
   {
     "id": "6899167639",
     "lat": 35.48685,
     "lng": -5.420065,
     "name_en": "Barrage Martil",
-    "name_ar": ""
+    "name_ar": "سد مرتيل"
   },
   {
     "id": "6899170969",
     "lat": 35.558152,
     "lng": -5.412594,
     "name_en": "Grt Louha",
-    "name_ar": ""
+    "name_ar": "اللوحة (Grt Louha)"
   },
   {
     "id": "6899183589",
     "lat": 35.507641,
     "lng": -5.425515,
     "name_en": "Beni Karrich",
-    "name_ar": ""
+    "name_ar": "بن قريش"
   },
   {
     "id": "6899183595",
     "lat": 35.54819,
     "lng": -5.423283,
     "name_en": "Borojo",
-    "name_ar": ""
+    "name_ar": "بوروخو (Borojo)"
   },
   {
     "id": "6899183691",
     "lat": 35.503543,
     "lng": -5.436051,
     "name_en": "El Akba",
-    "name_ar": ""
+    "name_ar": "العقبة"
   },
   {
     "id": "6899183692",
     "lat": 35.557931,
     "lng": -5.40866,
     "name_en": "Route De Torreta",
-    "name_ar": ""
+    "name_ar": "طريق طوريطة"
   },
   {
     "id": "6899217482",
     "lat": 35.446885,
     "lng": -5.39376,
     "name_en": "Café Sed",
-    "name_ar": ""
+    "name_ar": "مقهى السد"
   },
   {
     "id": "6899234168",
     "lat": 35.557216,
     "lng": -5.383532,
     "name_en": "Pharmacie Rkaina",
-    "name_ar": ""
+    "name_ar": "صيدلية الركينة"
   },
   {
     "id": "6899234179",
     "lat": 35.555183,
     "lng": -5.378905,
     "name_en": "Saf Al Hamam 1",
-    "name_ar": ""
+    "name_ar": "صف الحمام 1"
   },
   {
     "id": "6899235256",
     "lat": 35.569302,
     "lng": -5.38216,
     "name_en": "Clinique Nakhil",
-    "name_ar": ""
+    "name_ar": "مصحة النخيل"
   },
   {
     "id": "6899394691",
     "lat": 35.550609,
     "lng": -5.242701,
     "name_en": "Azla",
-    "name_ar": ""
+    "name_ar": "أزلا"
   },
   {
     "id": "6899394694",
@@ -466,21 +466,21 @@
     "lat": 35.562339,
     "lng": -5.362924,
     "name_en": "Faculté Des Sciences",
-    "name_ar": ""
+    "name_ar": "كلية العلوم"
   },
   {
     "id": "6899394700",
     "lat": 35.562961,
     "lng": -5.368759,
     "name_en": "Aakbat El Halouf 2",
-    "name_ar": ""
+    "name_ar": "عقبة الحلوف 2"
   },
   {
     "id": "6899394709",
     "lat": 35.564595,
     "lng": -5.352505,
     "name_en": "Abdellah El Fakhar - Afriquia",
-    "name_ar": ""
+    "name_ar": "عبد الله الفخار - أفريقيا"
   },
   {
     "id": "6899394731",
@@ -494,42 +494,42 @@
     "lat": 35.526575,
     "lng": -5.230782,
     "name_en": "Amssa",
-    "name_ar": ""
+    "name_ar": "أمسا"
   },
   {
     "id": "6899394734",
     "lat": 35.429497,
     "lng": -5.117541,
     "name_en": "El Contro",
-    "name_ar": ""
+    "name_ar": "الكونترو (El Contro)"
   },
   {
     "id": "6900310858",
     "lat": 35.581585,
     "lng": -5.35612,
     "name_en": "Mohamed Al Kharaz 3",
-    "name_ar": ""
+    "name_ar": "محمد الخراز 3"
   },
   {
     "id": "6900310862",
     "lat": 35.578154,
     "lng": -5.356204,
     "name_en": "Avenue Des Far - Rettaha",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - الرتاحة"
   },
   {
     "id": "6900317691",
     "lat": 35.583811,
     "lng": -5.352335,
     "name_en": "Mohamed Al Kharaz 4",
-    "name_ar": ""
+    "name_ar": "محمد الخراز 4"
   },
   {
     "id": "6900317719",
     "lat": 35.608204,
     "lng": -5.334402,
     "name_en": "Setine 60",
-    "name_ar": ""
+    "name_ar": "ستين 60 (Setine 60)"
   },
   {
     "id": "6900317722",
@@ -543,490 +543,490 @@
     "lat": 35.62617,
     "lng": -5.33138,
     "name_en": "Mandi",
-    "name_ar": ""
+    "name_ar": "مندي (Mandi)"
   },
   {
     "id": "6900317725",
     "lat": 35.580984,
     "lng": -5.353034,
     "name_en": "Avenue Des Far - Safir",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - سفير"
   },
   {
     "id": "6900317732",
     "lat": 35.62074,
     "lng": -5.329086,
     "name_en": "R'Milat",
-    "name_ar": ""
+    "name_ar": "الرميلات"
   },
   {
     "id": "6900317767",
     "lat": 35.592158,
     "lng": -5.342964,
     "name_en": "Avenue Des Far - El Yazidi",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - اليزيدي"
   },
   {
     "id": "6900317820",
     "lat": 35.586294,
     "lng": -5.347391,
     "name_en": "Avenue Des Far - Rif",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - الريف"
   },
   {
     "id": "6900317845",
     "lat": 35.56867,
     "lng": -5.361224,
     "name_en": "Lycée Charif Al Idrissi",
-    "name_ar": ""
+    "name_ar": "ثانوية الشريف الإدريسي"
   },
   {
     "id": "6900317866",
     "lat": 35.624908,
     "lng": -5.327287,
     "name_en": "Rp El Mallalienne",
-    "name_ar": ""
+    "name_ar": "مدار الملاليين"
   },
   {
     "id": "6900317881",
     "lat": 35.585879,
     "lng": -5.350885,
     "name_en": "Afka",
-    "name_ar": ""
+    "name_ar": "أفكا"
   },
   {
     "id": "6900317884",
     "lat": 35.566775,
     "lng": -5.366529,
     "name_en": "Ancienne Gare",
-    "name_ar": ""
+    "name_ar": "محطة القطار القديمة"
   },
   {
     "id": "6900317890",
     "lat": 35.602661,
     "lng": -5.336157,
     "name_en": "Marjane",
-    "name_ar": ""
+    "name_ar": "مرجان"
   },
   {
     "id": "6900317909",
     "lat": 35.589631,
     "lng": -5.3451,
     "name_en": "Avenue Des Far - Wilaya",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - الولاية"
   },
   {
     "id": "6903918966",
     "lat": 35.556821,
     "lng": -5.40432,
     "name_en": "Lafarge",
-    "name_ar": ""
+    "name_ar": "لافارج"
   },
   {
     "id": "6903919028",
     "lat": 35.565163,
     "lng": -5.401229,
     "name_en": "Taboula",
-    "name_ar": ""
+    "name_ar": "طابولة"
   },
   {
     "id": "6903919029",
     "lat": 35.549853,
     "lng": -5.397175,
     "name_en": "Ain Dar Zkiek",
-    "name_ar": ""
+    "name_ar": "عين دار زكيك"
   },
   {
     "id": "6903919030",
     "lat": 35.565404,
     "lng": -5.401491,
     "name_en": "Taboula",
-    "name_ar": ""
+    "name_ar": "طابولة"
   },
   {
     "id": "6903988254",
     "lat": 35.550347,
     "lng": -5.369092,
     "name_en": "Torreta",
-    "name_ar": ""
+    "name_ar": "طوريطة"
   },
   {
     "id": "6903988259",
     "lat": 35.567478,
     "lng": -5.365786,
     "name_en": "Casa Bloque",
-    "name_ar": ""
+    "name_ar": "كاسا بلوك"
   },
   {
     "id": "6903992628",
     "lat": 35.591374,
     "lng": -5.406174,
     "name_en": "Ain Semsa",
-    "name_ar": ""
+    "name_ar": "عين سمسة"
   },
   {
     "id": "6903993049",
     "lat": 35.575288,
     "lng": -5.393783,
     "name_en": "Palais Essalam",
-    "name_ar": ""
+    "name_ar": "قصر السلام"
   },
   {
     "id": "6903993053",
     "lat": 35.574645,
     "lng": -5.381371,
     "name_en": "Abdelkrim El Khattabi - Poste Maroc",
-    "name_ar": ""
+    "name_ar": "عبد الكريم الخطابي - بريد المغرب"
   },
   {
     "id": "6903993072",
     "lat": 35.574385,
     "lng": -5.386553,
     "name_en": "Cinéma Victoria",
-    "name_ar": ""
+    "name_ar": "سينما فيكتوريا"
   },
   {
     "id": "6903993083",
     "lat": 35.573529,
     "lng": -5.379548,
     "name_en": "Diour Lahjar",
-    "name_ar": ""
+    "name_ar": "ديور الحجر"
   },
   {
     "id": "6903993084",
     "lat": 35.574463,
     "lng": -5.383343,
     "name_en": "Souk El Fahm",
-    "name_ar": ""
+    "name_ar": "سوق الفحم"
   },
   {
     "id": "6904008870",
     "lat": 35.572452,
     "lng": -5.387677,
     "name_en": "Hôpital Espagnol",
-    "name_ar": ""
+    "name_ar": "المستشفى الإسباني"
   },
   {
     "id": "6904008875",
     "lat": 35.572803,
     "lng": -5.380903,
     "name_en": "Lycée Cadi Ayad",
-    "name_ar": ""
+    "name_ar": "ثانوية القاضي عياض"
   },
   {
     "id": "6904008880",
     "lat": 35.57396,
     "lng": -5.3962,
     "name_en": "Jamaa Mezouak",
-    "name_ar": ""
+    "name_ar": "جامع المزواق"
   },
   {
     "id": "6904026495",
     "lat": 35.57859,
     "lng": -5.3993,
     "name_en": "Route Semsa",
-    "name_ar": ""
+    "name_ar": "طريق سمسة"
   },
   {
     "id": "6904040661",
     "lat": 35.589811,
     "lng": -5.338175,
     "name_en": "Wilaya",
-    "name_ar": ""
+    "name_ar": "الولاية"
   },
   {
     "id": "6904040664",
     "lat": 35.575456,
     "lng": -5.349432,
     "name_en": "Kaboul - Tekniya",
-    "name_ar": ""
+    "name_ar": "كابول - التقنية"
   },
   {
     "id": "6904040671",
     "lat": 35.59609,
     "lng": -5.328517,
     "name_en": "Cité Universitaire",
-    "name_ar": ""
+    "name_ar": "الحي الجامعي"
   },
   {
     "id": "6904040672",
     "lat": 35.600447,
     "lng": -5.326428,
     "name_en": "Lot Souani (Place Palestine)",
-    "name_ar": ""
+    "name_ar": "تجزئة السواني (ساحة فلسطين)"
   },
   {
     "id": "6904040683",
     "lat": 35.598036,
     "lng": -5.324566,
     "name_en": "Avenue D'Egypte",
-    "name_ar": ""
+    "name_ar": "شارع مصر"
   },
   {
     "id": "6904096997",
     "lat": 35.58744,
     "lng": -5.337648,
     "name_en": "Mosquée Mohammed VI",
-    "name_ar": ""
+    "name_ar": "مسجد محمد السادس"
   },
   {
     "id": "6904097002",
     "lat": 35.591007,
     "lng": -5.334067,
     "name_en": "Aéroport",
-    "name_ar": ""
+    "name_ar": "المطار"
   },
   {
     "id": "6906735221",
     "lat": 35.563297,
     "lng": -5.489985,
     "name_en": "Barrage",
-    "name_ar": ""
+    "name_ar": "السد"
   },
   {
     "id": "6906735239",
     "lat": 35.559332,
     "lng": -5.500544,
     "name_en": "El Manar",
-    "name_ar": ""
+    "name_ar": "المنار"
   },
   {
     "id": "6906735263",
     "lat": 35.567302,
     "lng": -5.406294,
     "name_en": "Abattoirs",
-    "name_ar": ""
+    "name_ar": "المجازر (الكرنة)"
   },
   {
     "id": "6906735333",
     "lat": 35.548172,
     "lng": -5.554703,
     "name_en": "Ain Lahcen",
-    "name_ar": ""
+    "name_ar": "عين الحصن"
   },
   {
     "id": "6906735337",
     "lat": 35.567044,
     "lng": -5.407162,
     "name_en": "Abattoirs",
-    "name_ar": ""
+    "name_ar": "المجازر (الكرنة)"
   },
   {
     "id": "6906735360",
     "lat": 35.560392,
     "lng": -5.467883,
     "name_en": "Sahtrienne",
-    "name_ar": ""
+    "name_ar": "السحتريين"
   },
   {
     "id": "6906735407",
     "lat": 35.549631,
     "lng": -5.522785,
     "name_en": "Spirada",
-    "name_ar": ""
+    "name_ar": "سبيرادا"
   },
   {
     "id": "6907296517",
     "lat": 35.586204,
     "lng": -5.337336,
     "name_en": "Ecole Mohamed Aziman",
-    "name_ar": ""
+    "name_ar": "مدرسة محمد أزيمان"
   },
   {
     "id": "6907340451",
     "lat": 35.579814,
     "lng": -5.346481,
     "name_en": "Etablissement Tofola",
-    "name_ar": ""
+    "name_ar": "مؤسسة الطفولة"
   },
   {
     "id": "6907371629",
     "lat": 35.580041,
     "lng": -5.345082,
     "name_en": "Supermarché Taw",
-    "name_ar": ""
+    "name_ar": "متجر طاو (Supermarché Taw)"
   },
   {
     "id": "6907371653",
     "lat": 35.576522,
     "lng": -5.350217,
     "name_en": "Ecole Omar Ibn Abdelaziz",
-    "name_ar": ""
+    "name_ar": "مدرسة عمر بن عبد العزيز"
   },
   {
     "id": "6907371680",
     "lat": 35.578908,
     "lng": -5.349217,
     "name_en": "Pharmacie Afassi",
-    "name_ar": ""
+    "name_ar": "صيدلية العفاسي"
   },
   {
     "id": "6907371690",
     "lat": 35.583708,
     "lng": -5.342419,
     "name_en": "Ain Maloul",
-    "name_ar": ""
+    "name_ar": "عين ملول"
   },
   {
     "id": "6907371725",
     "lat": 35.577954,
     "lng": -5.350707,
     "name_en": "Résidence El Manar",
-    "name_ar": ""
+    "name_ar": "إقامة المنار"
   },
   {
     "id": "6907393004",
     "lat": 35.582914,
     "lng": -5.343826,
     "name_en": "Café Warda",
-    "name_ar": ""
+    "name_ar": "مقهى وردة"
   },
   {
     "id": "6907426185",
     "lat": 35.594675,
     "lng": -5.347742,
     "name_en": "Bennouna Boussafou",
-    "name_ar": ""
+    "name_ar": "بنونة بوصافو"
   },
   {
     "id": "6907426186",
     "lat": 35.585068,
     "lng": -5.354026,
     "name_en": "Boujarrah",
-    "name_ar": ""
+    "name_ar": "بوجراح"
   },
   {
     "id": "6907426190",
     "lat": 35.593616,
     "lng": -5.346002,
     "name_en": "Boussafou",
-    "name_ar": ""
+    "name_ar": "بوصافو"
   },
   {
     "id": "6907472786",
     "lat": 35.600103,
     "lng": -5.340555,
     "name_en": "Jnan El Haouzi",
-    "name_ar": ""
+    "name_ar": "جنان الحوزي"
   },
   {
     "id": "6907472790",
     "lat": 35.603206,
     "lng": -5.341488,
     "name_en": "Hjar Laaroussa",
-    "name_ar": ""
+    "name_ar": "حجر العروسة"
   },
   {
     "id": "6907472792",
     "lat": 35.597047,
     "lng": -5.343409,
     "name_en": "Mohamed Smaili",
-    "name_ar": ""
+    "name_ar": "محمد السمايلي (Mohamed Smaili)"
   },
   {
     "id": "6907522587",
     "lat": 35.57834,
     "lng": -5.361319,
     "name_en": "Mohamed Al Kharaz 1",
-    "name_ar": ""
+    "name_ar": "محمد الخراز 1"
   },
   {
     "id": "6907522588",
     "lat": 35.578935,
     "lng": -5.363813,
     "name_en": "Touilaa 2",
-    "name_ar": ""
+    "name_ar": "الطويلعة 2"
   },
   {
     "id": "6907541829",
     "lat": 35.592241,
     "lng": -5.359168,
     "name_en": "Kallaline",
-    "name_ar": ""
+    "name_ar": "القلالين"
   },
   {
     "id": "6910361862",
     "lat": 35.585394,
     "lng": -5.358776,
     "name_en": "Fatima Al Fihria",
-    "name_ar": ""
+    "name_ar": "فاطمة الفهرية"
   },
   {
     "id": "6910361863",
     "lat": 35.588895,
     "lng": -5.358506,
     "name_en": "Mokhtar Soussi",
-    "name_ar": ""
+    "name_ar": "المختار السوسي"
   },
   {
     "id": "6910361864",
     "lat": 35.583652,
     "lng": -5.358815,
     "name_en": "Haj Mohamed Bennouna 2",
-    "name_ar": ""
+    "name_ar": "الحاج محمد بنونة 2"
   },
   {
     "id": "7807273021",
     "lat": 35.572284,
     "lng": -5.359749,
     "name_en": "Avenue Des Far",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي"
   },
   {
     "id": "8154841013",
     "lat": 35.583209,
     "lng": -5.332224,
     "name_en": "9 Avril",
-    "name_ar": ""
+    "name_ar": "9 أبريل"
   },
   {
     "id": "8171402874",
     "lat": 35.567301,
     "lng": -5.421858,
     "name_en": "Prison Locale",
-    "name_ar": ""
+    "name_ar": "السجن المحلي"
   },
   {
     "id": "8171402875",
     "lat": 35.583677,
     "lng": -5.470453,
     "name_en": "Piste Lawta",
-    "name_ar": ""
+    "name_ar": "طريق لوطا (Piste Lawta)"
   },
   {
     "id": "8171402876",
     "lat": 35.519675,
     "lng": -5.176646,
     "name_en": "Tamernout",
-    "name_ar": ""
+    "name_ar": "تامرنوت"
   },
   {
     "id": "8171402877",
     "lat": 35.562943,
     "lng": -5.428942,
     "name_en": "Soussi",
-    "name_ar": ""
+    "name_ar": "السوسي"
   },
   {
     "id": "8171402878",
     "lat": 35.482682,
     "lng": -5.124549,
     "name_en": "Tamgart",
-    "name_ar": ""
+    "name_ar": "تمغارت"
   },
   {
     "id": "8171402879",
     "lat": 35.43626,
     "lng": -5.108442,
     "name_en": "Riyasna",
-    "name_ar": ""
+    "name_ar": "الرياسنة (Riyasna)"
   },
   {
     "id": "8171402880",
     "lat": 35.532034,
     "lng": -5.428877,
     "name_en": "Dar El Khayat",
-    "name_ar": ""
+    "name_ar": "دار الخياط"
   },
   {
     "id": "8171402881",
@@ -1040,406 +1040,406 @@
     "lat": 35.571589,
     "lng": -5.418826,
     "name_en": "Nassim",
-    "name_ar": ""
+    "name_ar": "النسيم"
   },
   {
     "id": "8171402883",
     "lat": 35.637019,
     "lng": -5.324041,
     "name_en": "Rayhana",
-    "name_ar": ""
+    "name_ar": "ريحانة"
   },
   {
     "id": "8171402884",
     "lat": 35.80739,
     "lng": -5.352609,
     "name_en": "Fadesa",
-    "name_ar": ""
+    "name_ar": "فاديسا"
   },
   {
     "id": "8171402885",
     "lat": 35.60779,
     "lng": -5.29749,
     "name_en": "Oum Keltoum",
-    "name_ar": ""
+    "name_ar": "أم كلثوم"
   },
   {
     "id": "8171402886",
     "lat": 35.56481,
     "lng": -5.347428,
     "name_en": "Grt Coelma",
-    "name_ar": ""
+    "name_ar": "كويلما (Grt Coelma)"
   },
   {
     "id": "8171402887",
     "lat": 35.613189,
     "lng": -5.332723,
     "name_en": "Koudia",
-    "name_ar": ""
+    "name_ar": "الكدية"
   },
   {
     "id": "8171402888",
     "lat": 35.57661,
     "lng": -5.34076,
     "name_en": "Nada",
-    "name_ar": ""
+    "name_ar": "ندى"
   },
   {
     "id": "8171402889",
     "lat": 35.580995,
     "lng": -5.360672,
     "name_en": "Haj Mohamed Bennouna 1",
-    "name_ar": ""
+    "name_ar": "الحاج محمد بنونة 1"
   },
   {
     "id": "8171402890",
     "lat": 35.569583,
     "lng": -5.33076,
     "name_en": "Fabrique Rbahi",
-    "name_ar": ""
+    "name_ar": "معمل الرباحي"
   },
   {
     "id": "8171402891",
     "lat": 35.682789,
     "lng": -5.320755,
     "name_en": "El Marssa",
-    "name_ar": ""
+    "name_ar": "المرسى"
   },
   {
     "id": "8171402892",
     "lat": 35.565059,
     "lng": -5.34499,
     "name_en": "Coelma",
-    "name_ar": ""
+    "name_ar": "كويلما"
   },
   {
     "id": "8171402893",
     "lat": 35.3467,
     "lng": -5.36759,
     "name_en": "Halhala",
-    "name_ar": ""
+    "name_ar": "الحلحالة (Halhala)"
   },
   {
     "id": "8171402894",
     "lat": 35.559759,
     "lng": -5.445002,
     "name_en": "Grankha",
-    "name_ar": ""
+    "name_ar": "لاكرانخا"
   },
   {
     "id": "8171402895",
     "lat": 35.698959,
     "lng": -5.331394,
     "name_en": "Holiday",
-    "name_ar": ""
+    "name_ar": "هوليداي"
   },
   {
     "id": "8171402896",
     "lat": 35.46346,
     "lng": -5.100193,
     "name_en": "Mkad",
-    "name_ar": ""
+    "name_ar": "مكاد"
   },
   {
     "id": "8171402898",
     "lat": 35.36773,
     "lng": -5.37359,
     "name_en": "Berraka",
-    "name_ar": ""
+    "name_ar": "البراكة"
   },
   {
     "id": "8171402899",
     "lat": 35.6123,
     "lng": -5.492454,
     "name_en": "Machachates",
-    "name_ar": ""
+    "name_ar": "المشاشات"
   },
   {
     "id": "8171402900",
     "lat": 35.564925,
     "lng": -5.420797,
     "name_en": "Louziyen",
-    "name_ar": ""
+    "name_ar": "اللوزيين"
   },
   {
     "id": "8171402901",
     "lat": 35.567701,
     "lng": -5.336648,
     "name_en": "El Manar",
-    "name_ar": ""
+    "name_ar": "المنار"
   },
   {
     "id": "8171402902",
     "lat": 35.573727,
     "lng": -5.402497,
     "name_en": "Mosquée El Aela",
-    "name_ar": ""
+    "name_ar": "المسجد الأعلى"
   },
   {
     "id": "8171402903",
     "lat": 35.482558,
     "lng": -5.41159,
     "name_en": "El Ksab",
-    "name_ar": ""
+    "name_ar": "القصب"
   },
   {
     "id": "8171402904",
     "lat": 35.434661,
     "lng": -5.390904,
     "name_en": "Enissar Joue",
-    "name_ar": ""
+    "name_ar": "عنصر الجوع (Enissar Joue)"
   },
   {
     "id": "8171402905",
     "lat": 35.55623,
     "lng": -5.4163,
     "name_en": "Tamuda",
-    "name_ar": ""
+    "name_ar": "تامودا"
   },
   {
     "id": "8171402906",
     "lat": 35.640204,
     "lng": -5.323234,
     "name_en": "El Filaha",
-    "name_ar": ""
+    "name_ar": "الفلاحة"
   },
   {
     "id": "8171402907",
     "lat": 35.559767,
     "lng": -5.43643,
     "name_en": "Dechrien",
-    "name_ar": ""
+    "name_ar": "الدشريين"
   },
   {
     "id": "8171402908",
     "lat": 35.555249,
     "lng": -5.376743,
     "name_en": "Saf Al Hamam 2",
-    "name_ar": ""
+    "name_ar": "صف الحمام 2"
   },
   {
     "id": "8171402909",
     "lat": 35.569565,
     "lng": -5.420434,
     "name_en": "Torreta",
-    "name_ar": ""
+    "name_ar": "طوريطة"
   },
   {
     "id": "8171402910",
     "lat": 35.45128,
     "lng": -5.396582,
     "name_en": "Barrage Nakhla",
-    "name_ar": ""
+    "name_ar": "سد النخلة"
   },
   {
     "id": "8171402911",
     "lat": 35.569995,
     "lng": -5.399374,
     "name_en": "Ecole Chouhadae",
-    "name_ar": ""
+    "name_ar": "مدرسة الشهداء"
   },
   {
     "id": "8171402912",
     "lat": 35.726573,
     "lng": -5.340057,
     "name_en": "Kabila 2",
-    "name_ar": ""
+    "name_ar": "كابيلا 2"
   },
   {
     "id": "8171402913",
     "lat": 35.529737,
     "lng": -5.1968,
     "name_en": "Tamrabet",
-    "name_ar": ""
+    "name_ar": "تامرابط"
   },
   {
     "id": "8171402914",
     "lat": 35.685533,
     "lng": -5.322794,
     "name_en": "M'Diq",
-    "name_ar": ""
+    "name_ar": "المضيق"
   },
   {
     "id": "8171402915",
     "lat": 35.559579,
     "lng": -5.350142,
     "name_en": "Mosquée Boujdad",
-    "name_ar": ""
+    "name_ar": "مسجد بوجداد"
   },
   {
     "id": "8171402916",
     "lat": 35.556751,
     "lng": -5.388947,
     "name_en": "Tahen",
-    "name_ar": ""
+    "name_ar": "الطاحن (Tahen)"
   },
   {
     "id": "8171441717",
     "lat": 35.460184,
     "lng": -5.404822,
     "name_en": "Moulay Abdessalam",
-    "name_ar": ""
+    "name_ar": "مولاي عبد السلام"
   },
   {
     "id": "8171441718",
     "lat": 35.582317,
     "lng": -5.364196,
     "name_en": "Teffaline",
-    "name_ar": ""
+    "name_ar": "الطفالين"
   },
   {
     "id": "8171441719",
     "lat": 35.55574,
     "lng": -5.505167,
     "name_en": "Chtab",
-    "name_ar": ""
+    "name_ar": "الشطاب (Chtab)"
   },
   {
     "id": "8171441720",
     "lat": 35.561427,
     "lng": -5.432971,
     "name_en": "Traksat",
-    "name_ar": ""
+    "name_ar": "طراكسات"
   },
   {
     "id": "8171441721",
     "lat": 35.666621,
     "lng": -5.31805,
     "name_en": "Krouche",
-    "name_ar": ""
+    "name_ar": "كروش (Krouche)"
   },
   {
     "id": "8171441722",
     "lat": 35.53744,
     "lng": -5.21337,
     "name_en": "Campigne",
-    "name_ar": ""
+    "name_ar": "المخيم (الكامبينغ)"
   },
   {
     "id": "8171441723",
     "lat": 35.388523,
     "lng": -5.373295,
     "name_en": "Beni Moussa",
-    "name_ar": ""
+    "name_ar": "بني موسى"
   },
   {
     "id": "8171441724",
     "lat": 35.61493,
     "lng": -5.27938,
     "name_en": "Chomouae",
-    "name_ar": ""
+    "name_ar": "الشموع"
   },
   {
     "id": "8171441725",
     "lat": 35.554031,
     "lng": -5.355025,
     "name_en": "Kharrouba",
-    "name_ar": ""
+    "name_ar": "الخروبة"
   },
   {
     "id": "8171441726",
     "lat": 35.563412,
     "lng": -5.249671,
     "name_en": "Chwabel",
-    "name_ar": ""
+    "name_ar": "الشوابل"
   },
   {
     "id": "8171441727",
     "lat": 35.55706,
     "lng": -5.35251,
     "name_en": "Ettoub",
-    "name_ar": ""
+    "name_ar": "الطوب"
   },
   {
     "id": "8171441728",
     "lat": 35.837275,
     "lng": -5.355397,
     "name_en": "Kondisa",
-    "name_ar": ""
+    "name_ar": "كونديسا"
   },
   {
     "id": "8171441729",
     "lat": 35.580674,
     "lng": -5.290164,
     "name_en": "El Kharrouba",
-    "name_ar": ""
+    "name_ar": "الخروبة"
   },
   {
     "id": "8171441730",
     "lat": 35.558019,
     "lng": -5.453507,
     "name_en": "Khmis",
-    "name_ar": ""
+    "name_ar": "الخميس"
   },
   {
     "id": "8171441731",
     "lat": 35.544971,
     "lng": -5.225513,
     "name_en": "Senssla",
-    "name_ar": ""
+    "name_ar": "السنسلة"
   },
   {
     "id": "8171441732",
     "lat": 35.615521,
     "lng": -5.275111,
     "name_en": "Borj",
-    "name_ar": ""
+    "name_ar": "البرج"
   },
   {
     "id": "8171441734",
     "lat": 35.423453,
     "lng": -5.392396,
     "name_en": "Kchoue",
-    "name_ar": ""
+    "name_ar": "كشوع (Kchoue)"
   },
   {
     "id": "8171441735",
     "lat": 35.550818,
     "lng": -5.363524,
     "name_en": "Mgaz Lhjar 1",
-    "name_ar": ""
+    "name_ar": "مجاز الحجر 1"
   },
   {
     "id": "8171441736",
     "lat": 35.552471,
     "lng": -5.365588,
     "name_en": "Mgaz Lhjar 2",
-    "name_ar": ""
+    "name_ar": "مجاز الحجر 2"
   },
   {
     "id": "8171441737",
     "lat": 35.557701,
     "lng": -5.386178,
     "name_en": "Boulangerie El Morabet",
-    "name_ar": ""
+    "name_ar": "مخبزة المرابط"
   },
   {
     "id": "8171441738",
     "lat": 35.5617,
     "lng": -5.481418,
     "name_en": "Boukhari",
-    "name_ar": ""
+    "name_ar": "البخاري"
   },
   {
     "id": "8171441739",
     "lat": 35.56565,
     "lng": -5.46152,
     "name_en": "Maison Renault",
-    "name_ar": ""
+    "name_ar": "وكالة رونو (Maison Renault)"
   },
   {
     "id": "8171441740",
     "lat": 35.559311,
     "lng": -5.461384,
     "name_en": "Trik",
-    "name_ar": ""
+    "name_ar": "الطريق (Trik)"
   },
   {
     "id": "8171441741",
     "lat": 35.57701,
     "lng": -5.30724,
     "name_en": "Jamae",
-    "name_ar": ""
+    "name_ar": "الجامع"
   },
   {
     "id": "8171441742",
@@ -1453,1043 +1453,1043 @@
     "lat": 35.439914,
     "lng": -5.39107,
     "name_en": "Café Ayad",
-    "name_ar": ""
+    "name_ar": "مقهى عياد"
   },
   {
     "id": "8171441744",
     "lat": 35.57498,
     "lng": -5.391325,
     "name_en": "Snack Loujdi",
-    "name_ar": ""
+    "name_ar": "سناك الوجدي"
   },
   {
     "id": "8171441745",
     "lat": 35.556241,
     "lng": -5.392253,
     "name_en": "Zariaa",
-    "name_ar": ""
+    "name_ar": "الزريعة"
   },
   {
     "id": "8171441746",
     "lat": 35.508275,
     "lng": -5.156796,
     "name_en": "Awchtam",
-    "name_ar": ""
+    "name_ar": "أوشتام"
   },
   {
     "id": "8171441747",
     "lat": 35.553203,
     "lng": -5.399034,
     "name_en": "Amina Bent Wahab",
-    "name_ar": ""
+    "name_ar": "آمنة بنت وهب"
   },
   {
     "id": "8171441748",
     "lat": 35.821607,
     "lng": -5.353755,
     "name_en": "Rifiyenne",
-    "name_ar": ""
+    "name_ar": "الريفيين"
   },
   {
     "id": "8171441749",
     "lat": 35.553101,
     "lng": -5.360102,
     "name_en": "Jamaat Zitoune",
-    "name_ar": ""
+    "name_ar": "جماعة الزيتون"
   },
   {
     "id": "8171441750",
     "lat": 35.795942,
     "lng": -5.356136,
     "name_en": "El Amin",
-    "name_ar": ""
+    "name_ar": "الأمين"
   },
   {
     "id": "8171441751",
     "lat": 35.609726,
     "lng": -5.293906,
     "name_en": "Faculté De Lettres",
-    "name_ar": ""
+    "name_ar": "كلية الآداب"
   },
   {
     "id": "8171441752",
     "lat": 35.572269,
     "lng": -5.263645,
     "name_en": "Sidi Abdeslam",
-    "name_ar": ""
+    "name_ar": "سيدي عبد السلام"
   },
   {
     "id": "8171441753",
     "lat": 35.58079,
     "lng": -5.364003,
     "name_en": "Mosquée Ben Aboud",
-    "name_ar": ""
+    "name_ar": "مسجد بن عبود"
   },
   {
     "id": "8171441754",
     "lat": 35.574726,
     "lng": -5.345031,
     "name_en": "Cnss",
-    "name_ar": ""
+    "name_ar": "الضمان الاجتماعي (CNSS)"
   },
   {
     "id": "8171441755",
     "lat": 35.590947,
     "lng": -5.475114,
     "name_en": "Bounazzal 1",
-    "name_ar": ""
+    "name_ar": "بونزال 1"
   },
   {
     "id": "8171441756",
     "lat": 35.408706,
     "lng": -5.379372,
     "name_en": "Mrija",
-    "name_ar": ""
+    "name_ar": "المريجة"
   },
   {
     "id": "8171441757",
     "lat": 35.49717,
     "lng": -5.43449,
     "name_en": "Aboudi",
-    "name_ar": ""
+    "name_ar": "عبودي (Aboudi)"
   },
   {
     "id": "8171441758",
     "lat": 35.491558,
     "lng": -5.423818,
     "name_en": "Ben Dakoo",
-    "name_ar": ""
+    "name_ar": "بن داكو (Ben Dakoo)"
   },
   {
     "id": "8171441759",
     "lat": 35.487884,
     "lng": -5.135705,
     "name_en": "Abita",
-    "name_ar": ""
+    "name_ar": "أبيتا (Abita)"
   },
   {
     "id": "8171441760",
     "lat": 35.550764,
     "lng": -5.360733,
     "name_en": "Beni Salah",
-    "name_ar": ""
+    "name_ar": "بني صالح"
   },
   {
     "id": "8171441761",
     "lat": 35.76637,
     "lng": -5.348635,
     "name_en": "Restinga",
-    "name_ar": ""
+    "name_ar": "ريستينغا"
   },
   {
     "id": "8171441762",
     "lat": 35.547072,
     "lng": -5.235696,
     "name_en": "Kae El Mejri",
-    "name_ar": ""
+    "name_ar": "قاع المجري"
   },
   {
     "id": "8171441763",
     "lat": 35.660093,
     "lng": -5.318609,
     "name_en": "Jamae",
-    "name_ar": ""
+    "name_ar": "الجامع"
   },
   {
     "id": "8171441764",
     "lat": 35.591486,
     "lng": -5.35365,
     "name_en": "Boujarrah 2",
-    "name_ar": ""
+    "name_ar": "بوجراح 2"
   },
   {
     "id": "8171441765",
     "lat": 35.583897,
     "lng": -5.365275,
     "name_en": "Ksar El Khalifa",
-    "name_ar": ""
+    "name_ar": "قصر الخليفة"
   },
   {
     "id": "8171441766",
     "lat": 35.600822,
     "lng": -5.304363,
     "name_en": "Zone Industrielle",
-    "name_ar": ""
+    "name_ar": "المنطقة الصناعية"
   },
   {
     "id": "8171441767",
     "lat": 35.561124,
     "lng": -5.473662,
     "name_en": "El Harcha",
-    "name_ar": ""
+    "name_ar": "الحرشة"
   },
   {
     "id": "8171441769",
     "lat": 35.414368,
     "lng": -5.384466,
     "name_en": "Café El Mrabet",
-    "name_ar": ""
+    "name_ar": "مقهى المرابط"
   },
   {
     "id": "8171441770",
     "lat": 35.64511,
     "lng": -5.321922,
     "name_en": "Campo",
-    "name_ar": ""
+    "name_ar": "كامبو (Campo)"
   },
   {
     "id": "8171441771",
     "lat": 35.552675,
     "lng": -5.513377,
     "name_en": "El Hjar",
-    "name_ar": ""
+    "name_ar": "الحجر"
   },
   {
     "id": "8171441772",
     "lat": 35.58656,
     "lng": -5.368067,
     "name_en": "Aakbat Chata",
-    "name_ar": ""
+    "name_ar": "عقبة شاطة"
   },
   {
     "id": "8171441773",
     "lat": 35.494786,
     "lng": -5.428433,
     "name_en": "Ain Aicha",
-    "name_ar": ""
+    "name_ar": "عين عائشة"
   },
   {
     "id": "8171441774",
     "lat": 35.377681,
     "lng": -5.374583,
     "name_en": "Koades",
-    "name_ar": ""
+    "name_ar": "القوادس"
   },
   {
     "id": "8171441775",
     "lat": 35.63099,
     "lng": -5.325693,
     "name_en": "Sdouki",
-    "name_ar": ""
+    "name_ar": "الصدوقي"
   },
   {
     "id": "8171441776",
     "lat": 35.477174,
     "lng": -5.117107,
     "name_en": "Khandak De Riyas",
-    "name_ar": ""
+    "name_ar": "خندق الرياس (Khandak De Riyas)"
   },
   {
     "id": "8171441777",
     "lat": 35.563119,
     "lng": -5.460117,
     "name_en": "Bousfiha",
-    "name_ar": ""
+    "name_ar": "بوصفيحة"
   },
   {
     "id": "8171441778",
     "lat": 35.582294,
     "lng": -5.401123,
     "name_en": "Route Semsa 2",
-    "name_ar": ""
+    "name_ar": "طريق سمسة 2"
   },
   {
     "id": "8171441779",
     "lat": 35.35601,
     "lng": -5.37099,
     "name_en": "El Kharrouba",
-    "name_ar": ""
+    "name_ar": "الخروبة"
   },
   {
     "id": "8171441780",
     "lat": 35.571261,
     "lng": -5.40013,
     "name_en": "Bni Khanous 1",
-    "name_ar": ""
+    "name_ar": "بني خنوس 1"
   },
   {
     "id": "8171441781",
     "lat": 35.572841,
     "lng": -5.401187,
     "name_en": "Bni Khanous 2",
-    "name_ar": ""
+    "name_ar": "بني خنوس 2"
   },
   {
     "id": "8171441782",
     "lat": 35.655375,
     "lng": -5.319148,
     "name_en": "Colinord",
-    "name_ar": ""
+    "name_ar": "كولينور"
   },
   {
     "id": "8171441783",
     "lat": 35.559195,
     "lng": -5.384653,
     "name_en": "Bourras",
-    "name_ar": ""
+    "name_ar": "بوراس"
   },
   {
     "id": "8171441784",
     "lat": 35.650002,
     "lng": -5.320593,
     "name_en": "Ghniwat",
-    "name_ar": ""
+    "name_ar": "غنيوات"
   },
   {
     "id": "8171441785",
     "lat": 35.571474,
     "lng": -5.421014,
     "name_en": "Malik Ibn Dirar - Mosquée",
-    "name_ar": ""
+    "name_ar": "مسجد مالك بن دينار"
   },
   {
     "id": "8188018824",
     "lat": 35.565907,
     "lng": -5.39298,
     "name_en": "Rif (Rommana)",
-    "name_ar": ""
+    "name_ar": "الريف (رمانة)"
   },
   {
     "id": "8188018825",
     "lat": 35.568516,
     "lng": -5.388997,
     "name_en": "Avenue Moulay Al Hassan Belmehdi",
-    "name_ar": ""
+    "name_ar": "شارع مولاي الحسن بلمهدي"
   },
   {
     "id": "8188018826",
     "lat": 35.568073,
     "lng": -5.373799,
     "name_en": "Jardin Chellal",
-    "name_ar": ""
+    "name_ar": "حديقة الشلال"
   },
   {
     "id": "8188018827",
     "lat": 35.565745,
     "lng": -5.368628,
     "name_en": "Mekki Nassiri - Aakbat El Halouf",
-    "name_ar": ""
+    "name_ar": "المكي الناصري - عقبة الحلوف"
   },
   {
     "id": "8188018828",
     "lat": 35.568738,
     "lng": -5.361292,
     "name_en": "Lycée Charif Al Idrissi",
-    "name_ar": ""
+    "name_ar": "ثانوية الشريف الإدريسي"
   },
   {
     "id": "8188018829",
     "lat": 35.572204,
     "lng": -5.359894,
     "name_en": "Avenue Des Far",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي"
   },
   {
     "id": "8188018830",
     "lat": 35.578267,
     "lng": -5.356329,
     "name_en": "Avenue Des Far - Rettaha",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - الرتاحة"
   },
   {
     "id": "8188018831",
     "lat": 35.581029,
     "lng": -5.353208,
     "name_en": "Avenue Des Far - Safir",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - سفير"
   },
   {
     "id": "8188018832",
     "lat": 35.586158,
     "lng": -5.347754,
     "name_en": "Avenue Des Far - Rif",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - الريف"
   },
   {
     "id": "8188018833",
     "lat": 35.589633,
     "lng": -5.34525,
     "name_en": "Avenue Des Far - Wilaya",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - الولاية"
   },
   {
     "id": "8188018834",
     "lat": 35.592243,
     "lng": -5.343123,
     "name_en": "Avenue Des Far - El Yazidi",
-    "name_ar": ""
+    "name_ar": "شارع الجيش الملكي - اليزيدي"
   },
   {
     "id": "8188018835",
     "lat": 35.593516,
     "lng": -5.345871,
     "name_en": "Boussafou",
-    "name_ar": ""
+    "name_ar": "بوصافو"
   },
   {
     "id": "8188018836",
     "lat": 35.594573,
     "lng": -5.347823,
     "name_en": "Bennouna Boussafou",
-    "name_ar": ""
+    "name_ar": "بنونة بوصافو"
   },
   {
     "id": "8188018837",
     "lat": 35.593005,
     "lng": -5.350566,
     "name_en": "Boujarrah 1",
-    "name_ar": ""
+    "name_ar": "بوجراح 1"
   },
   {
     "id": "8188018838",
     "lat": 35.593131,
     "lng": -5.350591,
     "name_en": "Boujarrah 1",
-    "name_ar": ""
+    "name_ar": "بوجراح 1"
   },
   {
     "id": "8188018839",
     "lat": 35.591397,
     "lng": -5.353571,
     "name_en": "Boujarrah 2",
-    "name_ar": ""
+    "name_ar": "بوجراح 2"
   },
   {
     "id": "8188018840",
     "lat": 35.587709,
     "lng": -5.35569,
     "name_en": "Boujarrah 3",
-    "name_ar": ""
+    "name_ar": "بوجراح 3"
   },
   {
     "id": "8188018841",
     "lat": 35.585008,
     "lng": -5.35418,
     "name_en": "Boujarrah",
-    "name_ar": ""
+    "name_ar": "بوجراح"
   },
   {
     "id": "8188220733",
     "lat": 35.570453,
     "lng": -5.363464,
     "name_en": "Bab El Okla",
-    "name_ar": ""
+    "name_ar": "باب العقلة"
   },
   {
     "id": "8188220734",
     "lat": 35.573161,
     "lng": -5.363073,
     "name_en": "Bab Saida",
-    "name_ar": ""
+    "name_ar": "باب السعيدة"
   },
   {
     "id": "8188220735",
     "lat": 35.575488,
     "lng": -5.363366,
     "name_en": "Ziana",
-    "name_ar": ""
+    "name_ar": "الزيانة"
   },
   {
     "id": "8188220736",
     "lat": 35.57714,
     "lng": -5.362725,
     "name_en": "Souk Ziana",
-    "name_ar": ""
+    "name_ar": "سوق الزيانة"
   },
   {
     "id": "8188220737",
     "lat": 35.578472,
     "lng": -5.361365,
     "name_en": "Mohamed Al Kharaz 1",
-    "name_ar": ""
+    "name_ar": "محمد الخراز 1"
   },
   {
     "id": "8188220738",
     "lat": 35.579394,
     "lng": -5.35896,
     "name_en": "Mohamed Al Kharaz 2",
-    "name_ar": ""
+    "name_ar": "محمد الخراز 2"
   },
   {
     "id": "8188220739",
     "lat": 35.581648,
     "lng": -5.356167,
     "name_en": "Mohamed Al Kharaz 3",
-    "name_ar": ""
+    "name_ar": "محمد الخراز 3"
   },
   {
     "id": "8188220740",
     "lat": 35.583863,
     "lng": -5.352417,
     "name_en": "Mohamed Al Kharaz 4",
-    "name_ar": ""
+    "name_ar": "محمد الخراز 4"
   },
   {
     "id": "8188220741",
     "lat": 35.584993,
     "lng": -5.352177,
     "name_en": "Jbel Toubkal",
-    "name_ar": ""
+    "name_ar": "جبل توبقال"
   },
   {
     "id": "8188220742",
     "lat": 35.585949,
     "lng": -5.350889,
     "name_en": "Afka",
-    "name_ar": ""
+    "name_ar": "أفكا"
   },
   {
     "id": "8188220743",
     "lat": 35.586609,
     "lng": -5.349218,
     "name_en": "Jbel Atlas",
-    "name_ar": ""
+    "name_ar": "جبل الأطلس"
   },
   {
     "id": "8188220744",
     "lat": 35.592501,
     "lng": -5.339873,
     "name_en": "Mohamed El Yazidi",
-    "name_ar": ""
+    "name_ar": "محمد اليزيدي"
   },
   {
     "id": "8188220745",
     "lat": 35.591093,
     "lng": -5.334134,
     "name_en": "Aéroport",
-    "name_ar": ""
+    "name_ar": "المطار"
   },
   {
     "id": "8188220746",
     "lat": 35.59349,
     "lng": -5.332204,
     "name_en": "I.T.A",
-    "name_ar": ""
+    "name_ar": "معهد التكنولوجيا التطبيقية (ITA)"
   },
   {
     "id": "8188220747",
     "lat": 35.596147,
     "lng": -5.328553,
     "name_en": "Cité Universitaire",
-    "name_ar": ""
+    "name_ar": "الحي الجامعي"
   },
   {
     "id": "8188220748",
     "lat": 35.59798,
     "lng": -5.324749,
     "name_en": "Avenue D'Egypte",
-    "name_ar": ""
+    "name_ar": "شارع مصر"
   },
   {
     "id": "8188220749",
     "lat": 35.592358,
     "lng": -5.339615,
     "name_en": "Mohamed El Yazidi",
-    "name_ar": ""
+    "name_ar": "محمد اليزيدي"
   },
   {
     "id": "8188220750",
     "lat": 35.58656,
     "lng": -5.349266,
     "name_en": "Jbel Atlas",
-    "name_ar": ""
+    "name_ar": "جبل الأطلس"
   },
   {
     "id": "8188220751",
     "lat": 35.585042,
     "lng": -5.352091,
     "name_en": "Jbel Toubkal",
-    "name_ar": ""
+    "name_ar": "جبل توبقال"
   },
   {
     "id": "8188220752",
     "lat": 35.579334,
     "lng": -5.3589,
     "name_en": "Mohamed Al Kharaz 2",
-    "name_ar": ""
+    "name_ar": "محمد الخراز 2"
   },
   {
     "id": "8188220753",
     "lat": 35.577116,
     "lng": -5.362675,
     "name_en": "Souk Ziana",
-    "name_ar": ""
+    "name_ar": "سوق الزيانة"
   },
   {
     "id": "8188220755",
     "lat": 35.573204,
     "lng": -5.363032,
     "name_en": "Bab Saida",
-    "name_ar": ""
+    "name_ar": "باب السعيدة"
   },
   {
     "id": "8188220756",
     "lat": 35.570403,
     "lng": -5.363421,
     "name_en": "Bab El Okla",
-    "name_ar": ""
+    "name_ar": "باب العقلة"
   },
   {
     "id": "8188220757",
     "lat": 35.567641,
     "lng": -5.365837,
     "name_en": "Casa Bloque",
-    "name_ar": ""
+    "name_ar": "كاسا بلوك"
   },
   {
     "id": "8188220758",
     "lat": 35.567033,
     "lng": -5.369037,
     "name_en": "Jardin Moulay Rachid",
-    "name_ar": ""
+    "name_ar": "حديقة مولاي رشيد"
   },
   {
     "id": "8188220759",
     "lat": 35.600553,
     "lng": -5.326766,
     "name_en": "Lot Souani (Place Palestine)",
-    "name_ar": ""
+    "name_ar": "تجزئة السواني (ساحة فلسطين)"
   },
   {
     "id": "8188220760",
     "lat": 35.565917,
     "lng": -5.393037,
     "name_en": "Rif (Rommana)",
-    "name_ar": ""
+    "name_ar": "الريف (رمانة)"
   },
   {
     "id": "8188287495",
     "lat": 35.58889,
     "lng": -5.35848,
     "name_en": "Mokhtar Soussi",
-    "name_ar": ""
+    "name_ar": "المختار السوسي"
   },
   {
     "id": "8188287496",
     "lat": 35.585418,
     "lng": -5.358744,
     "name_en": "Fatima Al Fihria",
-    "name_ar": ""
+    "name_ar": "فاطمة الفهرية"
   },
   {
     "id": "8188287497",
     "lat": 35.583598,
     "lng": -5.358729,
     "name_en": "Haj Mohamed Bennouna 2",
-    "name_ar": ""
+    "name_ar": "الحاج محمد بنونة 2"
   },
   {
     "id": "8188287498",
     "lat": 35.580936,
     "lng": -5.360593,
     "name_en": "Haj Mohamed Bennouna 1",
-    "name_ar": ""
+    "name_ar": "الحاج محمد بنونة 1"
   },
   {
     "id": "8188287499",
     "lat": 35.579146,
     "lng": -5.362099,
     "name_en": "Cheikh Ben Larbi Alaoui",
-    "name_ar": ""
+    "name_ar": "الشيخ بن العربي العلوي"
   },
   {
     "id": "8188287500",
     "lat": 35.592237,
     "lng": -5.35915,
     "name_en": "Kallaline",
-    "name_ar": ""
+    "name_ar": "القلالين"
   },
   {
     "id": "8188287501",
     "lat": 35.579127,
     "lng": -5.362172,
     "name_en": "Cheikh Ben Larbi Alaoui",
-    "name_ar": ""
+    "name_ar": "الشيخ بن العربي العلوي"
   },
   {
     "id": "8191086253",
     "lat": 35.547776,
     "lng": -5.398373,
     "name_en": "Dar Zkiek",
-    "name_ar": ""
+    "name_ar": "دار زكيك"
   },
   {
     "id": "8191086254",
     "lat": 35.549828,
     "lng": -5.397225,
     "name_en": "Ain Dar Zkiek",
-    "name_ar": ""
+    "name_ar": "عين دار زكيك"
   },
   {
     "id": "8191086255",
     "lat": 35.553171,
     "lng": -5.399117,
     "name_en": "Amina Bent Wahab",
-    "name_ar": ""
+    "name_ar": "آمنة بنت وهب"
   },
   {
     "id": "8191086256",
     "lat": 35.557842,
     "lng": -5.408684,
     "name_en": "Route De Torreta",
-    "name_ar": ""
+    "name_ar": "طريق طوريطة"
   },
   {
     "id": "8191086257",
     "lat": 35.558156,
     "lng": -5.412668,
     "name_en": "Grt Louha",
-    "name_ar": ""
+    "name_ar": "اللوحة (Grt Louha)"
   },
   {
     "id": "8191086258",
     "lat": 35.565662,
     "lng": -5.411768,
     "name_en": "Afriquia - Mly Hassan Bel Mehdi",
-    "name_ar": ""
+    "name_ar": "أفريقيا - مولاي الحسن بلمهدي"
   },
   {
     "id": "8191086259",
     "lat": 35.565491,
     "lng": -5.392422,
     "name_en": "Rommana",
-    "name_ar": ""
+    "name_ar": "رمانة"
   },
   {
     "id": "8191086260",
     "lat": 35.565477,
     "lng": -5.392411,
     "name_en": "Rommana",
-    "name_ar": ""
+    "name_ar": "رمانة"
   },
   {
     "id": "8191086261",
     "lat": 35.547759,
     "lng": -5.398324,
     "name_en": "Dar Zkiek",
-    "name_ar": ""
+    "name_ar": "دار زكيك"
   },
   {
     "id": "8191086267",
     "lat": 35.57053,
     "lng": -5.383038,
     "name_en": "Dar Takafa",
-    "name_ar": ""
+    "name_ar": "دار الثقافة"
   },
   {
     "id": "8191149531",
     "lat": 35.571561,
     "lng": -5.418817,
     "name_en": "Nassim",
-    "name_ar": ""
+    "name_ar": "النسيم"
   },
   {
     "id": "8191149532",
     "lat": 35.57146,
     "lng": -5.420993,
     "name_en": "Malik Ibn Dirar - Mosquée",
-    "name_ar": ""
+    "name_ar": "مسجد مالك بن دينار"
   },
   {
     "id": "8191149533",
     "lat": 35.569535,
     "lng": -5.420415,
     "name_en": "Torreta",
-    "name_ar": ""
+    "name_ar": "طوريطة"
   },
   {
     "id": "8191149534",
     "lat": 35.567285,
     "lng": -5.421844,
     "name_en": "Prison Locale",
-    "name_ar": ""
+    "name_ar": "السجن المحلي"
   },
   {
     "id": "8191149535",
     "lat": 35.565049,
     "lng": -5.421433,
     "name_en": "Louziyen",
-    "name_ar": ""
+    "name_ar": "اللوزيين"
   },
   {
     "id": "8191149536",
     "lat": 35.565248,
     "lng": -5.414973,
     "name_en": "Nakkata",
-    "name_ar": ""
+    "name_ar": "النقاطة"
   },
   {
     "id": "8191186411",
     "lat": 35.574707,
     "lng": -5.405168,
     "name_en": "Résidence Jardin Taboula",
-    "name_ar": ""
+    "name_ar": "إقامة جنان طابولة"
   },
   {
     "id": "8191186412",
     "lat": 35.573734,
     "lng": -5.40249,
     "name_en": "Mosquée El Aela",
-    "name_ar": ""
+    "name_ar": "المسجد الأعلى"
   },
   {
     "id": "8191186413",
     "lat": 35.572852,
     "lng": -5.401154,
     "name_en": "Bni Khanous 2",
-    "name_ar": ""
+    "name_ar": "بني خنوس 2"
   },
   {
     "id": "8191186414",
     "lat": 35.571277,
     "lng": -5.400079,
     "name_en": "Bni Khanous 1",
-    "name_ar": ""
+    "name_ar": "بني خنوس 1"
   },
   {
     "id": "8191186415",
     "lat": 35.569965,
     "lng": -5.39938,
     "name_en": "Ecole Chouhadae",
-    "name_ar": ""
+    "name_ar": "مدرسة الشهداء"
   },
   {
     "id": "8191229017",
     "lat": 35.568348,
     "lng": -5.402244,
     "name_en": "Résidence Yassmine",
-    "name_ar": ""
+    "name_ar": "إقامة الياسمين"
   },
   {
     "id": "8191229018",
     "lat": 35.566638,
     "lng": -5.401596,
     "name_en": "Koudia",
-    "name_ar": ""
+    "name_ar": "الكدية"
   },
   {
     "id": "8191229019",
     "lat": 35.568364,
     "lng": -5.402299,
     "name_en": "Résidence Yassmine",
-    "name_ar": ""
+    "name_ar": "إقامة الياسمين"
   },
   {
     "id": "8191229021",
     "lat": 35.575509,
     "lng": -5.408586,
     "name_en": "Résidence El Wikaya",
-    "name_ar": ""
+    "name_ar": "إقامة الوقاية"
   },
   {
     "id": "8191229022",
     "lat": 35.576656,
     "lng": -5.410818,
     "name_en": "Mosquée El Kabdani",
-    "name_ar": ""
+    "name_ar": "مسجد الكبداني"
   },
   {
     "id": "8191355103",
     "lat": 35.572543,
     "lng": -5.355339,
     "name_en": "Hopital Civil",
-    "name_ar": ""
+    "name_ar": "المستشفى المدني (سانية الرمل)"
   },
   {
     "id": "8191355104",
     "lat": 35.573063,
     "lng": -5.35344,
     "name_en": "Mosquée Al Oumma",
-    "name_ar": ""
+    "name_ar": "مسجد الأمة"
   },
   {
     "id": "8191355105",
     "lat": 35.576503,
     "lng": -5.350236,
     "name_en": "Ecole Omar Ibn Abdelaziz",
-    "name_ar": ""
+    "name_ar": "مدرسة عمر بن عبد العزيز"
   },
   {
     "id": "8191355106",
     "lat": 35.577955,
     "lng": -5.350742,
     "name_en": "Résidence El Manar",
-    "name_ar": ""
+    "name_ar": "إقامة المنار"
   },
   {
     "id": "8191355107",
     "lat": 35.578953,
     "lng": -5.349241,
     "name_en": "Pharmacie Afassi",
-    "name_ar": ""
+    "name_ar": "صيدلية العفاسي"
   },
   {
     "id": "8191355108",
     "lat": 35.579859,
     "lng": -5.346515,
     "name_en": "Etablissement Tofola",
-    "name_ar": ""
+    "name_ar": "مؤسسة الطفولة"
   },
   {
     "id": "8191355109",
     "lat": 35.580137,
     "lng": -5.345096,
     "name_en": "Supermarché Taw",
-    "name_ar": ""
+    "name_ar": "متجر طاو (Supermarché Taw)"
   },
   {
     "id": "8191355110",
     "lat": 35.583036,
     "lng": -5.343889,
     "name_en": "Café Warda",
-    "name_ar": ""
+    "name_ar": "مقهى وردة"
   },
   {
     "id": "8191355111",
     "lat": 35.583718,
     "lng": -5.342579,
     "name_en": "Ain Maloul",
-    "name_ar": ""
+    "name_ar": "عين ملول"
   },
   {
     "id": "8191355112",
     "lat": 35.586249,
     "lng": -5.337375,
     "name_en": "Ecole Mohamed Aziman",
-    "name_ar": ""
+    "name_ar": "مدرسة محمد أزيمان"
   },
   {
     "id": "8191355113",
     "lat": 35.587419,
     "lng": -5.337775,
     "name_en": "Mosquée Mohammed VI",
-    "name_ar": ""
+    "name_ar": "مسجد محمد السادس"
   },
   {
     "id": "8191355114",
     "lat": 35.589784,
     "lng": -5.338312,
     "name_en": "Wilaya",
-    "name_ar": ""
+    "name_ar": "الولاية"
   },
   {
     "id": "8193747822",
     "lat": 35.597098,
     "lng": -5.343476,
     "name_en": "Mohamed Smaili",
-    "name_ar": ""
+    "name_ar": "محمد السمايلي (Mohamed Smaili)"
   },
   {
     "id": "8193747823",
     "lat": 35.600107,
     "lng": -5.340587,
     "name_en": "Jnan El Haouzi",
-    "name_ar": ""
+    "name_ar": "جنان الحوزي"
   },
   {
     "id": "8193747824",
     "lat": 35.603177,
     "lng": -5.341593,
     "name_en": "Hjar Laaroussa",
-    "name_ar": ""
+    "name_ar": "حجر العروسة"
   },
   {
     "id": "8193820473",
     "lat": 35.589451,
     "lng": -5.361439,
     "name_en": "El Kariane",
-    "name_ar": ""
+    "name_ar": "الكاريان"
   },
   {
     "id": "8193820474",
     "lat": 35.586558,
     "lng": -5.368023,
     "name_en": "Aakbat Chata",
-    "name_ar": ""
+    "name_ar": "عقبة شاطة"
   },
   {
     "id": "8193820475",
     "lat": 35.583909,
     "lng": -5.365247,
     "name_en": "Ksar El Khalifa",
-    "name_ar": ""
+    "name_ar": "قصر الخليفة"
   },
   {
     "id": "8193820476",
     "lat": 35.582342,
     "lng": -5.364158,
     "name_en": "Teffaline",
-    "name_ar": ""
+    "name_ar": "الطفالين"
   },
   {
     "id": "8193820477",
     "lat": 35.580775,
     "lng": -5.363938,
     "name_en": "Mosquée Ben Aboud",
-    "name_ar": ""
+    "name_ar": "مسجد بن عبود"
   },
   {
     "id": "8193820478",
     "lat": 35.578971,
     "lng": -5.363762,
     "name_en": "Touilaa 2",
-    "name_ar": ""
+    "name_ar": "الطويلعة 2"
   },
   {
     "id": "8193820479",
     "lat": 35.589433,
     "lng": -5.361484,
     "name_en": "El Kariane",
-    "name_ar": ""
+    "name_ar": "الكاريان"
   },
   {
     "id": "8193863893",
     "lat": 35.573504,
     "lng": -5.379584,
     "name_en": "Diour Lahjar",
-    "name_ar": ""
+    "name_ar": "ديور الحجر"
   },
   {
     "id": "8193863894",
     "lat": 35.574612,
     "lng": -5.381365,
     "name_en": "Abdelkrim El Khattabi - Poste Maroc",
-    "name_ar": ""
+    "name_ar": "عبد الكريم الخطابي - بريد المغرب"
   },
   {
     "id": "8193863895",
     "lat": 35.574426,
     "lng": -5.383345,
     "name_en": "Souk El Fahm",
-    "name_ar": ""
+    "name_ar": "سوق الفحم"
   },
   {
     "id": "8193863896",
     "lat": 35.574332,
     "lng": -5.386566,
     "name_en": "Cinéma Victoria",
-    "name_ar": ""
+    "name_ar": "سينما فيكتوريا"
   },
   {
     "id": "8193863897",
     "lat": 35.574661,
     "lng": -5.389826,
     "name_en": "Cafe Terasa",
-    "name_ar": ""
+    "name_ar": "مقهى طيراسا"
   },
   {
     "id": "8193863898",
     "lat": 35.574949,
     "lng": -5.391305,
     "name_en": "Snack Loujdi",
-    "name_ar": ""
+    "name_ar": "سناك الوجدي"
   },
   {
     "id": "8193863899",
     "lat": 35.575256,
     "lng": -5.39381,
     "name_en": "Palais Essalam",
-    "name_ar": ""
+    "name_ar": "قصر السلام"
   },
   {
     "id": "8193863900",
@@ -2503,343 +2503,343 @@
     "lat": 35.578587,
     "lng": -5.399456,
     "name_en": "Route Semsa",
-    "name_ar": ""
+    "name_ar": "طريق سمسة"
   },
   {
     "id": "8193863902",
     "lat": 35.582229,
     "lng": -5.401253,
     "name_en": "Route Semsa 2",
-    "name_ar": ""
+    "name_ar": "طريق سمسة 2"
   },
   {
     "id": "8193863903",
     "lat": 35.591366,
     "lng": -5.406244,
     "name_en": "Ain Semsa",
-    "name_ar": ""
+    "name_ar": "عين سمسة"
   },
   {
     "id": "8193863905",
     "lat": 35.574675,
     "lng": -5.389792,
     "name_en": "Cafe Terasa",
-    "name_ar": ""
+    "name_ar": "مقهى طيراسا"
   },
   {
     "id": "8196047483",
     "lat": 35.574064,
     "lng": -5.396166,
     "name_en": "Jamaa Mezouak",
-    "name_ar": ""
+    "name_ar": "جامع المزواق"
   },
   {
     "id": "8196133392",
     "lat": 35.602808,
     "lng": -5.336288,
     "name_en": "Marjane",
-    "name_ar": ""
+    "name_ar": "مرجان"
   },
   {
     "id": "8196133393",
     "lat": 35.6079,
     "lng": -5.334637,
     "name_en": "Setine 60",
-    "name_ar": ""
+    "name_ar": "ستين 60 (Setine 60)"
   },
   {
     "id": "8196133394",
     "lat": 35.613488,
     "lng": -5.332836,
     "name_en": "Koudia",
-    "name_ar": ""
+    "name_ar": "الكدية"
   },
   {
     "id": "8196133395",
     "lat": 35.620744,
     "lng": -5.329353,
     "name_en": "R'Milat",
-    "name_ar": ""
+    "name_ar": "الرميلات"
   },
   {
     "id": "8196133396",
     "lat": 35.624778,
     "lng": -5.327619,
     "name_en": "Rp El Mallalienne",
-    "name_ar": ""
+    "name_ar": "مدار الملاليين"
   },
   {
     "id": "8196137641",
     "lat": 35.565013,
     "lng": -5.368506,
     "name_en": "Aakbat El Halouf 1",
-    "name_ar": ""
+    "name_ar": "عقبة الحلوف 1"
   },
   {
     "id": "8196137642",
     "lat": 35.562967,
     "lng": -5.368621,
     "name_en": "Aakbat El Halouf 2",
-    "name_ar": ""
+    "name_ar": "عقبة الحلوف 2"
   },
   {
     "id": "8196137643",
     "lat": 35.560451,
     "lng": -5.370855,
     "name_en": "Gare Routière",
-    "name_ar": ""
+    "name_ar": "المحطة الطرقية"
   },
   {
     "id": "8196137644",
     "lat": 35.555207,
     "lng": -5.376708,
     "name_en": "Saf Al Hamam 2",
-    "name_ar": ""
+    "name_ar": "صف الحمام 2"
   },
   {
     "id": "8196137645",
     "lat": 35.555105,
     "lng": -5.378878,
     "name_en": "Saf Al Hamam 1",
-    "name_ar": ""
+    "name_ar": "صف الحمام 1"
   },
   {
     "id": "8196137646",
     "lat": 35.555401,
     "lng": -5.381268,
     "name_en": "Les Jardins d'Andalous",
-    "name_ar": ""
+    "name_ar": "حدائق الأندلس"
   },
   {
     "id": "8196137647",
     "lat": 35.557213,
     "lng": -5.383657,
     "name_en": "Pharmacie Rkaina",
-    "name_ar": ""
+    "name_ar": "صيدلية الركينة"
   },
   {
     "id": "8196137648",
     "lat": 35.55915,
     "lng": -5.38467,
     "name_en": "Bourras",
-    "name_ar": ""
+    "name_ar": "بوراس"
   },
   {
     "id": "8196137649",
     "lat": 35.557626,
     "lng": -5.386072,
     "name_en": "Boulangerie El Morabet",
-    "name_ar": ""
+    "name_ar": "مخبزة المرابط"
   },
   {
     "id": "8196137650",
     "lat": 35.556665,
     "lng": -5.388888,
     "name_en": "Tahen",
-    "name_ar": ""
+    "name_ar": "الطاحن (Tahen)"
   },
   {
     "id": "8196137651",
     "lat": 35.556139,
     "lng": -5.392222,
     "name_en": "Zariaa",
-    "name_ar": ""
+    "name_ar": "الزريعة"
   },
   {
     "id": "8196137652",
     "lat": 35.555417,
     "lng": -5.401276,
     "name_en": "Lotissement Wikaya",
-    "name_ar": ""
+    "name_ar": "تجزئة الوقاية"
   },
   {
     "id": "8196137653",
     "lat": 35.55679,
     "lng": -5.404363,
     "name_en": "Lafarge",
-    "name_ar": ""
+    "name_ar": "لافارج"
   },
   {
     "id": "8196137654",
     "lat": 35.556109,
     "lng": -5.416231,
     "name_en": "Tamuda",
-    "name_ar": ""
+    "name_ar": "تامودا"
   },
   {
     "id": "8196137655",
     "lat": 35.555443,
     "lng": -5.381235,
     "name_en": "Les Jardins d'Andalous",
-    "name_ar": ""
+    "name_ar": "حدائق الأندلس"
   },
   {
     "id": "8196161705",
     "lat": 35.562623,
     "lng": -5.363179,
     "name_en": "Faculté Des Sciences",
-    "name_ar": ""
+    "name_ar": "كلية العلوم"
   },
   {
     "id": "8196161706",
     "lat": 35.565278,
     "lng": -5.356494,
     "name_en": "Casablanca 2",
-    "name_ar": ""
+    "name_ar": "الدار البيضاء 2"
   },
   {
     "id": "8196161707",
     "lat": 35.56476,
     "lng": -5.352418,
     "name_en": "Abdellah El Fakhar - Afriquia",
-    "name_ar": ""
+    "name_ar": "عبد الله الفخار - أفريقيا"
   },
   {
     "id": "8196161708",
     "lat": 35.56488,
     "lng": -5.347425,
     "name_en": "Grt Coelma",
-    "name_ar": ""
+    "name_ar": "كويلما (Grt Coelma)"
   },
   {
     "id": "8196161709",
     "lat": 35.565129,
     "lng": -5.345068,
     "name_en": "Coelma",
-    "name_ar": ""
+    "name_ar": "كويلما"
   },
   {
     "id": "8196161710",
     "lat": 35.56781,
     "lng": -5.33661,
     "name_en": "El Manar",
-    "name_ar": ""
+    "name_ar": "المنار"
   },
   {
     "id": "8196161711",
     "lat": 35.569693,
     "lng": -5.330776,
     "name_en": "Fabrique Rbahi",
-    "name_ar": ""
+    "name_ar": "معمل الرباحي"
   },
   {
     "id": "8196161712",
     "lat": 35.577263,
     "lng": -5.307382,
     "name_en": "Jamae",
-    "name_ar": ""
+    "name_ar": "الجامع"
   },
   {
     "id": "8196161713",
     "lat": 35.580848,
     "lng": -5.290252,
     "name_en": "El Kharrouba",
-    "name_ar": ""
+    "name_ar": "الخروبة"
   },
   {
     "id": "8196161714",
     "lat": 35.572429,
     "lng": -5.263489,
     "name_en": "Sidi Abdeslam",
-    "name_ar": ""
+    "name_ar": "سيدي عبد السلام"
   },
   {
     "id": "8196161715",
     "lat": 35.563485,
     "lng": -5.249601,
     "name_en": "Chwabel",
-    "name_ar": ""
+    "name_ar": "الشوابل"
   },
   {
     "id": "8196161716",
     "lat": 35.550651,
     "lng": -5.242552,
     "name_en": "Azla",
-    "name_ar": ""
+    "name_ar": "أزلا"
   },
   {
     "id": "8196235917",
     "lat": 35.547119,
     "lng": -5.235587,
     "name_en": "Kae El Mejri",
-    "name_ar": ""
+    "name_ar": "قاع المجري"
   },
   {
     "id": "8196235918",
     "lat": 35.544992,
     "lng": -5.225421,
     "name_en": "Senssla",
-    "name_ar": ""
+    "name_ar": "السنسلة"
   },
   {
     "id": "8196235919",
     "lat": 35.526698,
     "lng": -5.230593,
     "name_en": "Amssa",
-    "name_ar": ""
+    "name_ar": "أمسا"
   },
   {
     "id": "8196235920",
     "lat": 35.565229,
     "lng": -5.356535,
     "name_en": "Casablanca 2",
-    "name_ar": ""
+    "name_ar": "الدار البيضاء 2"
   },
   {
     "id": "8196697917",
     "lat": 35.537633,
     "lng": -5.213313,
     "name_en": "Campigne",
-    "name_ar": ""
+    "name_ar": "المخيم (الكامبينغ)"
   },
   {
     "id": "8196697918",
     "lat": 35.529766,
     "lng": -5.197137,
     "name_en": "Tamrabet",
-    "name_ar": ""
+    "name_ar": "تامرابط"
   },
   {
     "id": "8196697920",
     "lat": 35.519807,
     "lng": -5.176743,
     "name_en": "Tamernout",
-    "name_ar": ""
+    "name_ar": "تامرنوت"
   },
   {
     "id": "8196697921",
     "lat": 35.508457,
     "lng": -5.156709,
     "name_en": "Awchtam",
-    "name_ar": ""
+    "name_ar": "أوشتام"
   },
   {
     "id": "8196697922",
     "lat": 35.487865,
     "lng": -5.135481,
     "name_en": "Abita",
-    "name_ar": ""
+    "name_ar": "أبيتا (Abita)"
   },
   {
     "id": "8196697923",
     "lat": 35.482819,
     "lng": -5.124439,
     "name_en": "Tamgart",
-    "name_ar": ""
+    "name_ar": "تمغارت"
   },
   {
     "id": "8196697924",
     "lat": 35.477304,
     "lng": -5.116953,
     "name_en": "Khandak De Riyas",
-    "name_ar": ""
+    "name_ar": "خندق الرياس (Khandak De Riyas)"
   },
   {
     "id": "8196697925",
     "lat": 35.463512,
     "lng": -5.100061,
     "name_en": "Mkad",
-    "name_ar": ""
+    "name_ar": "مكاد"
   },
   {
     "id": "8196697926",
@@ -2867,252 +2867,252 @@
     "lat": 35.436107,
     "lng": -5.108273,
     "name_en": "Riyasna",
-    "name_ar": ""
+    "name_ar": "الرياسنة (Riyasna)"
   },
   {
     "id": "8196697930",
     "lat": 35.429415,
     "lng": -5.117479,
     "name_en": "El Contro",
-    "name_ar": ""
+    "name_ar": "الكونترو (El Contro)"
   },
   {
     "id": "8196697931",
     "lat": 35.423066,
     "lng": -5.121831,
     "name_en": "Oued Laou",
-    "name_ar": ""
+    "name_ar": "واد لاو"
   },
   {
     "id": "8196758062",
     "lat": 35.548062,
     "lng": -5.55463,
     "name_en": "Ain Lahcen",
-    "name_ar": ""
+    "name_ar": "عين الحصن"
   },
   {
     "id": "8196758063",
     "lat": 35.549481,
     "lng": -5.522715,
     "name_en": "Spirada",
-    "name_ar": ""
+    "name_ar": "سبيرادا"
   },
   {
     "id": "8196758064",
     "lat": 35.552358,
     "lng": -5.513264,
     "name_en": "El Hjar",
-    "name_ar": ""
+    "name_ar": "الحجر"
   },
   {
     "id": "8196758065",
     "lat": 35.555608,
     "lng": -5.504848,
     "name_en": "Chtab",
-    "name_ar": ""
+    "name_ar": "الشطاب (Chtab)"
   },
   {
     "id": "8196758066",
     "lat": 35.559582,
     "lng": -5.499769,
     "name_en": "El Manar",
-    "name_ar": ""
+    "name_ar": "المنار"
   },
   {
     "id": "8196758067",
     "lat": 35.563204,
     "lng": -5.489351,
     "name_en": "Barrage",
-    "name_ar": ""
+    "name_ar": "السد"
   },
   {
     "id": "8196758068",
     "lat": 35.561557,
     "lng": -5.481663,
     "name_en": "Boukhari",
-    "name_ar": ""
+    "name_ar": "البخاري"
   },
   {
     "id": "8196758069",
     "lat": 35.56093,
     "lng": -5.473667,
     "name_en": "El Harcha",
-    "name_ar": ""
+    "name_ar": "الحرشة"
   },
   {
     "id": "8196758070",
     "lat": 35.560172,
     "lng": -5.467919,
     "name_en": "Sahtrienne",
-    "name_ar": ""
+    "name_ar": "السحتريين"
   },
   {
     "id": "8196758071",
     "lat": 35.559135,
     "lng": -5.461429,
     "name_en": "Trik",
-    "name_ar": ""
+    "name_ar": "الطريق (Trik)"
   },
   {
     "id": "8196758072",
     "lat": 35.557803,
     "lng": -5.453436,
     "name_en": "Khmis",
-    "name_ar": ""
+    "name_ar": "الخميس"
   },
   {
     "id": "8196758073",
     "lat": 35.559591,
     "lng": -5.44497,
     "name_en": "Grankha",
-    "name_ar": ""
+    "name_ar": "لاكرانخا"
   },
   {
     "id": "8196758074",
     "lat": 35.559556,
     "lng": -5.436518,
     "name_en": "Dechrien",
-    "name_ar": ""
+    "name_ar": "الدشريين"
   },
   {
     "id": "8196758075",
     "lat": 35.561165,
     "lng": -5.433045,
     "name_en": "Traksat",
-    "name_ar": ""
+    "name_ar": "طراكسات"
   },
   {
     "id": "8196758076",
     "lat": 35.562725,
     "lng": -5.429261,
     "name_en": "Soussi",
-    "name_ar": ""
+    "name_ar": "السوسي"
   },
   {
     "id": "8196766600",
     "lat": 35.563107,
     "lng": -5.460258,
     "name_en": "Bousfiha",
-    "name_ar": ""
+    "name_ar": "بوصفيحة"
   },
   {
     "id": "8196766601",
     "lat": 35.565462,
     "lng": -5.461584,
     "name_en": "Maison Renault",
-    "name_ar": ""
+    "name_ar": "وكالة رونو (Maison Renault)"
   },
   {
     "id": "8196766602",
     "lat": 35.568396,
     "lng": -5.464807,
     "name_en": "Poste Electricité",
-    "name_ar": ""
+    "name_ar": "محطة الكهرباء"
   },
   {
     "id": "8196766603",
     "lat": 35.573931,
     "lng": -5.466853,
     "name_en": "Usine De Carreaux",
-    "name_ar": ""
+    "name_ar": "معمل الزليج"
   },
   {
     "id": "8196766604",
     "lat": 35.583624,
     "lng": -5.4707,
     "name_en": "Piste Lawta",
-    "name_ar": ""
+    "name_ar": "طريق لوطا (Piste Lawta)"
   },
   {
     "id": "8196766605",
     "lat": 35.59086,
     "lng": -5.475178,
     "name_en": "Bounazzal 1",
-    "name_ar": ""
+    "name_ar": "بونزال 1"
   },
   {
     "id": "8196766606",
     "lat": 35.593743,
     "lng": -5.477583,
     "name_en": "Bounazzal 2",
-    "name_ar": ""
+    "name_ar": "بونزال 2"
   },
   {
     "id": "8196766607",
     "lat": 35.598447,
     "lng": -5.481881,
     "name_en": "Lafarge",
-    "name_ar": ""
+    "name_ar": "لافارج"
   },
   {
     "id": "8196766608",
     "lat": 35.604676,
     "lng": -5.484319,
     "name_en": "Rwida",
-    "name_ar": ""
+    "name_ar": "الرويضة"
   },
   {
     "id": "8196766609",
     "lat": 35.612471,
     "lng": -5.492895,
     "name_en": "Machachates",
-    "name_ar": ""
+    "name_ar": "المشاشات"
   },
   {
     "id": "8196766610",
     "lat": 35.620942,
     "lng": -5.495824,
     "name_en": "Souk Lakdim",
-    "name_ar": ""
+    "name_ar": "السوق القديم"
   },
   {
     "id": "8196766611",
     "lat": 35.632402,
     "lng": -5.500971,
     "name_en": "Zouada",
-    "name_ar": ""
+    "name_ar": "الزوادة"
   },
   {
     "id": "8196766612",
     "lat": 35.664399,
     "lng": -5.510764,
     "name_en": "Kmis Anjra",
-    "name_ar": ""
+    "name_ar": "خميس أنجرة"
   },
   {
     "id": "8196909139",
     "lat": 35.638389,
     "lng": -5.447,
     "name_en": "Laalaouia",
-    "name_ar": ""
+    "name_ar": "العلوية"
   },
   {
     "id": "8196909140",
     "lat": 35.620359,
     "lng": -5.452765,
     "name_en": "Seddina",
-    "name_ar": ""
+    "name_ar": "صدينة"
   },
   {
     "id": "8196909141",
     "lat": 35.597102,
     "lng": -5.430469,
     "name_en": "Lafarge",
-    "name_ar": ""
+    "name_ar": "لافارج"
   },
   {
     "id": "8196909142",
     "lat": 35.5726,
     "lng": -5.404754,
     "name_en": "Orangina",
-    "name_ar": ""
+    "name_ar": "أورونجينا"
   },
   {
     "id": "8196909143",
     "lat": 35.570389,
     "lng": -5.404155,
     "name_en": "Gorna Abattoirs",
-    "name_ar": ""
+    "name_ar": "المجازر / الكرنة"
   },
   {
     "id": "8196996386",
@@ -3126,406 +3126,406 @@
     "lat": 35.626048,
     "lng": -5.331464,
     "name_en": "Mandi",
-    "name_ar": ""
+    "name_ar": "مندي (Mandi)"
   },
   {
     "id": "8197188235",
     "lat": 35.559524,
     "lng": -5.350065,
     "name_en": "Mosquée Boujdad",
-    "name_ar": ""
+    "name_ar": "مسجد بوجداد"
   },
   {
     "id": "8197188236",
     "lat": 35.556994,
     "lng": -5.352396,
     "name_en": "Ettoub",
-    "name_ar": ""
+    "name_ar": "الطوب"
   },
   {
     "id": "8197188237",
     "lat": 35.55395,
     "lng": -5.354991,
     "name_en": "Kharrouba",
-    "name_ar": ""
+    "name_ar": "الخروبة"
   },
   {
     "id": "8197188238",
     "lat": 35.553034,
     "lng": -5.36002,
     "name_en": "Jamaat Zitoune",
-    "name_ar": ""
+    "name_ar": "جماعة الزيتون"
   },
   {
     "id": "8197188239",
     "lat": 35.550705,
     "lng": -5.36077,
     "name_en": "Beni Salah",
-    "name_ar": ""
+    "name_ar": "بني صالح"
   },
   {
     "id": "8197188240",
     "lat": 35.550748,
     "lng": -5.363612,
     "name_en": "Mgaz Lhjar 1",
-    "name_ar": ""
+    "name_ar": "مجاز الحجر 1"
   },
   {
     "id": "8197188241",
     "lat": 35.552356,
     "lng": -5.365564,
     "name_en": "Mgaz Lhjar 2",
-    "name_ar": ""
+    "name_ar": "مجاز الحجر 2"
   },
   {
     "id": "8197188242",
     "lat": 35.5503,
     "lng": -5.369056,
     "name_en": "Torreta",
-    "name_ar": ""
+    "name_ar": "طوريطة"
   },
   {
     "id": "8197188243",
     "lat": 35.548426,
     "lng": -5.371899,
     "name_en": "Bouanane",
-    "name_ar": ""
+    "name_ar": "بوعنان"
   },
   {
     "id": "8197188244",
     "lat": 35.548441,
     "lng": -5.371806,
     "name_en": "Bouanane",
-    "name_ar": ""
+    "name_ar": "بوعنان"
   },
   {
     "id": "8197425134",
     "lat": 35.548041,
     "lng": -5.423081,
     "name_en": "Borojo",
-    "name_ar": ""
+    "name_ar": "بوروخو (Borojo)"
   },
   {
     "id": "8197425135",
     "lat": 35.532052,
     "lng": -5.428614,
     "name_en": "Dar El Khayat",
-    "name_ar": ""
+    "name_ar": "دار الخياط"
   },
   {
     "id": "8197425136",
     "lat": 35.503819,
     "lng": -5.435828,
     "name_en": "El Akba",
-    "name_ar": ""
+    "name_ar": "العقبة"
   },
   {
     "id": "8197425137",
     "lat": 35.497353,
     "lng": -5.434183,
     "name_en": "Aboudi",
-    "name_ar": ""
+    "name_ar": "عبودي (Aboudi)"
   },
   {
     "id": "8197425138",
     "lat": 35.495098,
     "lng": -5.428438,
     "name_en": "Ain Aicha",
-    "name_ar": ""
+    "name_ar": "عين عائشة"
   },
   {
     "id": "8197425139",
     "lat": 35.491718,
     "lng": -5.423662,
     "name_en": "Ben Dakoo",
-    "name_ar": ""
+    "name_ar": "بن داكو (Ben Dakoo)"
   },
   {
     "id": "8197425140",
     "lat": 35.487016,
     "lng": -5.419917,
     "name_en": "Barrage Martil",
-    "name_ar": ""
+    "name_ar": "سد مرتيل"
   },
   {
     "id": "8197425141",
     "lat": 35.482761,
     "lng": -5.411204,
     "name_en": "El Ksab",
-    "name_ar": ""
+    "name_ar": "القصب"
   },
   {
     "id": "8197425142",
     "lat": 35.470438,
     "lng": -5.402815,
     "name_en": "Zinat",
-    "name_ar": ""
+    "name_ar": "الزينات"
   },
   {
     "id": "8197425143",
     "lat": 35.460184,
     "lng": -5.404587,
     "name_en": "Moulay Abdessalam",
-    "name_ar": ""
+    "name_ar": "مولاي عبد السلام"
   },
   {
     "id": "8197425144",
     "lat": 35.451112,
     "lng": -5.396326,
     "name_en": "Barrage Nakhla",
-    "name_ar": ""
+    "name_ar": "سد النخلة"
   },
   {
     "id": "8197425145",
     "lat": 35.447078,
     "lng": -5.39368,
     "name_en": "Café Sed",
-    "name_ar": ""
+    "name_ar": "مقهى السد"
   },
   {
     "id": "8197425146",
     "lat": 35.439859,
     "lng": -5.390903,
     "name_en": "Café Ayad",
-    "name_ar": ""
+    "name_ar": "مقهى عياد"
   },
   {
     "id": "8197425147",
     "lat": 35.434673,
     "lng": -5.390697,
     "name_en": "Enissar Joue",
-    "name_ar": ""
+    "name_ar": "عنصر الجوع (Enissar Joue)"
   },
   {
     "id": "8197425148",
     "lat": 35.423467,
     "lng": -5.392225,
     "name_en": "Kchoue",
-    "name_ar": ""
+    "name_ar": "كشوع (Kchoue)"
   },
   {
     "id": "8197425149",
     "lat": 35.41423,
     "lng": -5.384613,
     "name_en": "Café El Mrabet",
-    "name_ar": ""
+    "name_ar": "مقهى المرابط"
   },
   {
     "id": "8197425150",
     "lat": 35.409021,
     "lng": -5.37935,
     "name_en": "Mrija",
-    "name_ar": ""
+    "name_ar": "المريجة"
   },
   {
     "id": "8197425151",
     "lat": 35.388496,
     "lng": -5.373182,
     "name_en": "Beni Moussa",
-    "name_ar": ""
+    "name_ar": "بني موسى"
   },
   {
     "id": "8197425152",
     "lat": 35.37764,
     "lng": -5.374433,
     "name_en": "Koades",
-    "name_ar": ""
+    "name_ar": "القوادس"
   },
   {
     "id": "8197425153",
     "lat": 35.367732,
     "lng": -5.373404,
     "name_en": "Berraka",
-    "name_ar": ""
+    "name_ar": "البراكة"
   },
   {
     "id": "8197425154",
     "lat": 35.356061,
     "lng": -5.370735,
     "name_en": "El Kharrouba",
-    "name_ar": ""
+    "name_ar": "الخروبة"
   },
   {
     "id": "8197425155",
     "lat": 35.346769,
     "lng": -5.367269,
     "name_en": "Halhala",
-    "name_ar": ""
+    "name_ar": "الحلحالة (Halhala)"
   },
   {
     "id": "8197477233",
     "lat": 35.631006,
     "lng": -5.325957,
     "name_en": "Sdouki",
-    "name_ar": ""
+    "name_ar": "الصدوقي"
   },
   {
     "id": "8197477234",
     "lat": 35.636839,
     "lng": -5.32436,
     "name_en": "Rayhana",
-    "name_ar": ""
+    "name_ar": "ريحانة"
   },
   {
     "id": "8197477235",
     "lat": 35.640414,
     "lng": -5.323393,
     "name_en": "El Filaha",
-    "name_ar": ""
+    "name_ar": "الفلاحة"
   },
   {
     "id": "8197477236",
     "lat": 35.645107,
     "lng": -5.322143,
     "name_en": "Campo",
-    "name_ar": ""
+    "name_ar": "كامبو (Campo)"
   },
   {
     "id": "8197477237",
     "lat": 35.649966,
     "lng": -5.320841,
     "name_en": "Ghniwat",
-    "name_ar": ""
+    "name_ar": "غنيوات"
   },
   {
     "id": "8197477238",
     "lat": 35.655376,
     "lng": -5.319315,
     "name_en": "Colinord",
-    "name_ar": ""
+    "name_ar": "كولينور"
   },
   {
     "id": "8197477239",
     "lat": 35.659783,
     "lng": -5.318902,
     "name_en": "Jamae",
-    "name_ar": ""
+    "name_ar": "الجامع"
   },
   {
     "id": "8197477240",
     "lat": 35.666808,
     "lng": -5.318495,
     "name_en": "Krouche",
-    "name_ar": ""
+    "name_ar": "كروش (Krouche)"
   },
   {
     "id": "8197477241",
     "lat": 35.676786,
     "lng": -5.321549,
     "name_en": "Gorna",
-    "name_ar": ""
+    "name_ar": "الكرنة"
   },
   {
     "id": "8197477242",
     "lat": 35.682764,
     "lng": -5.320919,
     "name_en": "El Marssa",
-    "name_ar": ""
+    "name_ar": "المرسى"
   },
   {
     "id": "8197477243",
     "lat": 35.685441,
     "lng": -5.322959,
     "name_en": "M'Diq",
-    "name_ar": ""
+    "name_ar": "المضيق"
   },
   {
     "id": "8197552106",
     "lat": 35.698887,
     "lng": -5.33162,
     "name_en": "Holiday",
-    "name_ar": ""
+    "name_ar": "هوليداي"
   },
   {
     "id": "8197552107",
     "lat": 35.719929,
     "lng": -5.338139,
     "name_en": "Kabila",
-    "name_ar": ""
+    "name_ar": "كابيلا"
   },
   {
     "id": "8197552108",
     "lat": 35.726499,
     "lng": -5.340236,
     "name_en": "Kabila 2",
-    "name_ar": ""
+    "name_ar": "كابيلا 2"
   },
   {
     "id": "8197552109",
     "lat": 35.735799,
     "lng": -5.342122,
     "name_en": "Sania",
-    "name_ar": ""
+    "name_ar": "السانية"
   },
   {
     "id": "8197552110",
     "lat": 35.742135,
     "lng": -5.34399,
     "name_en": "Studio",
-    "name_ar": ""
+    "name_ar": "ستوديو"
   },
   {
     "id": "8197552111",
     "lat": 35.749675,
     "lng": -5.346527,
     "name_en": "Marina Smir",
-    "name_ar": ""
+    "name_ar": "مارينا سمير"
   },
   {
     "id": "8197552112",
     "lat": 35.761088,
     "lng": -5.348659,
     "name_en": "Marina 2",
-    "name_ar": ""
+    "name_ar": "مارينا 2"
   },
   {
     "id": "8197552113",
     "lat": 35.766193,
     "lng": -5.348808,
     "name_en": "Restinga",
-    "name_ar": ""
+    "name_ar": "ريستينغا"
   },
   {
     "id": "8197552114",
     "lat": 35.778058,
     "lng": -5.348592,
     "name_en": "Grand Hôtel",
-    "name_ar": ""
+    "name_ar": "الفندق الكبير (غران أوتيل)"
   },
   {
     "id": "8197552115",
     "lat": 35.787471,
     "lng": -5.353586,
     "name_en": "Al Mina",
-    "name_ar": ""
+    "name_ar": "الميناء"
   },
   {
     "id": "8197552116",
     "lat": 35.795902,
     "lng": -5.356402,
     "name_en": "El Amin",
-    "name_ar": ""
+    "name_ar": "الأمين"
   },
   {
     "id": "8197563717",
     "lat": 35.807539,
     "lng": -5.352776,
     "name_en": "Fadesa",
-    "name_ar": ""
+    "name_ar": "فاديسا"
   },
   {
     "id": "8197563718",
     "lat": 35.821449,
     "lng": -5.353968,
     "name_en": "Rifiyenne",
-    "name_ar": ""
+    "name_ar": "الريفيين"
   },
   {
     "id": "8197563719",
     "lat": 35.837243,
     "lng": -5.355542,
     "name_en": "Kondisa",
-    "name_ar": ""
+    "name_ar": "كونديسا"
   },
   {
     "id": "8197563720",
@@ -3539,203 +3539,203 @@
     "lat": 35.574001,
     "lng": -5.348838,
     "name_en": "Terrain Saniat Rmel",
-    "name_ar": ""
+    "name_ar": "ملعب سانية الرمل"
   },
   {
     "id": "8197637226",
     "lat": 35.57481,
     "lng": -5.345114,
     "name_en": "Cnss",
-    "name_ar": ""
+    "name_ar": "الضمان الاجتماعي (CNSS)"
   },
   {
     "id": "8197637227",
     "lat": 35.57668,
     "lng": -5.340899,
     "name_en": "Nada",
-    "name_ar": ""
+    "name_ar": "ندى"
   },
   {
     "id": "8197637228",
     "lat": 35.580525,
     "lng": -5.336839,
     "name_en": "Faculté Ossoul-Eddine",
-    "name_ar": ""
+    "name_ar": "كلية أصول الدين"
   },
   {
     "id": "8197637229",
     "lat": 35.583004,
     "lng": -5.333021,
     "name_en": "9 Avril",
-    "name_ar": ""
+    "name_ar": "9 أبريل"
   },
   {
     "id": "8197637230",
     "lat": 35.588406,
     "lng": -5.324956,
     "name_en": "Palais Riad",
-    "name_ar": ""
+    "name_ar": "قصر الرياض"
   },
   {
     "id": "8197637231",
     "lat": 35.601027,
     "lng": -5.304776,
     "name_en": "Zone Industrielle",
-    "name_ar": ""
+    "name_ar": "المنطقة الصناعية"
   },
   {
     "id": "8197637232",
     "lat": 35.60794,
     "lng": -5.29774,
     "name_en": "Oum Keltoum",
-    "name_ar": ""
+    "name_ar": "أم كلثوم"
   },
   {
     "id": "8197637233",
     "lat": 35.609848,
     "lng": -5.294097,
     "name_en": "Faculté De Lettres",
-    "name_ar": ""
+    "name_ar": "كلية الآداب"
   },
   {
     "id": "8197637234",
     "lat": 35.612383,
     "lng": -5.287722,
     "name_en": "Chonbira",
-    "name_ar": ""
+    "name_ar": "الشومبيرا"
   },
   {
     "id": "8197637235",
     "lat": 35.613764,
     "lng": -5.283764,
     "name_en": "Café Bohour",
-    "name_ar": ""
+    "name_ar": "مقهى بحور"
   },
   {
     "id": "8197637236",
     "lat": 35.615108,
     "lng": -5.279625,
     "name_en": "Chomouae",
-    "name_ar": ""
+    "name_ar": "الشموع"
   },
   {
     "id": "8197637237",
     "lat": 35.617984,
     "lng": -5.275194,
     "name_en": "Ens",
-    "name_ar": ""
+    "name_ar": "المدرسة العليا للأساتذة (ENS)"
   },
   {
     "id": "8197637238",
     "lat": 35.619148,
     "lng": -5.273048,
     "name_en": "Miramar",
-    "name_ar": ""
+    "name_ar": "ميرامار"
   },
   {
     "id": "8197637239",
     "lat": 35.624818,
     "lng": -5.274817,
     "name_en": "Chbar",
-    "name_ar": ""
+    "name_ar": "شبار"
   },
   {
     "id": "8197637240",
     "lat": 35.627392,
     "lng": -5.281501,
     "name_en": "Dalia",
-    "name_ar": ""
+    "name_ar": "دالية"
   },
   {
     "id": "8197637241",
     "lat": 35.630879,
     "lng": -5.284634,
     "name_en": "Ahrik",
-    "name_ar": ""
+    "name_ar": "أحريق"
   },
   {
     "id": "8241076237",
     "lat": 35.552231,
     "lng": -5.367492,
     "name_en": "Mgaz Lhjar 3",
-    "name_ar": ""
+    "name_ar": "مجاز الحجر 3"
   },
   {
     "id": "8241076238",
     "lat": 35.563689,
     "lng": -5.349481,
     "name_en": "Coelma",
-    "name_ar": ""
+    "name_ar": "كويلما"
   },
   {
     "id": "8241076239",
     "lat": 35.56356,
     "lng": -5.349625,
     "name_en": "Coelma",
-    "name_ar": ""
+    "name_ar": "كويلما"
   },
   {
     "id": "8241076240",
     "lat": 35.56626,
     "lng": -5.360151,
     "name_en": "Casablanca 1",
-    "name_ar": ""
+    "name_ar": "الدار البيضاء 1"
   },
   {
     "id": "8241076241",
     "lat": 35.566336,
     "lng": -5.360124,
     "name_en": "Casablanca 1",
-    "name_ar": ""
+    "name_ar": "الدار البيضاء 1"
   },
   {
     "id": "8241076243",
     "lat": 35.569048,
     "lng": -5.362782,
     "name_en": "Ksar El Kebir - Bab El Okla",
-    "name_ar": ""
+    "name_ar": "القصر الكبير - باب العقلة"
   },
   {
     "id": "8241120138",
     "lat": 35.555312,
     "lng": -5.401269,
     "name_en": "Lotissement Wikaya",
-    "name_ar": ""
+    "name_ar": "تجزئة الوقاية"
   },
   {
     "id": "8242995661",
     "lat": 35.448285,
     "lng": -5.093499,
     "name_en": "Brigade-Gendarmerie",
-    "name_ar": ""
+    "name_ar": "سرية الدرك الملكي"
   },
   {
     "id": "8242995662",
     "lat": 35.448363,
     "lng": -5.093653,
     "name_en": "Brigade-Gendarmerie",
-    "name_ar": ""
+    "name_ar": "سرية الدرك الملكي"
   },
   {
     "id": "8243333383",
     "lat": 35.506509,
     "lng": -5.438979,
     "name_en": "Ben Karrich",
-    "name_ar": ""
+    "name_ar": "بن قريش"
   },
   {
     "id": "8243333384",
     "lat": 35.506245,
     "lng": -5.439104,
     "name_en": "Ben Karrich",
-    "name_ar": ""
+    "name_ar": "بن قريش"
   },
   {
     "id": "8244881546",
     "lat": 35.569452,
     "lng": -5.363589,
     "name_en": "Bab El Okla",
-    "name_ar": ""
+    "name_ar": "باب العقلة"
   },
   {
     "id": "10138642904",
@@ -3756,105 +3756,105 @@
     "lat": 35.840886,
     "lng": -5.557988,
     "name_en": "Ksar El Majaz",
-    "name_ar": ""
+    "name_ar": "قصر المجاز"
   },
   {
     "id": "12280396892",
     "lat": 35.840945,
     "lng": -5.55641,
     "name_en": "Ksar El Majaz",
-    "name_ar": ""
+    "name_ar": "قصر المجاز"
   },
   {
     "id": "12280396893",
     "lat": 35.843322,
     "lng": -5.552409,
     "name_en": "Station Ziz",
-    "name_ar": ""
+    "name_ar": "محطة زيز"
   },
   {
     "id": "12280396894",
     "lat": 35.843438,
     "lng": -5.552465,
     "name_en": "Station Ziz",
-    "name_ar": ""
+    "name_ar": "محطة زيز"
   },
   {
     "id": "12280396895",
     "lat": 35.845215,
     "lng": -5.551022,
     "name_en": "le petit poisson",
-    "name_ar": ""
+    "name_ar": "السمكة الصغيرة (Le Petit Poisson)"
   },
   {
     "id": "12280396896",
     "lat": 35.846485,
     "lng": -5.549456,
     "name_en": "Gare Ksar Sghir",
-    "name_ar": ""
+    "name_ar": "محطة القصر الصغير"
   },
   {
     "id": "12280396897",
     "lat": 35.84659,
     "lng": -5.549522,
     "name_en": "Gare Ksar Sghir",
-    "name_ar": ""
+    "name_ar": "محطة القصر الصغير"
   },
   {
     "id": "12280396902",
     "lat": 35.85079,
     "lng": -5.543868,
     "name_en": "Oued Ghlala 1",
-    "name_ar": ""
+    "name_ar": "واد غلالة 1"
   },
   {
     "id": "12280396903",
     "lat": 35.850958,
     "lng": -5.544036,
     "name_en": "Oued Ghlala 1",
-    "name_ar": ""
+    "name_ar": "واد غلالة 1"
   },
   {
     "id": "12280396904",
     "lat": 35.852118,
     "lng": -5.541289,
     "name_en": "Oued Ghlala 1",
-    "name_ar": ""
+    "name_ar": "واد غلالة 1"
   },
   {
     "id": "12280396905",
     "lat": 35.852219,
     "lng": -5.541364,
     "name_en": "Oued Ghlala 1",
-    "name_ar": ""
+    "name_ar": "واد غلالة 1"
   },
   {
     "id": "12280396907",
     "lat": 35.856891,
     "lng": -5.534163,
     "name_en": "Tanger Med 2",
-    "name_ar": ""
+    "name_ar": "طنجة المتوسط 2"
   },
   {
     "id": "12280396908",
     "lat": 35.856983,
     "lng": -5.53459,
     "name_en": "Tanger Med 2",
-    "name_ar": ""
+    "name_ar": "طنجة المتوسط 2"
   },
   {
     "id": "12280396909",
     "lat": 35.859526,
     "lng": -5.532772,
     "name_en": "Ksar sghir en face Tanger Med 210817",
-    "name_ar": ""
+    "name_ar": "القصر الصغير (قبالة طنجة المتوسط)"
   },
   {
     "id": "13694076436",
     "lat": 35.618408,
     "lng": -5.272942,
     "name_en": "Grand-Taxi Tétouan",
-    "name_ar": ""
+    "name_ar": "طاكسيات تطوان الكبيرة"
   },
   {
     "id": "14071087722",
@@ -3868,6 +3868,6 @@
     "lat": 35.569404,
     "lng": -5.387727,
     "name_en": "Supratour Tetouan oncf",
-    "name_ar": ""
+    "name_ar": "سوبراتور تطوان (ONCF)"
   }
 ]
