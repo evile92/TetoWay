@@ -32,7 +32,7 @@ const HUBS = {
   avenue_des_far: [-5.353034, 35.580984],
   saniat_rmel: [-5.34879, 35.574079],
   place_palestine: [-5.326428, 35.600447], // Lotissement Souani (Place Palestine)
-  quartier_universitaire: [-5.299312, 35.622826], // Cite Universitaire Martil (next to Riad Sofia)
+  quartier_universitaire: [-5.30175, 35.63105], // Cite Universitaire Martil 2 (Oued El Malh, next to Riad Sofia - JMJW+9R6)
   mhannech_sciences: [-5.36241, 35.56143], // Mhannech / Faculte des Sciences (Av. 9 Avril)
   boujarrah: [-5.35418, 35.58501],
   qalaline: [-5.34433, 35.6215],
@@ -153,7 +153,7 @@ const LINES_SPEC = [
     corridor: ['quartier_universitaire', 'ancienne_gare', 'torreta'],
     // Verified Cite Universitaire Martil (Riad Sofia) -> Islamic Cemetery -> Hay Mixta / Hopital de Jour -> Rond-point Aya -> Facultes -> Zone Industrielle -> Rond-point Chairi (9 Avril) -> Saniat Rmel -> Ancienne Gare -> Torreta
     routeWaypoints: [
-      [-5.299312, 35.622826],
+      [-5.30175, 35.63105],
       [-5.2925, 35.6248],
       [-5.2888, 35.6185],
       [-5.287722, 35.612383],
