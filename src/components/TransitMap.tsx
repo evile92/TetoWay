@@ -898,7 +898,14 @@ export function TransitMap({
         const el = document.createElement('button');
         el.type = 'button';
         el.setAttribute('dir', 'ltr');
-        el.className = `rounded-full border-2 shadow-sm flex items-center justify-center font-bold tabular-nums cursor-pointer transition-transform hover:scale-125 ${
+        // Never put CSS scale/transition-transform on the outer MapLibre marker element:
+        // MapLibre positions the outer element with inline `transform: translate(...)`,
+        // so scaling the outer element multiplies its map coordinates and shifts the pin.
+        el.className =
+          'group flex items-center justify-center bg-transparent border-0 p-0 cursor-pointer focus:outline-none';
+
+        const dot = document.createElement('span');
+        dot.className = `rounded-full border-2 shadow-sm flex items-center justify-center font-bold tabular-nums transition-transform duration-150 group-hover:scale-125 ${
           isTerminal
             ? `w-6 h-6 text-[10px] ${ringBorderClass}`
             : theme === 'light'
@@ -906,12 +913,13 @@ export function TransitMap({
               : 'w-4 h-4 text-[9px] bg-[#081828] text-[#EFF6FA]'
         }`;
         if (isTerminal) {
-          el.style.backgroundColor = selectedLine.color;
-          el.style.color = getContrastTextColor(selectedLine.color);
+          dot.style.backgroundColor = selectedLine.color;
+          dot.style.color = getContrastTextColor(selectedLine.color);
         } else {
-          el.style.borderColor = selectedLine.color;
+          dot.style.borderColor = selectedLine.color;
         }
-        el.textContent = String(seq);
+        dot.textContent = String(seq);
+        el.appendChild(dot);
 
         const nearby = getLinesServingPoint(stop.lat, stop.lng, lines, {
           excludeLineId: selectedLine.id,
