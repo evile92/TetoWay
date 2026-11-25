@@ -1,8 +1,8 @@
 {
   "announcement": {
-    "enabled": true,
+    "enabled": false,
     "type": "success",
-    "text_en": "Added Line 2: Avenue Rif (Rommana) ⇄ Lotissement Souani (Palestine Sq.).",
-    "text_ar": "تم اضافة خط رقم 2 شارع الريف (الرمانة) ⇄ تجزئة الصواني."
+    "text_en": "",
+    "text_ar": ""
   }
 }
