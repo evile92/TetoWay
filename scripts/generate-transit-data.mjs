@@ -35,7 +35,7 @@ const HUBS = {
   quartier_universitaire: [-5.30175, 35.63105], // Cite Universitaire Martil 2 (Oued El Malh, next to Riad Sofia - JMJW+9R6)
   mhannech_sciences: [-5.36241, 35.56143], // Mhannech / Faculte des Sciences (Av. 9 Avril)
   boujarrah: [-5.35418, 35.58501],
-  qalaline: [-5.34433, 35.6215],
+  qalaline: [-5.340159, 35.614761],
   dar_zkik: [-5.397175, 35.549853], // Ain Dar Zkik
   hay_nassim: [-5.42068, 35.57232], // Hay Nassim Nakata
   omar_mokhtar: [-5.40046, 35.56647], // Avenue Omar El Mokhtar 7

@@ -777,6 +777,52 @@ export function planTripItineraries(
   });
 }
 
+interface OsrmStep {
+  maneuver?: {
+    modifier?: string;
+  };
+}
+
+interface OsrmLeg {
+  distance: number;
+  steps?: OsrmStep[];
+}
+
+interface OsrmRoute {
+  distance: number;
+  geometry?: {
+    type?: string;
+    coordinates?: unknown;
+  };
+  legs?: OsrmLeg[];
+}
+
+interface OsrmRouteResponse {
+  routes?: OsrmRoute[];
+}
+
+async function fetchOsrmRoute(waypoints: BusStop[]): Promise<OsrmRoute> {
+  const coords = waypoints.map((s) => `${s.lng},${s.lat}`).join(';');
+  const url = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson&steps=true&continue_straight=true`;
+
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`OSRM HTTP ${res.status}`);
+  }
+  const data = (await res.json()) as OsrmRouteResponse;
+  const route = data?.routes?.[0];
+  const geometry = route?.geometry;
+  if (
+    !route ||
+    geometry?.type !== 'LineString' ||
+    !Array.isArray(geometry.coordinates) ||
+    geometry.coordinates.length < 2
+  ) {
+    throw new Error('Invalid OSRM geometry');
+  }
+  return route;
+}
+
 export async function resnapStopsWithOsrm(stops: BusStop[]): Promise<LineStringGeometry> {
   if (stops.length < 2) {
     throw new Error('At least 2 stops are required');
@@ -791,26 +837,50 @@ export async function resnapStopsWithOsrm(stops: BusStop[]): Promise<LineStringG
     }
   }
 
-  const coords = waypoints.map((s) => `${s.lng},${s.lat}`).join(';');
-  const url = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson`;
+  const pass1 = await fetchOsrmRoute(waypoints);
+  const badIndices = new Set<number>();
+  const legs = pass1.legs ?? [];
 
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`OSRM HTTP ${res.status}`);
+  for (let i = 0; i < legs.length; i++) {
+    const leg = legs[i];
+    const fromStop = waypoints[i];
+    const toStop = waypoints[i + 1];
+    if (!fromStop || !toStop) continue;
+
+    const direct = haversineMeters(fromStop.lng, fromStop.lat, toStop.lng, toStop.lat);
+    const hasUturn = leg.steps?.some((st) => st.maneuver?.modifier === 'uturn') ?? false;
+    const isDetour = leg.distance > Math.max(600, direct * 3.5);
+
+    if (hasUturn || isDetour) {
+      if (i > 0 && i < waypoints.length - 1) {
+        badIndices.add(i);
+      }
+      if (i + 1 > 0 && i + 1 < waypoints.length - 1) {
+        badIndices.add(i + 1);
+      }
+    }
   }
-  const data = await res.json();
-  const geometry = data?.routes?.[0]?.geometry;
-  if (
-    geometry?.type !== 'LineString' ||
-    !Array.isArray(geometry.coordinates) ||
-    geometry.coordinates.length < 2
-  ) {
-    throw new Error('Invalid OSRM geometry');
+
+  if (badIndices.size > 0) {
+    const cleaned = waypoints.filter((_, idx) => !badIndices.has(idx));
+    if (cleaned.length >= 2) {
+      try {
+        const pass2 = await fetchOsrmRoute(cleaned);
+        if (pass2.distance < pass1.distance) {
+          return {
+            type: 'LineString',
+            coordinates: pass2.geometry!.coordinates as [number, number][],
+          };
+        }
+      } catch {
+        // Fall back safely to Pass 1 geometry if cleaned re-query fails
+      }
+    }
   }
 
   return {
     type: 'LineString',
-    coordinates: geometry.coordinates as [number, number][],
+    coordinates: pass1.geometry!.coordinates as [number, number][],
   };
 }
 
