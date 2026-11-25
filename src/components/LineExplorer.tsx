@@ -90,12 +90,20 @@ function LineListRow({
             {status && (
               <span
                 title={
-                  status.isActive
-                    ? t.explorer.serviceActive
-                    : `${t.explorer.serviceEnded} · ${t.explorer.serviceStarts} ${status.firstDeparture}`
+                  status.isEndingSoon
+                    ? status.minutesUntilEnd === 0
+                      ? t.explorer.lastBusNow
+                      : `${t.explorer.lastBusIn} ${status.minutesUntilEnd} ${t.explorer.minutesUnit}`
+                    : status.isActive
+                      ? t.explorer.serviceActive
+                      : `${t.explorer.serviceEnded} · ${t.explorer.serviceStarts} ${status.firstDeparture}`
                 }
                 className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                  status.isActive ? 'bg-[#01A069] dark:bg-[#34D399]' : 'bg-[#94A3B8] dark:bg-[#475569]'
+                  status.isEndingSoon
+                    ? 'bg-amber-500 dark:bg-amber-400'
+                    : status.isActive
+                      ? 'bg-[#01A069] dark:bg-[#34D399]'
+                      : 'bg-[#94A3B8] dark:bg-[#475569]'
                 }`}
               />
             )}
@@ -302,20 +310,40 @@ export function LineExplorer({
                   <span
                     data-testid="line-service-status"
                     className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border text-[10px] font-semibold tabular-nums ${
-                      serviceStatus.isActive
-                        ? 'bg-emerald-50 border-emerald-200 text-[#018A5B] dark:bg-emerald-950/60 dark:border-emerald-800/70 dark:text-[#34D399]'
-                        : 'bg-[#F4F8FB] border-[#DCE6EE] text-[#526D82] dark:bg-[#0D2236] dark:border-[#183550] dark:text-[#85A3BC]'
+                      serviceStatus.isEndingSoon
+                        ? 'bg-amber-50 border-amber-200 text-amber-800 dark:bg-amber-950/60 dark:border-amber-800/70 dark:text-amber-300'
+                        : serviceStatus.isActive
+                          ? 'bg-emerald-50 border-emerald-200 text-[#018A5B] dark:bg-emerald-950/60 dark:border-emerald-800/70 dark:text-[#34D399]'
+                          : 'bg-[#F4F8FB] border-[#DCE6EE] text-[#526D82] dark:bg-[#0D2236] dark:border-[#183550] dark:text-[#85A3BC]'
                     }`}
                   >
                     <span
                       className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                        serviceStatus.isActive
-                          ? 'bg-[#01A069] dark:bg-[#34D399]'
-                          : 'bg-[#94A3B8] dark:bg-[#64748B]'
+                        serviceStatus.isEndingSoon
+                          ? 'bg-amber-500 dark:bg-amber-400'
+                          : serviceStatus.isActive
+                            ? 'bg-[#01A069] dark:bg-[#34D399]'
+                            : 'bg-[#94A3B8] dark:bg-[#64748B]'
                       }`}
                     />
-                    {serviceStatus.isActive ? (
-                      <span>{t.explorer.serviceActive}</span>
+                    {serviceStatus.isEndingSoon ? (
+                      serviceStatus.minutesUntilEnd === 0 ? (
+                        <span>{t.explorer.lastBusNow}</span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1">
+                          <span>{t.explorer.lastBusIn}</span>
+                          <span dir="ltr">{serviceStatus.minutesUntilEnd}</span>
+                          <span>{t.explorer.minutesUnit}</span>
+                        </span>
+                      )
+                    ) : serviceStatus.isActive ? (
+                      <span className="inline-flex items-center gap-1">
+                        <span>{t.explorer.serviceActive}</span>
+                        <span>·</span>
+                        <span>{t.explorer.frequencyPrefix}</span>
+                        <span dir="ltr">{selectedLine.frequency_mins}</span>
+                        <span>{t.explorer.minutesUnit}</span>
+                      </span>
                     ) : (
                       <span className="inline-flex items-center gap-1">
                         <span>{t.explorer.serviceEnded}</span>

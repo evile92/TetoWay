@@ -52,7 +52,9 @@
     "removeFavoriteAria": "Remove line from favorites",
     "serviceActive": "Active now",
     "serviceEnded": "Off-hours",
-    "serviceStarts": "Starts"
+    "serviceStarts": "Starts",
+    "lastBusIn": "Last bus in",
+    "lastBusNow": "Last bus departing now"
   },
   "map": {
     "stopPopupSequence": "Stop",
@@ -106,7 +108,19 @@
     "kindHub": "Hub",
     "kindLandmark": "Landmark",
     "kindStop": "Stop",
-    "shareTrip": "Share"
+    "shareTrip": "Share",
+    "savedPlacesTitle": "Saved places",
+    "slotHome": "Home",
+    "slotUniversity": "University",
+    "slotWork": "Work",
+    "savedPlaceAddHint": "Tap to set",
+    "savedPlaceSearchPlaceholder": "Search stop or district to save...",
+    "savedPlaceUseGps": "Save current GPS",
+    "savedPlaceEditAria": "Edit saved place",
+    "savedPlaceRemove": "Remove",
+    "savedPlaceCancel": "Cancel",
+    "savedPlaceGpsLabel": "My GPS location",
+    "popularDestinationsTitle": "Popular destinations"
   },
   "editor": {
     "bannerTitle": "Admin Control Panel",

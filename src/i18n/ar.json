@@ -52,7 +52,9 @@
     "removeFavoriteAria": "إزالة الخط من المفضلة",
     "serviceActive": "يعمل الآن",
     "serviceEnded": "متوقف حالياً",
-    "serviceStarts": "يبدأ"
+    "serviceStarts": "يبدأ",
+    "lastBusIn": "آخر حافلة بعد",
+    "lastBusNow": "آخر حافلة تنطلق الآن"
   },
   "map": {
     "stopPopupSequence": "محطة رقم",
@@ -106,7 +108,19 @@
     "kindHub": "قطب",
     "kindLandmark": "معلم",
     "kindStop": "محطة",
-    "shareTrip": "مشاركة"
+    "shareTrip": "مشاركة",
+    "savedPlacesTitle": "أماكني المحفوظة",
+    "slotHome": "البيت",
+    "slotUniversity": "الكلية",
+    "slotWork": "العمل",
+    "savedPlaceAddHint": "اضغط للحفظ",
+    "savedPlaceSearchPlaceholder": "ابحث عن محطة أو حي لحفظه...",
+    "savedPlaceUseGps": "حفظ موقعي الحالي (GPS)",
+    "savedPlaceEditAria": "تعديل المكان المحفوظ",
+    "savedPlaceRemove": "حذف",
+    "savedPlaceCancel": "إلغاء",
+    "savedPlaceGpsLabel": "موقعي الحالي",
+    "popularDestinationsTitle": "وجهات سريعة في تطوان"
   },
   "editor": {
     "bannerTitle": "لوحة التحكم الخاصة",

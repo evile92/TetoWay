@@ -1,5 +1,7 @@
 export interface LineServiceStatus {
   isActive: boolean;
+  isEndingSoon: boolean;
+  minutesUntilEnd: number | null;
   firstDeparture: string;
   lastDeparture: string;
 }
@@ -16,7 +18,7 @@ function parseMinutesOfDay(hhmm: string): number | null {
 
 /**
  * Determine offline whether a bus line is currently within its operating window
- * based strictly on the local device clock (`now`).
+ * and whether its final departure is within 60 minutes based on local time (`now`).
  */
 export function getLineServiceStatus(
   firstDeparture: string,
@@ -33,8 +35,20 @@ export function getLineServiceStatus(
       ? currentMin >= startMin && currentMin <= endMin
       : currentMin >= startMin || currentMin <= endMin;
 
+  let minutesUntilEnd: number | null = null;
+  if (isActive) {
+    minutesUntilEnd =
+      startMin <= endMin
+        ? endMin - currentMin
+        : currentMin <= endMin
+          ? endMin - currentMin
+          : 1440 - currentMin + endMin;
+  }
+
   return {
     isActive,
+    isEndingSoon: minutesUntilEnd !== null && minutesUntilEnd <= 60,
+    minutesUntilEnd,
     firstDeparture,
     lastDeparture,
   };

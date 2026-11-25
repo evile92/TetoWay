@@ -1,15 +1,21 @@
 import {
   ArrowUpDown,
+  Briefcase,
   Clock,
   Footprints,
+  GraduationCap,
+  Home,
   LocateFixed,
   MapPin,
   Navigation,
+  Pencil,
   Radio,
   Repeat,
   RotateCcw,
+  Trash2,
+  X,
 } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { formatMad, resolveHubName, resolveStopLabel, TRANSLATIONS } from '../i18n';
 import type {
   BusLine,
@@ -22,7 +28,16 @@ import type {
   TripItinerary,
 } from '../types/transit';
 import { buildShareUrl } from '../utils/deepLink';
-import { buildOfflineSearchPlaces } from '../utils/stopSearch';
+import {
+  POPULAR_DESTINATIONS,
+  readSavedPlaces,
+  removeSavedPlace,
+  SAVED_PLACES_EVENT,
+  saveSavedPlace,
+  type SavedPlaceSlot,
+  type SavedPlacesMap,
+} from '../utils/savedPlaces';
+import { buildOfflineSearchPlaces, formatSelectedPointLabel } from '../utils/stopSearch';
 import { BidiText, LineBadge } from './BidiText';
 import { ShareButton } from './ShareButton';
 import { StopSearchInput } from './StopSearchInput';
@@ -70,6 +85,29 @@ export function TripPlanner({
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
   const [locating, setLocating] = useState(false);
   const [geoError, setGeoError] = useState(false);
+  const [savedPlaces, setSavedPlaces] = useState<SavedPlacesMap>(readSavedPlaces);
+  const [editingSlot, setEditingSlot] = useState<SavedPlaceSlot | null>(null);
+  const [commuteSlotLocating, setCommuteSlotLocating] = useState<SavedPlaceSlot | null>(null);
+  const [savingSlotGps, setSavingSlotGps] = useState(false);
+
+  useEffect(() => {
+    const handleSync = () => setSavedPlaces(readSavedPlaces());
+    window.addEventListener(SAVED_PLACES_EVENT, handleSync);
+    return () => window.removeEventListener(SAVED_PLACES_EVENT, handleSync);
+  }, []);
+
+  const savedSlotConfigs: Array<{
+    slot: SavedPlaceSlot;
+    label: string;
+    Icon: typeof Home;
+  }> = [
+    { slot: 'home', label: t.planner.slotHome, Icon: Home },
+    { slot: 'university', label: t.planner.slotUniversity, Icon: GraduationCap },
+    { slot: 'work', label: t.planner.slotWork, Icon: Briefcase },
+  ];
+  const activeEditConfig = editingSlot
+    ? savedSlotConfigs.find((c) => c.slot === editingSlot) ?? null
+    : null;
 
   const searchablePlaces = useMemo(
     () => buildOfflineSearchPlaces(lines, osmStops, lang),
@@ -106,6 +144,72 @@ export function TripPlanner({
     const prevB = destinationPoint;
     onSetOriginPoint(prevB);
     onSetDestinationPoint(prevA);
+  }
+
+  function handleQuickCommute(slot: SavedPlaceSlot) {
+    const saved = savedPlaces[slot];
+    if (!saved) {
+      setEditingSlot(slot);
+      return;
+    }
+    setGeoError(false);
+    setEditingSlot(null);
+    onSetPickMode('none');
+    onSetDestinationPoint(saved.point);
+
+    if (originPoint) return;
+    if (nearMeResult?.userPoint) {
+      onSetOriginPoint(nearMeResult.userPoint);
+      return;
+    }
+    if (!('geolocation' in navigator)) {
+      setGeoError(true);
+      return;
+    }
+
+    setCommuteSlotLocating(slot);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setCommuteSlotLocating(null);
+        onSetOriginPoint({
+          lng: pos.coords.longitude,
+          lat: pos.coords.latitude,
+        });
+      },
+      () => {
+        setCommuteSlotLocating(null);
+        setGeoError(true);
+      },
+      { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 },
+    );
+  }
+
+  function handleSaveCurrentGpsToSlot(slot: SavedPlaceSlot) {
+    setGeoError(false);
+    if (!('geolocation' in navigator)) {
+      setGeoError(true);
+      return;
+    }
+    setSavingSlotGps(true);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setSavingSlotGps(false);
+        const pt: GeoPoint = {
+          lng: pos.coords.longitude,
+          lat: pos.coords.latitude,
+        };
+        const matched = formatSelectedPointLabel(searchablePlaces, pt);
+        const isRawCoords = /^-?\d+\.\d+,\s*-?\d+\.\d+$/.test(matched);
+        const label = !matched || isRawCoords ? t.planner.savedPlaceGpsLabel : matched;
+        setSavedPlaces(saveSavedPlace(slot, label, pt));
+        setEditingSlot(null);
+      },
+      () => {
+        setSavingSlotGps(false);
+        setGeoError(true);
+      },
+      { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 },
+    );
   }
 
   return (
@@ -317,6 +421,141 @@ export function TripPlanner({
           )}
         </div>
 
+        {/* Saved Personal Places (Home / University / Work) */}
+        <div data-testid="saved-places-bar" className="space-y-1.5">
+          <div className="text-[10px] font-semibold uppercase tracking-wider text-[#526D82] dark:text-[#85A3BC]">
+            {t.planner.savedPlacesTitle}
+          </div>
+
+          <div className="grid grid-cols-3 gap-1.5">
+            {savedSlotConfigs.map(({ slot, label, Icon }) => {
+              const saved = savedPlaces[slot];
+              const isEditing = editingSlot === slot;
+              const isLocatingThis = commuteSlotLocating === slot;
+              return (
+                <div
+                  key={slot}
+                  className={`flex items-stretch rounded-md border transition-colors min-w-0 ${
+                    isEditing
+                      ? 'border-[#0155A6] dark:border-[#34D399] bg-[#EEF5F9] dark:bg-[#0D2236]'
+                      : saved
+                        ? 'border-[#DCE6EE] dark:border-[#183550] bg-[#F4F8FB] dark:bg-[#0D2236]/90 hover:border-[#B6CBD9] dark:hover:border-[#254E74]'
+                        : 'border-dashed border-[#CBDCE8] dark:border-[#1E3D5C] bg-white dark:bg-[#081828] hover:border-[#9EB7CA] dark:hover:border-[#2B5680]'
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => handleQuickCommute(slot)}
+                    disabled={isLocatingThis}
+                    data-testid={`saved-place-${slot}`}
+                    title={saved ? saved.label : t.planner.savedPlaceAddHint}
+                    className="flex-1 min-w-0 px-2 py-1.5 text-start flex flex-col gap-0.5 cursor-pointer disabled:opacity-60"
+                  >
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#041626] dark:text-[#EFF6FA]">
+                      <Icon
+                        className={`w-3 h-3 shrink-0 ${
+                          saved
+                            ? 'text-[#01A069] dark:text-[#34D399]'
+                            : 'text-[#526D82] dark:text-[#85A3BC]'
+                        }`}
+                        strokeWidth={1.75}
+                      />
+                      <span className="truncate">{label}</span>
+                    </span>
+                    <span className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
+                      {isLocatingThis
+                        ? t.planner.locating
+                        : saved
+                          ? saved.label
+                          : t.planner.savedPlaceAddHint}
+                    </span>
+                  </button>
+
+                  {saved && (
+                    <button
+                      type="button"
+                      onClick={() => setEditingSlot(isEditing ? null : slot)}
+                      aria-label={`${t.planner.savedPlaceEditAria} (${label})`}
+                      title={t.planner.savedPlaceEditAria}
+                      data-testid={`saved-place-edit-${slot}`}
+                      className="px-1.5 border-s border-[#E6EFF5] dark:border-[#142B42] text-[#7C97AE] hover:text-[#041626] dark:text-[#6B8BA5] dark:hover:text-[#EFF6FA] inline-flex items-center justify-center cursor-pointer shrink-0"
+                    >
+                      <Pencil className="w-2.5 h-2.5" strokeWidth={1.75} />
+                    </button>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {editingSlot && activeEditConfig && (
+            <div
+              data-testid="saved-place-editor"
+              className="rounded-md border border-[#DCE6EE] dark:border-[#183550] bg-[#F4F8FB] dark:bg-[#0D2236] p-2.5 space-y-2"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#041626] dark:text-[#EFF6FA]">
+                  <activeEditConfig.Icon
+                    className="w-3.5 h-3.5 text-[#0155A6] dark:text-[#34D399]"
+                    strokeWidth={1.75}
+                  />
+                  <span>{activeEditConfig.label}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setEditingSlot(null)}
+                  aria-label={t.planner.savedPlaceCancel}
+                  className="p-0.5 rounded text-[#526D82] hover:text-[#041626] dark:text-[#85A3BC] dark:hover:text-[#EFF6FA] cursor-pointer"
+                >
+                  <X className="w-3.5 h-3.5" strokeWidth={1.75} />
+                </button>
+              </div>
+
+              <StopSearchInput
+                lang={lang}
+                value={savedPlaces[editingSlot]?.point ?? null}
+                places={searchablePlaces}
+                placeholder={t.planner.savedPlaceSearchPlaceholder}
+                testId={`saved-place-search-${editingSlot}`}
+                onSelectPoint={(pt) => {
+                  if (!pt) return;
+                  const lbl = formatSelectedPointLabel(searchablePlaces, pt) || activeEditConfig.label;
+                  setSavedPlaces(saveSavedPlace(editingSlot, lbl, pt));
+                  setEditingSlot(null);
+                }}
+              />
+
+              <div className="flex items-center justify-between gap-2">
+                <button
+                  type="button"
+                  onClick={() => handleSaveCurrentGpsToSlot(editingSlot)}
+                  disabled={savingSlotGps}
+                  data-testid="saved-place-use-gps"
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded border border-[#DCE6EE] dark:border-[#183550] bg-white dark:bg-[#081828] hover:border-[#0155A6] dark:hover:border-[#34D399] text-[11px] font-medium text-[#0155A6] dark:text-[#34D399] disabled:opacity-60 cursor-pointer"
+                >
+                  <Navigation className="w-3 h-3 shrink-0" strokeWidth={1.75} />
+                  <span>{savingSlotGps ? t.planner.locating : t.planner.savedPlaceUseGps}</span>
+                </button>
+
+                {savedPlaces[editingSlot] && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSavedPlaces(removeSavedPlace(editingSlot));
+                      setEditingSlot(null);
+                    }}
+                    data-testid="saved-place-remove"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-medium text-rose-600 hover:bg-rose-50 dark:text-rose-400 dark:hover:bg-rose-950/40 cursor-pointer"
+                  >
+                    <Trash2 className="w-3 h-3 shrink-0" strokeWidth={1.75} />
+                    <span>{t.planner.savedPlaceRemove}</span>
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* Origin (A) */}
         <div className="space-y-1.5">
           <div className="flex items-center justify-between text-[11px] text-[#4A657A] dark:text-[#85A3BC]">
@@ -411,6 +650,30 @@ export function TripPlanner({
               <span dir="ltr">B</span>
             </button>
           </div>
+
+          {!destinationPoint && (
+            <div data-testid="popular-destinations" className="pt-1 space-y-1.5">
+              <div className="text-[10px] font-medium text-[#526D82] dark:text-[#85A3BC]">
+                {t.planner.popularDestinationsTitle}
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {POPULAR_DESTINATIONS.map((dest) => (
+                  <button
+                    key={dest.id}
+                    type="button"
+                    onClick={() => {
+                      onSetPickMode('none');
+                      onSetDestinationPoint(dest.point);
+                    }}
+                    data-testid={`popular-dest-${dest.id}`}
+                    className="px-2 py-1 rounded-full border border-[#DCE6EE] dark:border-[#183550] bg-[#F4F8FB] dark:bg-[#0D2236] hover:border-[#0155A6] dark:hover:border-[#34D399] hover:text-[#0155A6] dark:hover:text-[#34D399] text-[11px] font-medium text-[#041626] dark:text-[#EFF6FA] transition-colors cursor-pointer"
+                  >
+                    {lang === 'ar' ? dest.name_ar : dest.name_en}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Empty / Prompt State */}
