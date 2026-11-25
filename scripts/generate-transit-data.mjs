@@ -72,9 +72,9 @@ const HUBS = {
   martil_facultes: [-5.294097, 35.609848], // Faculte des Lettres / Martil Faculties
 };
 
-// Complete 35 Bus Lines (17 Urban + 18 Regional)
+// Complete 36 Bus Lines (18 Urban + 18 Regional)
 const LINES_SPEC = [
-  // Urban Network (17 Lines - 3.50 MAD)
+  // Urban Network (18 Lines - 3.50 MAD)
   {
     id: 'L1',
     number: '1',
@@ -99,6 +99,32 @@ const LINES_SPEC = [
       [-5.353571, 35.591397],
       [-5.35569, 35.587709],
       [-5.35418, 35.58501],
+    ],
+  },
+  {
+    id: 'L2',
+    number: '2',
+    category: 'urban',
+    color: '#0F766E',
+    price_mad: 3.5,
+    frequency_mins: 15,
+    first_departure: '06:00',
+    last_departure: '22:00',
+    corridor: ['rommana', 'dar_takafa', 'place_palestine'],
+    // Verified Rommana -> Dar Takafa -> Ancienne Gare -> Bab El Okla -> Ziana -> Mohamed Al Kharaz 1-4 -> Mohamed El Yazidi -> I.T.A -> Place Palestine
+    routeWaypoints: [
+      [-5.39242, 35.56549],
+      [-5.383003, 35.57058],
+      [-5.363464, 35.570453],
+      [-5.363366, 35.575488],
+      [-5.362725, 35.57714],
+      [-5.361365, 35.578472],
+      [-5.35896, 35.579394],
+      [-5.35612, 35.581585],
+      [-5.352335, 35.583811],
+      [-5.339615, 35.592358],
+      [-5.332204, 35.59349],
+      [-5.326428, 35.600447],
     ],
   },
   { id: 'L3', number: '3', category: 'urban', color: '#4F46E5', price_mad: 3.5, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['rommana', 'dar_takafa', 'boujarrah', 'qalaline'] },

@@ -2,7 +2,7 @@
   "app": {
     "brand": "TetoWay",
     "subtitle": "Tetouan & Region Public Transit",
-    "networkBadge": "35 lines",
+    "networkBadge": "36 lines",
     "loading": "Loading transit network...",
     "loadError": "Unable to load transit network data.",
     "retry": "Retry",
@@ -67,7 +67,7 @@
     "useAsOrigin": "Start here",
     "useAsDestination": "Go here",
     "webglUnsupportedTitle": "Interactive map unavailable",
-    "webglUnsupportedDesc": "This browser or device does not support WebGL map rendering. You can still browse all 35 bus lines, stops, and trip routes."
+    "webglUnsupportedDesc": "This browser or device does not support WebGL map rendering. You can still browse all 36 bus lines, stops, and trip routes."
   },
   "planner": {
     "nearMeTitle": "Nearest bus stop",
@@ -192,7 +192,7 @@
   "sheet": {
     "expand": "Expand",
     "collapse": "Collapse",
-    "browsePrompt": "Browse 35 lines and route planner"
+    "browsePrompt": "Browse 36 lines and route planner"
   },
   "hubs": {
     "rommana": "Avenue Rif (Rommana)",
@@ -293,7 +293,7 @@
     "modalTitle": "Tetouan Offline Map",
     "modalSubtitle": "Save the vector street map and bilingual fonts on your device (~6.5 MB).",
     "statusReadyTitle": "Map saved on this device",
-    "statusReadyDesc": "Streets, labels, and all 35 routes work without internet or mobile data.",
+    "statusReadyDesc": "Streets, labels, and all 36 routes work without internet or mobile data.",
     "statusNotReadyTitle": "Online streaming active",
     "statusNotReadyDesc": "Download once to browse streets anywhere around Tetouan even in airplane mode.",
     "downloadButton": "Download offline map (~6.5 MB)",
