@@ -494,7 +494,10 @@ export function LineExplorer({
         </div>
 
         {/* Vertical Stop Timeline */}
-        <div className="flex-1 min-h-0 overflow-y-auto transit-scroll p-3.5">
+        <div
+          key={`stop-timeline-${selectedLine.id}-${direction}`}
+          className="flex-1 min-h-0 overflow-y-auto transit-scroll p-3.5"
+        >
           <div className="flex items-center justify-between mb-1">
             <h3 className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA]">
               {t.explorer.stopTimelineTitle}
@@ -641,7 +644,10 @@ export function LineExplorer({
       </div>
 
       {/* Flush Hairline Timetable Rows */}
-      <div className="flex-1 min-h-0 overflow-y-auto transit-scroll divide-y divide-[#E6EFF5] dark:divide-[#152D44]">
+      <div
+        key="all-lines-list"
+        className="flex-1 min-h-0 overflow-y-auto transit-scroll divide-y divide-[#E6EFF5] dark:divide-[#152D44]"
+      >
         {filteredLines.length === 0 ? (
           <div className="text-center py-10 px-4 space-y-2">
             <p className="text-xs text-[#526D82] dark:text-[#85A3BC]">{t.explorer.noResults}</p>
