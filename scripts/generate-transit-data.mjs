@@ -141,10 +141,11 @@ const LINES_SPEC = [
     first_departure: '06:00',
     last_departure: '22:15',
     corridor: ['rommana', 'dar_takafa', 'saniat_rmel', 'place_palestine'],
-    // Verified Touabel -> Avenue Al Joulane -> Avenue Mehdi Ben Barka -> Wilaya -> Aeroport corridor
+    // Verified Av. Hassan I (Casa Bloque 36/7) -> Saniat Rmel -> Touabel -> Av. Al Joulane -> Av. Mehdi Ben Barka -> Wilaya -> Aeroport corridor
     routeWaypoints: [
       [-5.39242, 35.56549],
       [-5.383003, 35.57058],
+      [-5.365, 35.56775],
       [-5.348838, 35.574001],
       [-5.349432, 35.575456],
       [-5.350707, 35.577954],
@@ -295,7 +296,26 @@ const LINES_SPEC = [
   },
   { id: 'L34', number: '34', category: 'regional', color: '#0891B2', price_mad: 5.0, frequency_mins: 15, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine', 'mdiq'] },
   { id: 'L35', number: '35', category: 'regional', color: '#2563EB', price_mad: 7.0, frequency_mins: 15, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine', 'mdiq', 'fnideq'] },
-  { id: 'L36', number: '36', category: 'regional', color: '#10B981', price_mad: 4.0, frequency_mins: 10, first_departure: '06:00', last_departure: '22:30', corridor: ['rommana', 'dar_takafa', 'saniat_rmel', 'tamouda', 'martil'] },
+  {
+    id: 'L36',
+    number: '36',
+    category: 'regional',
+    color: '#10B981',
+    price_mad: 4.0,
+    frequency_mins: 10,
+    first_departure: '06:00',
+    last_departure: '22:30',
+    corridor: ['rommana', 'dar_takafa', 'saniat_rmel', 'tamouda', 'martil'],
+    // Verified Rommana -> Dar Takafa -> Av. Hassan I (Casa Bloque 36/7) -> Saniat Rmel -> N16 Tamouda -> Martil
+    routeWaypoints: [
+      [-5.39242, 35.56549],
+      [-5.383003, 35.57058],
+      [-5.365, 35.56775],
+      [-5.348838, 35.574001],
+      [-5.324263, 35.58871],
+      [-5.275194, 35.617984],
+    ],
+  },
 ];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
