@@ -107,6 +107,7 @@ export interface TripItinerary {
   transferWalkGeometry?: LineStringGeometry;
   totalFareMad: number;
   totalMinutes: number;
+  totalDistanceMeters: number;
   score: number;
 }
 

@@ -20,6 +20,7 @@ import type {
 } from '../types/transit';
 import { buildShareUrl } from '../utils/deepLink';
 import { normalizeSearchText } from '../utils/stopSearch';
+import { formatDistanceKm, getLineRouteStats } from '../utils/transitGeo';
 import { getLineServiceStatus } from '../utils/transitSchedule';
 import { BidiText, LineBadge } from './BidiText';
 import { ShareButton } from './ShareButton';
@@ -229,6 +230,7 @@ export function LineExplorer({
       selectedLine.last_departure,
       now,
     );
+    const routeStats = getLineRouteStats(selectedLine);
     const orderedStops =
       direction === 'outbound' ? selectedLine.stops : [...selectedLine.stops].reverse();
     const startHubKey =
@@ -410,36 +412,70 @@ export function LineExplorer({
           </div>
 
           {/* Unified Hairline Metric Strip */}
-          <div className="grid grid-cols-3 divide-x rtl:divide-x-reverse divide-[#DCE6EE] dark:divide-[#183550] border border-[#DCE6EE] dark:border-[#183550] rounded-lg bg-[#F4F8FB] dark:bg-[#0D2236]/80">
-            <div className="px-2.5 py-2">
-              <div className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
-                {t.explorer.hoursLabel}
+          <div className="border border-[#DCE6EE] dark:border-[#183550] rounded-lg bg-[#F4F8FB] dark:bg-[#0D2236]/80 overflow-hidden">
+            <div className="grid grid-cols-3 divide-x rtl:divide-x-reverse divide-[#DCE6EE] dark:divide-[#183550]">
+              <div className="px-2.5 py-2">
+                <div className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
+                  {t.explorer.hoursLabel}
+                </div>
+                <div
+                  dir="ltr"
+                  className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums mt-0.5 whitespace-nowrap"
+                >
+                  {`${selectedLine.first_departure} - ${selectedLine.last_departure}`}
+                </div>
               </div>
-              <div
-                dir="ltr"
-                className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums mt-0.5 whitespace-nowrap"
-              >
-                {`${selectedLine.first_departure} - ${selectedLine.last_departure}`}
+
+              <div className="px-2.5 py-2">
+                <div className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
+                  {t.explorer.frequencyPrefix}
+                </div>
+                <div className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums mt-0.5 flex items-center gap-1 whitespace-nowrap">
+                  <span dir="ltr">{selectedLine.frequency_mins}</span>
+                  <span>{t.explorer.minutesUnit}</span>
+                </div>
+              </div>
+
+              <div className="px-2.5 py-2">
+                <div className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
+                  {t.explorer.fareLabel}
+                </div>
+                <div className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums mt-0.5 flex items-center gap-1 whitespace-nowrap">
+                  <span dir="ltr">{formatMad(selectedLine.price_mad)}</span>
+                  <span>{t.explorer.currency}</span>
+                </div>
               </div>
             </div>
 
-            <div className="px-2.5 py-2">
-              <div className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
-                {t.explorer.frequencyPrefix}
+            <div className="grid grid-cols-2 divide-x rtl:divide-x-reverse divide-[#DCE6EE] dark:divide-[#183550] border-t border-[#DCE6EE] dark:border-[#183550]">
+              <div className="px-2.5 py-1.5 flex items-center justify-between gap-2">
+                <span className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
+                  {t.explorer.routeDistanceLabel}
+                </span>
+                <span
+                  data-testid="line-distance-km"
+                  className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums inline-flex items-center gap-1 shrink-0 whitespace-nowrap"
+                >
+                  <span dir="ltr">{formatDistanceKm(routeStats.distanceMeters)}</span>
+                  <span className="text-[10px] font-normal text-[#526D82] dark:text-[#85A3BC]">
+                    {t.explorer.kmUnit}
+                  </span>
+                </span>
               </div>
-              <div className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums mt-0.5 flex items-center gap-1 whitespace-nowrap">
-                <span dir="ltr">{selectedLine.frequency_mins}</span>
-                <span>{t.explorer.minutesUnit}</span>
-              </div>
-            </div>
 
-            <div className="px-2.5 py-2">
-              <div className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
-                {t.explorer.fareLabel}
-              </div>
-              <div className="text-xs font-semibold text-[#041626] dark:text-[#EFF6FA] tabular-nums mt-0.5 flex items-center gap-1 whitespace-nowrap">
-                <span dir="ltr">{formatMad(selectedLine.price_mad)}</span>
-                <span>{t.explorer.currency}</span>
+              <div className="px-2.5 py-1.5 flex items-center justify-between gap-2">
+                <span className="text-[10px] text-[#526D82] dark:text-[#85A3BC] truncate">
+                  {t.explorer.routeDurationLabel}
+                </span>
+                <span
+                  data-testid="line-duration-mins"
+                  className="text-xs font-semibold text-[#0155A6] dark:text-[#34D399] tabular-nums inline-flex items-center gap-1 shrink-0 whitespace-nowrap"
+                >
+                  <span dir="ltr">~{routeStats.estimatedMinutes}</span>
+                  <span className="text-[10px] font-normal text-[#526D82] dark:text-[#85A3BC]">
+                    {t.explorer.minutesUnit}
+                  </span>
+                </span>
               </div>
             </div>
           </div>

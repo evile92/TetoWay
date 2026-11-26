@@ -22,6 +22,13 @@ const DEG_TO_RAD = Math.PI / 180;
 interface LineSpatialMeta {
   bbox: [number, number, number, number];
   stopCumMeters: number[];
+  totalLengthMeters: number;
+}
+
+export interface LineRouteStats {
+  distanceMeters: number;
+  estimatedMinutes: number;
+  stopCount: number;
 }
 
 const lineSpatialCache = new WeakMap<BusLine, LineSpatialMeta>();
@@ -52,6 +59,7 @@ function getLineSpatialMeta(line: BusLine): LineSpatialMeta {
     const empty: LineSpatialMeta = {
       bbox: [0, 0, 0, 0],
       stopCumMeters: line.stops.map(() => 0),
+      totalLengthMeters: 0,
     };
     lineSpatialCache.set(line, empty);
     return empty;
@@ -94,6 +102,7 @@ function getLineSpatialMeta(line: BusLine): LineSpatialMeta {
   const meta: LineSpatialMeta = {
     bbox: [minLng, minLat, maxLng, maxLat],
     stopCumMeters,
+    totalLengthMeters: Math.round(cumVertexMeters[coords.length - 1]),
   };
   lineSpatialCache.set(line, meta);
   return meta;
@@ -127,6 +136,34 @@ function estimateRideMinutes(
   const dwellPerStop = category === 'regional' ? 0.25 : 0.4;
   const minMins = category === 'regional' ? 3 : 2;
   return Math.max(minMins, Math.round(rideDistanceMeters / speed + stopCount * dwellPerStop));
+}
+
+/** Format a distance in meters as kilometers with one decimal place (minimum 0.1). */
+export function formatDistanceKm(meters: number): string {
+  return Math.max(0.1, meters / 1000).toFixed(1);
+}
+
+/** Compute full-route street length and stop-adjusted estimated ride time for a bus line. */
+export function getLineRouteStats(line: BusLine): LineRouteStats {
+  let distanceMeters = getLineSpatialMeta(line).totalLengthMeters;
+  if (distanceMeters < 1 && line.stops.length >= 2) {
+    let sum = 0;
+    for (let i = 1; i < line.stops.length; i++) {
+      sum += haversineMeters(
+        line.stops[i - 1].lng,
+        line.stops[i - 1].lat,
+        line.stops[i].lng,
+        line.stops[i].lat,
+      );
+    }
+    distanceMeters = Math.round(sum);
+  }
+  const stopCount = Math.max(0, line.stops.length - 1);
+  return {
+    distanceMeters,
+    estimatedMinutes: estimateRideMinutes(distanceMeters, stopCount, line.category),
+    stopCount,
+  };
 }
 
 function safeSliceLine(
@@ -718,6 +755,7 @@ export function planTripItineraries(
         legs: [leg],
         totalFareMad: c.orig.line.price_mad,
         totalMinutes: walkToBoardMinutes + leg.rideMinutes + walkFromAlightMinutes,
+        totalDistanceMeters: walkToBoardMeters + leg.rideDistanceMeters + walkFromAlightMeters,
         score: refinedScore,
       };
     }
@@ -772,6 +810,12 @@ export function planTripItineraries(
         transferWaitMinutes +
         leg2.rideMinutes +
         walkFromAlightMinutes,
+      totalDistanceMeters:
+        walkToBoardMeters +
+        leg1.rideDistanceMeters +
+        actualTransferWalkMeters +
+        leg2.rideDistanceMeters +
+        walkFromAlightMeters,
       score: refinedScore,
     };
   });

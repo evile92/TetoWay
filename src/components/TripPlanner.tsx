@@ -38,6 +38,7 @@ import {
   type SavedPlacesMap,
 } from '../utils/savedPlaces';
 import { buildOfflineSearchPlaces, formatSelectedPointLabel } from '../utils/stopSearch';
+import { formatDistanceKm } from '../utils/transitGeo';
 import { BidiText, LineBadge } from './BidiText';
 import { ShareButton } from './ShareButton';
 import { StopSearchInput } from './StopSearchInput';
@@ -738,7 +739,15 @@ export function TripPlanner({
                       ))}
                     </div>
 
-                    <div className="flex items-center gap-2 shrink-0">
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <span
+                        data-testid={`itinerary-distance-${idx}`}
+                        className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#F4F8FB] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] text-[10px] font-medium text-[#526D82] dark:text-[#85A3BC] tabular-nums"
+                      >
+                        <span dir="ltr">{formatDistanceKm(itinerary.totalDistanceMeters)}</span>
+                        <span>{t.explorer.kmUnit}</span>
+                      </span>
+
                       <span
                         title={t.planner.estimatedTimeLabel}
                         data-testid={`itinerary-duration-${idx}`}
@@ -789,6 +798,9 @@ export function TripPlanner({
                             <span className="text-[10px] text-[#526D82] dark:text-[#85A3BC] tabular-nums flex items-center gap-1">
                               <span dir="ltr">{leg.stopCount}</span>
                               <span>{t.explorer.stopsCount}</span>
+                              <span>·</span>
+                              <span dir="ltr">{formatDistanceKm(leg.rideDistanceMeters)}</span>
+                              <span>{t.explorer.kmUnit}</span>
                               <span>·</span>
                               <span dir="ltr">~{leg.rideMinutes}</span>
                               <span>{t.explorer.minutesUnit}</span>
