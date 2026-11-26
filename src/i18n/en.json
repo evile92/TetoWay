@@ -58,7 +58,7 @@
     "serviceStarts": "Starts",
     "lastBusIn": "Last bus in",
     "lastBusNow": "Last bus departing now",
-    "estimatedDisclaimer": "Fares & schedules are approximate (Issal 2026). Use Report to suggest updates."
+    "estimatedDisclaimer": "Approximate fares & schedules (Issal 2026)."
   },
   "map": {
     "stopPopupSequence": "Stop",

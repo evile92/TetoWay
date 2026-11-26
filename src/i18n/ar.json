@@ -58,7 +58,7 @@
     "serviceStarts": "يبدأ",
     "lastBusIn": "آخر حافلة بعد",
     "lastBusNow": "آخر حافلة تنطلق الآن",
-    "estimatedDisclaimer": "التعريفات وأوقات العمل تقريبية (إيصال 2026). استخدم زر إبلاغ لاقتراح أي تصحيح."
+    "estimatedDisclaimer": "التعريفات وأوقات العمل تقريبية (إيصال 2026)."
   },
   "map": {
     "stopPopupSequence": "محطة رقم",
