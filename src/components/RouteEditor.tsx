@@ -225,7 +225,7 @@ export function RouteEditor({
       number: String(nextNum),
       category: 'urban',
       color: '#0284C7',
-      price_mad: 3.5,
+      price_mad: 4.0,
       first_departure: '06:00',
       last_departure: '22:00',
       frequency_mins: 15,
@@ -842,9 +842,20 @@ export function RouteEditor({
             </label>
             <select
               value={selectedLine.origin_key}
-              onChange={(e) =>
-                markLineUpdated({ ...selectedLine, origin_key: e.target.value })
-              }
+              onChange={(e) => {
+                const nextKey = e.target.value;
+                const nextStops = selectedLine.stops.map((stop, idx) =>
+                  idx === 0
+                    ? {
+                        ...stop,
+                        hub_key: nextKey,
+                        name_en: resolveHubName(nextKey, 'en'),
+                        name_ar: resolveHubName(nextKey, 'ar'),
+                      }
+                    : stop,
+                );
+                markLineUpdated({ ...selectedLine, origin_key: nextKey, stops: nextStops });
+              }}
               className="w-full bg-[#F4F8FB] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] rounded-md px-2.5 py-1.5 text-xs text-[#041626] dark:text-[#EFF6FA]"
             >
               {hubKeys.map((key) => (
@@ -861,9 +872,21 @@ export function RouteEditor({
             </label>
             <select
               value={selectedLine.destination_key}
-              onChange={(e) =>
-                markLineUpdated({ ...selectedLine, destination_key: e.target.value })
-              }
+              onChange={(e) => {
+                const nextKey = e.target.value;
+                const lastIdx = selectedLine.stops.length - 1;
+                const nextStops = selectedLine.stops.map((stop, idx) =>
+                  idx === lastIdx
+                    ? {
+                        ...stop,
+                        hub_key: nextKey,
+                        name_en: resolveHubName(nextKey, 'en'),
+                        name_ar: resolveHubName(nextKey, 'ar'),
+                      }
+                    : stop,
+                );
+                markLineUpdated({ ...selectedLine, destination_key: nextKey, stops: nextStops });
+              }}
               className="w-full bg-[#F4F8FB] dark:bg-[#0D2236] border border-[#DCE6EE] dark:border-[#183550] rounded-md px-2.5 py-1.5 text-xs text-[#041626] dark:text-[#EFF6FA]"
             >
               {hubKeys.map((key) => (

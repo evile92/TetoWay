@@ -16,9 +16,28 @@ function parseMinutesOfDay(hhmm: string): number | null {
   return hours * 60 + mins;
 }
 
+function getMoroccoMinutesOfDay(now: Date): number {
+  try {
+    const parts = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Africa/Casablanca',
+      hour: '2-digit',
+      minute: '2-digit',
+      hourCycle: 'h23',
+    }).formatToParts(now);
+    const hour = Number.parseInt(parts.find((p) => p.type === 'hour')?.value ?? '', 10);
+    const minute = Number.parseInt(parts.find((p) => p.type === 'minute')?.value ?? '', 10);
+    if (Number.isFinite(hour) && Number.isFinite(minute)) {
+      return (hour % 24) * 60 + minute;
+    }
+  } catch {
+    // Fallback to device local clock if Intl timeZone data is unavailable
+  }
+  return now.getHours() * 60 + now.getMinutes();
+}
+
 /**
  * Determine offline whether a bus line is currently within its operating window
- * and whether its final departure is within 60 minutes based on local time (`now`).
+ * and whether its final departure is within 60 minutes based on Morocco local time (`Africa/Casablanca`).
  */
 export function getLineServiceStatus(
   firstDeparture: string,
@@ -29,7 +48,7 @@ export function getLineServiceStatus(
   const endMin = parseMinutesOfDay(lastDeparture);
   if (startMin === null || endMin === null) return null;
 
-  const currentMin = now.getHours() * 60 + now.getMinutes();
+  const currentMin = getMoroccoMinutesOfDay(now);
   const isActive =
     startMin <= endMin
       ? currentMin >= startMin && currentMin <= endMin

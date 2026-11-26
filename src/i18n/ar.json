@@ -57,7 +57,8 @@
     "serviceEnded": "متوقف حالياً",
     "serviceStarts": "يبدأ",
     "lastBusIn": "آخر حافلة بعد",
-    "lastBusNow": "آخر حافلة تنطلق الآن"
+    "lastBusNow": "آخر حافلة تنطلق الآن",
+    "estimatedDisclaimer": "التعريفات وأوقات العمل تقريبية (إيصال 2026). استخدم زر إبلاغ لاقتراح أي تصحيح."
   },
   "map": {
     "stopPopupSequence": "محطة رقم",
@@ -207,6 +208,7 @@
     "saniat_rmel": "سانية الرمل",
     "place_palestine": "تجزئة الصواني (ساحة فلسطين)",
     "quartier_universitaire": "الحي الجامعي (الواد المالح)",
+    "mhannech_sciences": "المحنش (كلية العلوم)",
     "boujarrah": "محطة بوجراح",
     "qalaline": "القلالين",
     "dar_zkik": "محطة دار الزكيك",
@@ -220,6 +222,7 @@
     "bouanane": "بوعنان",
     "tamouda": "تمودة",
     "abderrahmane_dakhel": "شارع عبد الرحمان الداخل",
+    "tamuda_west": "تامودا (شارع عبد الرحمان الداخل)",
     "torreta": "طوريطا (البرج)",
     "rn13_malaliyine": "الطريق الوطنية 13 (الملاليين)",
     "malaliyine": "الملاليين",
@@ -228,6 +231,7 @@
     "sahtriyine": "السحتريين",
     "amsa": "أمسا",
     "azla": "أزلا",
+    "zaouiat_sidi_kacem": "زاوية سيدي قاسم",
     "oued_laou": "واد لاو (سوق بني سعيد)",
     "ain_lahcen": "عين الحصن",
     "khemis_anjra": "خميس أنجرة",

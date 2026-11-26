@@ -57,7 +57,8 @@
     "serviceEnded": "Off-hours",
     "serviceStarts": "Starts",
     "lastBusIn": "Last bus in",
-    "lastBusNow": "Last bus departing now"
+    "lastBusNow": "Last bus departing now",
+    "estimatedDisclaimer": "Fares & schedules are approximate (Issal 2026). Use Report to suggest updates."
   },
   "map": {
     "stopPopupSequence": "Stop",
@@ -207,6 +208,7 @@
     "saniat_rmel": "Saniat Rmel",
     "place_palestine": "Lotissement Souani (Palestine Sq.)",
     "quartier_universitaire": "University District (Oued El Malh)",
+    "mhannech_sciences": "M'hannech (Faculty of Sciences)",
     "boujarrah": "Boujarrah Station",
     "qalaline": "Qalaline",
     "dar_zkik": "Dar Zkik Station",
@@ -220,6 +222,7 @@
     "bouanane": "Bouanane",
     "tamouda": "Tamouda",
     "abderrahmane_dakhel": "Av. Abderrahmane Dakhil",
+    "tamuda_west": "Tamuda (Av. Abderrahmane Dakhil)",
     "torreta": "Torreta (El Borj)",
     "rn13_malaliyine": "National Route 13 (Malaliyine)",
     "malaliyine": "Malaliyine",
@@ -228,6 +231,7 @@
     "sahtriyine": "Sahtriyine",
     "amsa": "Amsa",
     "azla": "Azla",
+    "zaouiat_sidi_kacem": "Zaouiat Sidi Kacem",
     "oued_laou": "Oued Laou (Souk Beni Said)",
     "ain_lahcen": "Ain Lahcen",
     "khemis_anjra": "Khemis Anjra",

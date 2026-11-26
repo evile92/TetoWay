@@ -480,6 +480,10 @@ export function LineExplorer({
             </div>
           </div>
 
+          <p className="text-[10px] leading-relaxed text-[#526D82] dark:text-[#85A3BC]">
+            {t.explorer.estimatedDisclaimer}
+          </p>
+
           {orderedStops.length >= 2 && (
             <button
               type="button"

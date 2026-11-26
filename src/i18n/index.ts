@@ -33,20 +33,16 @@ export function resolveStopLabel(
   stop: Pick<BusStop, 'hub_key' | 'name_en' | 'name_ar'>,
   lang: Lang,
 ): ResolvedLabel {
-  if (stop.hub_key) {
-    const hubText = resolveHubName(stop.hub_key, lang);
-    return {
-      text: hubText,
-      dir: lang === 'ar' ? 'rtl' : 'ltr',
-    };
-  }
+  const enName = stop.name_en.trim();
+  const arName = stop.name_ar.trim();
 
   if (lang === 'ar') {
-    const arName = stop.name_ar.trim();
     if (arName) {
       return { text: arName, dir: 'rtl' };
     }
-    const enName = stop.name_en.trim();
+    if (stop.hub_key) {
+      return { text: resolveHubName(stop.hub_key, 'ar'), dir: 'rtl' };
+    }
     if (enName && enName !== 'Bus Stop') {
       return {
         text: enName,
@@ -59,14 +55,15 @@ export function resolveStopLabel(
     };
   }
 
-  const enName = stop.name_en.trim();
   if (enName && enName !== 'Bus Stop') {
     return {
       text: enName,
       dir: isArabicScript(enName) ? 'rtl' : 'ltr',
     };
   }
-  const arName = stop.name_ar.trim();
+  if (stop.hub_key) {
+    return { text: resolveHubName(stop.hub_key, 'en'), dir: 'ltr' };
+  }
   if (arName) {
     return { text: arName, dir: 'rtl' };
   }

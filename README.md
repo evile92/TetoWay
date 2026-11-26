@@ -46,7 +46,7 @@ Built with zero paid API keys, it combines OpenStreetMap stop datasets, OSRM str
   <tr>
     <td align="center" width="25%">
       <strong>Network Explorer</strong><br />
-      <sub>35 Lines &amp; Offline Map</sub><br /><br />
+      <sub>36 Lines &amp; Offline Map</sub><br /><br />
       <img src="./docs/screenshots/mobile-network-en.jpg" alt="Mobile Network Explorer Day Mode" width="200" />
     </td>
     <td align="center" width="25%">
@@ -72,13 +72,14 @@ Built with zero paid API keys, it combines OpenStreetMap stop datasets, OSRM str
 
 ### Core Features
 
-- **35 Real Road-Snapped Bus Lines (17 Urban + 18 Regional):**
+- **36 Real Road-Snapped Bus Lines (18 Urban + 18 Regional):**
   Every corridor passes through verified Tetouan terminals and intermediate waypoints (`scripts/generate-transit-data.mjs`) snapped smoothly along actual streets using OSRM (`LineString` GeoJSON) rather than straight lines.
 - **553 OpenStreetMap Bus Stops Layer:**
   Toggleable live OSM stops overlay (`public/data/osm-stops.json`) fetched from Overpass API with interactive click popups showing connecting bus lines within walking range.
-- **Day & Night Modes Harmonized with TetoWay Branding:**
-  - **Day Mode (Default):** Clean whitewashed Medina surfaces (`#FFFFFF` / `#F2F7FA`), deep navy typography (`#041626`), marine blue (`#0155A6`) and Rif emerald (`#01A069`) accents over **CartoDB Voyager** vector maps.
-  - **Night Mode:** Deep Mediterranean marine navy UI (`#081828` / `#05101C`), coastal cyan (`#22D3EE`) & emerald (`#34D399`) accents, and a dedicated transparent night wordmark over **CartoDB Dark Matter** vector tiles.
+- **Day & Night Modes + Full Offline Map Support:**
+  - **Day Mode (Default):** Clean whitewashed Medina surfaces (`#FFFFFF` / `#F2F7FA`), deep navy typography (`#041626`), marine blue (`#0155A6`) and Rif emerald (`#01A069`) accents over local **Protomaps PMTiles** vector basemaps (`public/tiles/tetouan.pmtiles`).
+  - **Night Mode:** Deep Mediterranean marine navy UI (`#081828` / `#05101C`), coastal cyan (`#22D3EE`) & emerald (`#34D399`) accents, and a dedicated transparent night wordmark over dark **Protomaps PMTiles** vector tiles.
+  - **Offline Walking & Map Pack:** Client-side pedestrian street graph (`public/data/tetouan-walk.bin`) and downloadable ~6.5 MB offline vector map cache.
 - **Strict Bilingual EN (`LTR`) & AR (`RTL`) Experience:**
   Instant switching between English and Arabic UI with isolated `dir="ltr"` / `dir="rtl"` containers and standard Western numerals (`0-9`) for all route shields, schedules, fares, and walking metrics.
 - **Smart Trip Planner & Nearest Stop Finder:**
@@ -91,13 +92,14 @@ Built with zero paid API keys, it combines OpenStreetMap stop datasets, OSRM str
 
 ---
 
-### Bus Network Directory (35 Lines)
+### Bus Network Directory (36 Lines)
 
-#### Urban Network (17 Lines — `3.50 MAD`)
+#### Urban Network (18 Lines — `4.00 MAD`)
 
 | Line | Route (Origin ↔ Destination) | Frequency |
 | :---: | :--- | :---: |
 | **1** | Avenue Rif (Rommana) ↔ Boujarrah Station | 12 min |
+| **2** | Avenue Rif (Rommana) ↔ Lotissement Souani (Palestine Sq.) | 15 min |
 | **3** | Avenue Rif (Rommana) ↔ Qalaline | 20 min |
 | **4** | Dar Takafa ↔ Dar Zkik Station | 20 min |
 | **5** | Dar Takafa ↔ Hay Nassim | 15 min |
@@ -109,34 +111,34 @@ Built with zero paid API keys, it combines OpenStreetMap stop datasets, OSRM str
 | **11** | Dar Takafa ↔ Ain Samsa | 20 min |
 | **12** | Old Railway Station ↔ Avenue Zaio (Jamaa Mezouak) | 12 min |
 | **13** | Avenue Rif (Rommana) ↔ Bouanane | 25 min |
-| **14** | Dar Takafa ↔ Av. Abderrahmane Dakhil | 15 min |
-| **15** | University District ↔ Torreta (El Borj) | 12 min |
+| **14** | Dar Takafa ↔ Tamuda (Av. Abderrahmane Dakhil) | 15 min |
+| **15** | University District (Oued El Malh) ↔ Torreta (El Borj) | 12 min |
 | **16** | Avenue Rif (Rommana) ↔ National Route 13 (Malaliyine) | 20 min |
 | **17** | Avenue Rif (Rommana) ↔ Avenue Abdellah El Fakhar | 20 min |
 | **18** | Avenue Rif (Rommana) ↔ Hay Barbourine | 20 min |
 
-#### Regional & Suburban Network (18 Lines — `4.00` to `8.00 MAD`)
+#### Regional & Suburban Network (18 Lines — `5.00` to `10.00 MAD`)
 
 | Line | Route (Origin ↔ Destination) | Fare | Frequency |
 | :---: | :--- | :---: | :---: |
-| **19** | Avenue Rif (Rommana) ↔ Amsa | 4.50 MAD | 35 min |
-| **20** | Avenue Rif (Rommana) ↔ Azla | 4.50 MAD | 30 min |
-| **21** | Old Railway Station ↔ Oued Laou (Souk Beni Said) | 8.00 MAD | 40 min |
-| **22** | Avenue Khalid Ibn Walid ↔ Sahtriyine | 4.00 MAD | 20 min |
-| **23** | Dar Takafa ↔ Ain Lahcen | 5.00 MAD | 30 min |
-| **24** | Dar Takafa ↔ Khemis Anjra | 6.00 MAD | 40 min |
-| **25** | Dar Takafa ↔ Saddina | 5.00 MAD | 35 min |
-| **26** | Avenue Rif (Rommana) ↔ Malaliyine | 4.00 MAD | 20 min |
-| **27** | Old Railway Station ↔ Dar Ben Karrich | 4.50 MAD | 25 min |
-| **28** | Old Railway Station ↔ Zinate | 5.50 MAD | 40 min |
-| **29** | Old Railway Station ↔ Arbaa Beni Hassan | 7.00 MAD | 45 min |
-| **30** | Old Railway Station ↔ Beni Salah | 4.00 MAD | 30 min |
-| **31** | Old Railway Station ↔ Ain Zarka | 4.50 MAD | 35 min |
-| **32** | Hay Bouzaghlal ↔ Martil | 4.50 MAD | 25 min |
-| **33** | Fnideq ↔ Martil | 6.00 MAD | 25 min |
-| **34** | Avenue Rif (Rommana) ↔ M'diq | 5.00 MAD | 15 min |
-| **35** | Avenue Rif (Rommana) ↔ Fnideq | 7.00 MAD | 15 min |
-| **36** | Avenue Rif (Rommana) ↔ Martil | 4.00 MAD | 10 min |
+| **19** | Avenue Rif (Rommana) ↔ Amsa | 6.00 MAD | 35 min |
+| **20** | Avenue Rif (Rommana) ↔ Zaouiat Sidi Kacem | 6.00 MAD | 30 min |
+| **21** | Old Railway Station ↔ Oued Laou (Souk Beni Said) | 10.00 MAD | 40 min |
+| **22** | Avenue Khalid Ibn Walid ↔ Sahtriyine | 5.00 MAD | 20 min |
+| **23** | Dar Takafa ↔ Ain Lahcen | 6.00 MAD | 30 min |
+| **24** | Dar Takafa ↔ Khemis Anjra | 7.00 MAD | 40 min |
+| **25** | Dar Takafa ↔ Laalaouia (El Alwia) | 6.00 MAD | 35 min |
+| **26** | Avenue Rif (Rommana) ↔ Malaliyine | 5.00 MAD | 20 min |
+| **27** | Old Railway Station ↔ Dar Ben Karrich | 6.00 MAD | 25 min |
+| **28** | Old Railway Station ↔ Zinate | 7.00 MAD | 40 min |
+| **29** | Old Railway Station ↔ Arbaa Beni Hassan | 10.00 MAD | 45 min |
+| **30** | Old Railway Station ↔ Beni Salah | 5.00 MAD | 30 min |
+| **31** | Old Railway Station ↔ Ain Zarka | 5.00 MAD | 35 min |
+| **32** | Hay Bouzaghlal ↔ Martil | 6.00 MAD | 25 min |
+| **33** | Fnideq ↔ Martil (Faculties) | 8.00 MAD | 25 min |
+| **34** | Avenue Rif (Rommana) ↔ M'diq | 6.00 MAD | 15 min |
+| **35** | Avenue Rif (Rommana) ↔ Fnideq | 10.00 MAD | 15 min |
+| **36** | Avenue Rif (Rommana) ↔ Martil | 5.00 MAD | 10 min |
 
 ---
 
@@ -146,7 +148,10 @@ Built with zero paid API keys, it combines OpenStreetMap stop datasets, OSRM str
 ├── public/
 │   ├── data/
 │   │   ├── osm-stops.json         # 553 normalized OpenStreetMap bus stops
-│   │   └── tetouan-lines.json     # 35 OSRM road-snapped lines & ordered stops
+│   │   ├── tetouan-lines.json     # 36 OSRM road-snapped lines & ordered stops
+│   │   └── tetouan-walk.bin       # Offline pedestrian street graph (TTWK v1)
+│   ├── tiles/
+│   │   └── tetouan.pmtiles        # Local Protomaps vector basemap archive
 │   ├── favicon.png                # Browser tab icon
 │   ├── logo-pin.png               # Tetouan Medina & Rif pin emblem
 │   ├── logo-tetoway.png           # Full TetoWay lockup (Light Mode)
@@ -225,7 +230,7 @@ npm run build
   <tr>
     <td align="center" width="25%">
       <strong>خريطة الشبكة</strong><br />
-      <sub>35 خطاً وعرض أوفلاين</sub><br /><br />
+      <sub>36 خطاً وعرض أوفلاين</sub><br /><br />
       <img src="./docs/screenshots/mobile-network-en.jpg" alt="خريطة الشبكة على الهاتف" width="200" />
     </td>
     <td align="center" width="25%">
@@ -251,13 +256,14 @@ npm run build
 
 ### أبرز المميزات
 
-- **35 خط حافلات بمسارات حقيقية على الطرقات (17 خطاً حضرياً + 18 خطاً جهوياً):**
+- **36 خط حافلات بمسارات حقيقية على الطرقات (18 خطاً حضرياً + 18 خطاً جهوياً):**
   تم ربط جميع الأقطاب والمحطات الوسيطية في تطوان بدقة وسحب المسارات آلياً عبر خدمة OSRM لتتبع الشوارع الفعلية دون خطوط مستقيمة عشوائية.
 - **طبقة محطات الخريطة المفتوحة (553 محطة OSM):**
   إمكانية إظهار وإخفاء محطات OpenStreetMap فوق الخريطة مع نوافذ منبثقة تعرض أقرب خطوط الحافلات التي تمر بكل محطة.
-- **الوضع النهاري والوضع الليلي بألوان شعار تيتوواي:**
-  - **الوضع النهاري:** واجهة ناصعة مستوحاة من بياض تطوان والأزرق البحري والأخضر الريفي فوق خرائط CartoDB Voyager الفاتحة.
-  - **الوضع الليلي:** واجهة بكحلي ليلي بحري أنيق (`#081828` / `#05101C`) ولمسات سماوية وزمردية مريحة للعين مع نسخة مخصصة شفافة من الشعار فوق خرائط CartoDB Dark Matter.
+- **الوضع النهاري والوضع الليلي مع دعم العمل دون إنترنت:**
+  - **الوضع النهاري:** واجهة ناصعة مستوحاة من بياض تطوان والأزرق البحري والأخضر الريفي فوق خرائط **Protomaps PMTiles** المتجهية المحلية (`public/tiles/tetouan.pmtiles`).
+  - **الوضع الليلي:** واجهة بكحلي ليلي بحري أنيق (`#081828` / `#05101C`) ولمسات سماوية وزمردية مريحة للعين مع نسخة مخصصة شفافة من الشعار فوق خرائط **Protomaps PMTiles** الداكنة.
+  - **حزمة أوفلاين وشبكة المشي:** شبكة طرقات للمشاة (`public/data/tetouan-walk.bin`) مع إمكانية تنزيل خريطة تطوان كاملة بحجم يقارب `6.5 MB` للعمل بدون إنترنت.
 - **دعم ثنائي اللغة (العربية `RTL` والإنجليزية `LTR`):**
   فصل دقيق لاتجاه النصوص والواجهات مع اعتماد الأرقام القياسية (`0-9`) لسهولة قراءة أرقام الخطوط والتعريفات والأوقات.
 - **مخطط الرحلات وأقرب محطة إليك:**
@@ -270,13 +276,14 @@ npm run build
 
 ---
 
-### دليل شبكة الخطوط (35 خطاً)
+### دليل شبكة الخطوط (36 خطاً)
 
-#### الخطوط داخل المدينة (17 خطاً — `3.50 درهم`)
+#### الخطوط داخل المدينة (18 خطاً — `4.00 درهم`)
 
 | رقم الخط | المسار (نقطة الانطلاق ⬌ نقطة الوصول) | التواتر |
 | :---: | :--- | :---: |
 | **1** | شارع الريف (الرمانة) ⬌ محطة بوجراح | كل 12 دقيقة |
+| **2** | شارع الريف (الرمانة) ⬌ تجزئة الصواني (ساحة فلسطين) | كل 15 دقيقة |
 | **3** | شارع الريف (الرمانة) ⬌ القلالين | كل 20 دقيقة |
 | **4** | دار الثقافة ⬌ محطة دار الزكيك | كل 20 دقيقة |
 | **5** | دار الثقافة ⬌ حي النسيم | كل 15 دقيقة |
@@ -286,36 +293,36 @@ npm run build
 | **9** | شارع الريف (الرمانة) ⬌ حي الكاريان | كل 15 دقيقة |
 | **10** | شارع الريف (الرمانة) ⬌ شارع مختار السوسي | كل 15 دقيقة |
 | **11** | دار الثقافة ⬌ عين صمصة | كل 20 دقيقة |
-| **12** | محطة السكك الحديدية القديمة ⬌ شارع زايو (حي جامع مزواق) | كل 12 دقيقة |
+| **12** | محطة القطار القديمة ⬌ شارع زايو (حي جامع مزواق) | كل 12 دقيقة |
 | **13** | شارع الريف (الرمانة) ⬌ بوعنان | كل 25 دقيقة |
-| **14** | دار الثقافة ⬌ شارع عبد الرحمان الداخل | كل 15 دقيقة |
-| **15** | الحي الجامعي ⬌ طوريطا (البرج) | كل 12 دقيقة |
+| **14** | دار الثقافة ⬌ تامودا (شارع عبد الرحمان الداخل) | كل 15 دقيقة |
+| **15** | الحي الجامعي (الواد المالح) ⬌ طوريطا (البرج) | كل 12 دقيقة |
 | **16** | شارع الريف (الرمانة) ⬌ الطريق الوطنية 13 (الملاليين) | كل 20 دقيقة |
 | **17** | شارع الريف (الرمانة) ⬌ شارع عبد الله الفخار | كل 20 دقيقة |
 | **18** | شارع الريف (الرمانة) ⬌ حي الباربورين | كل 20 دقيقة |
 
-#### الخطوط الرابطة بين تطوان والنواحي (18 خطاً — `4.00` إلى `8.00 درهم`)
+#### الخطوط الرابطة بين تطوان والنواحي (18 خطاً — `5.00` إلى `10.00 درهم`)
 
 | رقم الخط | المسار (نقطة الانطلاق ⬌ نقطة الوصول) | التعريفة | التواتر |
 | :---: | :--- | :---: | :---: |
-| **19** | شارع الريف (الرمانة) ⬌ أمسا | 4.50 درهم | كل 35 دقيقة |
-| **20** | شارع الريف (الرمانة) ⬌ أزلا | 4.50 درهم | كل 30 دقيقة |
-| **21** | محطة السكك الحديدية القديمة ⬌ واد لاو (سوق بني سعيد) | 8.00 درهم | كل 40 دقيقة |
-| **22** | شارع خالد بن الوليد ⬌ السحتريين | 4.00 درهم | كل 20 دقيقة |
-| **23** | دار الثقافة ⬌ عين الحصن | 5.00 درهم | كل 30 دقيقة |
-| **24** | دار الثقافة ⬌ خميس أنجرة | 6.00 درهم | كل 40 دقيقة |
-| **25** | دار الثقافة ⬌ صدينة | 5.00 درهم | كل 35 دقيقة |
-| **26** | شارع الريف (الرمانة) ⬌ الملاليين | 4.00 درهم | كل 20 دقيقة |
-| **27** | محطة السكك الحديدية القديمة ⬌ دار بن قريش | 4.50 درهم | كل 25 دقيقة |
-| **28** | محطة السكك الحديدية القديمة ⬌ الزينات | 5.50 درهم | كل 40 دقيقة |
-| **29** | محطة السكك الحديدية القديمة ⬌ أربعاء بني حسان | 7.00 درهم | كل 45 دقيقة |
-| **30** | محطة السكك الحديدية القديمة ⬌ بني صالح | 4.00 درهم | كل 30 دقيقة |
-| **31** | محطة السكك الحديدية القديمة ⬌ العين الزرقاء | 4.50 درهم | كل 35 دقيقة |
-| **32** | حي بوزغلال ⬌ مرتيل | 4.50 درهم | كل 25 دقيقة |
-| **33** | الفنيدق ⬌ مرتيل | 6.00 درهم | كل 25 دقيقة |
-| **34** | شارع الريف (الرمانة) ⬌ المضيق | 5.00 درهم | كل 15 دقيقة |
-| **35** | شارع الريف (الرمانة) ⬌ الفنيدق | 7.00 درهم | كل 15 دقيقة |
-| **36** | شارع الريف (الرمانة) ⬌ مرتيل | 4.00 درهم | كل 10 دقائق |
+| **19** | شارع الريف (الرمانة) ⬌ أمسا | 6.00 درهم | كل 35 دقيقة |
+| **20** | شارع الريف (الرمانة) ⬌ زاوية سيدي قاسم | 6.00 درهم | كل 30 دقيقة |
+| **21** | محطة القطار القديمة ⬌ واد لاو (سوق بني سعيد) | 10.00 درهم | كل 40 دقيقة |
+| **22** | شارع خالد بن الوليد ⬌ السحتريين | 5.00 درهم | كل 20 دقيقة |
+| **23** | دار الثقافة ⬌ عين الحصن | 6.00 درهم | كل 30 دقيقة |
+| **24** | دار الثقافة ⬌ خميس أنجرة | 7.00 درهم | كل 40 دقيقة |
+| **25** | دار الثقافة ⬌ العلوية (صدينة) | 6.00 درهم | كل 35 دقيقة |
+| **26** | شارع الريف (الرمانة) ⬌ الملاليين | 5.00 درهم | كل 20 دقيقة |
+| **27** | محطة القطار القديمة ⬌ دار بن قريش | 6.00 درهم | كل 25 دقيقة |
+| **28** | محطة القطار القديمة ⬌ الزينات | 7.00 درهم | كل 40 دقيقة |
+| **29** | محطة القطار القديمة ⬌ أربعاء بني حسان | 10.00 درهم | كل 45 دقيقة |
+| **30** | محطة القطار القديمة ⬌ بني صالح | 5.00 درهم | كل 30 دقيقة |
+| **31** | محطة القطار القديمة ⬌ العين الزرقاء | 5.00 درهم | كل 35 دقيقة |
+| **32** | حي بوزغلال ⬌ مرتيل | 6.00 درهم | كل 25 دقيقة |
+| **33** | الفنيدق ⬌ مرتيل (الكليات) | 8.00 درهم | كل 25 دقيقة |
+| **34** | شارع الريف (الرمانة) ⬌ المضيق | 6.00 درهم | كل 15 دقيقة |
+| **35** | شارع الريف (الرمانة) ⬌ الفنيدق | 10.00 درهم | كل 15 دقيقة |
+| **36** | شارع الريف (الرمانة) ⬌ مرتيل | 5.00 درهم | كل 10 دقائق |
 
 ---
 
