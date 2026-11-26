@@ -17,8 +17,8 @@ const OVERPASS_ENDPOINTS = [
 
 const OVERPASS_QUERY = `[out:json][timeout:30];
 (
-  node["highway"="bus_stop"](35.34,-5.56,35.86,-5.08);
-  node["public_transport"="platform"]["bus"="yes"](35.34,-5.56,35.86,-5.08);
+  node["highway"="bus_stop"](35.30,-5.56,35.86,-5.08);
+  node["public_transport"="platform"]["bus"="yes"](35.30,-5.56,35.86,-5.08);
 );
 out body;`;
 
@@ -52,7 +52,7 @@ const HUBS = {
   rn13_malaliyine: [-5.327287, 35.624908], // National Route 13 (Malaliyine)
   malaliyine: [-5.341542, 35.626566],
   abdellah_fakhar: [-5.352505, 35.564595],
-  barbourine: [-5.374, 35.581],
+  barbourine: [-5.372222, 35.580361], // Hay Barbourine / Polvorin Dersa (road next to Pharmacie Polvorin Dersa)
   sahtriyine: [-5.467919, 35.560172],
   amsa: [-5.230782, 35.526575],
   azla: [-5.242701, 35.550609],
@@ -64,7 +64,7 @@ const HUBS = {
   laalaouia: [-5.446945, 35.638405],
   ben_karrich: [-5.425515, 35.507641],
   zinate: [-5.402815, 35.470438],
-  arbaa_beni_hassan: [-5.370735, 35.356061],
+  arbaa_beni_hassan: [-5.356811, 35.318981], // Souk Larbaa Beni Hassan (OSM bus_stop 8197425158)
   beni_salah: [-5.360733, 35.550764],
   ain_zarka: [-5.342911, 35.520493],
   hay_bouzaghlal: [-5.346932, 35.698063],
@@ -232,7 +232,24 @@ const LINES_SPEC = [
   },
   { id: 'L16', number: '16', category: 'urban', color: '#65A30D', price_mad: 4.0, frequency_mins: 20, first_departure: '06:15', last_departure: '21:45', corridor: ['rommana', 'dar_takafa', 'avenue_des_far', 'rn13_malaliyine'] },
   { id: 'L17', number: '17', category: 'urban', color: '#9333EA', price_mad: 4.0, frequency_mins: 20, first_departure: '06:15', last_departure: '21:30', corridor: ['rommana', 'dar_takafa', 'ancienne_gare', 'abdellah_fakhar'] },
-  { id: 'L18', number: '18', category: 'urban', color: '#F97316', price_mad: 4.0, frequency_mins: 20, first_departure: '06:15', last_departure: '21:30', corridor: ['rommana', 'dar_takafa', 'barbourine'] },
+  {
+    id: 'L18',
+    number: '18',
+    category: 'urban',
+    color: '#F97316',
+    price_mad: 4.0,
+    frequency_mins: 20,
+    first_departure: '06:15',
+    last_departure: '21:30',
+    corridor: ['rommana', 'dar_takafa', 'barbourine'],
+    // Verified Rommana -> Blvd Mohamed V -> Blvd Moulay El Abbas (Dar Takafa) -> Av. Mauritanie (Diour Lahjar) -> Hay Barbourine (Polvorin Dersa)
+    routeWaypoints: [
+      [-5.39242, 35.56549],
+      [-5.385313, 35.571079],
+      [-5.383003, 35.57058],
+      [-5.372222, 35.580361],
+    ],
+  },
 
   // Regional / Suburban Network (18 Lines - 5.00 to 10.00 MAD)
   { id: 'L19', number: '19', category: 'regional', color: '#0284C7', price_mad: 6.0, frequency_mins: 35, first_departure: '06:30', last_departure: '21:00', corridor: ['rommana', 'dar_takafa', 'mhannech_sciences', 'amsa'] },
